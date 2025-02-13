@@ -1,0 +1,13 @@
+p style="color: green" = notice
+
+- content_for :title, "Timelines"
+
+h1 Timelines
+
+div#timelines
+  - @timelines.each do |timeline|
+    = render timeline
+    p
+      = link_to "Show this timeline", timeline
+
+= link_to "New timeline", new_timeline_path

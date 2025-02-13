@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Timelines" %>
+
+<h1>Timelines</h1>
+
+<div id="timelines">
+  <% @timelines.each do |timeline| %>
+    <%= render timeline %>
+    <p>
+      <%= link_to "Show this timeline", timeline %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New timeline", new_timeline_path %>

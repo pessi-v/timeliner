@@ -1,0 +1,12 @@
+- content_for :title, "Editing timeline"
+
+h1 Editing timeline
+
+= render "form", timeline: @timeline
+
+br
+
+div
+  = link_to "Show this timeline", @timeline
+  = " | "
+  = link_to "Back to timelines", timelines_path

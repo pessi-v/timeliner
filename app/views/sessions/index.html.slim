@@ -1,0 +1,27 @@
+p style="color: green"
+  = notice
+
+h1 Devices & Sessions
+
+#sessions
+  - @sessions.each do |session|
+    div id=dom_id(session)
+      p
+        strong User Agent:
+        = session.user_agent
+
+      p
+        strong Ip Address:
+        = session.ip_address
+
+      p
+        strong Created at:
+        = session.created_at
+
+    p
+      = button_to "Log out", session, method: :delete
+
+br
+
+div
+  = link_to "Back", root_path 

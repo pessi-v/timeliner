@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+== render @timeline
+
+div
+  => link_to "Edit this timeline", edit_timeline_path(@timeline)
+  '|
+  =< link_to "Back to timelines", timelines_path
+
+  = button_to "Destroy this timeline", @timeline, method: :delete

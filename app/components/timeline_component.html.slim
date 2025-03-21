@@ -1,0 +1,20 @@
+.timeline-visualization
+  .timeline-header
+    .timeline-line
+    .timeline-dates
+      span.start-date = format_date(@start_date)
+      span.end-date = format_date(@end_date)
+
+  .timeline-rows
+    - @rows.each do |row|
+      .timeline-row
+        .timeline-row-line
+        .timeline-events
+          - row.each do |event|
+            - position = calculate_position_and_width(event)
+            .timeline-event[
+              style="left: #{position[:left]}; width: #{position[:width]};"
+              title="#{event[:description]} (#{format_date(event[:from])} - #{format_date(event[:until])})"
+              data-timeline-id=event[:timeline_id]
+            ]
+              .event-label = event[:description]

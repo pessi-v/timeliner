@@ -1,0 +1,8 @@
+p style="color: green" = notice
+
+= link_to('make new timeline', new_timeline_path)
+
+= @new_timelines.each do |timeline|
+  = timeline_path(timeline)
+= @user_timelines.each do |timeline|
+  = timeline_path(timeline)

@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+h1 Timelines
+
+#timelines
+  - @timelines.each do |timeline|
+    p
+      = link_to "#{timeline.title} - #{timeline.info}", timeline
+
+= link_to "New timeline", new_timeline_path

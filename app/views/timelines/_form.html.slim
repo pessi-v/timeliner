@@ -1,0 +1,76 @@
+/ = form_with(model: timeline, data: { controller: "timeline-events" }) do |f|
+/   .field
+/     - if timeline.errors.any?
+/       div style="color: red"
+/         h2 = "#{pluralize(timeline.errors.count, "error")} prohibited this timeline from being saved:"
+/         ul
+/           - timeline.errors.each do |error|
+/             li = error.full_message
+/     = f.label :title
+/     = f.text_field :title
+
+/     = f.label :info
+/     = f.text_field :info
+
+/   .events-form data-timeline-events-target="eventsForm"
+/     h3 Add Event
+/     .field
+/       = f.label :description
+/       = f.text_field :description, data: { timeline_events_target: "description" }
+    
+/     .field
+/       = f.label :from, "From *"
+/       = f.datetime_field :from, data: { timeline_events_target: "fromDateTime" }
+    
+/     .field
+/       = f.label :until, "Until"
+/       = f.datetime_field :until, data: { timeline_events_target: "untilDateTime" }
+    
+/     .error-message.hidden data-timeline-events-target="errorMessage"
+/       / Error message will be inserted here
+    
+/     = button_tag "Add Event", type: "button", data: { action: "click->timeline-events#addEvent" }
+
+/   .events-list data-timeline-events-target="eventsList"
+/     / Events will be dynamically added here
+
+/   = f.submit "Create Timeline"
+
+
+= form_with(model: timeline, data: { controller: "timeline-events", timeline_events_initial_value: timeline.events.to_json }) do |f|
+  .field
+    - if timeline.errors.any?
+      div style="color: red"
+        h2 = "#{pluralize(timeline.errors.count, "error")} prohibited this timeline from being saved:"
+        ul
+          - timeline.errors.each do |error|
+            li = error.full_message
+    = f.label :title
+    = f.text_field :title
+
+    = f.label :info
+    = f.text_field :info
+
+    .events-form data-timeline-events-target="eventsForm"
+      h3 Add Event
+      .field
+        = label_tag :description
+        = text_field_tag :description, nil, data: { timeline_events_target: "description" }
+      
+      .field
+        = label_tag :from, "From *"
+        = datetime_field_tag :from, nil, data: { timeline_events_target: "fromDateTime" }
+      
+      .field
+        = label_tag :until, "Until"
+        = datetime_field_tag :until, nil, data: { timeline_events_target: "untilDateTime" }
+      
+      .error-message.hidden data-timeline-events-target="errorMessage"
+        / Error message will be inserted here
+      
+      = button_tag "Add Event", type: "button", data: { action: "click->timeline-events#addEvent" }
+
+    .events-list data-timeline-events-target="eventsList"
+      / Events will be dynamically added here
+
+  = f.submit "Create Timeline"

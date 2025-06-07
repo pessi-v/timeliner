@@ -91,7 +91,7 @@ production:
     <<: *default
     database: timeliner_production
     username: timeliner
-    password: <%= ENV["TIMELINER_DATABASE_PASSWORD"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: timeliner_production_cache

@@ -37,6 +37,7 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
+
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     # When you start using multiple servers, you should split out job processing to a dedicated machine.
@@ -99,7 +100,9 @@ accessories:
     port: "127.0.0.1:5432:5432"
     env:
       secret:
-        - TIMELINER_DATABASE_PASSWORD
+        - POSTGRES_DB
+        - POSTGRES_USER
+        - POSTGRES_PASSWORD
     files:
       # - config/mysql/production.cnf:/etc/mysql/my.cnf
       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql

@@ -89,6 +89,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
+    host: timeliner-postgres
     database: timeliner_production
     username: timeliner
     password: <%= ENV["POSTGRES_PASSWORD"] %>

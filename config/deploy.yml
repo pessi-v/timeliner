@@ -9,7 +9,7 @@ image: pessiv/timeliner
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.135
+    - 192.168.0.136
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -95,7 +95,7 @@ builder:
 accessories:
   postgres:
     image: postgres:15
-    host: 192.168.0.135
+    host: 192.168.0.136
     # Change to 3306 to expose port to the world instead of just local network.
     port: "127.0.0.1:5432:5432"
     env:

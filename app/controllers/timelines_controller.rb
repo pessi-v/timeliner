@@ -1,4 +1,6 @@
 class TimelinesController < ApplicationController
+  skip_before_action :authenticate, only: [:show]
+  before_action :set_current_session, only: [:show]
   before_action :set_timeline, only: %i[show edit update destroy]
 
   # GET /timelines or /timelines.json
@@ -62,11 +64,13 @@ class TimelinesController < ApplicationController
     end
   end
 
+  helper_method :timeline_owner?
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_timeline
-    @timeline = Timeline.find(params.expect(:id))
+    @timeline = Timeline.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
@@ -76,5 +80,21 @@ class TimelinesController < ApplicationController
       permitted[:events] = JSON.parse(permitted[:events])
     end
     permitted
+  end
+
+  def timeline_owner?
+    Current.user&.id == @timeline.user_id
+  end
+
+  def skip_authentication?
+    action_name == "show"
+  end
+
+  def set_current_session
+    Current.session = if session_record = Session.find_by_id(cookies.signed[:session_token])
+      session_record
+    else
+      nil
+    end
   end
 end

@@ -1,0 +1,90 @@
+.timeline {
+  padding: 40px 20px;
+  position: relative;
+}
+
+.timeline-header {
+  position: relative;
+  height: 30px;
+  margin-bottom: 40px;
+}
+
+.timeline-header__line {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #333;
+}
+
+.timeline-header__dates {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+
+.timeline-events {
+  position: relative;
+  /* height: 100%; */
+}
+
+.timeline-event {
+  position: absolute;
+  height: 30px;
+  /* width: 0; */
+}
+
+.timeline-event__period {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 7px;
+  min-width: 1px;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(var(--width-scale));
+  background-color: #3498db;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.timeline-event__label {
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+  max-width: none;
+
+  /* font-family: "Space Mono", monospace; */
+  /* font-family: "Baskerville", monospace; */
+  font-family: "Cutive Mono", monospace;
+  /* font-family: "Noto Sans Gunjala Gondi", monospace; */
+  font-size: var(--font-size-xs);
+}
+
+/* Add margin between events */
+.timeline-event__label:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+/* Position variations */
+/* .timeline-event__label .timeline-event__period {
+  bottom: 0;
+} */
+/* 
+.--label-above .timeline-event__label {
+  top: 20px;
+}
+
+.--label-below .timeline-event__period {
+  top: 0;
+}
+
+.--label-below {
+  bottom: -17px;
+} */

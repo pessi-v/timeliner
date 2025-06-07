@@ -74,7 +74,8 @@ class TimelineComponent < ViewComponent::Base
 
     {
       left: "#{position_percentage}%",
-      width: "#{width_percentage}%"
+      width: "calc(var(--timeline-width) * #{width_percentage / 100})",
+      width_percentage: width_percentage
     }
   end
 

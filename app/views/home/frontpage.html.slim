@@ -1,8 +1,22 @@
-p style="color: green" = notice
+.jumbotron
+  h1 Welcome to Timeline.rs
+  p.lead Create, view, edit, share and combine Timelines
 
-= link_to('make new timeline', new_timeline_path)
+  .cta-buttons
+    - if Current.user
+      p
+        | Signed in as 
+        = Current.user.email
+      = button_to "Log out", Current.session, method: :delete, class: "btn btn-outline-primary btn-lg"
+    - else
+      = link_to "Sign in", sign_in_path, class: "btn btn-primary btn-lg"
+      = link_to "Sign up", sign_up_path, class: "btn btn-outline-primary btn-lg"
 
-= @new_timelines.each do |timeline|
-  = timeline_path(timeline)
-= @user_timelines.each do |timeline|
-  = timeline_path(timeline)
+.featured-timelines
+  h2 Featured Timelines
+  .timeline-grid
+    - @new_timelines.each do |timeline|
+      .timeline-card
+        h3 = timeline.title
+        p = timeline.info
+        = link_to "View Timeline", timeline_path(timeline), class: "btn btn-sm btn-outline-secondary"

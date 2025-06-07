@@ -1,20 +1,23 @@
-.timeline-visualization
+.timeline
   .timeline-header
-    .timeline-line
-    .timeline-dates
+    .timeline-header__line
+    .timeline-header__dates
       span.start-date = format_date(@start_date)
       span.end-date = format_date(@end_date)
 
   .timeline-rows
     - @rows.each do |row|
-      .timeline-row
-        .timeline-row-line
-        .timeline-events
-          - row.each do |event|
-            - position = calculate_position_and_width(event)
-            .timeline-event[
-              style="left: #{position[:left]}; width: #{position[:width]};"
+      .timeline-events
+        - row.each_with_index do |event, index|
+          - position = calculate_position_and_width(event)
+          .timeline-event[
+            style="left: #{position[:left]}; width:100%;"
+            data-timeline-id=event[:timeline_id]
+          ]
+            .timeline-event__period[
+              style="width: #{position[:width_percentage]}%;"
               title="#{event[:description]} (#{format_date(event[:from])} - #{format_date(event[:until])})"
-              data-timeline-id=event[:timeline_id]
             ]
-              .event-label = event[:description]
+          .timeline-event__label[
+            style="left: #{position[:left]};"
+          ] = event[:description]

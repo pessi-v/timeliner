@@ -1,10 +1,18 @@
 p style="color: green" = notice
 
+h2 = @timeline.title
+h4 = link_to "frontpage", root_path
+
+- if timeline_owner?
+  h4 = link_to "edit", edit_timeline_path(@timeline)
+
 == render @timeline
 
 div
-  => link_to "Edit this timeline", edit_timeline_path(@timeline)
-  '|
-  =< link_to "Back to timelines", timelines_path
-
-  = button_to "Destroy this timeline", @timeline, method: :delete
+  - if timeline_owner?
+    => link_to "Edit this timeline", edit_timeline_path(@timeline)
+    '|
+    =< link_to "Back to timelines", timelines_path
+    = button_to "Destroy this timeline", @timeline, method: :delete
+  - else
+    = link_to "Back to timelines", timelines_path

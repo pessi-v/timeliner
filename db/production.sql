@@ -1,0 +1,4 @@
+CREATE DATABASE timeliner_production;
+CREATE DATABASE timeliner_production_cache;
+CREATE DATABASE timeliner_production_queue;
+CREATE DATABASE timeliner_production_cable;

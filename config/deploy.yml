@@ -1,3 +1,5 @@
+<% require "dotenv"; Dotenv.load(".env") %>
+
 # Name of your application. Used to uniquely configure containers.
 service: timeliner
 
@@ -90,7 +92,7 @@ builder:
 
 # Use accessory services (secrets come from .kamal/secrets).
 accessories:
-  db:
+  postgres:
     image: postgres:15
     host: 192.168.0.135
     # Change to 3306 to expose port to the world instead of just local network.

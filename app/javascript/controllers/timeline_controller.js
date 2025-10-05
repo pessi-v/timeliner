@@ -183,32 +183,57 @@ export default class extends Controller {
     // Draw ticks at the bottom of the timeline
     const tickY = this.height - this.marginBottom + 10
     const duration = this.viewEnd - this.viewStart
+    const viewportWidth = this.width - this.marginLeft - this.marginRight
+    
+    // Calculate maximum number of ticks that can fit without overlapping
+    // Assume each label needs about 80-100 pixels of space
+    const minLabelSpacing = 80
+    const maxTicks = Math.floor(viewportWidth / minLabelSpacing)
     
     let interval, format
     
-    if (duration < 3600) { // Less than 1 hour
-      interval = 300 // 5 minutes
-      format = (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
-    } else if (duration < 86400) { // Less than 1 day
-      interval = 3600 // 1 hour
-      format = (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
-    } else if (duration < 604800) { // Less than 1 week
-      interval = 21600 // 6 hours
-      format = (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + 
-                         date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
-    } else if (duration < 2592000) { // Less than 30 days
-      interval = 86400 // 1 day
-      format = (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-    } else if (duration < 31536000) { // Less than 1 year
-      interval = 2592000 // 30 days
-      format = (date) => date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
-    } else if (duration < 315360000) { // Less than 10 years
-      interval = 31536000 // 1 year
-      format = (date) => date.getFullYear().toString()
-    } else {
-      interval = 315360000 // 10 years
-      format = (date) => date.getFullYear().toString()
+    // Start with the finest granularity and work up until we have fewer ticks than maxTicks
+    const possibleIntervals = [
+      { seconds: 60, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) },
+      { seconds: 300, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 5 min
+      { seconds: 600, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 10 min
+      { seconds: 1800, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 30 min
+      { seconds: 3600, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 1 hour
+      { seconds: 10800, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 3 hours
+      { seconds: 21600, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 6 hours
+      { seconds: 43200, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + date.toLocaleTimeString('en-US', { hour: '2-digit' }) }, // 12 hours
+      { seconds: 86400, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }, // 1 day
+      { seconds: 172800, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }, // 2 days
+      { seconds: 432000, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }, // 5 days
+      { seconds: 604800, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }, // 1 week
+      { seconds: 1209600, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }, // 2 weeks
+      { seconds: 2592000, format: (date) => date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }, // 30 days
+      { seconds: 7776000, format: (date) => date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }, // 90 days
+      { seconds: 15552000, format: (date) => date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }, // 180 days
+      { seconds: 31536000, format: (date) => date.getFullYear().toString() }, // 1 year
+      { seconds: 63072000, format: (date) => date.getFullYear().toString() }, // 2 years
+      { seconds: 157680000, format: (date) => date.getFullYear().toString() }, // 5 years
+      { seconds: 315360000, format: (date) => date.getFullYear().toString() }, // 10 years
+      { seconds: 630720000, format: (date) => date.getFullYear().toString() }, // 20 years
+      { seconds: 1576800000, format: (date) => date.getFullYear().toString() }, // 50 years
+      { seconds: 3153600000, format: (date) => date.getFullYear().toString() } // 100 years
+    ]
+    
+    // Find the smallest interval that keeps tick count under maxTicks
+    let selectedInterval = possibleIntervals[possibleIntervals.length - 1] // Default to largest
+    
+    for (let i = 0; i < possibleIntervals.length; i++) {
+      const potentialInterval = possibleIntervals[i]
+      const tickCount = Math.ceil(duration / potentialInterval.seconds)
+      
+      if (tickCount <= maxTicks) {
+        selectedInterval = potentialInterval
+        break
+      }
     }
+    
+    interval = selectedInterval.seconds
+    format = selectedInterval.format
     
     let currentTime = Math.floor(this.viewStart / interval) * interval
     

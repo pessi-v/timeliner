@@ -2,12 +2,18 @@
      data-controller="timeline"
      data-timeline-min-time-value="<%= time_range ? time_range[:min].to_i : 0 %>"
      data-timeline-max-time-value="<%= time_range ? time_range[:max].to_i : 0 %>"
+     data-timeline-max-lanes-value="<%= max_lanes %>"
      data-timeline-events-value="<%= events_data.to_json %>">
   
   <div class="mb-4">
     <h2 class="text-2xl font-bold text-gray-800"><%= timeline.name %></h2>
     <% if timeline.description.present? %>
       <p class="text-gray-600 mt-2"><%= timeline.description %></p>
+    <% end %>
+    <% if max_lanes > 1 %>
+      <p class="text-sm text-gray-500 mt-1">
+        <%= pluralize(max_lanes, 'concurrent event lane') %>
+      </p>
     <% end %>
   </div>
 

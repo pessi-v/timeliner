@@ -181,8 +181,197 @@ ai_revolution = Event.create!(
 
 tech_timeline.events << [iphone_launch, ai_revolution]
 
+# NEW: Create a timeline with many overlapping events - WWII Major Battles
+battles_timeline = Timeline.create!(
+  name: "World War II - Major Concurrent Battles",
+  description: "Overlapping military operations during World War II",
+  color: "#991b1b"
+)
+
+# Create overlapping battles
+battle_britain = Event.create!(
+  title: "Battle of Britain",
+  description: "German air campaign against the UK",
+  start_time: DateTime.new(1940, 7, 10),
+  end_time: DateTime.new(1940, 10, 31),
+  event_type: "range",
+  color: "#dc2626"
+)
+
+battle_atlantic = Event.create!(
+  title: "Battle of the Atlantic",
+  description: "Longest continuous military campaign in WWII",
+  start_time: DateTime.new(1939, 9, 3),
+  end_time: DateTime.new(1945, 5, 8),
+  event_type: "range",
+  color: "#1e40af"
+)
+
+siege_leningrad = Event.create!(
+  title: "Siege of Leningrad",
+  description: "872-day siege by German and Finnish forces",
+  start_time: DateTime.new(1941, 9, 8),
+  end_time: DateTime.new(1944, 1, 27),
+  event_type: "range",
+  color: "#7c2d12"
+)
+
+battle_moscow = Event.create!(
+  title: "Battle of Moscow",
+  description: "German offensive against Moscow",
+  start_time: DateTime.new(1941, 10, 2),
+  end_time: DateTime.new(1942, 1, 7),
+  event_type: "range",
+  color: "#dc2626"
+)
+
+battle_stalingrad = Event.create!(
+  title: "Battle of Stalingrad",
+  description: "Major battle on Eastern Front",
+  start_time: DateTime.new(1942, 8, 23),
+  end_time: DateTime.new(1943, 2, 2),
+  event_type: "range",
+  color: "#991b1b"
+)
+
+el_alamein = Event.create!(
+  title: "Second Battle of El Alamein",
+  description: "Turning point in North Africa",
+  start_time: DateTime.new(1942, 10, 23),
+  end_time: DateTime.new(1942, 11, 11),
+  event_type: "range",
+  color: "#d97706"
+)
+
+guadalcanal = Event.create!(
+  title: "Battle of Guadalcanal",
+  description: "First major Allied offensive in Pacific",
+  start_time: DateTime.new(1942, 8, 7),
+  end_time: DateTime.new(1943, 2, 9),
+  event_type: "range",
+  color: "#059669"
+)
+
+kursk = Event.create!(
+  title: "Battle of Kursk",
+  description: "Largest tank battle in history",
+  start_time: DateTime.new(1943, 7, 5),
+  end_time: DateTime.new(1943, 8, 23),
+  event_type: "range",
+  color: "#dc2626"
+)
+
+normandy = Event.create!(
+  title: "Battle of Normandy",
+  description: "Allied invasion of Normandy",
+  start_time: DateTime.new(1944, 6, 6),
+  end_time: DateTime.new(1944, 8, 25),
+  event_type: "range",
+  color: "#3b82f6"
+)
+
+bulge = Event.create!(
+  title: "Battle of the Bulge",
+  description: "Last major German offensive",
+  start_time: DateTime.new(1944, 12, 16),
+  end_time: DateTime.new(1945, 1, 25),
+  event_type: "range",
+  color: "#dc2626"
+)
+
+battles_timeline.events << [
+  battle_britain, battle_atlantic, siege_leningrad, battle_moscow,
+  battle_stalingrad, el_alamein, guadalcanal, kursk, normandy, bulge
+]
+
+# NEW: Create a timeline with overlapping events at minute-level granularity
+# A busy hospital emergency room on a single day
+hospital_timeline = Timeline.create!(
+  name: "Emergency Room - Busy Friday Night",
+  description: "Patient arrivals and treatments overlapping throughout the evening",
+  color: "#dc2626"
+)
+
+patient1 = Event.create!(
+  title: "Patient A: Chest Pain",
+  description: "65yo male, cardiac evaluation",
+  start_time: DateTime.new(2024, 1, 12, 18, 15),
+  end_time: DateTime.new(2024, 1, 12, 21, 45),
+  event_type: "range",
+  color: "#dc2626"
+)
+
+patient2 = Event.create!(
+  title: "Patient B: Broken Arm",
+  description: "12yo child, skateboard accident",
+  start_time: DateTime.new(2024, 1, 12, 18, 30),
+  end_time: DateTime.new(2024, 1, 12, 20, 15),
+  event_type: "range",
+  color: "#2563eb"
+)
+
+patient3 = Event.create!(
+  title: "Patient C: Allergic Reaction",
+  description: "28yo female, severe food allergy",
+  start_time: DateTime.new(2024, 1, 12, 18, 45),
+  end_time: DateTime.new(2024, 1, 12, 19, 30),
+  event_type: "range",
+  color: "#dc2626"
+)
+
+patient4 = Event.create!(
+  title: "Patient D: Laceration",
+  description: "45yo male, deep cut requiring stitches",
+  start_time: DateTime.new(2024, 1, 12, 19, 00),
+  end_time: DateTime.new(2024, 1, 12, 20, 30),
+  event_type: "range",
+  color: "#059669"
+)
+
+patient5 = Event.create!(
+  title: "Patient E: Asthma Attack",
+  description: "8yo child, breathing difficulty",
+  start_time: DateTime.new(2024, 1, 12, 19, 15),
+  end_time: DateTime.new(2024, 1, 12, 21, 00),
+  event_type: "range",
+  color: "#dc2626"
+)
+
+patient6 = Event.create!(
+  title: "Patient F: Sprained Ankle",
+  description: "22yo athlete, sports injury",
+  start_time: DateTime.new(2024, 1, 12, 19, 45),
+  end_time: DateTime.new(2024, 1, 12, 21, 15),
+  event_type: "range",
+  color: "#2563eb"
+)
+
+patient7 = Event.create!(
+  title: "Patient G: Migraine",
+  description: "35yo female, severe headache",
+  start_time: DateTime.new(2024, 1, 12, 20, 00),
+  end_time: DateTime.new(2024, 1, 12, 21, 30),
+  event_type: "range",
+  color: "#7c3aed"
+)
+
+patient8 = Event.create!(
+  title: "Patient H: MVA Minor",
+  description: "Motor vehicle accident, minor injuries",
+  start_time: DateTime.new(2024, 1, 12, 20, 30),
+  end_time: DateTime.new(2024, 1, 12, 22, 45),
+  event_type: "range",
+  color: "#d97706"
+)
+
+hospital_timeline.events << [
+  patient1, patient2, patient3, patient4,
+  patient5, patient6, patient7, patient8
+]
+
 puts "✅ Created #{Timeline.count} timelines with #{Event.count} events"
-puts "Timelines:"
+puts "\nTimelines:"
 Timeline.all.each do |timeline|
-  puts "  - #{timeline.name} (#{timeline.events.count} events)"
+  component = TimelineComponent.new(timeline: timeline)
+  puts "  - #{timeline.name} (#{timeline.events.count} events, #{component.max_lanes} lanes)"
 end

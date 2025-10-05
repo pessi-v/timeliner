@@ -67,6 +67,13 @@
 - Duplicate events appear only once
 - Customizable name, description, and color for merged timeline
 
+✅ **Automatic Lane Assignment:**
+- Events that overlap in time are automatically placed in different vertical lanes
+- Smart algorithm ensures no visual overlaps
+- Lane separators clearly show concurrent events
+- Scales vertically to accommodate any number of simultaneous events
+- Works at all time scales (minutes, hours, days, years)
+
 ✅ **Visual Enhancements:**
 - Color-coded events
 - Automatic label positioning
@@ -76,12 +83,14 @@
 
 ## Sample Timelines
 
-The seed data creates four example timelines:
+The seed data creates six example timelines:
 
 1. **World War II** - Demonstrates year/month granularity over a 6-year span
 2. **September 11, 2001** - Demonstrates hour/minute granularity within a single day
 3. **The Sassanid Empire** - Demonstrates ancient dates and multi-century spans
 4. **Modern Tech Era** - Demonstrates ongoing events extending into the future
+5. **WWII Major Concurrent Battles** - Demonstrates automatic lane assignment with 10 overlapping battles (shows up to 6 concurrent lanes)
+6. **Emergency Room - Busy Friday Night** - Demonstrates minute-level overlapping events with 8 concurrent patients
 
 ## Key Features Explained
 
@@ -113,6 +122,27 @@ The merge feature allows you to:
 - Events can belong to multiple timelines
 - Merging doesn't duplicate events - they're shared
 - Original timelines are preserved
+
+### Lane Assignment for Overlapping Events
+The timeline automatically detects when events overlap in time and assigns them to different vertical "lanes" or "swim lanes" to prevent visual overlap.
+
+**Algorithm:**
+1. Sort all events by start time
+2. For each event, find the first available lane where it doesn't overlap with any existing event
+3. If no lane is available, create a new lane
+4. Assign the event to that lane
+
+**Visual rendering:**
+- Lane separators are drawn to clearly show concurrent events
+- Events are vertically distributed across available lanes
+- Labels are placed directly on or next to events
+- Works seamlessly at any time scale
+
+**Benefits:**
+- Instantly see which events happened simultaneously
+- No manual positioning required
+- Scales to any number of concurrent events
+- Great for project management, medical records, battle timelines, etc.
 
 ## Architecture Decisions
 
@@ -205,3 +235,4 @@ Navigate to any timeline to see all its events rendered on an interactive SVG ca
 - Merge multiple war timelines to see historical conflicts together
 - Combine personal project timelines to see full portfolio timeline
 - Merge company milestone timelines from different departments
+- **Merge "WWII" + "WWII Major Concurrent Battles"** to see major events alongside detailed battle information with automatic lane separation

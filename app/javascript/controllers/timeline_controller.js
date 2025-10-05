@@ -5,6 +5,7 @@ export default class extends Controller {
   static values = {
     minTime: Number,
     maxTime: Number,
+    maxLanes: Number,
     events: Array
   }
 
@@ -20,11 +21,12 @@ export default class extends Controller {
     // Margins for timeline
     this.marginLeft = 50
     this.marginRight = 50
-    this.marginTop = 60
+    this.marginTop = 80
     this.marginBottom = 60
     
     console.log('Timeline connected')
     console.log('Events:', this.eventsValue)
+    console.log('Max lanes:', this.maxLanesValue)
     console.log('Time range:', this.viewStart, 'to', this.viewEnd)
     
     this.setupInteractions()
@@ -130,12 +132,25 @@ export default class extends Controller {
     return this.marginLeft + (offset / timeRange) * viewportWidth
   }
 
+  getLaneY(laneIndex) {
+    // Calculate Y position for a given lane
+    const availableHeight = this.height - this.marginTop - this.marginBottom
+    const laneHeight = availableHeight / this.maxLanesValue
+    return this.marginTop + (laneIndex * laneHeight) + (laneHeight / 2)
+  }
+
+  getLaneHeight() {
+    const availableHeight = this.height - this.marginTop - this.marginBottom
+    return Math.min(availableHeight / this.maxLanesValue, 40) // Max 40px per lane
+  }
+
   render() {
     this.contentTarget.innerHTML = ''
     
-    // Draw main timeline axis
-    const axisY = this.height / 2
-    this.drawLine(this.marginLeft, axisY, this.width - this.marginRight, axisY, '#cbd5e1', 2)
+    // Draw lane separators if we have multiple lanes
+    if (this.maxLanesValue > 1) {
+      this.drawLaneSeparators()
+    }
     
     // Draw time ticks
     this.drawTimeTicks()
@@ -147,8 +162,26 @@ export default class extends Controller {
     this.updateScaleLabel()
   }
 
+  drawLaneSeparators() {
+    const availableHeight = this.height - this.marginTop - this.marginBottom
+    const laneHeight = availableHeight / this.maxLanesValue
+    
+    for (let i = 0; i <= this.maxLanesValue; i++) {
+      const y = this.marginTop + (i * laneHeight)
+      this.drawLine(
+        this.marginLeft, 
+        y, 
+        this.width - this.marginRight, 
+        y, 
+        i === 0 || i === this.maxLanesValue ? '#cbd5e1' : '#e5e7eb', 
+        i === 0 || i === this.maxLanesValue ? 2 : 1
+      )
+    }
+  }
+
   drawTimeTicks() {
-    const axisY = this.height / 2
+    // Draw ticks at the bottom of the timeline
+    const tickY = this.height - this.marginBottom + 10
     const duration = this.viewEnd - this.viewStart
     
     let interval, format
@@ -184,7 +217,7 @@ export default class extends Controller {
       
       if (x >= this.marginLeft && x <= this.width - this.marginRight) {
         // Tick mark
-        this.drawLine(x, axisY - 5, x, axisY + 5, '#6b7280', 1)
+        this.drawLine(x, tickY - 5, x, tickY + 5, '#6b7280', 1)
         
         // Label
         const date = new Date(currentTime * 1000)
@@ -196,8 +229,6 @@ export default class extends Controller {
   }
 
   drawEvents() {
-    const axisY = this.height / 2
-    
     console.log('Drawing events, count:', this.eventsValue ? this.eventsValue.length : 0)
     
     if (!this.eventsValue || this.eventsValue.length === 0) {
@@ -205,7 +236,9 @@ export default class extends Controller {
       return
     }
     
-    this.eventsValue.forEach((event, index) => {
+    const eventHeight = Math.min(this.getLaneHeight() * 0.7, 30)
+    
+    this.eventsValue.forEach((event) => {
       const startX = this.timeToX(event.start_time)
       const endX = this.timeToX(event.end_time)
       
@@ -214,7 +247,7 @@ export default class extends Controller {
         return
       }
       
-      const labelY = this.marginTop + (index % 3) * 25
+      const laneY = this.getLaneY(event.lane)
       const isPointEvent = event.event_type === 'point'
       const isOngoing = event.event_type === 'ongoing'
       
@@ -222,34 +255,32 @@ export default class extends Controller {
       
       if (isPointEvent) {
         // Point event - circle
-        this.drawCircle(g, startX, axisY, 6, event.color, 'white', 2)
+        this.drawCircle(g, startX, laneY, 6, event.color, 'white', 2)
         
-        // Connector line
-        this.drawLine(startX, axisY - 6, startX, labelY + 15, event.color, 1, '2,2', g)
+        // Label directly next to the point
+        const labelX = startX + 12
+        this.drawText(labelX, laneY + 4, event.title, 'start', '#1f2937', '12px', 'bold', g)
       } else {
         // Range event - rectangle
         const width = Math.max(endX - startX, 2)
-        this.drawRect(g, startX, axisY - 15, width, 30, event.color, event.color, 2, 0.6)
+        const rectY = laneY - eventHeight / 2
         
-        // Connector line
-        const centerX = startX + width / 2
-        this.drawLine(centerX, axisY - 15, centerX, labelY + 15, event.color, 1, '2,2', g)
+        this.drawRect(g, startX, rectY, width, eventHeight, event.color, event.color, 2, 0.7)
+        
+        // Label inside or next to the event bar
+        const labelX = startX + width / 2
+        this.drawText(labelX, laneY + 4, event.title, 'middle', '#ffffff', '12px', 'bold', g)
         
         // Arrow for ongoing events
         if (isOngoing && endX > this.width - this.marginRight) {
           const arrowX = Math.min(endX, this.width - this.marginRight)
           this.drawPolygon(g, [
-            [arrowX, axisY - 10],
-            [arrowX + 8, axisY],
-            [arrowX, axisY + 10]
+            [arrowX, laneY - eventHeight / 2],
+            [arrowX + 10, laneY],
+            [arrowX, laneY + eventHeight / 2]
           ], event.color)
         }
       }
-      
-      // Event label
-      const labelX = isPointEvent ? startX : startX + (endX - startX) / 2
-      const title = event.title.length > 30 ? event.title.substring(0, 27) + '...' : event.title
-      this.drawText(labelX, labelY, title, 'middle', '#1f2937', '12px', 'bold', g)
       
       this.contentTarget.appendChild(g)
     })

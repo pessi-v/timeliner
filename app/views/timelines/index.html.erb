@@ -1,0 +1,32 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="flex justify-between items-center mb-8">
+    <h1 class="text-4xl font-bold text-gray-800">Timelines</h1>
+    <%= link_to "Create New Timeline", new_timeline_path, class: "px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" %>
+  </div>
+
+  <% if @timelines.any? %>
+    <div class="grid gap-6">
+      <% @timelines.each do |timeline| %>
+        <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
+          <div class="flex justify-between items-start">
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-800">
+                <%= link_to timeline.name, timeline_path(timeline), class: "hover:text-blue-600" %>
+              </h2>
+              <% if timeline.description.present? %>
+                <p class="text-gray-600 mt-2"><%= timeline.description %></p>
+              <% end %>
+              <div class="mt-3 text-sm text-gray-500">
+                <%= pluralize(timeline.events.count, 'event') %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="text-center py-20">
+      <p class="text-gray-500 text-lg">No timelines yet. Create your first one!</p>
+    </div>
+  <% end %>
+</div>

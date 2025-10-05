@@ -34,6 +34,7 @@
   - `point`: Single moment in time (e.g., Hiroshima bombing)
   - `range`: Event with duration (e.g., WW2 battle)
   - `ongoing`: Events still happening (e.g., AI Revolution)
+  - Uses `bigint` to store seconds from epoch, supporting extreme date ranges (dinosaurs to far future)
 - **TimelineEvent**: Join table for many-to-many relationship (allows events to belong to multiple timelines)
 
 ### ViewComponents
@@ -83,7 +84,7 @@
 
 ## Sample Timelines
 
-The seed data creates six example timelines:
+The seed data creates eight example timelines:
 
 1. **World War II** - Demonstrates year/month granularity over a 6-year span
 2. **September 11, 2001** - Demonstrates hour/minute granularity within a single day
@@ -91,6 +92,8 @@ The seed data creates six example timelines:
 4. **Modern Tech Era** - Demonstrates ongoing events extending into the future
 5. **WWII Major Concurrent Battles** - Demonstrates automatic lane assignment with 10 overlapping battles (shows up to 6 concurrent lanes)
 6. **Emergency Room - Busy Friday Night** - Demonstrates minute-level overlapping events with 8 concurrent patients
+7. **Age of Dinosaurs** - Demonstrates extreme past dates spanning 252-66 million years ago across the Mesozoic Era (14 species + extinction event)
+8. **Climate Change Projections (2025-2175)** - Demonstrates future dates 150 years ahead with historical context and ongoing events
 
 ## Key Features Explained
 
@@ -145,6 +148,29 @@ The timeline automatically detects when events overlap in time and assigns them 
 - Great for project management, medical records, battle timelines, etc.
 
 ## Architecture Decisions
+
+### BigInt for Extreme Time Ranges
+To support extreme date ranges (from millions of years ago to centuries in the future), we use PostgreSQL's `bigint` type to store seconds from a reference epoch:
+
+**Why bigint?**
+- PostgreSQL's `datetime` type has limits (4713 BC to 294276 AD) - can't represent dinosaurs
+- PostgreSQL's `interval` type has maximum value limits - can't handle geological time scales
+- `bigint` can store any value from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+- Perfect for representing billions of years in seconds
+
+**How it works:**
+- Reference epoch: Year 0 (DateTime.new(0, 1, 1))
+- All events stored as seconds from this epoch
+- Negative values = past (e.g., -7,193,280,000,000,000 seconds = 228 million years ago)
+- Positive values = future (e.g., +4,733,510,400 seconds = year 2150)
+- Regular dates converted to seconds automatically
+
+**Benefits:**
+- Seamlessly handles dinosaurs (millions of years ago)
+- Supports far future events (thousands of years ahead)
+- Simple integer arithmetic for calculations
+- No special database type handling required
+- Fast comparisons and sorting
 
 ### Why SVG?
 - **Scalability**: Perfect for zoom operations

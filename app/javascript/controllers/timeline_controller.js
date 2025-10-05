@@ -10,7 +10,7 @@ export default class extends Controller {
   }
 
   connect() {
-    // Viewport in time (Unix timestamps)
+    // Viewport in time (seconds from epoch year 0)
     this.viewStart = this.minTimeValue
     this.viewEnd = this.maxTimeValue
     
@@ -23,6 +23,9 @@ export default class extends Controller {
     this.marginRight = 50
     this.marginTop = 80
     this.marginBottom = 60
+    
+    // Epoch offset: seconds from year 0 to Unix epoch (1970-01-01)
+    this.epochOffset = 62135596800
     
     console.log('Timeline connected')
     console.log('Events:', this.eventsValue)
@@ -96,8 +99,8 @@ export default class extends Controller {
       this.viewEnd = center + newRange / 2
       
       // Don't zoom beyond the data limits
-      const minRange = (this.maxTimeValue - this.minTimeValue) * 0.01 // At least 1% of total range
-      const maxRange = (this.maxTimeValue - this.minTimeValue) * 2 // At most 2x of total range
+      const minRange = (this.maxTimeValue - this.minTimeValue) * 0.01
+      const maxRange = (this.maxTimeValue - this.minTimeValue) * 2
       
       if (this.viewEnd - this.viewStart < minRange) {
         const center = (this.viewStart + this.viewEnd) / 2
@@ -109,14 +112,6 @@ export default class extends Controller {
         const center = (this.viewStart + this.viewEnd) / 2
         this.viewStart = center - maxRange / 2
         this.viewEnd = center + maxRange / 2
-      }
-      
-      // Keep within bounds
-      if (this.viewStart < this.minTimeValue - (maxRange - (this.maxTimeValue - this.minTimeValue)) / 2) {
-        this.viewStart = this.minTimeValue - (maxRange - (this.maxTimeValue - this.minTimeValue)) / 2
-      }
-      if (this.viewEnd > this.maxTimeValue + (maxRange - (this.maxTimeValue - this.minTimeValue)) / 2) {
-        this.viewEnd = this.maxTimeValue + (maxRange - (this.maxTimeValue - this.minTimeValue)) / 2
       }
       
       this.render()
@@ -133,7 +128,6 @@ export default class extends Controller {
   }
 
   getLaneY(laneIndex) {
-    // Calculate Y position for a given lane
     const availableHeight = this.height - this.marginTop - this.marginBottom
     const laneHeight = availableHeight / this.maxLanesValue
     return this.marginTop + (laneIndex * laneHeight) + (laneHeight / 2)
@@ -141,24 +135,18 @@ export default class extends Controller {
 
   getLaneHeight() {
     const availableHeight = this.height - this.marginTop - this.marginBottom
-    return Math.min(availableHeight / this.maxLanesValue, 40) // Max 40px per lane
+    return Math.min(availableHeight / this.maxLanesValue, 40)
   }
 
   render() {
     this.contentTarget.innerHTML = ''
     
-    // Draw lane separators if we have multiple lanes
     if (this.maxLanesValue > 1) {
       this.drawLaneSeparators()
     }
     
-    // Draw time ticks
     this.drawTimeTicks()
-    
-    // Draw events
     this.drawEvents()
-    
-    // Update scale label
     this.updateScaleLabel()
   }
 
@@ -179,61 +167,82 @@ export default class extends Controller {
     }
   }
 
+  // Format timestamp (seconds from year 0) for display
+  formatTimestamp(timestamp) {
+    const years = timestamp / (365.25 * 24 * 3600)
+    
+    // Geological time (< -1000 years from year 0)
+    if (years < -1000000) {
+      const millions = Math.abs(years) / 1000000
+      return `${millions.toFixed(1)}M ya`
+    } else if (years < -1000) {
+      return `${Math.abs(Math.round(years))} ya`
+    } else if (years < 0) {
+      return `Year ${Math.round(years)}`
+    }
+    
+    // Modern dates - convert to JavaScript Date
+    try {
+      const unixSeconds = timestamp - this.epochOffset
+      const date = new Date(unixSeconds * 1000)
+      
+      // Check if date is valid
+      if (isNaN(date.getTime())) {
+        // Fallback to year display
+        return `Year ${Math.round(years)}`
+      }
+      
+      const duration = this.viewEnd - this.viewStart
+      
+      // Format based on scale
+      if (duration < 3600) {
+        return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+      } else if (duration < 86400) {
+        return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+      } else if (duration < 604800) {
+        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' +
+               date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+      } else if (duration < 2592000) {
+        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+      } else if (duration < 31536000) {
+        return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+      } else {
+        return date.getFullYear().toString()
+      }
+    } catch (e) {
+      // Fallback if Date conversion fails
+      return `Year ${Math.round(years)}`
+    }
+  }
+
   drawTimeTicks() {
-    // Draw ticks at the bottom of the timeline
     const tickY = this.height - this.marginBottom + 10
     const duration = this.viewEnd - this.viewStart
     const viewportWidth = this.width - this.marginLeft - this.marginRight
     
-    // Calculate maximum number of ticks that can fit without overlapping
-    // Assume each label needs about 80-100 pixels of space
     const minLabelSpacing = 80
     const maxTicks = Math.floor(viewportWidth / minLabelSpacing)
     
-    let interval, format
-    
-    // Start with the finest granularity and work up until we have fewer ticks than maxTicks
     const possibleIntervals = [
-      { seconds: 60, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) },
-      { seconds: 300, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 5 min
-      { seconds: 600, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 10 min
-      { seconds: 1800, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 30 min
-      { seconds: 3600, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 1 hour
-      { seconds: 10800, format: (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 3 hours
-      { seconds: 21600, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) }, // 6 hours
-      { seconds: 43200, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + date.toLocaleTimeString('en-US', { hour: '2-digit' }) }, // 12 hours
-      { seconds: 86400, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }, // 1 day
-      { seconds: 172800, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }, // 2 days
-      { seconds: 432000, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }, // 5 days
-      { seconds: 604800, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }, // 1 week
-      { seconds: 1209600, format: (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }, // 2 weeks
-      { seconds: 2592000, format: (date) => date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }, // 30 days
-      { seconds: 7776000, format: (date) => date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }, // 90 days
-      { seconds: 15552000, format: (date) => date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }, // 180 days
-      { seconds: 31536000, format: (date) => date.getFullYear().toString() }, // 1 year
-      { seconds: 63072000, format: (date) => date.getFullYear().toString() }, // 2 years
-      { seconds: 157680000, format: (date) => date.getFullYear().toString() }, // 5 years
-      { seconds: 315360000, format: (date) => date.getFullYear().toString() }, // 10 years
-      { seconds: 630720000, format: (date) => date.getFullYear().toString() }, // 20 years
-      { seconds: 1576800000, format: (date) => date.getFullYear().toString() }, // 50 years
-      { seconds: 3153600000, format: (date) => date.getFullYear().toString() } // 100 years
+      60, 300, 600, 1800, 3600, 10800, 21600, 43200,
+      86400, 172800, 432000, 604800, 1209600, 2592000,
+      7776000, 15552000, 31536000, 63072000, 157680000,
+      315360000, 630720000, 1576800000, 3153600000,
+      31536000000, 315360000000, 3153600000000,
+      31536000000000, 315360000000000
     ]
     
-    // Find the smallest interval that keeps tick count under maxTicks
-    let selectedInterval = possibleIntervals[possibleIntervals.length - 1] // Default to largest
+    let interval = possibleIntervals[possibleIntervals.length - 1]
     
     for (let i = 0; i < possibleIntervals.length; i++) {
       const potentialInterval = possibleIntervals[i]
-      const tickCount = Math.ceil(duration / potentialInterval.seconds)
+      const tickCount = Math.ceil(duration / potentialInterval)
       
       if (tickCount <= maxTicks) {
-        selectedInterval = potentialInterval
+        interval = potentialInterval
         break
       }
     }
-    
-    interval = selectedInterval.seconds
-    format = selectedInterval.format
     
     let currentTime = Math.floor(this.viewStart / interval) * interval
     
@@ -241,12 +250,10 @@ export default class extends Controller {
       const x = this.timeToX(currentTime)
       
       if (x >= this.marginLeft && x <= this.width - this.marginRight) {
-        // Tick mark
         this.drawLine(x, tickY - 5, x, tickY + 5, '#6b7280', 1)
         
-        // Label
-        const date = new Date(currentTime * 1000)
-        this.drawText(x, this.height - 30, format(date), 'middle', '#6b7280', '11px')
+        const label = this.formatTimestamp(currentTime)
+        this.drawText(x, this.height - 30, label, 'middle', '#6b7280', '11px')
       }
       
       currentTime += interval
@@ -254,10 +261,7 @@ export default class extends Controller {
   }
 
   drawEvents() {
-    console.log('Drawing events, count:', this.eventsValue ? this.eventsValue.length : 0)
-    
     if (!this.eventsValue || this.eventsValue.length === 0) {
-      console.log('No events to draw')
       return
     }
     
@@ -267,7 +271,6 @@ export default class extends Controller {
       const startX = this.timeToX(event.start_time)
       const endX = this.timeToX(event.end_time)
       
-      // Skip events completely outside viewport
       if (endX < this.marginLeft || startX > this.width - this.marginRight) {
         return
       }
@@ -279,24 +282,18 @@ export default class extends Controller {
       const g = this.createGroup(event)
       
       if (isPointEvent) {
-        // Point event - circle
         this.drawCircle(g, startX, laneY, 6, event.color, 'white', 2)
-        
-        // Label directly next to the point
         const labelX = startX + 12
         this.drawText(labelX, laneY + 4, event.title, 'start', '#1f2937', '12px', 'bold', g)
       } else {
-        // Range event - rectangle
         const width = Math.max(endX - startX, 2)
         const rectY = laneY - eventHeight / 2
         
         this.drawRect(g, startX, rectY, width, eventHeight, event.color, event.color, 2, 0.7)
         
-        // Label inside or next to the event bar
         const labelX = startX + width / 2
         this.drawText(labelX, laneY + 4, event.title, 'middle', '#ffffff', '12px', 'bold', g)
         
-        // Arrow for ongoing events
         if (isOngoing && endX > this.width - this.marginRight) {
           const arrowX = Math.min(endX, this.width - this.marginRight)
           this.drawPolygon(g, [
@@ -320,14 +317,16 @@ export default class extends Controller {
     else if (duration < 2592000) scale = 'days'
     else if (duration < 31536000) scale = 'months'
     else if (duration < 315360000) scale = 'years'
-    else scale = 'decades'
+    else if (duration < 3153600000) scale = 'decades'
+    else if (duration < 31536000000) scale = 'centuries'
+    else if (duration < 31536000000000) scale = 'millennia'
+    else scale = 'millions of years'
     
     if (this.hasScaleLabelTarget) {
       this.scaleLabelTarget.textContent = scale
     }
   }
 
-  // Helper methods to create SVG elements
   createGroup(event) {
     const g = document.createElementNS('http://www.w3.org/2000/svg', 'g')
     g.classList.add('event-group', 'cursor-pointer', 'hover:opacity-80', 'transition-opacity')
@@ -411,7 +410,6 @@ export default class extends Controller {
     return polygon
   }
 
-  // Zoom controls
   zoomIn() {
     const currentRange = this.viewEnd - this.viewStart
     const newRange = currentRange * 0.5
@@ -431,7 +429,6 @@ export default class extends Controller {
     this.viewStart = center - newRange / 2
     this.viewEnd = center + newRange / 2
     
-    // Don't zoom out beyond reasonable limits
     const maxRange = (this.maxTimeValue - this.minTimeValue) * 2
     if (this.viewEnd - this.viewStart > maxRange) {
       const center = (this.viewStart + this.viewEnd) / 2
@@ -448,7 +445,6 @@ export default class extends Controller {
     this.render()
   }
 
-  // Modal controls
   showEventDetails(event) {
     this.modalTitleTarget.textContent = event.title
     this.modalDescriptionTarget.textContent = event.description || 'No description available'

@@ -32,8 +32,8 @@
                   </span>
                   <% if timeline.time_range %>
                     <span class="ml-2">
-                      <%= timeline.time_range[:min].strftime('%Y-%m-%d') %> to 
-                      <%= timeline.time_range[:max].strftime('%Y-%m-%d') %>
+                      <%= format_timestamp_simple(timeline.time_range[:min]) %> to 
+                      <%= format_timestamp_simple(timeline.time_range[:max]) %>
                     </span>
                   <% end %>
                 </div>

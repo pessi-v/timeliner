@@ -17,8 +17,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_01_000003) do
   create_table "events", force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
-    t.datetime "start_time", null: false
-    t.datetime "end_time"
+    t.bigint "start_time", null: false
+    t.bigint "end_time"
     t.string "event_type", default: "point", null: false
     t.string "color"
     t.datetime "created_at", null: false

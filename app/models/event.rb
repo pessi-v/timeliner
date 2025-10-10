@@ -33,6 +33,7 @@ class Event < ApplicationRecord
   end
 
   def start_time_datetime=(datetime)
+    return if datetime.blank?
     self.start_time = self.class.datetime_to_seconds(datetime)
   end
 
@@ -42,6 +43,7 @@ class Event < ApplicationRecord
   end
 
   def end_time_datetime=(datetime)
+    return if datetime.blank?
     self.end_time = self.class.datetime_to_seconds(datetime)
   end
 

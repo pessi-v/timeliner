@@ -3,6 +3,7 @@
 
   <div class="mt-8 flex gap-4">
     <%= link_to "← Back to all timelines", timelines_path, class: "text-blue-600 hover:text-blue-800" %>
+    <%= link_to "Edit timeline", edit_timeline_path(@timeline), class: "text-green-600 hover:text-green-800" %>
     <%= link_to "Merge with other timelines", merge_form_timelines_path, class: "text-purple-600 hover:text-purple-800" %>
   </div>
 </div>

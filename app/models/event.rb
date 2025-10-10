@@ -21,6 +21,30 @@ class Event < ApplicationRecord
     (datetime.to_time - EPOCH.to_time).to_i
   end
 
+  # Convert seconds from epoch to DateTime
+  def self.seconds_to_datetime(seconds)
+    return nil unless seconds
+    EPOCH.to_time + seconds
+  end
+
+  # Virtual attribute for form: start_time as datetime
+  def start_time_datetime
+    self.class.seconds_to_datetime(start_time)
+  end
+
+  def start_time_datetime=(datetime)
+    self.start_time = self.class.datetime_to_seconds(datetime)
+  end
+
+  # Virtual attribute for form: end_time as datetime
+  def end_time_datetime
+    self.class.seconds_to_datetime(end_time)
+  end
+
+  def end_time_datetime=(datetime)
+    self.end_time = self.class.datetime_to_seconds(datetime)
+  end
+
   # Get start time as seconds from epoch (already stored as bigint)
   def start_time_seconds
     start_time

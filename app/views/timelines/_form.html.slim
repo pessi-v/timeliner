@@ -1,0 +1,89 @@
+= form_with model: timeline, class: "space-y-6" do |form|
+  - if timeline.errors.any?
+    .bg-red-50.border.border-red-200.rounded.p-4
+      h2.text-red-800.font-semibold.mb-2
+        = pluralize(timeline.errors.count, "error")
+        |  prohibited this timeline from being saved:
+      ul.list-disc.list-inside.text-red-700
+        - timeline.errors.full_messages.each do |message|
+          li= message
+
+  div
+    = form.label :name, class: "block text-sm font-medium text-gray-700 mb-2"
+    = form.text_field :name, class: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+
+  div
+    = form.label :description, class: "block text-sm font-medium text-gray-700 mb-2"
+    = form.text_area :description, rows: 4, class: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+
+  div
+    = form.label :color, "Timeline Color", class: "block text-sm font-medium text-gray-700 mb-2"
+    = form.color_field :color, value: (timeline.color || "#3b82f6"), class: "h-10 w-20 border border-gray-300 rounded cursor-pointer"
+
+  .border-t.pt-6
+    .flex.justify-between.items-center.mb-4
+      h3.text-lg.font-semibold.text-gray-800 Events
+      button#add-event.px-4.py-2.bg-green-600.text-white.rounded.hover:bg-green-700.text-sm type="button"
+        | + Add Event
+
+    #events-container.space-y-4
+      = form.fields_for :events do |event_form|
+        = render 'event_fields', form: event_form
+
+    template#event-template
+      = form.fields_for :events, Event.new, child_index: 'NEW_RECORD' do |event_form|
+        = render 'event_fields', form: event_form
+
+  .flex.gap-4
+    = form.submit (timeline.new_record? ? "Create Timeline" : "Update Timeline"), class: "px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+    = link_to "Cancel", (timeline.new_record? ? timelines_path : timeline_path(timeline)), class: "px-6 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+
+javascript:
+  document.addEventListener('DOMContentLoaded', function() {
+    const addEventButton = document.getElementById('add-event');
+    const eventsContainer = document.getElementById('events-container');
+    const template = document.getElementById('event-template');
+
+    if (addEventButton && eventsContainer && template) {
+      addEventButton.addEventListener('click', function() {
+        const newId = new Date().getTime();
+        const content = template.innerHTML.replace(/NEW_RECORD/g, newId);
+        eventsContainer.insertAdjacentHTML('beforeend', content);
+        updateEventTypeFields();
+      });
+
+      eventsContainer.addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove-event')) {
+          const eventField = e.target.closest('.event-fields');
+          const destroyInput = eventField.querySelector('input[name*="_destroy"]');
+          if (destroyInput) {
+            destroyInput.value = '1';
+          }
+          eventField.style.display = 'none';
+        }
+      });
+
+      eventsContainer.addEventListener('change', function(e) {
+        if (e.target.classList.contains('event-type-select')) {
+          updateEventTypeFields();
+        }
+      });
+
+      function updateEventTypeFields() {
+        document.querySelectorAll('.event-fields').forEach(function(eventField) {
+          const eventType = eventField.querySelector('.event-type-select');
+          const endTimeField = eventField.querySelector('.end-time-field');
+
+          if (eventType && endTimeField) {
+            if (eventType.value === 'point' || eventType.value === 'ongoing') {
+              endTimeField.style.display = 'none';
+            } else {
+              endTimeField.style.display = 'block';
+            }
+          }
+        });
+      }
+
+      updateEventTypeFields();
+    }
+  });

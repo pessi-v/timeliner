@@ -2,6 +2,8 @@ class Timeline < ApplicationRecord
   has_many :timeline_events, dependent: :destroy
   has_many :events, through: :timeline_events
 
+  accepts_nested_attributes_for :events, allow_destroy: true, reject_if: :all_blank
+
   validates :name, presence: true
 
   def time_range

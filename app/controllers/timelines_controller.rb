@@ -13,11 +13,25 @@ class TimelinesController < ApplicationController
 
   def create
     @timeline = Timeline.new(timeline_params)
-    
+
     if @timeline.save
       redirect_to @timeline, notice: "Timeline created successfully."
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @timeline = Timeline.includes(:events).find(params[:id])
+  end
+
+  def update
+    @timeline = Timeline.find(params[:id])
+
+    if @timeline.update(timeline_params)
+      redirect_to @timeline, notice: "Timeline updated successfully."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -60,6 +74,11 @@ class TimelinesController < ApplicationController
   private
 
   def timeline_params
-    params.require(:timeline).permit(:name, :description, :color)
+    params.require(:timeline).permit(
+      :name,
+      :description,
+      :color,
+      events_attributes: [:id, :title, :description, :start_time_datetime, :end_time_datetime, :event_type, :_destroy]
+    )
   end
 end

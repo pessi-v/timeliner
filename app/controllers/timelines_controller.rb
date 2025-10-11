@@ -78,7 +78,7 @@ class TimelinesController < ApplicationController
       :name,
       :description,
       :color,
-      events_attributes: [:id, :title, :description, :start_time_datetime, :end_time_datetime, :event_type, :_destroy]
+      events_attributes: [:id, :title, :description, :start_time_datetime, :end_time_datetime, :event_type, :timezone, :_destroy]
     )
   end
 end

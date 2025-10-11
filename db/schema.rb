@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_01_000003) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_11_093458) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -23,6 +23,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_01_000003) do
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "timezone", default: "UTC"
     t.index ["end_time"], name: "index_events_on_end_time"
     t.index ["event_type"], name: "index_events_on_event_type"
     t.index ["start_time"], name: "index_events_on_start_time"

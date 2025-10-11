@@ -23,6 +23,11 @@
       = form.label :start_time_datetime, "Start Time", class: "block text-sm font-medium text-gray-700 mb-1"
       = form.datetime_local_field :start_time_datetime, class: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 
+    div
+      = form.label :timezone, "Timezone", class: "block text-sm font-medium text-gray-700 mb-1"
+      = form.select :timezone, ActiveSupport::TimeZone.all.map { |tz| [tz.to_s, tz.name] }, { selected: 'UTC' }, class: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      p.text-xs.text-gray-500.mt-1 Times entered above will be converted from this timezone to UTC for storage
+
     .end-time-field
       = form.label :end_time_datetime, "End Time", class: "block text-sm font-medium text-gray-700 mb-1"
       = form.datetime_local_field :end_time_datetime, class: "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"

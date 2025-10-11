@@ -4,8 +4,9 @@ Event.destroy_all
 Timeline.destroy_all
 
 # Helper method to convert DateTime to seconds from epoch
-def datetime_seconds(datetime)
-  (datetime.to_time - Event::EPOCH.to_time).to_i
+# Optionally specify timezone to convert from that timezone to UTC
+def datetime_seconds(datetime, timezone = "UTC")
+  Event.datetime_to_seconds(datetime, timezone)
 end
 
 # Helper method to convert years to seconds from epoch
@@ -33,9 +34,10 @@ invasion_poland = Event.create!(
 pearl_harbor = Event.create!(
   title: "Pearl Harbor Attack",
   description: "Japanese surprise attack on Pearl Harbor",
-  start_time: datetime_seconds(DateTime.new(1941, 12, 7, 7, 48)),
+  start_time: datetime_seconds(DateTime.new(1941, 12, 7, 7, 48), "Hawaii"),
   event_type: "point",
-  color: "#dc2626"
+  color: "#dc2626",
+  timezone: "Hawaii"
 )
 
 d_day = Event.create!(
@@ -50,9 +52,10 @@ d_day = Event.create!(
 hiroshima = Event.create!(
   title: "Hiroshima Bombing",
   description: "Atomic bomb dropped on Hiroshima",
-  start_time: datetime_seconds(DateTime.new(1945, 8, 6, 8, 15)),
+  start_time: datetime_seconds(DateTime.new(1945, 8, 6, 8, 15), "Tokyo"),
   event_type: "point",
-  color: "#dc2626"
+  color: "#dc2626",
+  timezone: "Tokyo"
 )
 
 ve_day = Event.create!(
@@ -83,41 +86,46 @@ nine_eleven = Timeline.create!(
 first_plane = Event.create!(
   title: "First Plane Hits North Tower",
   description: "American Airlines Flight 11 crashes into North Tower",
-  start_time: datetime_seconds(DateTime.new(2001, 9, 11, 8, 46)),
+  start_time: datetime_seconds(DateTime.new(2001, 9, 11, 8, 46), "Eastern Time (US & Canada)"),
   event_type: "point",
-  color: "#dc2626"
+  color: "#dc2626",
+  timezone: "Eastern Time (US & Canada)"
 )
 
 second_plane = Event.create!(
   title: "Second Plane Hits South Tower",
   description: "United Airlines Flight 175 crashes into South Tower",
-  start_time: datetime_seconds(DateTime.new(2001, 9, 11, 9, 3)),
+  start_time: datetime_seconds(DateTime.new(2001, 9, 11, 9, 3), "Eastern Time (US & Canada)"),
   event_type: "point",
-  color: "#dc2626"
+  color: "#dc2626",
+  timezone: "Eastern Time (US & Canada)"
 )
 
 pentagon = Event.create!(
   title: "Pentagon Attack",
   description: "American Airlines Flight 77 crashes into the Pentagon",
-  start_time: datetime_seconds(DateTime.new(2001, 9, 11, 9, 37)),
+  start_time: datetime_seconds(DateTime.new(2001, 9, 11, 9, 37), "Eastern Time (US & Canada)"),
   event_type: "point",
-  color: "#dc2626"
+  color: "#dc2626",
+  timezone: "Eastern Time (US & Canada)"
 )
 
 south_collapse = Event.create!(
   title: "South Tower Collapses",
   description: "The South Tower of the World Trade Center collapses",
-  start_time: datetime_seconds(DateTime.new(2001, 9, 11, 9, 59)),
+  start_time: datetime_seconds(DateTime.new(2001, 9, 11, 9, 59), "Eastern Time (US & Canada)"),
   event_type: "point",
-  color: "#7c2d12"
+  color: "#7c2d12",
+  timezone: "Eastern Time (US & Canada)"
 )
 
 north_collapse = Event.create!(
   title: "North Tower Collapses",
   description: "The North Tower of the World Trade Center collapses",
-  start_time: datetime_seconds(DateTime.new(2001, 9, 11, 10, 28)),
+  start_time: datetime_seconds(DateTime.new(2001, 9, 11, 10, 28), "Eastern Time (US & Canada)"),
   event_type: "point",
-  color: "#7c2d12"
+  color: "#7c2d12",
+  timezone: "Eastern Time (US & Canada)"
 )
 
 nine_eleven.events << [first_plane, second_plane, pentagon, south_collapse, north_collapse]

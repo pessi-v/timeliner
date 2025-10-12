@@ -1,0 +1,26 @@
+.container.mx-auto.px-4.py-8
+  .flex.justify-between.items-center.mb-8
+    h1.prose Timelines
+    .flex.gap-3
+      = link_to "Merge Timelines", merge_form_timelines_path, class: "btn btn-primary"
+      = link_to "Create New Timeline", new_timeline_path, class: "btn btn-secondary"
+
+  - if @timelines.any?
+    .grid.gap-6
+      - @timelines.each do |timeline|
+        .card.w-96.bg-base-100.card-sm.shadow-sm data-theme="light"
+          .card-body
+            article.prose.lg:prose-xl
+
+              = link_to(timeline_path(timeline)) do
+                h2 
+                  = timeline.name
+              h2.card-title
+              - if timeline.description.present?
+                p class="" = timeline.description
+              .mt-3.text-sm.text-gray-500
+                = pluralize(timeline.events.count, 'event')
+
+  - else
+    .text-center.py-20
+      p.text-gray-500.text-lg No timelines yet. Create your first one!

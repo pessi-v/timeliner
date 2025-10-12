@@ -1,0 +1,60 @@
+.timeline-container.bg-white.rounded-lg.shadow-lg.p-6 data-controller="timeline" data-timeline-min-time-value="#{time_range ? time_range[:min].to_i : 0}" data-timeline-max-time-value="#{time_range ? time_range[:max].to_i : 0}" data-timeline-max-lanes-value="#{max_lanes}" data-timeline-events-value="#{events_data.to_json}"
+
+  .mb-4
+    h2.text-2xl.font-bold.text-gray-800 = timeline.name
+    - if timeline.description.present?
+      p.text-gray-600.mt-2 = timeline.description
+    - if max_lanes > 1
+      p.text-sm.text-gray-500.mt-1
+        = pluralize(max_lanes, 'concurrent event lane')
+
+  - if time_range.nil?
+    .text-center.text-gray-500.py-20
+      | No events on this timeline yet
+  - else
+    / Zoom controls
+    .flex.gap-2.mb-4.items-center
+      button.btn.btn-primary data-action="timeline#zoomIn"
+        | Zoom In
+      button.btn.btn-accent data-action="timeline#zoomOut"
+        | Zoom Out
+      button.btn.btn-info data-action="timeline#resetZoom"
+        | Reset
+      span.px-3.py-1.bg-gray-100.rounded.text-sm.text-gray-700
+        | Scale:
+        span data-timeline-target="scaleLabel"
+          = time_scale
+
+    / SVG Timeline
+    .overflow-hidden.border.border-gray-200.rounded.bg-gradient-to-b.from-gray-50.to-white
+      svg.timeline-svg data-timeline-target="svg" width="#{width}" height="#{height}"
+
+        / All content will be rendered by Stimulus
+        g data-timeline-target="content"
+
+    / Pan instructions
+    .mt-2.text-sm.text-gray-500.text-center
+      | Click and drag to pan • Scroll to zoom • Click events for details
+
+  / Event details modal
+  .hidden.fixed.inset-0.bg-black.bg-opacity-50.flex.items-center.justify-center.z-50 data-timeline-target="modal" data-action="click->timeline#closeModalBackdrop"
+    .bg-white.rounded-lg.shadow-xl.max-w-lg.w-full.mx-4.p-6 data-action="click->timeline#stopPropagation"
+      .flex.justify-between.items-start.mb-4
+        h3.text-xl.font-bold.text-gray-800 data-timeline-target="modalTitle"
+        button data-action="click->timeline#closeModal" class="text-gray-400 hover:text-gray-600"
+          svg.w-6.h-6 fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"
+
+      .space-y-3
+        div
+          span.font-semibold.text-gray-700 Type:
+          span.text-gray-600.ml-2.capitalize data-timeline-target="modalType"
+        div
+          span.font-semibold.text-gray-700 Start:
+          span.text-gray-600.ml-2 data-timeline-target="modalStart"
+        div
+          span.font-semibold.text-gray-700 End:
+          span.text-gray-600.ml-2 data-timeline-target="modalEnd"
+        div
+          p.font-semibold.text-gray-700.mb-1 Description:
+          p.text-gray-600 data-timeline-target="modalDescription"

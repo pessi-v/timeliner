@@ -288,11 +288,15 @@ export default class extends Controller {
       } else {
         const width = Math.max(endX - startX, 2)
         const rectY = laneY - eventHeight / 2
-        
+
         this.drawRect(g, startX, rectY, width, eventHeight, event.color, event.color, 2, 0.7)
-        
+
         const labelX = startX + width / 2
-        this.drawText(labelX, laneY + 4, event.title, 'middle', '#ffffff', '12px', 'bold', g)
+        // Use dark text with white stroke for better contrast on colored backgrounds
+        const textEl = this.drawText(labelX, laneY + 4, event.title, 'middle', '#1f2937', '12px', 'bold', g)
+        textEl.setAttribute('stroke', '#ffffff')
+        textEl.setAttribute('stroke-width', '3')
+        textEl.setAttribute('paint-order', 'stroke')
         
         if (isOngoing && endX > this.width - this.marginRight) {
           const arrowX = Math.min(endX, this.width - this.marginRight)

@@ -21,7 +21,7 @@ ww2_timeline = Timeline.create!(
   color: "#dc2626"
 )
 
-# Add events to WW2 timeline
+# Add events to WW2 timeline  
 invasion_poland = Event.create!(
   title: "Invasion of Poland",
   description: "Germany invades Poland, marking the start of WWII in Europe",

@@ -67,11 +67,11 @@ module Views
                 link_to edit_timeline_path(timeline) do
                   Button(variant: :ghost, size: :sm) { "Edit" }
                 end
-                button_to timeline_path(timeline),
+                button_to "Delete",
+                  timeline_path(timeline),
                   method: :delete,
-                  data: { turbo_confirm: "Are you sure?" } do
-                  Button(variant: :ghost, size: :sm, class: "text-red-600 hover:text-red-800") { "Delete" }
-                end
+                  data: { turbo_confirm: "Are you sure?" },
+                  class: "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-red-600 hover:text-red-800"
               end
             end
           end

@@ -16,7 +16,11 @@ module Views
           render_errors if @timeline.errors.any?
           render_name_field(form)
           render_description_field(form)
-          render_timeline_data_field(form)
+          render_periods_section
+          render_events_section
+          render_connectors_section
+          render_validation_messages
+          render_hidden_json_field(form)
           render_actions(form)
         end
       end
@@ -55,85 +59,209 @@ module Views
         end
       end
 
-      def render_timeline_data_field(form)
-        FormField(class: "mb-8") do
-          FormFieldLabel(class: "text-lg") { "Timeline Data (JSON)" }
-          FormFieldHint(class: "mb-4") do
-            "Enter your timeline data as JSON. The structure should include events, periods, and connectors arrays."
+      def render_periods_section
+        Card(class: "mb-6") do
+          CardHeader do
+            CardTitle { "Periods" }
+            CardDescription { "Add time periods to your timeline" }
           end
+          CardContent do
+            # List of existing periods
+            div(
+              data_timeline_form_target: "periodsList",
+              class: "space-y-2 mb-4"
+            )
 
-          form.text_area :timeline_data,
-            value: timeline_data_value,
-            rows: 20,
-            class: "flex min-h-[500px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm font-mono ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-            data: { timeline_form_target: "jsonField" }
+            # Form to add new period
+            div(
+              class: "space-y-4 p-4 border rounded-md bg-gray-50"
+            ) do
+              div(class: "grid grid-cols-1 md:grid-cols-2 gap-4") do
+                div do
+                  label(class: "block text-sm font-medium mb-1") { "Period Name" }
+                  input(
+                    type: "text",
+                    name: "period_name",
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  )
+                end
 
-          render_example
+                div do
+                  label(class: "block text-sm font-medium mb-1") { "Start Time" }
+                  input(
+                    type: "text",
+                    name: "period_start_time",
+                    placeholder: "e.g., 2020-01-01 or { value: 100, unit: 'mya' }",
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  )
+                end
+
+                div do
+                  label(class: "block text-sm font-medium mb-1") { "End Time" }
+                  input(
+                    type: "text",
+                    name: "period_end_time",
+                    placeholder: "e.g., 2021-01-01",
+                    data_timeline_form_target: "endTime",
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  )
+                end
+
+                div(class: "flex items-center pt-6") do
+                  label(class: "flex items-center space-x-2 cursor-pointer") do
+                    input(
+                      type: "checkbox",
+                      name: "period_ongoing",
+                      value: "1",
+                      data_action: "change->timeline-form#toggleOngoing",
+                      class: "rounded border-gray-300"
+                    )
+                    span(class: "text-sm font-medium") { "Ongoing" }
+                  end
+                end
+              end
+
+              button(
+                type: "button",
+                data_action: "click->timeline-form#addPeriod",
+                class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+              ) { "Add Period" }
+            end
+          end
         end
+      end
+
+      def render_events_section
+        Card(class: "mb-6") do
+          CardHeader do
+            CardTitle { "Events" }
+            CardDescription { "Add specific events to your timeline" }
+          end
+          CardContent do
+            # List of existing events
+            div(
+              data_timeline_form_target: "eventsList",
+              class: "space-y-2 mb-4"
+            )
+
+            # Form to add new event
+            div(
+              class: "space-y-4 p-4 border rounded-md bg-gray-50"
+            ) do
+              div(class: "grid grid-cols-1 md:grid-cols-2 gap-4") do
+                div do
+                  label(class: "block text-sm font-medium mb-1") { "Event Name" }
+                  input(
+                    type: "text",
+                    name: "event_name",
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  )
+                end
+
+                div do
+                  label(class: "block text-sm font-medium mb-1") { "Time" }
+                  input(
+                    type: "text",
+                    name: "event_time",
+                    placeholder: "e.g., 2020-06-15 or { value: 66, unit: 'mya' }",
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  )
+                end
+              end
+
+              button(
+                type: "button",
+                data_action: "click->timeline-form#addEvent",
+                class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+              ) { "Add Event" }
+            end
+          end
+        end
+      end
+
+      def render_connectors_section
+        Card(
+          class: "mb-6 hidden",
+          data_timeline_form_target: "connectorsSection"
+        ) do
+          CardHeader do
+            CardTitle { "Connectors" }
+            CardDescription { "Connect periods to show relationships" }
+          end
+          CardContent do
+            # List of existing connectors
+            div(
+              data_timeline_form_target: "connectorsList",
+              class: "space-y-2 mb-4"
+            )
+
+            # Form to add new connector
+            div(
+              class: "space-y-4 p-4 border rounded-md bg-gray-50"
+            ) do
+              div(class: "grid grid-cols-1 md:grid-cols-2 gap-4") do
+                div do
+                  label(class: "block text-sm font-medium mb-1") { "From Period" }
+                  select(
+                    name: "connector_from",
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  ) do
+                    option(value: "") { "Select period..." }
+                  end
+                end
+
+                div do
+                  label(class: "block text-sm font-medium mb-1") { "To Period" }
+                  select(
+                    name: "connector_to",
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  ) do
+                    option(value: "") { "Select period..." }
+                  end
+                end
+
+                div(class: "flex items-center pt-6") do
+                  label(class: "flex items-center space-x-2 cursor-pointer") do
+                    input(
+                      type: "checkbox",
+                      name: "connector_indirect",
+                      value: "1",
+                      class: "rounded border-gray-300"
+                    )
+                    span(class: "text-sm font-medium") { "Indirect Lineage" }
+                  end
+                end
+              end
+
+              button(
+                type: "button",
+                data_action: "click->timeline-form#addConnector",
+                class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+              ) { "Add Connector" }
+            end
+          end
+        end
+      end
+
+      def render_validation_messages
+        div(
+          data_timeline_form_target: "validationMessages",
+          class: "mb-6"
+        )
+      end
+
+      def render_hidden_json_field(form)
+        form.hidden_field :timeline_data,
+          value: timeline_data_value,
+          data: { timeline_form_target: "jsonField" }
       end
 
       def timeline_data_value
         if @timeline.timeline_data.present?
-          JSON.pretty_generate(@timeline.timeline_data)
+          JSON.generate(@timeline.timeline_data)
         else
-          JSON.pretty_generate({ events: [], periods: [], connectors: [] })
+          JSON.generate({ events: [], periods: [], connectors: [] })
         end
-      end
-
-      def render_example
-        Collapsible(class: "mt-4") do
-          CollapsibleTrigger do
-            div(class: "flex items-center gap-2") do
-              Text(size: "2", class: "font-semibold text-primary cursor-pointer hover:underline") do
-                "Show Example"
-              end
-            end
-          end
-          CollapsibleContent(class: "mt-2") do
-            Codeblock(example_json, syntax: :json)
-          end
-        end
-      end
-
-      def example_json
-        <<~JSON
-          {
-            "events": [
-              {
-                "id": "event1",
-                "name": "Big Bang",
-                "time": { "value": 13800, "unit": "mya" }
-              },
-              {
-                "id": "event2",
-                "name": "Earth Formation",
-                "time": { "value": 4543, "unit": "mya" }
-              }
-            ],
-            "periods": [
-              {
-                "id": "period1",
-                "name": "Mesozoic Era",
-                "startTime": { "value": 252, "unit": "mya" },
-                "endTime": { "value": 66, "unit": "mya" }
-              },
-              {
-                "id": "period2",
-                "name": "Cenozoic Era",
-                "startTime": { "value": 66, "unit": "mya" },
-                "endTime": "2024-01-01T00:00:00Z"
-              }
-            ],
-            "connectors": [
-              {
-                "id": "conn1",
-                "fromId": "period1",
-                "toId": "period2",
-                "type": "defined"
-              }
-            ]
-          }
-        JSON
       end
 
       def render_actions(form)

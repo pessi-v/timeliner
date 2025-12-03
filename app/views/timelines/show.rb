@@ -35,7 +35,7 @@ module Views
               Button(variant: :primary) { "Edit" }
             end
             link_to timelines_path do
-              Button(variant: :primary) { "Back" }
+              Button(variant: :primary) { "Index" }
             end
           end
         end
@@ -43,9 +43,9 @@ module Views
 
       def render_stats
         div(class: "flex gap-2 mb-6") do
-          Badge(variant: :secondary) { pluralize(@timeline.events.count, "event") }
-          Badge(variant: :secondary) { pluralize(@timeline.periods.count, "period") }
-          Badge(variant: :secondary) { pluralize(@timeline.connectors.count, "connector") }
+          Badge(variant: :primary) { pluralize(@timeline.events.count, "event") }
+          Badge(variant: :primary) { pluralize(@timeline.periods.count, "period") }
+          Badge(variant: :primary) { pluralize(@timeline.connectors.count, "connector") }
         end
       end
 

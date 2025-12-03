@@ -31,6 +31,7 @@ export default class extends Controller {
       this.renderPeriods()
       this.renderEvents()
       this.renderConnectors()
+      this.toggleConnectorsSection()
     } catch (error) {
       // Start fresh if JSON is invalid
       this.periods = []

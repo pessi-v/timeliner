@@ -104,4 +104,4 @@ accessories:
         POSTGRES_USER: timeliner
         POSTGRES_DB: timeliner_production
     volumes:
-      - timeliner-db-data:/var/lib/postgresql/data
+      - timeliner-db-data:/var/lib/postgresql

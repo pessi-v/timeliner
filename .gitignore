@@ -38,3 +38,6 @@
 !/app/assets/builds/.keep
 
 lib/tasks/thymeline.rake
+
+.kamal/secrets*
+/config/deploy*

@@ -90,6 +90,8 @@ production:
     database: timeliner_production
     username: timeliner
     password: <%= ENV["TIMELINER_DATABASE_PASSWORD"] %>
+    host: <%= ENV["DB_HOST"] %>
+    port: 5432
   cache:
     <<: *primary_production
     database: timeliner_production_cache

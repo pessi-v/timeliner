@@ -12,6 +12,16 @@ module Views
       end
 
       def view_template
+        Form(class: "w-2/3 space-y-6", data: { controller: "timeline-form" }, accept_charset: "UTF-8", method: 'post') do
+          FormField do
+            FormFieldLabel { "Default error" }
+            Input(placeholder: "Joel Drapper", required: true, minlength: "3") { "Joel Drapper" }
+            FormFieldHint()
+            FormFieldError()
+          end
+          Button(type: "submit") { "Save" }
+        end
+
         form_with(model: @timeline, data: { controller: "timeline-form" }) do |form|
           render_errors if @timeline.errors.any?
           render_name_field(form)
@@ -66,12 +76,6 @@ module Views
             CardDescription { "Add time periods to your timeline" }
           end
           CardContent do
-            # List of existing periods
-            div(
-              data_timeline_form_target: "periodsList",
-              class: "space-y-2 mb-4"
-            )
-
             # Form to add new period
             div(
               class: "space-y-4 p-4 border rounded-md bg-gray-50"
@@ -126,7 +130,15 @@ module Views
                 data_action: "click->timeline-form#addPeriod",
                 class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
               ) { "Add Period" }
+            
+            
             end
+
+            # List of existing periods
+            div(
+              data_timeline_form_target: "periodsList",
+              class: "space-y-2 mb-4"
+            )
           end
         end
       end
@@ -138,12 +150,6 @@ module Views
             CardDescription { "Add specific events to your timeline" }
           end
           CardContent do
-            # List of existing events
-            div(
-              data_timeline_form_target: "eventsList",
-              class: "space-y-2 mb-4"
-            )
-
             # Form to add new event
             div(
               class: "space-y-4 p-4 border rounded-md bg-gray-50"
@@ -175,6 +181,12 @@ module Views
                 class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
               ) { "Add Event" }
             end
+
+            # List of existing events
+            div(
+              data_timeline_form_target: "eventsList",
+              class: "space-y-2 mb-4"
+            )
           end
         end
       end
@@ -189,12 +201,6 @@ module Views
             CardDescription { "Connect periods to show relationships" }
           end
           CardContent do
-            # List of existing connectors
-            div(
-              data_timeline_form_target: "connectorsList",
-              class: "space-y-2 mb-4"
-            )
-
             # Form to add new connector
             div(
               class: "space-y-4 p-4 border rounded-md bg-gray-50"
@@ -239,6 +245,12 @@ module Views
                 class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
               ) { "Add Connector" }
             end
+
+            # List of existing connectors
+            div(
+              data_timeline_form_target: "connectorsList",
+              class: "space-y-2 mb-4"
+            )
           end
         end
       end

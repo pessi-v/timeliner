@@ -10,6 +10,34 @@ class TimelinesController < ApplicationController
     render Views::Timelines::Show.new(timeline: @timeline)
   end
 
+  def combine
+    timeline_ids = params[:ids] || []
+
+    if timeline_ids.empty?
+      redirect_to timelines_path, alert: "Please select at least one timeline to combine."
+      return
+    end
+
+    @timelines = Timeline.where(id: timeline_ids)
+
+    if @timelines.empty?
+      redirect_to timelines_path, alert: "No valid timelines found."
+      return
+    end
+
+    combiner = TimelineCombiner.new(@timelines)
+    @combined_timeline_data = combiner.combine
+    @combined_name = combiner.combined_name
+    @combined_description = combiner.combined_description
+
+    render Views::Timelines::Combined.new(
+      timeline_data: @combined_timeline_data,
+      name: @combined_name,
+      description: @combined_description,
+      timelines: @timelines
+    )
+  end
+
   def new
     timeline = Timeline.new
     render Views::Timelines::New.new(timeline: timeline)

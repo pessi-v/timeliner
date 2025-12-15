@@ -1,24 +1,6 @@
-# README
+Timeliner is a web application for creating historical timelines. The concept in bullet points:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- an educational tool in the spirit of wikipedia
+- possibility to combine user generated timelines
+- timelines can be of any time scale: cosmological time, civilizational time, recent history and future timelines
+- clean and modern layout

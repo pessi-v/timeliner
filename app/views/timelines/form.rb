@@ -12,15 +12,15 @@ module Views
       end
 
       def view_template
-        Form(class: "w-2/3 space-y-6", data: { controller: "timeline-form" }, accept_charset: "UTF-8", method: 'post') do
-          FormField do
-            FormFieldLabel { "Default error" }
-            Input(placeholder: "Joel Drapper", required: true, minlength: "3") { "Joel Drapper" }
-            FormFieldHint()
-            FormFieldError()
-          end
-          Button(type: "submit") { "Save" }
-        end
+        # Form(class: "w-2/3 space-y-6", data: { controller: "timeline-form" }, accept_charset: "UTF-8", method: 'post') do
+        #   FormField do
+        #     FormFieldLabel { "Default error" }
+        #     Input(placeholder: "Joel Drapper", required: true, minlength: "3") { "Joel Drapper" }
+        #     FormFieldHint()
+        #     FormFieldError()
+        #   end
+        #   Button(type: "submit") { "Save" }
+        # end
 
         form_with(model: @timeline, data: { controller: "timeline-form" }) do |form|
           render_errors if @timeline.errors.any?

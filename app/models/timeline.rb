@@ -65,12 +65,44 @@ class Timeline < ApplicationRecord
   def validate_event(event, index)
     unless event.is_a?(Hash) && event["id"].present? && event["name"].present? && event["time"].present?
       errors.add(:timeline_data, "event at index #{index} must have id, name, and time")
+      return
+    end
+
+    # Validate time structure if it's an object with unit
+    if event["time"].is_a?(Hash)
+      validate_time_object(event["time"], "event at index #{index}")
     end
   end
 
   def validate_period(period, index)
     unless period.is_a?(Hash) && period["id"].present? && period["name"].present? && period["startTime"].present? && period["endTime"].present?
       errors.add(:timeline_data, "period at index #{index} must have id, name, startTime, and endTime")
+      return
+    end
+
+    # Validate time structure if they're objects with units
+    if period["startTime"].is_a?(Hash)
+      validate_time_object(period["startTime"], "period at index #{index} startTime")
+    end
+
+    if period["endTime"].is_a?(Hash)
+      validate_time_object(period["endTime"], "period at index #{index} endTime")
+    end
+  end
+
+  def validate_time_object(time_obj, field_name)
+    unless time_obj["value"].present? && time_obj["unit"].present?
+      errors.add(:timeline_data, "#{field_name} must have value and unit when specified as an object")
+      return
+    end
+
+    unless time_obj["value"].is_a?(Numeric)
+      errors.add(:timeline_data, "#{field_name} value must be a number")
+    end
+
+    valid_units = %w[bce mya years-ago]
+    unless valid_units.include?(time_obj["unit"])
+      errors.add(:timeline_data, "#{field_name} unit must be one of: #{valid_units.join(', ')}")
     end
   end
 

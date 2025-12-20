@@ -70,8 +70,8 @@ module Views
                 end
 
                 div(class: "flex-1") do
-                  CardTitle do
-                    Link(href: timeline_path(timeline)) { timeline.name }
+                  link_to(timeline_path(timeline)) do
+                    CardTitle { timeline.name }
                   end
 
                   if timeline.description.present?

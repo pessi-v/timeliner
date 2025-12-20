@@ -93,22 +93,86 @@ module Views
                 div do
                   label(class: "block text-sm font-medium mb-1") { "Start Time" }
                   input(
-                    type: "text",
-                    name: "period_start_time",
-                    placeholder: "e.g., 2020-01-01 or { value: 100, unit: 'mya' }",
-                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                    type: "number",
+                    name: "period_start_time_value",
+                    placeholder: "e.g., 3300000",
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm mb-2"
                   )
+                  div(class: "space-y-2") do
+                    label(class: "flex items-center space-x-2 cursor-pointer") do
+                      input(
+                        type: "checkbox",
+                        name: "period_start_time_unit",
+                        value: "bce",
+                        class: "h-4 w-4 rounded border-gray-300",
+                        data_action: "change->timeline-form#onUnitCheckboxChange"
+                      )
+                      span(class: "text-sm") { "BCE" }
+                    end
+                    label(class: "flex items-center space-x-2 cursor-pointer") do
+                      input(
+                        type: "checkbox",
+                        name: "period_start_time_unit",
+                        value: "mya",
+                        class: "h-4 w-4 rounded border-gray-300",
+                        data_action: "change->timeline-form#onUnitCheckboxChange"
+                      )
+                      span(class: "text-sm") { "Million years ago" }
+                    end
+                    label(class: "flex items-center space-x-2 cursor-pointer") do
+                      input(
+                        type: "checkbox",
+                        name: "period_start_time_unit",
+                        value: "years-ago",
+                        class: "h-4 w-4 rounded border-gray-300",
+                        data_action: "change->timeline-form#onUnitCheckboxChange"
+                      )
+                      span(class: "text-sm") { "Years ago" }
+                    end
+                  end
                 end
 
                 div do
                   label(class: "block text-sm font-medium mb-1") { "End Time" }
                   input(
-                    type: "text",
-                    name: "period_end_time",
-                    placeholder: "e.g., 2021-01-01",
+                    type: "number",
+                    name: "period_end_time_value",
+                    placeholder: "e.g., 3200000",
                     data_timeline_form_target: "endTime",
-                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm mb-2"
                   )
+                  div(class: "space-y-2") do
+                    label(class: "flex items-center space-x-2 cursor-pointer") do
+                      input(
+                        type: "checkbox",
+                        name: "period_end_time_unit",
+                        value: "bce",
+                        class: "h-4 w-4 rounded border-gray-300",
+                        data_action: "change->timeline-form#onUnitCheckboxChange"
+                      )
+                      span(class: "text-sm") { "BCE" }
+                    end
+                    label(class: "flex items-center space-x-2 cursor-pointer") do
+                      input(
+                        type: "checkbox",
+                        name: "period_end_time_unit",
+                        value: "mya",
+                        class: "h-4 w-4 rounded border-gray-300",
+                        data_action: "change->timeline-form#onUnitCheckboxChange"
+                      )
+                      span(class: "text-sm") { "Million years ago" }
+                    end
+                    label(class: "flex items-center space-x-2 cursor-pointer") do
+                      input(
+                        type: "checkbox",
+                        name: "period_end_time_unit",
+                        value: "years-ago",
+                        class: "h-4 w-4 rounded border-gray-300",
+                        data_action: "change->timeline-form#onUnitCheckboxChange"
+                      )
+                      span(class: "text-sm") { "Years ago" }
+                    end
+                  end
                 end
 
                 div(class: "flex items-center pt-6") do
@@ -167,11 +231,43 @@ module Views
                 div do
                   label(class: "block text-sm font-medium mb-1") { "Time" }
                   input(
-                    type: "text",
-                    name: "event_time",
-                    placeholder: "e.g., 2020-06-15 or { value: 66, unit: 'mya' }",
-                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                    type: "number",
+                    name: "event_time_value",
+                    placeholder: "e.g., 66000000",
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm mb-2"
                   )
+                  div(class: "space-y-2") do
+                    label(class: "flex items-center space-x-2 cursor-pointer") do
+                      input(
+                        type: "checkbox",
+                        name: "event_time_unit",
+                        value: "bce",
+                        class: "h-4 w-4 rounded border-gray-300",
+                        data_action: "change->timeline-form#onUnitCheckboxChange"
+                      )
+                      span(class: "text-sm") { "BCE" }
+                    end
+                    label(class: "flex items-center space-x-2 cursor-pointer") do
+                      input(
+                        type: "checkbox",
+                        name: "event_time_unit",
+                        value: "mya",
+                        class: "h-4 w-4 rounded border-gray-300",
+                        data_action: "change->timeline-form#onUnitCheckboxChange"
+                      )
+                      span(class: "text-sm") { "Million years ago" }
+                    end
+                    label(class: "flex items-center space-x-2 cursor-pointer") do
+                      input(
+                        type: "checkbox",
+                        name: "event_time_unit",
+                        value: "years-ago",
+                        class: "h-4 w-4 rounded border-gray-300",
+                        data_action: "change->timeline-form#onUnitCheckboxChange"
+                      )
+                      span(class: "text-sm") { "Years ago" }
+                    end
+                  end
                 end
               end
 

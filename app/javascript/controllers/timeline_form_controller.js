@@ -20,6 +20,21 @@ export default class extends Controller {
     this.updateJSON()
   }
 
+  onUnitCheckboxChange(event) {
+    const checkbox = event.target
+    const name = checkbox.name
+
+    // If this checkbox was just checked, uncheck all other checkboxes with the same name
+    if (checkbox.checked) {
+      const allCheckboxes = this.element.querySelectorAll(`[name="${name}"]`)
+      allCheckboxes.forEach(cb => {
+        if (cb !== checkbox) {
+          cb.checked = false
+        }
+      })
+    }
+  }
+
   loadExistingData() {
     if (!this.hasJsonFieldTarget) return
 
@@ -52,22 +67,41 @@ export default class extends Controller {
     const container = event.target.closest('[class*="space-y-4"]')
 
     const nameInput = container.querySelector('[name="period_name"]')
-    const startTimeInput = container.querySelector('[name="period_start_time"]')
-    const endTimeInput = container.querySelector('[name="period_end_time"]')
+    const startTimeValueInput = container.querySelector('[name="period_start_time_value"]')
+    const endTimeValueInput = container.querySelector('[name="period_end_time_value"]')
     const ongoingCheckbox = container.querySelector('[name="period_ongoing"]')
 
     const name = nameInput.value
-    const startTime = startTimeInput.value
-    const endTime = endTimeInput.value
+    const startTimeValue = startTimeValueInput.value
+    const endTimeValue = endTimeValueInput.value
     const ongoing = ongoingCheckbox.checked
 
-    if (!name || !startTime) return
+    // Get selected unit checkboxes
+    const startTimeUnitCheckbox = container.querySelector('[name="period_start_time_unit"]:checked')
+    const endTimeUnitCheckbox = container.querySelector('[name="period_end_time_unit"]:checked')
+
+    if (!name || !startTimeValue) return
+
+    // Build startTime object
+    const startTime = startTimeUnitCheckbox
+      ? { value: parseFloat(startTimeValue), unit: startTimeUnitCheckbox.value }
+      : startTimeValue
+
+    // Build endTime object
+    let endTime
+    if (ongoing) {
+      endTime = new Date().toISOString()
+    } else if (endTimeValue) {
+      endTime = endTimeUnitCheckbox
+        ? { value: parseFloat(endTimeValue), unit: endTimeUnitCheckbox.value }
+        : endTimeValue
+    }
 
     const period = {
       id: this.generateId(name),
       name: name,
       startTime: startTime,
-      endTime: ongoing ? new Date().toISOString() : endTime
+      endTime: endTime
     }
 
     this.periods.push(period)
@@ -77,10 +111,15 @@ export default class extends Controller {
 
     // Clear inputs
     nameInput.value = ""
-    startTimeInput.value = ""
-    endTimeInput.value = ""
+    startTimeValueInput.value = ""
+    endTimeValueInput.value = ""
     ongoingCheckbox.checked = false
-    endTimeInput.disabled = false
+    endTimeValueInput.disabled = false
+
+    // Uncheck all unit checkboxes
+    container.querySelectorAll('[name="period_start_time_unit"], [name="period_end_time_unit"]').forEach(cb => {
+      cb.checked = false
+    })
   }
 
   removePeriod(event) {
@@ -104,12 +143,20 @@ export default class extends Controller {
     const container = event.target.closest('[class*="space-y-4"]')
 
     const nameInput = container.querySelector('[name="event_name"]')
-    const timeInput = container.querySelector('[name="event_time"]')
+    const timeValueInput = container.querySelector('[name="event_time_value"]')
 
     const name = nameInput.value
-    const time = timeInput.value
+    const timeValue = timeValueInput.value
 
-    if (!name || !time) return
+    // Get selected unit checkbox
+    const timeUnitCheckbox = container.querySelector('[name="event_time_unit"]:checked')
+
+    if (!name || !timeValue) return
+
+    // Build time object
+    const time = timeUnitCheckbox
+      ? { value: parseFloat(timeValue), unit: timeUnitCheckbox.value }
+      : timeValue
 
     const eventData = {
       id: this.generateId(name),
@@ -123,7 +170,12 @@ export default class extends Controller {
 
     // Clear inputs
     nameInput.value = ""
-    timeInput.value = ""
+    timeValueInput.value = ""
+
+    // Uncheck all unit checkboxes
+    container.querySelectorAll('[name="event_time_unit"]').forEach(cb => {
+      cb.checked = false
+    })
   }
 
   removeEvent(event) {
@@ -191,7 +243,7 @@ export default class extends Controller {
         <div>
           <strong>${period.name}</strong>
           <span class="text-sm text-gray-600 ml-2">
-            (${period.startTime} → ${period.endTime})
+            (${this.formatTime(period.startTime)} → ${this.formatTime(period.endTime)})
           </span>
         </div>
         <button
@@ -213,7 +265,7 @@ export default class extends Controller {
       <div class="flex items-center justify-between p-3 bg-gray-50 rounded-md">
         <div>
           <strong>${event.name}</strong>
-          <span class="text-sm text-gray-600 ml-2">(${event.time})</span>
+          <span class="text-sm text-gray-600 ml-2">(${this.formatTime(event.time)})</span>
         </div>
         <button
           type="button"
@@ -324,5 +376,17 @@ export default class extends Controller {
 
       this.validationMessagesTarget.appendChild(container)
     }
+  }
+
+  formatTime(time) {
+    if (typeof time === 'object' && time !== null && time.value !== undefined && time.unit !== undefined) {
+      const unitLabels = {
+        'bce': 'BCE',
+        'mya': 'million years ago',
+        'years-ago': 'years ago'
+      }
+      return `${time.value.toLocaleString()} ${unitLabels[time.unit] || time.unit}`
+    }
+    return time
   }
 }

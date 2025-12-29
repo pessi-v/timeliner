@@ -1,7 +1,8 @@
 class Timeline < ApplicationRecord
   validates :name, presence: true
   validates :timeline_data, presence: true
-  validate :validate_timeline_data_structure
+  # validate :validate_timeline_data_structure
+  validate :validate_with_thymeline
 
   # Ensure timeline_data always has the required keys
   before_validation :ensure_timeline_data_structure
@@ -31,36 +32,36 @@ class Timeline < ApplicationRecord
     self.timeline_data["connectors"] ||= []
   end
 
-  def validate_timeline_data_structure
-    return if timeline_data.blank?
+  # def validate_timeline_data_structure
+  #   return if timeline_data.blank?
 
-    unless timeline_data.is_a?(Hash)
-      errors.add(:timeline_data, "must be a valid JSON object")
-      return
-    end
+  #   unless timeline_data.is_a?(Hash)
+  #     errors.add(:timeline_data, "must be a valid JSON object")
+  #     return
+  #   end
 
-    # Validate that events, periods, and connectors are arrays
-    %w[events periods connectors].each do |key|
-      if timeline_data[key].present? && !timeline_data[key].is_a?(Array)
-        errors.add(:timeline_data, "#{key} must be an array")
-      end
-    end
+  #   # Validate that events, periods, and connectors are arrays
+  #   %w[events periods connectors].each do |key|
+  #     if timeline_data[key].present? && !timeline_data[key].is_a?(Array)
+  #       errors.add(:timeline_data, "#{key} must be an array")
+  #     end
+  #   end
 
-    # Validate event structure
-    timeline_data["events"]&.each_with_index do |event, index|
-      validate_event(event, index)
-    end
+  #   # Validate event structure
+  #   timeline_data["events"]&.each_with_index do |event, index|
+  #     validate_event(event, index)
+  #   end
 
-    # Validate period structure
-    timeline_data["periods"]&.each_with_index do |period, index|
-      validate_period(period, index)
-    end
+  #   # Validate period structure
+  #   timeline_data["periods"]&.each_with_index do |period, index|
+  #     validate_period(period, index)
+  #   end
 
-    # Validate connector structure
-    timeline_data["connectors"]&.each_with_index do |connector, index|
-      validate_connector(connector, index)
-    end
-  end
+  #   # Validate connector structure
+  #   timeline_data["connectors"]&.each_with_index do |connector, index|
+  #     validate_connector(connector, index)
+  #   end
+  # end
 
   def validate_event(event, index)
     unless event.is_a?(Hash) && event["id"].present? && event["name"].present? && event["time"].present?
@@ -114,5 +115,27 @@ class Timeline < ApplicationRecord
     if connector["type"].present? && !%w[defined undefined].include?(connector["type"])
       errors.add(:timeline_data, "connector at index #{index} type must be 'defined' or 'undefined'")
     end
+  end
+
+  def validate_with_thymeline
+    return if timeline_data.blank?
+    return if errors[:timeline_data].any? # Skip if basic validation already failed
+
+    result = TimelineValidatorService.validate(timeline_data)
+
+    # Add errors from thymeline validation
+    result[:errors]&.each do |error|
+      item_prefix = error["itemId"] ? "[#{error["itemId"]}] " : ""
+      errors.add(:timeline_data, "#{item_prefix}#{error["message"]}")
+    end
+
+    # Add warnings as base errors (not blocking, but informative)
+    result[:warnings]&.each do |warning|
+      item_prefix = warning["itemId"] ? "[#{warning["itemId"]}] " : ""
+      errors.add(:base, "Warning: #{item_prefix}#{warning["message"]}")
+    end
+  rescue => e
+    Rails.logger.error("Thymeline validation failed: #{e.class} - #{e.message}")
+    # Don't add validation errors if the service fails - log and continue
   end
 end

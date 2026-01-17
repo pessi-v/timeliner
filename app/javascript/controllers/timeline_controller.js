@@ -12,6 +12,21 @@ export default class extends Controller {
     this.renderTimeline()
   }
 
+  cleanupTimelineData(data) {
+    // Clean up periods: remove undefined/null endTime properties
+    if (data.periods) {
+      data.periods = data.periods.map(period => {
+        const cleanedPeriod = { ...period }
+        // Remove endTime if it's undefined or null
+        if (cleanedPeriod.endTime === undefined || cleanedPeriod.endTime === null) {
+          delete cleanedPeriod.endTime
+        }
+        return cleanedPeriod
+      })
+    }
+    return data
+  }
+
   renderTimeline() {
     // Clear any existing content
     this.element.innerHTML = ""
@@ -38,9 +53,11 @@ export default class extends Controller {
         height: timelineHeight
       })
 
-      console.log("Rendering timeline with data:", this.dataValue)
+      // Clean up the data before rendering
+      const cleanedData = this.cleanupTimelineData(this.dataValue)
+      console.log("Rendering timeline with data:", cleanedData)
       // Render the timeline with the data
-      this.renderer.render(this.dataValue)
+      this.renderer.render(cleanedData)
       console.log("Timeline rendered successfully")
     } catch (error) {
       console.error("Failed to render timeline:", error)

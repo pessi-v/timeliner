@@ -93,9 +93,9 @@ module Views
                 div do
                   label(class: "block text-sm font-medium mb-1") { "Start Time" }
                   input(
-                    type: "number",
+                    type: "text",
                     name: "period_start_time_value",
-                    placeholder: "e.g., 3300000",
+                    placeholder: "e.g., 2000, 2017-11, Nov 2017, Jun 15 2000, 3.11.1988",
                     class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm mb-2"
                   )
                   div(class: "space-y-2") do
@@ -135,9 +135,9 @@ module Views
                 div do
                   label(class: "block text-sm font-medium mb-1") { "End Time" }
                   input(
-                    type: "number",
+                    type: "text",
                     name: "period_end_time_value",
-                    placeholder: "e.g., 3200000",
+                    placeholder: "e.g., 2024, 2024-12, Dec 2024, Jan 1 2025, 15.3.2025",
                     data_timeline_form_target: "endTime",
                     class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm mb-2"
                   )
@@ -231,9 +231,9 @@ module Views
                 div do
                   label(class: "block text-sm font-medium mb-1") { "Time" }
                   input(
-                    type: "number",
+                    type: "text",
                     name: "event_time_value",
-                    placeholder: "e.g., 66000000",
+                    placeholder: "e.g., 2000, 2017-11, Nov 2017, Jun 15 2000, 3.11.1988",
                     class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm mb-2"
                   )
                   div(class: "space-y-2") do

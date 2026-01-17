@@ -20,6 +20,79 @@ export default class extends Controller {
     this.updateJSON()
   }
 
+  parseTimeValue(value, hasUnitSelected) {
+    // If a unit checkbox is selected (BCE, MYA, Years ago), just return the numeric value
+    if (hasUnitSelected) {
+      return parseFloat(value)
+    }
+
+    // Try to parse various date formats
+    const trimmedValue = value.trim()
+
+    // Format: "1988-11-03" (ISO 8601 date - already valid)
+    const isoDatePattern = /^\d{4}-\d{2}-\d{2}$/
+    if (isoDatePattern.test(trimmedValue)) {
+      return trimmedValue
+    }
+
+    // Format: "2000-11" (ISO 8601 year-month - convert to full date)
+    const isoYearMonthPattern = /^(\d{4})-(\d{2})$/
+    const isoYearMonthMatch = trimmedValue.match(isoYearMonthPattern)
+    if (isoYearMonthMatch) {
+      return `${isoYearMonthMatch[1]}-${isoYearMonthMatch[2]}-01`
+    }
+
+    // Match formats like "Nov 2017", "Jun 15 2000", "3.11.1988", etc.
+    const monthNames = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+
+    // Format: "Nov 2017" or "November 2017"
+    const monthYearPattern = /^([a-z]+)\s+(\d{4})$/i
+    const monthYearMatch = trimmedValue.match(monthYearPattern)
+    if (monthYearMatch) {
+      const monthStr = monthYearMatch[1].toLowerCase()
+      const year = monthYearMatch[2]
+      const monthIndex = monthNames.findIndex(m => monthStr.startsWith(m.substring(0, 3)))
+      if (monthIndex !== -1) {
+        const month = String(monthIndex + 1).padStart(2, '0')
+        return `${year}-${month}-01`
+      }
+    }
+
+    // Format: "Jun 15 2000" or "June 15 2000"
+    const monthDayYearPattern = /^([a-z]+)\s+(\d{1,2})\s+(\d{4})$/i
+    const monthDayYearMatch = trimmedValue.match(monthDayYearPattern)
+    if (monthDayYearMatch) {
+      const monthStr = monthDayYearMatch[1].toLowerCase()
+      const day = monthDayYearMatch[2].padStart(2, '0')
+      const year = monthDayYearMatch[3]
+      const monthIndex = monthNames.findIndex(m => monthStr.startsWith(m.substring(0, 3)))
+      if (monthIndex !== -1) {
+        const month = String(monthIndex + 1).padStart(2, '0')
+        return `${year}-${month}-${day}`
+      }
+    }
+
+    // Format: "3.11.1988" or "15.3.2025" (DD.MM.YYYY)
+    const dotPattern = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/
+    const dotMatch = trimmedValue.match(dotPattern)
+    if (dotMatch) {
+      const day = dotMatch[1].padStart(2, '0')
+      const month = dotMatch[2].padStart(2, '0')
+      const year = dotMatch[3]
+      return `${year}-${month}-${day}`
+    }
+
+    // Simple year (e.g., "2000", "1988") - convert to ISO 8601 date
+    const yearPattern = /^(\d{4})$/
+    const yearMatch = trimmedValue.match(yearPattern)
+    if (yearMatch) {
+      return `${yearMatch[1]}-01-01`
+    }
+
+    // If no pattern matches, return the original value
+    return value
+  }
+
   onUnitCheckboxChange(event) {
     const checkbox = event.target
     const name = checkbox.name
@@ -84,25 +157,25 @@ export default class extends Controller {
 
     // Build startTime object
     const startTime = startTimeUnitCheckbox
-      ? { value: parseFloat(startTimeValue), unit: startTimeUnitCheckbox.value }
-      : startTimeValue
+      ? { value: this.parseTimeValue(startTimeValue, true), unit: startTimeUnitCheckbox.value }
+      : this.parseTimeValue(startTimeValue, false)
 
-    // Build endTime object
-    let endTime
-    if (ongoing) {
-      endTime = new Date().toISOString()
-    } else if (endTimeValue) {
-      endTime = endTimeUnitCheckbox
-        ? { value: parseFloat(endTimeValue), unit: endTimeUnitCheckbox.value }
-        : endTimeValue
-    }
-
+    // Build period object
     const period = {
       id: this.generateId(name),
       name: name,
-      startTime: startTime,
-      endTime: endTime
+      startTime: startTime
     }
+
+    // Only add endTime if it has a value
+    if (ongoing) {
+      period.endTime = new Date().toISOString()
+    } else if (endTimeValue) {
+      period.endTime = endTimeUnitCheckbox
+        ? { value: this.parseTimeValue(endTimeValue, true), unit: endTimeUnitCheckbox.value }
+        : this.parseTimeValue(endTimeValue, false)
+    }
+    // If neither ongoing nor endTimeValue, endTime is omitted (ongoing period without explicit end)
 
     this.periods.push(period)
     this.renderPeriods()
@@ -155,8 +228,8 @@ export default class extends Controller {
 
     // Build time object
     const time = timeUnitCheckbox
-      ? { value: parseFloat(timeValue), unit: timeUnitCheckbox.value }
-      : timeValue
+      ? { value: this.parseTimeValue(timeValue, true), unit: timeUnitCheckbox.value }
+      : this.parseTimeValue(timeValue, false)
 
     const eventData = {
       id: this.generateId(name),

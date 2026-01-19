@@ -375,3 +375,525 @@ Timeline.create(
   ]
 }
 )
+
+Timeline.create(
+  name:"Development of Life",
+  timeline_data: {
+  "events": [
+    {
+      "id": "event-earth-formation",
+      "name": "Formation of Earth",
+      "time": { "value": 4540, "unit": "mya" },
+      "info": "Earth forms from the solar nebula through accretion of dust and gas. The early Earth is molten, bombarded by asteroids, and has no atmosphere or oceans. The collision that forms the Moon occurs shortly after."
+    },
+    {
+      "id": "event-first-life",
+      "name": "First Life Appears",
+      "time": { "value": 3800, "unit": "mya" },
+      "relates_to": "period-archean",
+      "info": "The earliest evidence of life appears in the form of simple prokaryotic cells (bacteria and archaea). These single-celled organisms likely emerge near hydrothermal vents or in warm shallow pools, using chemical energy rather than sunlight."
+    },
+    {
+      "id": "event-photosynthesis",
+      "name": "First Photosynthesis",
+      "time": { "value": 3500, "unit": "mya" },
+      "relates_to": "period-archean",
+      "info": "Cyanobacteria evolve oxygenic photosynthesis, the ability to convert sunlight, water, and carbon dioxide into energy while releasing oxygen. Stromatolites—layered structures built by cyanobacterial mats—become common in shallow seas."
+    },
+    {
+      "id": "event-great-oxygenation",
+      "name": "Great Oxygenation Event",
+      "time": { "value": 2400, "unit": "mya" },
+      "relates_to": "period-proterozoic",
+      "info": "Oxygen produced by cyanobacteria accumulates in Earth's atmosphere, rising from trace amounts to about 2%. This transforms the planet, rusting iron in the oceans, creating a new atmosphere, and causing a mass extinction of anaerobic life."
+    },
+    {
+      "id": "event-first-eukaryotes",
+      "name": "First Eukaryotic Cells",
+      "time": { "value": 2100, "unit": "mya" },
+      "relates_to": "period-proterozoic",
+      "info": "Eukaryotes—cells with a nucleus and membrane-bound organelles—evolve through endosymbiosis. Mitochondria originate as engulfed bacteria that become permanent energy-producing partners. This innovation enables larger, more complex cells."
+    },
+    {
+      "id": "event-sexual-reproduction",
+      "name": "Sexual Reproduction Evolves",
+      "time": { "value": 1200, "unit": "mya" },
+      "relates_to": "period-proterozoic",
+      "info": "Sexual reproduction emerges, enabling genetic recombination and dramatically accelerating evolution. The mixing of genes from two parents creates variation that natural selection can act upon more effectively."
+    },
+    {
+      "id": "event-first-multicellular",
+      "name": "First Multicellular Life",
+      "time": { "value": 1000, "unit": "mya" },
+      "relates_to": "period-proterozoic",
+      "info": "Simple multicellular organisms appear, with cells beginning to specialize for different functions. Red and green algae are among the earliest multicellular forms, followed by early sponges and other simple animals."
+    },
+    {
+      "id": "event-snowball-earth",
+      "name": "Snowball Earth",
+      "time": { "value": 720, "unit": "mya" },
+      "relates_to": "period-proterozoic",
+      "info": "Earth enters a period of extreme glaciation, possibly freezing over almost entirely. Ice sheets may have reached the equator. The eventual thawing releases carbon dioxide and may have triggered conditions favorable for complex life."
+    },
+    {
+      "id": "event-ediacaran-fauna",
+      "name": "Ediacaran Fauna Appears",
+      "time": { "value": 575, "unit": "mya" },
+      "relates_to": "period-proterozoic",
+      "info": "The first large, complex multicellular organisms appear in the fossil record. The Ediacaran biota includes strange, quilted creatures like Dickinsonia and Charnia—soft-bodied organisms unlike anything alive today."
+    },
+    {
+      "id": "event-cambrian-explosion",
+      "name": "Cambrian Explosion",
+      "time": { "value": 538.8, "unit": "mya" },
+      "relates_to": "period-cambrian",
+      "info": "An evolutionary burst produces most major animal body plans within about 25 million years. Eyes, shells, legs, and other innovations appear. The Burgess Shale preserves extraordinary fossils including Anomalocaris, Hallucigenia, and the first chordates."
+    },
+    {
+      "id": "event-first-vertebrates",
+      "name": "First Vertebrates",
+      "time": { "value": 530, "unit": "mya" },
+      "relates_to": "period-cambrian",
+      "info": "The earliest vertebrates appear as small, jawless fish-like creatures. Haikouichthys, from the Cambrian of China, has a notochord, primitive skull, and segmented muscles—the basic vertebrate body plan that will give rise to all fish, amphibians, reptiles, birds, and mammals."
+    },
+    {
+      "id": "event-first-land-plants",
+      "name": "First Land Plants",
+      "time": { "value": 470, "unit": "mya" },
+      "relates_to": "period-ordovician",
+      "info": "Plants begin colonizing land, initially as simple moss-like forms lacking roots or vascular tissue. They transform barren rock into soil, paving the way for terrestrial ecosystems. Fungi likely assist by forming symbiotic relationships."
+    },
+    {
+      "id": "event-ordovician-extinction",
+      "name": "Ordovician Mass Extinction",
+      "time": { "value": 445, "unit": "mya" },
+      "relates_to": "period-ordovician",
+      "info": "The second-largest mass extinction in Earth's history kills about 85% of marine species. Caused by glaciation and falling sea levels, it devastates the trilobites, brachiopods, and other invertebrates that dominate Ordovician seas."
+    },
+    {
+      "id": "event-first-jawed-fish",
+      "name": "First Jawed Fish",
+      "time": { "value": 430, "unit": "mya" },
+      "relates_to": "period-silurian",
+      "info": "Jaws evolve from modified gill arches, revolutionizing vertebrate feeding. Jawed fish can bite, grasp, and process food in new ways. This innovation eventually leads to the dominance of jawed vertebrates on Earth."
+    },
+    {
+      "id": "event-first-insects",
+      "name": "First Insects",
+      "time": { "value": 410, "unit": "mya" },
+      "relates_to": "period-devonian",
+      "info": "Insects appear on land, evolving from crustacean-like ancestors. These six-legged arthropods will become the most diverse group of animals on Earth, eventually comprising over half of all known species."
+    },
+    {
+      "id": "event-first-amphibians",
+      "name": "First Amphibians",
+      "time": { "value": 375, "unit": "mya" },
+      "relates_to": "period-devonian",
+      "info": "Tiktaalik and similar 'fishapods' bridge the gap between fish and tetrapods, using sturdy fins to prop themselves up in shallow water. True amphibians like Ichthyostega soon follow, becoming the first vertebrates to walk on land."
+    },
+    {
+      "id": "event-devonian-extinction",
+      "name": "Late Devonian Extinction",
+      "time": { "value": 372, "unit": "mya" },
+      "relates_to": "period-devonian",
+      "info": "A prolonged extinction event kills about 75% of species over millions of years. Tropical marine species are hit hardest, including many reef-building organisms. The causes may include oxygen depletion, climate change, or asteroid impacts."
+    },
+    {
+      "id": "event-first-reptiles",
+      "name": "First Reptiles",
+      "time": { "value": 312, "unit": "mya" },
+      "relates_to": "period-carboniferous",
+      "info": "Reptiles evolve the amniotic egg, which can be laid on land without drying out. This breakthrough frees vertebrates from dependence on water for reproduction. Hylonomus is among the earliest known reptiles."
+    },
+    {
+      "id": "event-first-flying-insects",
+      "name": "Giant Flying Insects",
+      "time": { "value": 300, "unit": "mya" },
+      "relates_to": "period-carboniferous",
+      "info": "Insects take to the air, becoming the first animals to achieve powered flight. High oxygen levels allow giant forms like Meganeura, a dragonfly with a 70cm wingspan. Flight enables insects to exploit new ecological niches."
+    },
+    {
+      "id": "event-permian-extinction",
+      "name": "Permian Mass Extinction",
+      "time": { "value": 252, "unit": "mya" },
+      "relates_to": "period-permian",
+      "info": "The 'Great Dying' eliminates about 96% of marine species and 70% of land species—the worst mass extinction in Earth's history. Massive volcanic eruptions in Siberia trigger climate change, ocean acidification, and oxygen depletion."
+    },
+    {
+      "id": "event-first-dinosaurs",
+      "name": "First Dinosaurs",
+      "time": { "value": 233, "unit": "mya" },
+      "relates_to": "period-triassic",
+      "info": "Dinosaurs evolve from small, bipedal archosaurs. Early dinosaurs like Eoraptor and Herrerasaurus are modest-sized predators. They will eventually dominate terrestrial ecosystems for over 160 million years."
+    },
+    {
+      "id": "event-first-mammals",
+      "name": "First True Mammals",
+      "time": { "value": 225, "unit": "mya" },
+      "relates_to": "period-triassic",
+      "info": "Mammals evolve from synapsid reptiles. Early mammals are small, nocturnal insectivores, living in the shadow of dinosaurs. Their warm-blooded metabolism, fur, and milk production will prove advantageous after the dinosaurs' extinction."
+    },
+    {
+      "id": "event-triassic-extinction",
+      "name": "Triassic-Jurassic Extinction",
+      "time": { "value": 201, "unit": "mya" },
+      "relates_to": "period-triassic",
+      "info": "A mass extinction kills about 80% of species, including most large amphibians and many reptile groups. Volcanic activity as Pangaea breaks apart is the likely cause. Dinosaurs survive and diversify rapidly afterward."
+    },
+    {
+      "id": "event-first-birds",
+      "name": "First Birds",
+      "time": { "value": 150, "unit": "mya" },
+      "relates_to": "period-jurassic",
+      "info": "Archaeopteryx, discovered in Germany, shows a mix of dinosaurian and avian features: feathered wings, teeth, and a bony tail. Birds evolve from small, feathered theropod dinosaurs, making modern birds living dinosaurs."
+    },
+    {
+      "id": "event-first-flowering-plants",
+      "name": "First Flowering Plants",
+      "time": { "value": 130, "unit": "mya" },
+      "relates_to": "period-cretaceous",
+      "info": "Angiosperms (flowering plants) appear and begin their explosive diversification. Their flowers attract pollinators; their fruits spread seeds. By the end of the Cretaceous, they dominate most terrestrial ecosystems."
+    },
+    {
+      "id": "event-kt-extinction",
+      "name": "Cretaceous-Paleogene Extinction",
+      "time": { "value": 66, "unit": "mya" },
+      "relates_to": "period-cretaceous",
+      "info": "An asteroid 10km wide strikes the Yucatan Peninsula, triggering global catastrophe. Dust and debris block sunlight; fires rage; temperatures plunge then spike. All non-avian dinosaurs perish, along with 75% of species. Mammals inherit the Earth."
+    },
+    {
+      "id": "event-first-primates",
+      "name": "First Primates",
+      "time": { "value": 55, "unit": "mya" },
+      "relates_to": "period-paleogene",
+      "info": "Primates evolve, characterized by grasping hands, forward-facing eyes, and large brains relative to body size. Early primates like Plesiadapis are small, tree-dwelling creatures. They will eventually give rise to monkeys, apes, and humans."
+    },
+    {
+      "id": "event-first-whales",
+      "name": "Whales Return to Sea",
+      "time": { "value": 50, "unit": "mya" },
+      "relates_to": "period-paleogene",
+      "info": "Cetaceans evolve from land-dwelling hoofed mammals. Pakicetus and Ambulocetus show the transition, with limbs gradually becoming flippers. Within 10 million years, fully aquatic whales roam the oceans."
+    },
+    {
+      "id": "event-grasslands-spread",
+      "name": "Grasslands Spread",
+      "time": { "value": 25, "unit": "mya" },
+      "relates_to": "period-neogene",
+      "info": "Grasslands expand across continents as climate becomes cooler and drier. This new ecosystem drives the evolution of grazing mammals with specialized teeth and long legs for running on open plains."
+    },
+    {
+      "id": "event-first-hominins",
+      "name": "First Hominins",
+      "time": { "value": 7, "unit": "mya" },
+      "relates_to": "period-neogene",
+      "info": "The human lineage splits from the ancestors of chimpanzees. Sahelanthropus tchadensis, discovered in Chad, may be near this divergence point. Early hominins begin developing bipedal locomotion in African forests."
+    },
+    {
+      "id": "event-australopithecus",
+      "name": "Australopithecus Appears",
+      "time": { "value": 4, "unit": "mya" },
+      "relates_to": "period-quaternary",
+      "info": "Australopithecus, including the famous 'Lucy', walks upright in East Africa. These early human relatives have small brains but are fully bipedal, freeing their hands for tool use and carrying food."
+    },
+    {
+      "id": "event-first-stone-tools",
+      "name": "First Stone Tools",
+      "time": { "value": 3.3, "unit": "mya" },
+      "relates_to": "period-quaternary",
+      "info": "The oldest known stone tools appear in East Africa, predating the genus Homo. These simple flakes and choppers mark a cognitive leap—the ability to plan, craft, and use technology to extend physical capabilities."
+    },
+    {
+      "id": "event-homo-erectus",
+      "name": "Homo erectus Emerges",
+      "time": { "value": 1.9, "unit": "mya" },
+      "relates_to": "period-quaternary",
+      "info": "Homo erectus evolves with a larger brain, smaller face, and modern body proportions. This species masters fire, creates more sophisticated tools, and becomes the first hominin to leave Africa, spreading across Asia and Europe."
+    },
+    {
+      "id": "event-first-fire-use",
+      "name": "Controlled Use of Fire",
+      "time": { "value": 1, "unit": "mya" },
+      "relates_to": "period-quaternary",
+      "info": "Hominins begin using fire regularly for cooking, warmth, and protection. Cooking makes food more digestible and nutritious, possibly enabling the evolution of larger brains. Fire extends the day and enables habitation of colder climates."
+    },
+    {
+      "id": "event-homo-sapiens",
+      "name": "Homo sapiens Evolves",
+      "time": { "value": 300000, "unit": "years-ago" },
+      "relates_to": "period-quaternary",
+      "info": "Anatomically modern humans appear in Africa, distinguished by a globular skull, small face, and prominent chin. Fossils from Jebel Irhoud, Morocco push back our species' origin. Modern human behavior, including art and symbolism, follows."
+    },
+    {
+      "id": "event-out-of-africa",
+      "name": "Out of Africa Migration",
+      "time": { "value": 70000, "unit": "years-ago" },
+      "relates_to": "period-quaternary",
+      "info": "Homo sapiens expands out of Africa, eventually colonizing every continent except Antarctica. Along the way, our ancestors encounter and interbreed with Neanderthals and Denisovans, whose DNA persists in modern populations."
+    },
+    {
+      "id": "event-cave-art",
+      "name": "First Cave Art",
+      "time": { "value": 40000, "unit": "years-ago" },
+      "relates_to": "period-quaternary",
+      "info": "Humans create the earliest known cave paintings in Indonesia and Europe. These artworks—depicting animals, hands, and abstract patterns—demonstrate symbolic thinking, creativity, and the capacity for culture that defines our species."
+    },
+    {
+      "id": "event-megafauna-extinction",
+      "name": "Megafauna Extinction",
+      "time": { "value": 12000, "unit": "years-ago" },
+      "relates_to": "period-quaternary",
+      "info": "Woolly mammoths, saber-toothed cats, giant sloths, and other large Ice Age mammals go extinct. Climate change and human hunting both contribute. These extinctions reshape ecosystems and remove ecological roles not yet refilled."
+    },
+    {
+      "id": "event-agriculture",
+      "name": "Agriculture Begins",
+      "time": { "value": 10000, "unit": "years-ago" },
+      "relates_to": "period-quaternary",
+      "info": "Humans begin domesticating plants and animals in multiple regions independently. This Neolithic Revolution enables settled communities, population growth, and eventually cities and civilizations. It also brings new diseases and social hierarchies."
+    }
+  ],
+  "periods": [
+    {
+      "id": "period-hadean",
+      "name": "Hadean Eon",
+      "startTime": { "value": 4540, "unit": "mya" },
+      "endTime": { "value": 4000, "unit": "mya" },
+      "info": "The earliest eon of Earth's history, named after Hades (the Greek underworld) for its hellish conditions. The Earth is molten, bombarded by asteroids, and has no stable crust, oceans, or life. The Moon forms from a giant impact. No rocks survive from this time."
+    },
+    {
+      "id": "period-archean",
+      "name": "Archean Eon",
+      "startTime": { "value": 4000, "unit": "mya" },
+      "endTime": { "value": 2500, "unit": "mya" },
+      "info": "Life emerges on Earth during this eon. The first continents form as the crust stabilizes. Prokaryotic life (bacteria and archaea) dominates, with cyanobacteria eventually evolving photosynthesis and beginning to oxygenate the atmosphere. Stromatolites build layered structures in shallow seas."
+    },
+    {
+      "id": "period-proterozoic",
+      "name": "Proterozoic Eon",
+      "startTime": { "value": 2500, "unit": "mya" },
+      "endTime": { "value": 538.8, "unit": "mya" },
+      "info": "The eon of 'earlier life' sees major evolutionary innovations: eukaryotic cells, sexual reproduction, and multicellular organisms. The Great Oxygenation Event transforms the atmosphere. Snowball Earth glaciations occur. By its end, the Ediacaran fauna—the first large, complex organisms—appears."
+    },
+    {
+      "id": "period-cambrian",
+      "name": "Cambrian Period",
+      "startTime": { "value": 538.8, "unit": "mya" },
+      "endTime": { "value": 485.4, "unit": "mya" },
+      "info": "The Cambrian Explosion produces most major animal phyla in a geologically brief burst of evolution. Trilobites, anomalocarids, and the ancestors of all vertebrates appear. Hard shells and exoskeletons evolve, improving fossil preservation. The first predators drive an evolutionary arms race."
+    },
+    {
+      "id": "period-ordovician",
+      "name": "Ordovician Period",
+      "startTime": { "value": 485.4, "unit": "mya" },
+      "endTime": { "value": 443.8, "unit": "mya" },
+      "info": "Marine life diversifies dramatically in the 'Great Ordovician Biodiversification Event'. Brachiopods, bryozoans, and corals flourish. Fish remain jawless. The first land plants appear. The period ends with a severe mass extinction caused by glaciation."
+    },
+    {
+      "id": "period-silurian",
+      "name": "Silurian Period",
+      "startTime": { "value": 443.8, "unit": "mya" },
+      "endTime": { "value": 419.2, "unit": "mya" },
+      "info": "Life recovers from the Ordovician extinction. The first jawed fish and bony fish evolve. Vascular plants develop, allowing them to grow taller and spread across land. The first terrestrial arthropods—millipedes and early arachnids—colonize the land."
+    },
+    {
+      "id": "period-devonian",
+      "name": "Devonian Period",
+      "startTime": { "value": 419.2, "unit": "mya" },
+      "endTime": { "value": 358.9, "unit": "mya" },
+      "info": "The 'Age of Fishes' sees incredible diversity among fish, including armored placoderms, sharks, and lobe-finned fish. The first forests grow on land. Insects appear. Vertebrates make the transition to land, with Tiktaalik bridging fish and amphibians. Ends with a prolonged mass extinction."
+    },
+    {
+      "id": "period-carboniferous",
+      "name": "Carboniferous Period",
+      "startTime": { "value": 358.9, "unit": "mya" },
+      "endTime": { "value": 298.9, "unit": "mya" },
+      "info": "Vast swamp forests cover tropical lowlands, eventually forming the coal deposits that give this period its name. High oxygen levels allow giant insects. Amphibians diversify; the first reptiles evolve with their waterproof eggs. The supercontinent Pangaea begins forming."
+    },
+    {
+      "id": "period-permian",
+      "name": "Permian Period",
+      "startTime": { "value": 298.9, "unit": "mya" },
+      "endTime": { "value": 252, "unit": "mya" },
+      "info": "Reptiles diversify and dominate land ecosystems. Synapsids (mammal ancestors) include the large, sail-backed Dimetrodon. Pangaea is fully assembled, creating vast interior deserts. The period ends with the catastrophic Permian-Triassic extinction, the worst in Earth's history."
+    },
+    {
+      "id": "period-triassic",
+      "name": "Triassic Period",
+      "startTime": { "value": 252, "unit": "mya" },
+      "endTime": { "value": 201.3, "unit": "mya" },
+      "info": "Life recovers from the Great Dying. The first dinosaurs, mammals, pterosaurs, and marine reptiles evolve. Conifers and cycads dominate plant life. Pangaea begins breaking apart. Another mass extinction at the period's end clears the way for dinosaur dominance."
+    },
+    {
+      "id": "period-jurassic",
+      "name": "Jurassic Period",
+      "startTime": { "value": 201.3, "unit": "mya" },
+      "endTime": { "value": 145, "unit": "mya" },
+      "info": "The 'Age of Dinosaurs' reaches its peak. Sauropods like Brachiosaurus and Diplodocus become the largest land animals ever. Theropods include Allosaurus and early tyrannosaurs. The first birds evolve from feathered dinosaurs. Pangaea continues splitting."
+    },
+    {
+      "id": "period-cretaceous",
+      "name": "Cretaceous Period",
+      "startTime": { "value": 145, "unit": "mya" },
+      "endTime": { "value": 66, "unit": "mya" },
+      "info": "The longest period of the Mesozoic Era. Flowering plants revolutionize ecosystems, co-evolving with pollinating insects. Tyrannosaurus, Triceratops, and the giant sauropod Argentinosaurus roam. The period ends abruptly with the asteroid impact that eliminates non-avian dinosaurs."
+    },
+    {
+      "id": "period-paleogene",
+      "name": "Paleogene Period",
+      "startTime": { "value": 66, "unit": "mya" },
+      "endTime": { "value": 23, "unit": "mya" },
+      "info": "Mammals rapidly diversify to fill ecological niches left by dinosaurs. Modern mammal orders appear: primates, rodents, carnivores, whales, and more. Birds also diversify. India collides with Asia, raising the Himalayas. Climate cools gradually."
+    },
+    {
+      "id": "period-neogene",
+      "name": "Neogene Period",
+      "startTime": { "value": 23, "unit": "mya" },
+      "endTime": { "value": 2.6, "unit": "mya" },
+      "info": "Grasslands spread as climate becomes cooler and drier, driving evolution of grazing mammals. Apes diversify in Africa; great apes and early hominins diverge. The Panama land bridge forms, connecting North and South America and enabling the Great American Interchange."
+    },
+    {
+      "id": "period-quaternary",
+      "name": "Quaternary Period",
+      "startTime": { "value": 2.6, "unit": "mya" },
+      "info": "The current geological period, defined by cycles of ice ages. Homo erectus, Neanderthals, and Homo sapiens evolve. Humans spread across the globe, develop agriculture, and transform the planet. Many large mammals go extinct as humans expand."
+    },
+    {
+      "id": "period-age-of-fish",
+      "name": "Age of Fishes",
+      "startTime": { "value": 530, "unit": "mya" },
+      "endTime": { "value": 360, "unit": "mya" },
+      "info": "Fish dominate the oceans from the Cambrian through the Devonian. Jawless fish give way to jawed fish, including placoderms, sharks, and bony fish. Lobe-finned fish give rise to the first tetrapods, beginning the vertebrate conquest of land."
+    },
+    {
+      "id": "period-age-of-dinosaurs",
+      "name": "Age of Dinosaurs",
+      "startTime": { "value": 233, "unit": "mya" },
+      "endTime": { "value": 66, "unit": "mya" },
+      "info": "Dinosaurs dominate terrestrial ecosystems for over 160 million years—longer than any other group of large land animals. They evolve into thousands of species, from tiny feathered theropods to the largest animals to ever walk the Earth."
+    },
+    {
+      "id": "period-age-of-mammals",
+      "name": "Age of Mammals",
+      "startTime": { "value": 66, "unit": "mya" },
+      "info": "Following the extinction of non-avian dinosaurs, mammals diversify explosively. From tiny insectivores, they evolve into forms as diverse as whales, bats, elephants, and humans. Mammals occupy nearly every ecological niche on land, sea, and air."
+    },
+    {
+      "id": "period-human-evolution",
+      "name": "Human Evolution",
+      "startTime": { "value": 7, "unit": "mya" },
+      "info": "The human lineage diverges from other apes and evolves through multiple species. Bipedalism, tool use, enlarged brains, and language develop over millions of years. Homo sapiens emerges in Africa and eventually becomes the dominant species on Earth."
+    }
+  ],
+  "connectors": [
+    {
+      "id": "conn-hadean-archean",
+      "fromId": "period-hadean",
+      "toId": "period-archean",
+      "type": "defined",
+      "metadata": {
+        "note": "Earth stabilizes, enabling the emergence of life"
+      }
+    },
+    {
+      "id": "conn-archean-proterozoic",
+      "fromId": "period-archean",
+      "toId": "period-proterozoic",
+      "type": "defined",
+      "metadata": {
+        "note": "Oxygenation transforms the planet"
+      }
+    },
+    {
+      "id": "conn-proterozoic-cambrian",
+      "fromId": "period-proterozoic",
+      "toId": "period-cambrian",
+      "type": "defined",
+      "metadata": {
+        "note": "Multicellular life leads to the Cambrian Explosion"
+      }
+    },
+    {
+      "id": "conn-devonian-carboniferous",
+      "fromId": "period-devonian",
+      "toId": "period-carboniferous",
+      "type": "defined",
+      "metadata": {
+        "note": "Land vertebrates from fish ancestors flourish in coal swamps"
+      }
+    },
+    {
+      "id": "conn-permian-triassic",
+      "fromId": "period-permian",
+      "toId": "period-triassic",
+      "type": "defined",
+      "metadata": {
+        "note": "Great Dying reshapes life, dinosaurs emerge"
+      }
+    },
+    {
+      "id": "conn-fish-to-age",
+      "fromId": "period-cambrian",
+      "toId": "period-age-of-fish",
+      "type": "defined",
+      "metadata": {
+        "note": "First vertebrates begin fish dominance"
+      }
+    },
+    {
+      "id": "conn-triassic-dinosaurs",
+      "fromId": "period-triassic",
+      "toId": "period-age-of-dinosaurs",
+      "type": "defined",
+      "metadata": {
+        "note": "Dinosaurs evolve and begin their reign"
+      }
+    },
+    {
+      "id": "conn-dinosaurs-mammals",
+      "fromId": "period-age-of-dinosaurs",
+      "toId": "period-age-of-mammals",
+      "type": "defined",
+      "metadata": {
+        "note": "Dinosaur extinction enables mammal diversification"
+      }
+    },
+    {
+      "id": "conn-cretaceous-paleogene",
+      "fromId": "period-cretaceous",
+      "toId": "period-paleogene",
+      "type": "defined",
+      "metadata": {
+        "note": "Mass extinction ends the Mesozoic, mammals inherit Earth"
+      }
+    },
+    {
+      "id": "conn-neogene-human",
+      "fromId": "period-neogene",
+      "toId": "period-human-evolution",
+      "type": "defined",
+      "metadata": {
+        "note": "Hominin lineage diverges from other apes"
+      }
+    },
+    {
+      "id": "conn-mammals-human",
+      "fromId": "period-age-of-mammals",
+      "toId": "period-human-evolution",
+      "type": "undefined",
+      "metadata": {
+        "note": "Primates evolve within mammalian radiation"
+      }
+    },
+    {
+      "id": "conn-jurassic-cretaceous",
+      "fromId": "period-jurassic",
+      "toId": "period-cretaceous",
+      "type": "defined",
+      "metadata": {
+        "note": "Dinosaur dominance continues, birds diversify"
+      }
+    }
+  ]
+}
+)

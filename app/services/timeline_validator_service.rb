@@ -6,7 +6,7 @@ class TimelineValidatorService
   class ValidationError < StandardError; end
 
   VALIDATOR_SCRIPT_PATH = Rails.root.join("lib/assets/javascripts/thymeline_validator.js")
-  THYMELINE_LIB_PATH = "/Users/pes/code/thymeline/dist/thymeline.umd.cjs"
+  THYMELINE_LIB_PATH = Rails.root.join("vendor/javascript/thymeline.umd.js")
 
   # Validate timeline data using thymeline.js validation
   # @param timeline_data [Hash] The timeline data to validate

@@ -1,5 +1,5 @@
 class Timeline < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :timeline_data, presence: true
   validate :validate_timeline_data_structure
   validate :validate_with_thymeline
@@ -80,7 +80,7 @@ class Timeline < ApplicationRecord
   def validate_period(period, index)
     # endTime is optional (for ongoing periods)
     unless period.is_a?(Hash) && period["id"].present? && period["name"].present? && period["startTime"].present?
-      errors.add(:timeline_data, "period at index #{index} must have id, name, and startTime")
+      errors.add(:timeline_data, "period #{period["name"]} must have id, name, and startTime")
       return
     end
 
@@ -111,7 +111,7 @@ class Timeline < ApplicationRecord
       errors.add(:timeline_data, "#{field_name} value must be a number")
     end
 
-    valid_units = %w[bce mya years-ago]
+    valid_units = %w[bce ce mya years-ago]
     unless valid_units.include?(time_obj["unit"])
       errors.add(:timeline_data, "#{field_name} unit must be one of: #{valid_units.join(', ')}")
     end

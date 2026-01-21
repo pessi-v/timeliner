@@ -1418,17 +1418,24 @@ Timeline.create(
       "info": "A period of rapid cultural innovation as modern humans spread across the globe. Cave art flourishes at sites like Chauvet and Lascaux. Sophisticated tools including harpoons, needles, and saws are invented. The first permanent settlements appear, humans colonize Australia and the Americas, and Neanderthals go extinct."
     },
     {
-      "id": "period-mesolithic",
-      "name": "Mesolithic",
-      "startTime": { "value": 12000, "unit": "years-ago" },
-      "endTime": { "value": 7000, "unit": "bce" },
+      "id": "period-european-mesolithic",
+      "name": "European Mesolithic",
+      "startTime": { "value": 15000, "unit": "years-ago" },
+      "endTime": { "value": 5000, "unit": "bce" },
+      "info": "The 'Middle Stone Age' bridges the Paleolithic and Neolithic, beginning as glaciers retreat at the end of the Pleistocene. Characterized by microlithic tools, fishing tackle, and the first canoes. The Natufian culture in the Levant represents sedentary hunter-gatherers who may have begun cultivating wild cereals."
+    },
+    {
+      "id": "period-wa-mesolithic",
+      "name": "West Asian Mesolithic",
+      "startTime": { "value": 20000, "unit": "years-ago" },
+      "endTime": { "value": 10000, "unit": "bce" },
       "info": "The 'Middle Stone Age' bridges the Paleolithic and Neolithic, beginning as glaciers retreat at the end of the Pleistocene. Characterized by microlithic tools, fishing tackle, and the first canoes. The Natufian culture in the Levant represents sedentary hunter-gatherers who may have begun cultivating wild cereals."
     },
     {
       "id": "period-neolithic",
       "name": "Neolithic",
-      "startTime": { "value": 10200, "unit": "bce" },
-      "endTime": { "value": 4500, "unit": "bce" },
+      "startTime": { "value": 10000, "unit": "bce" },
+      "endTime": { "value": 2000, "unit": "bce" },
       "info": "The 'New Stone Age' witnesses the Neolithic Revolution: the transition from hunting-gathering to agriculture and settled life. Crops and animals are domesticated, permanent villages emerge, pottery is invented, and megalithic monuments like Stonehenge are built. This transformation begins in the Fertile Crescent and spreads gradually across the world."
     },
     {
@@ -1469,8 +1476,8 @@ Timeline.create(
     {
       "id": "period-sumer",
       "name": "Sumerian Civilization",
-      "startTime": { "value": 4500, "unit": "bce" },
-      "endTime": { "value": 1900, "unit": "bce" },
+      "startTime": { "value": 3350, "unit": "bce" },
+      "endTime": { "value": 2500, "unit": "bce" },
       "info": "The world's first urban civilization emerges in southern Mesopotamia (modern Iraq). Sumerians invent cuneiform writing, the wheel, and the plow. City-states like Ur, Uruk, and Eridu develop complex governments, religions, and the first known literary work, the Epic of Gilgamesh."
     },
     {
@@ -1491,8 +1498,15 @@ Timeline.create(
       "id": "period-egypt",
       "name": "Ancient Egypt",
       "startTime": { "value": 3150, "unit": "bce" },
-      "endTime": { "value": 30, "unit": "bce" },
+      "endTime": { "value": 27, "unit": "bce" },
       "info": "One of history's longest-lasting civilizations, unified under pharaohs who are considered living gods. Egyptians build pyramids, develop hieroglyphic writing, and create a rich religious tradition focused on the afterlife. The civilization endures through multiple dynasties until Roman conquest."
+    },
+    {
+      "id": "period-roman-egypt",
+      "name": "Roman Egypt",
+      "startTime": { "value": 27, "unit": "bce" },
+      "endTime": { "value": 642, "unit": "ce" },
+      "info": "During the era of the Roman Empire, most of modern-day Egypt except for the Sinai was ruled as the imperial province of Aegyptus."
     },
     {
       "id": "period-mehrgarh",
@@ -1856,6 +1870,12 @@ Timeline.create(
       }
     },
     {
+      "id": "conn-egypt-roman-egypt",
+      "fromId": "period-egypt",
+      "toId": "period-roman-egypt",
+      "type": "defined"
+    },
+    {
       "id": "conn-middle-upper-paleo",
       "fromId": "period-middle-paleolithic",
       "toId": "period-upper-paleolithic",
@@ -1867,7 +1887,7 @@ Timeline.create(
     {
       "id": "conn-upper-paleo-mesolithic",
       "fromId": "period-upper-paleolithic",
-      "toId": "period-mesolithic",
+      "toId": "period-european-mesolithic",
       "type": "defined",
       "metadata": {
         "note": "End of last Ice Age transforms environments and cultures"
@@ -1875,7 +1895,7 @@ Timeline.create(
     },
     {
       "id": "conn-mesolithic-neolithic",
-      "fromId": "period-mesolithic",
+      "fromId": "period-european-mesolithic",
       "toId": "period-neolithic",
       "type": "defined",
       "metadata": {
@@ -1910,75 +1930,12 @@ Timeline.create(
       }
     },
     {
-      "id": "conn-neolithic-gobekli",
-      "fromId": "period-neolithic",
-      "toId": "period-gobekli-tepe",
-      "type": "defined",
-      "metadata": {
-        "note": "Göbekli Tepe represents early Neolithic monumental construction"
-      }
-    },
-    {
-      "id": "conn-neolithic-sumer",
-      "fromId": "period-neolithic",
-      "toId": "period-sumer",
-      "type": "defined",
-      "metadata": {
-        "note": "Sumerian civilization emerges from Neolithic farming communities"
-      }
-    },
-    {
-      "id": "conn-bronze-egypt",
-      "fromId": "period-bronze-age",
-      "toId": "period-egypt",
-      "type": "defined",
-      "metadata": {
-        "note": "Egyptian civilization flourishes during Bronze Age"
-      }
-    },
-    {
-      "id": "conn-bronze-indus",
-      "fromId": "period-bronze-age",
-      "toId": "period-indus",
-      "type": "defined",
-      "metadata": {
-        "note": "Indus Valley civilization emerges as Bronze Age culture"
-      }
-    },
-    {
       "id": "conn-mehrgarh-indus",
       "fromId": "period-mehrgarh",
       "toId": "period-indus",
       "type": "defined",
       "metadata": {
         "note": "Mehrgarh's pre-Harappan culture evolves into Indus Valley Civilization"
-      }
-    },
-    {
-      "id": "conn-neolithic-mehrgarh",
-      "fromId": "period-neolithic",
-      "toId": "period-mehrgarh",
-      "type": "defined",
-      "metadata": {
-        "note": "Mehrgarh represents early Neolithic farming in South Asia"
-      }
-    },
-    {
-      "id": "conn-iron-greece",
-      "fromId": "period-iron-age",
-      "toId": "period-greece",
-      "type": "defined",
-      "metadata": {
-        "note": "Greek civilization develops during Iron Age"
-      }
-    },
-    {
-      "id": "conn-iron-rome",
-      "fromId": "period-iron-age",
-      "toId": "period-rome",
-      "type": "defined",
-      "metadata": {
-        "note": "Rome founded during Iron Age"
       }
     },
     {
@@ -2036,22 +1993,10 @@ Timeline.create(
       }
     },
     {
-      "id": "conn-egypt-greece",
-      "fromId": "period-egypt",
+      "id": "conn-mycenea-greece",
+      "fromId": "period-mycenean",
       "toId": "period-greece",
-      "type": "undefined",
-      "metadata": {
-        "note": "Greeks admire and learn from Egyptian civilization"
-      }
-    },
-    {
-      "id": "conn-phoenicia-greece",
-      "fromId": "period-phoenicia",
-      "toId": "period-greece",
-      "type": "defined",
-      "metadata": {
-        "note": "Greeks adopt and adapt the Phoenician alphabet"
-      }
+      "type": "defined"
     },
     {
       "id": "conn-phoenicia-carthage",
@@ -2090,7 +2035,7 @@ Timeline.create(
       "id": "conn-macedon-persia",
       "fromId": "period-macedon",
       "toId": "period-persia-achaemenid",
-      "type": "defined",
+      "type": "undefined",
       "metadata": {
         "note": "Alexander conquers the Persian Empire"
       }
@@ -2120,15 +2065,6 @@ Timeline.create(
       "type": "undefined",
       "metadata": {
         "note": "Punic Wars determine Mediterranean dominance"
-      }
-    },
-    {
-      "id": "conn-rome-egypt",
-      "fromId": "period-rome",
-      "toId": "period-egypt",
-      "type": "defined",
-      "metadata": {
-        "note": "Rome conquers Ptolemaic Egypt, ending ancient Egyptian civilization"
       }
     },
     {
@@ -2183,15 +2119,6 @@ Timeline.create(
       "type": "undefined",
       "metadata": {
         "note": "Gupta Empire revives Indian imperial tradition after Mauryan decline"
-      }
-    },
-    {
-      "id": "conn-macedon-maurya",
-      "fromId": "period-macedon",
-      "toId": "period-maurya",
-      "type": "undefined",
-      "metadata": {
-        "note": "Chandragupta Maurya rises after Alexander's invasion of India"
       }
     },
     {
@@ -2411,15 +2338,6 @@ Timeline.create(
       }
     },
     {
-      "id": "conn-chalcolithic-uruk",
-      "fromId": "period-chalcolithic",
-      "toId": "period-uruk",
-      "type": "defined",
-      "metadata": {
-        "note": "Uruk period emerges from Chalcolithic foundations in Mesopotamia"
-      }
-    },
-    {
       "id": "conn-uruk-sumer",
       "fromId": "period-uruk",
       "toId": "period-sumer",
@@ -2429,30 +2347,12 @@ Timeline.create(
       }
     },
     {
-      "id": "conn-bronze-minoan",
-      "fromId": "period-bronze-age",
-      "toId": "period-minoan",
-      "type": "defined",
-      "metadata": {
-        "note": "Minoan civilization flourishes as a Bronze Age maritime culture"
-      }
-    },
-    {
       "id": "conn-minoan-greece",
       "fromId": "period-minoan",
       "toId": "period-greece",
-      "type": "defined",
+      "type": "undefined",
       "metadata": {
         "note": "Minoan culture influences later Greek civilization through Mycenaean intermediaries"
-      }
-    },
-    {
-      "id": "conn-bronze-shang",
-      "fromId": "period-bronze-age",
-      "toId": "period-shang",
-      "type": "defined",
-      "metadata": {
-        "note": "Shang dynasty represents China's Bronze Age civilization"
       }
     },
     {
@@ -2462,15 +2362,6 @@ Timeline.create(
       "type": "defined",
       "metadata": {
         "note": "Zhou dynasty conquers and succeeds the Shang"
-      }
-    },
-    {
-      "id": "conn-teotihuacan-maya",
-      "fromId": "period-teotihuacan",
-      "toId": "period-maya",
-      "type": "undefined",
-      "metadata": {
-        "note": "Teotihuacan exerts significant influence on Maya cities including Tikal"
       }
     },
     {
@@ -2502,4 +2393,5 @@ Timeline.create(
     }
   ]
 }
+
 )

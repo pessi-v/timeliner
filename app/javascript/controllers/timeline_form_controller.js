@@ -140,11 +140,13 @@ export default class extends Controller {
     const container = event.target.closest('[class*="space-y-4"]')
 
     const nameInput = container.querySelector('[name="period_name"]')
+    const infoInput = container.querySelector('[name="period_info"]')
     const startTimeValueInput = container.querySelector('[name="period_start_time_value"]')
     const endTimeValueInput = container.querySelector('[name="period_end_time_value"]')
     const ongoingCheckbox = container.querySelector('[name="period_ongoing"]')
 
     const name = nameInput.value
+    const info = infoInput.value
     const startTimeValue = startTimeValueInput.value
     const endTimeValue = endTimeValueInput.value
     const ongoing = ongoingCheckbox.checked
@@ -167,6 +169,10 @@ export default class extends Controller {
       startTime: startTime
     }
 
+    if (info) {
+      period.info = info
+    }
+
     // Only add endTime if it has a value
     if (ongoing) {
       period.endTime = new Date().toISOString()
@@ -184,6 +190,7 @@ export default class extends Controller {
 
     // Clear inputs
     nameInput.value = ""
+    infoInput.value = ""
     startTimeValueInput.value = ""
     endTimeValueInput.value = ""
     ongoingCheckbox.checked = false
@@ -216,9 +223,11 @@ export default class extends Controller {
     const container = event.target.closest('[class*="space-y-4"]')
 
     const nameInput = container.querySelector('[name="event_name"]')
+    const infoInput = container.querySelector('[name="event_info"]')
     const timeValueInput = container.querySelector('[name="event_time_value"]')
 
     const name = nameInput.value
+    const info = infoInput.value
     const timeValue = timeValueInput.value
 
     // Get selected unit checkbox
@@ -237,12 +246,17 @@ export default class extends Controller {
       time: time
     }
 
+    if (info) {
+      eventData.info = info
+    }
+
     this.events.push(eventData)
     this.renderEvents()
     this.updateJSON()
 
     // Clear inputs
     nameInput.value = ""
+    infoInput.value = ""
     timeValueInput.value = ""
 
     // Uncheck all unit checkboxes
@@ -318,6 +332,7 @@ export default class extends Controller {
           <span class="text-sm text-gray-600 ml-2">
             (${this.formatTime(period.startTime)} → ${this.formatTime(period.endTime)})
           </span>
+          ${period.info ? `<p class="text-sm text-gray-500 mt-1">${period.info}</p>` : ''}
         </div>
         <button
           type="button"
@@ -339,6 +354,7 @@ export default class extends Controller {
         <div>
           <strong>${event.name}</strong>
           <span class="text-sm text-gray-600 ml-2">(${this.formatTime(event.time)})</span>
+          ${event.info ? `<p class="text-sm text-gray-500 mt-1">${event.info}</p>` : ''}
         </div>
         <button
           type="button"

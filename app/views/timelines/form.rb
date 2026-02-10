@@ -91,6 +91,16 @@ module Views
                 end
 
                 div do
+                  label(class: "block text-sm font-medium mb-1") { "Info" }
+                  textarea(
+                    name: "period_info",
+                    rows: 2,
+                    placeholder: "Additional information about this period",
+                    class: "flex min-h-[60px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  )
+                end
+
+                div do
                   label(class: "block text-sm font-medium mb-1") { "Start Time" }
                   input(
                     type: "text",
@@ -225,6 +235,16 @@ module Views
                     type: "text",
                     name: "event_name",
                     class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  )
+                end
+
+                div do
+                  label(class: "block text-sm font-medium mb-1") { "Info" }
+                  textarea(
+                    name: "event_info",
+                    rows: 2,
+                    placeholder: "Additional information about this event",
+                    class: "flex min-h-[60px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                   )
                 end
 

@@ -21,7 +21,7 @@ module RubyUI
     def default_attrs
       {
         data: {
-          action: ["click->ruby-ui--command#open", @keybindings.join(" ")]
+          action: [ "click->ruby-ui--command#open", @keybindings.join(" ") ]
         }
       }
     end

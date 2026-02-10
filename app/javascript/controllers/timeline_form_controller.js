@@ -9,13 +9,22 @@ export default class extends Controller {
     "connectorsList",
     "connectorsSection",
     "endTime",
-    "validationMessages"
+    "validationMessages",
+    "periodAddButton",
+    "periodCancelButton",
+    "eventAddButton",
+    "eventCancelButton",
+    "connectorAddButton",
+    "connectorCancelButton"
   ]
 
   connect() {
     this.periods = []
     this.events = []
     this.connectors = []
+    this.editingPeriodIndex = null
+    this.editingEventIndex = null
+    this.editingConnectorIndex = null
     this.loadExistingData()
     this.updateJSON()
   }
@@ -140,11 +149,13 @@ export default class extends Controller {
     const container = event.target.closest('[class*="space-y-4"]')
 
     const nameInput = container.querySelector('[name="period_name"]')
+    const infoInput = container.querySelector('[name="period_info"]')
     const startTimeValueInput = container.querySelector('[name="period_start_time_value"]')
     const endTimeValueInput = container.querySelector('[name="period_end_time_value"]')
     const ongoingCheckbox = container.querySelector('[name="period_ongoing"]')
 
     const name = nameInput.value
+    const info = infoInput.value
     const startTimeValue = startTimeValueInput.value
     const endTimeValue = endTimeValueInput.value
     const ongoing = ongoingCheckbox.checked
@@ -167,6 +178,10 @@ export default class extends Controller {
       startTime: startTime
     }
 
+    if (info) {
+      period.info = info
+    }
+
     // Only add endTime if it has a value
     if (ongoing) {
       period.endTime = new Date().toISOString()
@@ -177,22 +192,23 @@ export default class extends Controller {
     }
     // If neither ongoing nor endTimeValue, endTime is omitted (ongoing period without explicit end)
 
-    this.periods.push(period)
+    if (this.editingPeriodIndex !== null) {
+      period.id = this.periods[this.editingPeriodIndex].id
+      this.periods[this.editingPeriodIndex] = period
+      this.editingPeriodIndex = null
+      this.periodAddButtonTarget.textContent = "Add Period"
+      this.periodCancelButtonTarget.classList.add("hidden")
+    } else {
+      this.periods.push(period)
+    }
+
     this.renderPeriods()
     this.updateJSON()
     this.toggleConnectorsSection()
 
     // Clear inputs
-    nameInput.value = ""
-    startTimeValueInput.value = ""
-    endTimeValueInput.value = ""
-    ongoingCheckbox.checked = false
+    this.clearPeriodForm(container)
     endTimeValueInput.disabled = false
-
-    // Uncheck all unit checkboxes
-    container.querySelectorAll('[name="period_start_time_unit"], [name="period_end_time_unit"]').forEach(cb => {
-      cb.checked = false
-    })
   }
 
   removePeriod(event) {
@@ -216,9 +232,11 @@ export default class extends Controller {
     const container = event.target.closest('[class*="space-y-4"]')
 
     const nameInput = container.querySelector('[name="event_name"]')
+    const infoInput = container.querySelector('[name="event_info"]')
     const timeValueInput = container.querySelector('[name="event_time_value"]')
 
     const name = nameInput.value
+    const info = infoInput.value
     const timeValue = timeValueInput.value
 
     // Get selected unit checkbox
@@ -237,18 +255,25 @@ export default class extends Controller {
       time: time
     }
 
-    this.events.push(eventData)
+    if (info) {
+      eventData.info = info
+    }
+
+    if (this.editingEventIndex !== null) {
+      eventData.id = this.events[this.editingEventIndex].id
+      this.events[this.editingEventIndex] = eventData
+      this.editingEventIndex = null
+      this.eventAddButtonTarget.textContent = "Add Event"
+      this.eventCancelButtonTarget.classList.add("hidden")
+    } else {
+      this.events.push(eventData)
+    }
+
     this.renderEvents()
     this.updateJSON()
 
     // Clear inputs
-    nameInput.value = ""
-    timeValueInput.value = ""
-
-    // Uncheck all unit checkboxes
-    container.querySelectorAll('[name="event_time_unit"]').forEach(cb => {
-      cb.checked = false
-    })
+    this.clearEventForm(container)
   }
 
   removeEvent(event) {
@@ -279,14 +304,21 @@ export default class extends Controller {
       type: indirect ? "undefined" : "defined"
     }
 
-    this.connectors.push(connector)
+    if (this.editingConnectorIndex !== null) {
+      connector.id = this.connectors[this.editingConnectorIndex].id
+      this.connectors[this.editingConnectorIndex] = connector
+      this.editingConnectorIndex = null
+      this.connectorAddButtonTarget.textContent = "Add Connector"
+      this.connectorCancelButtonTarget.classList.add("hidden")
+    } else {
+      this.connectors.push(connector)
+    }
+
     this.renderConnectors()
     this.updateJSON()
 
     // Reset selections
-    fromSelect.value = ""
-    toSelect.value = ""
-    indirectCheckbox.checked = false
+    this.clearConnectorForm(container)
   }
 
   removeConnector(event) {
@@ -308,6 +340,113 @@ export default class extends Controller {
     }
   }
 
+  populateTimeFields(container, inputName, unitName, timeValue) {
+    const input = container.querySelector(`[name="${inputName}"]`)
+    const unitCheckboxes = container.querySelectorAll(`[name="${unitName}"]`)
+
+    unitCheckboxes.forEach(cb => cb.checked = false)
+
+    if (typeof timeValue === 'object' && timeValue !== null && timeValue.value !== undefined) {
+      input.value = timeValue.value
+      const matchingCheckbox = container.querySelector(`[name="${unitName}"][value="${timeValue.unit}"]`)
+      if (matchingCheckbox) matchingCheckbox.checked = true
+    } else if (timeValue) {
+      input.value = timeValue
+    } else {
+      input.value = ""
+    }
+  }
+
+  clearPeriodForm(container) {
+    container.querySelector('[name="period_name"]').value = ""
+    container.querySelector('[name="period_info"]').value = ""
+    container.querySelector('[name="period_start_time_value"]').value = ""
+    container.querySelector('[name="period_end_time_value"]').value = ""
+    container.querySelector('[name="period_ongoing"]').checked = false
+    container.querySelectorAll('[name="period_start_time_unit"], [name="period_end_time_unit"]').forEach(cb => cb.checked = false)
+  }
+
+  clearEventForm(container) {
+    container.querySelector('[name="event_name"]').value = ""
+    container.querySelector('[name="event_info"]').value = ""
+    container.querySelector('[name="event_time_value"]').value = ""
+    container.querySelectorAll('[name="event_time_unit"]').forEach(cb => cb.checked = false)
+  }
+
+  clearConnectorForm(container) {
+    container.querySelector('[name="connector_from"]').value = ""
+    container.querySelector('[name="connector_to"]').value = ""
+    container.querySelector('[name="connector_indirect"]').checked = false
+  }
+
+  editPeriod(event) {
+    const index = parseInt(event.params.index)
+    const period = this.periods[index]
+    this.editingPeriodIndex = index
+
+    const container = this.periodAddButtonTarget.closest('[class*="space-y-4"]')
+    container.querySelector('[name="period_name"]').value = period.name
+    container.querySelector('[name="period_info"]').value = period.info || ""
+    this.populateTimeFields(container, "period_start_time_value", "period_start_time_unit", period.startTime)
+    this.populateTimeFields(container, "period_end_time_value", "period_end_time_unit", period.endTime)
+    container.querySelector('[name="period_ongoing"]').checked = false
+
+    this.periodAddButtonTarget.textContent = "Save Period"
+    this.periodCancelButtonTarget.classList.remove("hidden")
+  }
+
+  cancelEditPeriod() {
+    this.editingPeriodIndex = null
+    const container = this.periodAddButtonTarget.closest('[class*="space-y-4"]')
+    this.clearPeriodForm(container)
+    this.periodAddButtonTarget.textContent = "Add Period"
+    this.periodCancelButtonTarget.classList.add("hidden")
+  }
+
+  editEvent(event) {
+    const index = parseInt(event.params.index)
+    const evt = this.events[index]
+    this.editingEventIndex = index
+
+    const container = this.eventAddButtonTarget.closest('[class*="space-y-4"]')
+    container.querySelector('[name="event_name"]').value = evt.name
+    container.querySelector('[name="event_info"]').value = evt.info || ""
+    this.populateTimeFields(container, "event_time_value", "event_time_unit", evt.time)
+
+    this.eventAddButtonTarget.textContent = "Save Event"
+    this.eventCancelButtonTarget.classList.remove("hidden")
+  }
+
+  cancelEditEvent() {
+    this.editingEventIndex = null
+    const container = this.eventAddButtonTarget.closest('[class*="space-y-4"]')
+    this.clearEventForm(container)
+    this.eventAddButtonTarget.textContent = "Add Event"
+    this.eventCancelButtonTarget.classList.add("hidden")
+  }
+
+  editConnector(event) {
+    const index = parseInt(event.params.index)
+    const connector = this.connectors[index]
+    this.editingConnectorIndex = index
+
+    const container = this.connectorAddButtonTarget.closest('[class*="space-y-4"]')
+    container.querySelector('[name="connector_from"]').value = connector.fromId
+    container.querySelector('[name="connector_to"]').value = connector.toId
+    container.querySelector('[name="connector_indirect"]').checked = connector.type === "undefined"
+
+    this.connectorAddButtonTarget.textContent = "Save Connector"
+    this.connectorCancelButtonTarget.classList.remove("hidden")
+  }
+
+  cancelEditConnector() {
+    this.editingConnectorIndex = null
+    const container = this.connectorAddButtonTarget.closest('[class*="space-y-4"]')
+    this.clearConnectorForm(container)
+    this.connectorAddButtonTarget.textContent = "Add Connector"
+    this.connectorCancelButtonTarget.classList.add("hidden")
+  }
+
   renderPeriods() {
     if (!this.hasPeriodsListTarget) return
 
@@ -318,15 +457,26 @@ export default class extends Controller {
           <span class="text-sm text-gray-600 ml-2">
             (${this.formatTime(period.startTime)} → ${this.formatTime(period.endTime)})
           </span>
+          ${period.info ? `<p class="text-sm text-gray-500 mt-1">${period.info}</p>` : ''}
         </div>
-        <button
-          type="button"
-          data-action="click->timeline-form#removePeriod"
-          data-timeline-form-index-param="${index}"
-          class="text-red-600 hover:text-red-800 text-sm"
-        >
-          Remove
-        </button>
+        <div class="flex gap-2">
+          <button
+            type="button"
+            data-action="click->timeline-form#editPeriod"
+            data-timeline-form-index-param="${index}"
+            class="text-blue-600 hover:text-blue-800 text-sm"
+          >
+            Edit
+          </button>
+          <button
+            type="button"
+            data-action="click->timeline-form#removePeriod"
+            data-timeline-form-index-param="${index}"
+            class="text-red-600 hover:text-red-800 text-sm"
+          >
+            Remove
+          </button>
+        </div>
       </div>
     `).join("")
   }
@@ -339,15 +489,26 @@ export default class extends Controller {
         <div>
           <strong>${event.name}</strong>
           <span class="text-sm text-gray-600 ml-2">(${this.formatTime(event.time)})</span>
+          ${event.info ? `<p class="text-sm text-gray-500 mt-1">${event.info}</p>` : ''}
         </div>
-        <button
-          type="button"
-          data-action="click->timeline-form#removeEvent"
-          data-timeline-form-index-param="${index}"
-          class="text-red-600 hover:text-red-800 text-sm"
-        >
-          Remove
-        </button>
+        <div class="flex gap-2">
+          <button
+            type="button"
+            data-action="click->timeline-form#editEvent"
+            data-timeline-form-index-param="${index}"
+            class="text-blue-600 hover:text-blue-800 text-sm"
+          >
+            Edit
+          </button>
+          <button
+            type="button"
+            data-action="click->timeline-form#removeEvent"
+            data-timeline-form-index-param="${index}"
+            class="text-red-600 hover:text-red-800 text-sm"
+          >
+            Remove
+          </button>
+        </div>
       </div>
     `).join("")
   }
@@ -368,14 +529,24 @@ export default class extends Controller {
             <strong>${toPeriod?.name || connector.toId}</strong>
             <span class="text-sm text-gray-600">${typeLabel}</span>
           </div>
-          <button
-            type="button"
-            data-action="click->timeline-form#removeConnector"
-            data-timeline-form-index-param="${index}"
-            class="text-red-600 hover:text-red-800 text-sm"
-          >
-            Remove
-          </button>
+          <div class="flex gap-2">
+            <button
+              type="button"
+              data-action="click->timeline-form#editConnector"
+              data-timeline-form-index-param="${index}"
+              class="text-blue-600 hover:text-blue-800 text-sm"
+            >
+              Edit
+            </button>
+            <button
+              type="button"
+              data-action="click->timeline-form#removeConnector"
+              data-timeline-form-index-param="${index}"
+              class="text-red-600 hover:text-red-800 text-sm"
+            >
+              Remove
+            </button>
+          </div>
         </div>
       `
     }).join("")

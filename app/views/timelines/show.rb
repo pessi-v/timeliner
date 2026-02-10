@@ -11,14 +11,12 @@ module Views
       end
 
       def view_template
-        
           div(class: "max-w-7xl mx-auto px-4 sm:px-6 lg:w-full px-8 py-8") do
             render_header
             render_stats
             render_timeline_viewer
             render_raw_json
           end
-        
       end
 
       private

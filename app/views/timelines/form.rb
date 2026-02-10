@@ -91,6 +91,16 @@ module Views
                 end
 
                 div do
+                  label(class: "block text-sm font-medium mb-1") { "Info" }
+                  textarea(
+                    name: "period_info",
+                    rows: 2,
+                    placeholder: "Additional information about this period",
+                    class: "flex min-h-[60px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  )
+                end
+
+                div do
                   label(class: "block text-sm font-medium mb-1") { "Start Time" }
                   input(
                     type: "text",
@@ -189,13 +199,20 @@ module Views
                 end
               end
 
-              button(
-                type: "button",
-                data_action: "click->timeline-form#addPeriod",
-                class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-              ) { "Add Period" }
-            
-            
+              div(class: "flex gap-2") do
+                button(
+                  type: "button",
+                  data_action: "click->timeline-form#addPeriod",
+                  data_timeline_form_target: "periodAddButton",
+                  class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                ) { "Add Period" }
+                button(
+                  type: "button",
+                  data_action: "click->timeline-form#cancelEditPeriod",
+                  data_timeline_form_target: "periodCancelButton",
+                  class: "hidden inline-flex items-center justify-center rounded-md text-sm font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2"
+                ) { "Cancel" }
+              end
             end
 
             # List of existing periods
@@ -225,6 +242,16 @@ module Views
                     type: "text",
                     name: "event_name",
                     class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  )
+                end
+
+                div do
+                  label(class: "block text-sm font-medium mb-1") { "Info" }
+                  textarea(
+                    name: "event_info",
+                    rows: 2,
+                    placeholder: "Additional information about this event",
+                    class: "flex min-h-[60px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                   )
                 end
 
@@ -271,11 +298,20 @@ module Views
                 end
               end
 
-              button(
-                type: "button",
-                data_action: "click->timeline-form#addEvent",
-                class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-              ) { "Add Event" }
+              div(class: "flex gap-2") do
+                button(
+                  type: "button",
+                  data_action: "click->timeline-form#addEvent",
+                  data_timeline_form_target: "eventAddButton",
+                  class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                ) { "Add Event" }
+                button(
+                  type: "button",
+                  data_action: "click->timeline-form#cancelEditEvent",
+                  data_timeline_form_target: "eventCancelButton",
+                  class: "hidden inline-flex items-center justify-center rounded-md text-sm font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2"
+                ) { "Cancel" }
+              end
             end
 
             # List of existing events
@@ -335,11 +371,20 @@ module Views
                 end
               end
 
-              button(
-                type: "button",
-                data_action: "click->timeline-form#addConnector",
-                class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-              ) { "Add Connector" }
+              div(class: "flex gap-2") do
+                button(
+                  type: "button",
+                  data_action: "click->timeline-form#addConnector",
+                  data_timeline_form_target: "connectorAddButton",
+                  class: "inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                ) { "Add Connector" }
+                button(
+                  type: "button",
+                  data_action: "click->timeline-form#cancelEditConnector",
+                  data_timeline_form_target: "connectorCancelButton",
+                  class: "hidden inline-flex items-center justify-center rounded-md text-sm font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2"
+                ) { "Cancel" }
+              end
             end
 
             # List of existing connectors

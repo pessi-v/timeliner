@@ -67,7 +67,7 @@ class TimelineValidatorService
 
     # Build the complete script by injecting thymeline code as a string variable
     # We need to escape the code properly to make it a JavaScript string
-    escaped_thymeline_code = thymeline_code.gsub('\\', '\\\\\\\\').gsub("'", "\\\\'").gsub("\n", "\\n")
+    escaped_thymeline_code = thymeline_code.gsub("\\", "\\\\\\\\").gsub("'", "\\\\'").gsub("\n", "\\n")
 
     complete_script = <<~JAVASCRIPT
       var THYMELINE_CODE = '#{escaped_thymeline_code}';

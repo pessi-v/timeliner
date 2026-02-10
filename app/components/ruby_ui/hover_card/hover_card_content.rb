@@ -3,7 +3,7 @@
 module RubyUI
   class HoverCardContent < Base
     def view_template(&block)
-      template(data: {ruby_ui__hover_card_target: "content"}) do
+      template(data: { ruby_ui__hover_card_target: "content" }) do
         div(**attrs, &block)
       end
     end

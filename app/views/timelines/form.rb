@@ -213,8 +213,6 @@ module Views
                   class: "hidden inline-flex items-center justify-center rounded-md text-sm font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2"
                 ) { "Cancel" }
               end
-            
-            
             end
 
             # List of existing periods

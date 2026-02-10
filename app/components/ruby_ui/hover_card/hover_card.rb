@@ -4,7 +4,7 @@ module RubyUI
   class HoverCard < Base
     def initialize(option: {}, **attrs)
       @options = option
-      @options[:delay] ||= [500, 250]
+      @options[:delay] ||= [ 500, 250 ]
       @options[:trigger] ||= "mouseenter focus click"
       super(**attrs)
     end

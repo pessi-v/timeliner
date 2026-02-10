@@ -9,9 +9,9 @@
 #   end
 
 Timeline.create(
-  name:"The history of socialism",
-  description:"blah blah blah",
-  timeline_data:{
+  name: "The history of socialism",
+  description: "blah blah blah",
+  timeline_data: {
   "events": [
     {
       "id": "event-manifesto",
@@ -377,7 +377,7 @@ Timeline.create(
 )
 
 Timeline.create(
-  name:"Development of Life",
+  name: "Development of Life",
   timeline_data: {
   "events": [
     {
@@ -900,7 +900,7 @@ Timeline.create(
 
 Timeline.create(
   name: "History of Civilizations",
-  timeline_data:{
+  timeline_data: {
   "events": [
     {
       "id": "event-lomekwi-tools",

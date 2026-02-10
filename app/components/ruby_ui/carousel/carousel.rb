@@ -17,7 +17,7 @@ module RubyUI
 
     def default_attrs
       {
-        class: ["relative group", orientation_classes],
+        class: [ "relative group", orientation_classes ],
         role: "region",
         aria_roledescription: "carousel",
         data: {

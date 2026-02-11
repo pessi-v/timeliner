@@ -15,7 +15,8 @@ export default class extends Controller {
     "eventAddButton",
     "eventCancelButton",
     "connectorAddButton",
-    "connectorCancelButton"
+    "connectorCancelButton",
+    "eventRelatesToSelect"
   ]
 
   connect() {
@@ -129,6 +130,7 @@ export default class extends Controller {
       this.renderEvents()
       this.renderConnectors()
       this.toggleConnectorsSection()
+      this.updateEventRelatesToSelect()
     } catch (error) {
       // Start fresh if JSON is invalid
       this.periods = []
@@ -205,6 +207,7 @@ export default class extends Controller {
     this.renderPeriods()
     this.updateJSON()
     this.toggleConnectorsSection()
+    this.updateEventRelatesToSelect()
 
     // Clear inputs
     this.clearPeriodForm(container)
@@ -225,6 +228,7 @@ export default class extends Controller {
     this.renderConnectors()
     this.updateJSON()
     this.toggleConnectorsSection()
+    this.updateEventRelatesToSelect()
   }
 
   addEvent(event) {
@@ -233,10 +237,12 @@ export default class extends Controller {
 
     const nameInput = container.querySelector('[name="event_name"]')
     const infoInput = container.querySelector('[name="event_info"]')
+    const relatesToSelect = container.querySelector('[name="event_relates_to"]')
     const timeValueInput = container.querySelector('[name="event_time_value"]')
 
     const name = nameInput.value
     const info = infoInput.value
+    const relatesTo = relatesToSelect.value
     const timeValue = timeValueInput.value
 
     // Get selected unit checkbox
@@ -257,6 +263,10 @@ export default class extends Controller {
 
     if (info) {
       eventData.info = info
+    }
+
+    if (relatesTo) {
+      eventData.relatesTo = relatesTo
     }
 
     if (this.editingEventIndex !== null) {
@@ -369,6 +379,7 @@ export default class extends Controller {
   clearEventForm(container) {
     container.querySelector('[name="event_name"]').value = ""
     container.querySelector('[name="event_info"]').value = ""
+    container.querySelector('[name="event_relates_to"]').value = ""
     container.querySelector('[name="event_time_value"]').value = ""
     container.querySelectorAll('[name="event_time_unit"]').forEach(cb => cb.checked = false)
   }
@@ -411,6 +422,7 @@ export default class extends Controller {
     const container = this.eventAddButtonTarget.closest('[class*="space-y-4"]')
     container.querySelector('[name="event_name"]').value = evt.name
     container.querySelector('[name="event_info"]').value = evt.info || ""
+    container.querySelector('[name="event_relates_to"]').value = evt.relatesTo || ""
     this.populateTimeFields(container, "event_time_value", "event_time_unit", evt.time)
 
     this.eventAddButtonTarget.textContent = "Save Event"
@@ -484,11 +496,14 @@ export default class extends Controller {
   renderEvents() {
     if (!this.hasEventsListTarget) return
 
-    this.eventsListTarget.innerHTML = this.events.map((event, index) => `
+    this.eventsListTarget.innerHTML = this.events.map((event, index) => {
+      const relatedPeriod = event.relatesTo ? this.periods.find(p => p.id === event.relatesTo) : null
+      return `
       <div class="flex items-center justify-between p-3 bg-gray-50 rounded-md">
         <div>
           <strong>${event.name}</strong>
           <span class="text-sm text-gray-600 ml-2">(${this.formatTime(event.time)})</span>
+          ${relatedPeriod ? `<span class="text-sm text-indigo-600 ml-2">→ ${relatedPeriod.name}</span>` : ''}
           ${event.info ? `<p class="text-sm text-gray-500 mt-1">${event.info}</p>` : ''}
         </div>
         <div class="flex gap-2">
@@ -510,7 +525,7 @@ export default class extends Controller {
           </button>
         </div>
       </div>
-    `).join("")
+    `}).join("")
   }
 
   renderConnectors() {
@@ -575,6 +590,18 @@ export default class extends Controller {
 
     fromSelect.innerHTML = '<option value="">Select period...</option>' + options
     toSelect.innerHTML = '<option value="">Select period...</option>' + options
+  }
+
+  updateEventRelatesToSelect() {
+    if (!this.hasEventRelatesToSelectTarget) return
+
+    const currentValue = this.eventRelatesToSelectTarget.value
+    const options = this.periods.map(p =>
+      `<option value="${p.id}">${p.name}</option>`
+    ).join("")
+
+    this.eventRelatesToSelectTarget.innerHTML = '<option value="">None</option>' + options
+    this.eventRelatesToSelectTarget.value = currentValue
   }
 
   updateJSON() {

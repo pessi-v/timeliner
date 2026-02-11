@@ -256,6 +256,17 @@ module Views
                 end
 
                 div do
+                  label(class: "block text-sm font-medium mb-1") { "Relates to Period" }
+                  select(
+                    name: "event_relates_to",
+                    data_timeline_form_target: "eventRelatesToSelect",
+                    class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  ) do
+                    option(value: "") { "None" }
+                  end
+                end
+
+                div do
                   label(class: "block text-sm font-medium mb-1") { "Time" }
                   input(
                     type: "text",

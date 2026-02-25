@@ -9,7 +9,8 @@ export default class extends Controller {
   connect() {
     console.log("Timeline controller connected");
     console.log("Timeline data:", this.dataValue);
-    this.renderTimeline();
+    // Defer until after the flex layout has been calculated so offsetHeight is correct
+    requestAnimationFrame(() => this.renderTimeline());
   }
 
   cleanupTimelineData(data) {
@@ -34,22 +35,22 @@ export default class extends Controller {
     // Clear any existing content
     this.element.innerHTML = "";
 
-    // Use parent container's width
-    const parentWidth = this.element.offsetWidth;
-    const timelineWidth = parentWidth > 0 ? parentWidth : 800; // Fallback to 800 if parent width is 0
-    const timelineHeight = 600;
-
-    // Create a container for the timeline
+    // Create the container first and attach it so CSS layout resolves before we measure
     const container = document.createElement("div");
     container.id = "timeline-container";
     container.style.width = "100%";
-    container.style.height = `${timelineHeight}px`;
+    container.style.height = "100%";
     this.element.appendChild(container);
+
+    // Read dimensions from the attached container — clientHeight reflects the true
+    // flex-allocated height of the canvas element at this point
+    const timelineWidth = container.clientWidth > 0 ? container.clientWidth : 800;
+    const timelineHeight = container.clientHeight > 0 ? container.clientHeight : 600;
 
     try {
       console.log("Creating TimelineRenderer...");
       console.log(
-        `Parent width: ${parentWidth}px, Timeline width: ${timelineWidth}px`
+        `Container: ${timelineWidth}px × ${timelineHeight}px`
       );
 
       // Initialize the timeline renderer

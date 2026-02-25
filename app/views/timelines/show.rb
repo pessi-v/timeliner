@@ -11,12 +11,12 @@ module Views
       end
 
       def view_template
-          div(class: "max-w-7xl mx-auto px-4 sm:px-6 lg:w-full px-8 py-8") do
-            render_header
-            render_stats
-            render_timeline_viewer
-            render_raw_json
-          end
+        div(class: "h-dvh flex flex-col px-8 py-8 overflow-hidden") do
+          render_header
+          render_stats
+          render_timeline_viewer
+          render_raw_json
+        end
       end
 
       private
@@ -50,13 +50,16 @@ module Views
       end
 
       def render_timeline_viewer
-        Card(class: "mb-8") do
-          CardContent(class: "pt-6") do
-            div(
-              data_controller: "timeline",
-              data_timeline_data_value: @timeline.timeline_data.to_json,
-              class: "w-full"
-            )
+        div(class: "flex-1 min-h-0 mb-4") do
+          Card(class: "h-full") do
+            CardContent(class: "pt-6 h-full flex flex-col") do
+              div(
+                id: "timeline_canvas",
+                data_controller: "timeline",
+                data_timeline_data_value: @timeline.timeline_data.to_json,
+                class: "w-full flex-1 min-h-0"
+              )
+            end
           end
         end
       end

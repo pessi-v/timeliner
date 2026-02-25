@@ -3,6 +3,7 @@ class Timeline < ApplicationRecord
   validates :timeline_data, presence: true
   validate :validate_timeline_data_structure
   validate :validate_with_thymeline
+  belongs_to :user, optional: true
 
   # Ensure timeline_data always has the required keys
   before_validation :ensure_timeline_data_structure
@@ -113,7 +114,7 @@ class Timeline < ApplicationRecord
 
     valid_units = %w[bce ce mya years-ago]
     unless valid_units.include?(time_obj["unit"])
-      errors.add(:timeline_data, "#{field_name} unit must be one of: #{valid_units.join(', ')}")
+      errors.add(:timeline_data, "#{field_name} unit must be one of: #{valid_units.join(", ")}")
     end
   end
 

@@ -1,5 +1,6 @@
 class TimelinesController < ApplicationController
-  before_action :set_timeline, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_timeline, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_authentication, only: [:index, :show]
 
   def index
     timelines = Timeline.all.order(created_at: :desc)
@@ -77,7 +78,7 @@ class TimelinesController < ApplicationController
   end
 
   def timeline_params
-    permitted = params.expect(timeline: [ :name, :description, :timeline_data ])
+    permitted = params.expect(timeline: [:name, :description, :timeline_data])
 
     # Parse timeline_data if it's a string
     if permitted[:timeline_data].is_a?(String)

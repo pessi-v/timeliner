@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_02_25_184938) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_25_190101) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -29,7 +29,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_25_184938) do
     t.string "name", null: false
     t.jsonb "timeline_data", default: {"events"=>[], "periods"=>[], "connectors"=>[]}, null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["timeline_data"], name: "index_timelines_on_timeline_data", using: :gin
+    t.index ["user_id"], name: "index_timelines_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,4 +43,5 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_25_184938) do
   end
 
   add_foreign_key "sessions", "users"
+  add_foreign_key "timelines", "users"
 end

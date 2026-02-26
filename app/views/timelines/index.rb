@@ -33,6 +33,19 @@ module Views
           Heading(level: 1) { "Timelines" }
 
           div(class: "flex gap-3") do
+            if helpers.authenticated?
+              link_to session_path, data: { turbo_method: :delete } do
+                Button(variant: :secondary) { "Log out" }
+              end
+            else
+              link_to new_registration_path do
+                Button(variant: :secondary) { "Sign up" }
+              end
+              link_to new_session_path do
+                Button(variant: :secondary) { "Log in" }
+              end
+            end
+
             if @timelines.any?
               Button(
                 variant: :secondary,

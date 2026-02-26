@@ -25,321 +25,321 @@ Timeline.create(
       {
         id: "event-lomekwi-tools",
         name: "Oldest Known Stone Tools (Lomekwi)",
-        time: {value: 3.3, unit: "mya"},
+        time: { value: 3.3, unit: "mya" },
         info: "Stone tools discovered at Lomekwi 3 in Kenya represent the oldest known manufactured artifacts. These pre-Oldowan tools, likely made by Australopithecus or Kenyanthropus, predate the emergence of the Homo genus and push back the origins of tool-making by 700,000 years."
       },
       {
         id: "event-genus-homo",
         name: "Genus Homo Appears",
-        time: {value: 2.8, unit: "mya"},
+        time: { value: 2.8, unit: "mya" },
         relates_to: "period-lower-paleolithic",
         info: "The first members of the genus Homo emerge in East Africa, distinguished from earlier Australopithecines by larger brains and more sophisticated tool use. Homo habilis ('handy man') is among the earliest species, associated with systematic tool manufacturing."
       },
       {
         id: "event-oldowan-tools",
         name: "Oldowan Tool Industry Begins",
-        time: {value: 2.6, unit: "mya"},
+        time: { value: 2.6, unit: "mya" },
         relates_to: "period-lower-paleolithic",
         info: "The Oldowan stone tool tradition emerges in East Africa, associated with early Homo species. These simple choppers and flakes represent the first standardized tool-making technology, persisting for over a million years."
       },
       {
         id: "event-homo-erectus-fire",
         name: "Fire Use at Bnot Ya'akov Bridge",
-        time: {value: 790000, unit: "years-ago"},
+        time: { value: 790000, unit: "years-ago" },
         relates_to: "period-lower-paleolithic",
         info: "Evidence from Bnot Ya'akov Bridge in Israel provides the most widely accepted early claim of controlled fire use by Homo erectus or Homo ergaster. Fire enables cooking, warmth, protection, and extends human activity into the night."
       },
       {
         id: "event-first-fire",
         name: "Earliest Evidence of Controlled Fire",
-        time: {value: 1, unit: "mya"},
+        time: { value: 1, unit: "mya" },
         info: "Evidence from Wonderwerk Cave in South Africa suggests hominins were using controlled fire by this time. Fire provided warmth, protection from predators, and the ability to cook food—potentially enabling the evolution of larger brains."
       },
       {
         id: "event-oldest-homo-sapiens",
         name: "Oldest Homo Sapiens Fossils",
-        time: {value: 300000, unit: "years-ago"},
+        time: { value: 300000, unit: "years-ago" },
         info: "Fossils from Jebel Irhoud in Morocco represent the earliest known anatomically modern humans. These remains push back the origin of our species by 100,000 years and suggest Homo sapiens evolved across Africa rather than in a single location."
       },
       {
         id: "event-oldest-burial",
         name: "Earliest Known Intentional Burial",
-        time: {value: 100000, unit: "years-ago"},
+        time: { value: 100000, unit: "years-ago" },
         relates_to: "period-middle-paleolithic",
         info: "Burials at Qafzeh Cave in Israel provide the earliest clear evidence of intentional human burial, with bodies placed in prepared graves with grave goods. This suggests early symbolic thinking and possibly beliefs about death and afterlife."
       },
       {
         id: "event-invention-clothing",
         name: "Invention of Clothing",
-        time: {value: 170000, unit: "years-ago"},
+        time: { value: 170000, unit: "years-ago" },
         relates_to: "period-middle-paleolithic",
         info: "Genetic studies of body lice suggest clothing was invented between 170,000 and 83,000 years ago. Clothing enabled humans to survive in colder climates and was essential for migration into Europe, Asia, and eventually the Americas."
       },
       {
         id: "event-toba-eruption",
         name: "Toba Supervolcano Eruption",
-        time: {value: 75000, unit: "years-ago"},
+        time: { value: 75000, unit: "years-ago" },
         relates_to: "period-middle-paleolithic",
         info: "The Toba supervolcano in Sumatra erupts in one of Earth's largest known volcanic events, ejecting 2,800 cubic kilometers of material. Some researchers propose this caused a volcanic winter and human population bottleneck, though this remains debated."
       },
       {
         id: "event-out-of-africa",
         name: "Major Human Migration Out of Africa",
-        time: {value: 70000, unit: "years-ago"},
+        time: { value: 70000, unit: "years-ago" },
         info: "Homo sapiens begins the major wave of migration out of Africa that will eventually colonize every continent. Genetic evidence suggests a population bottleneck around this time, possibly linked to the Toba supervolcanic eruption."
       },
       {
         id: "event-oldest-figurative-art",
         name: "Oldest Figurative Art (Sulawesi Cave)",
-        time: {value: 45500, unit: "years-ago"},
+        time: { value: 45500, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "A cave painting of a warty pig in Sulawesi, Indonesia represents the oldest known figurative artwork. This discovery proves that symbolic artistic expression emerged independently in both Europe and Southeast Asia."
       },
       {
         id: "event-australia-settlement",
         name: "Human Settlement of Australia",
-        time: {value: 40000, unit: "years-ago"},
+        time: { value: 40000, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "Indigenous Australians become the first humans to colonize Australia, crossing from Southeast Asia via land bridges and short sea voyages. This represents the earliest known sea crossing by humans and the colonization of an entirely new continent."
       },
       {
         id: "event-new-guinea-settlement",
         name: "Human Settlement of New Guinea",
-        time: {value: 30500, unit: "years-ago"},
+        time: { value: 30500, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "New Guinea is populated by colonists from Asia or Australia. The island's inhabitants will later independently develop agriculture, making it one of the few places where farming originated independently."
       },
       {
         id: "event-gravettian-inventions",
         name: "Gravettian Culture and Inventions",
-        time: {value: 28000, unit: "years-ago"},
+        time: { value: 28000, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "The Gravettian culture flourishes in Europe, producing sophisticated tools including harpoons, needles, and saws. This period sees the creation of famous Venus figurines and advances in clothing and shelter construction."
       },
       {
         id: "event-last-glacial-maximum",
         name: "Last Glacial Maximum",
-        time: {value: 26500, unit: "years-ago"},
+        time: { value: 26500, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "Global ice sheets reach their maximum extent, with sea levels dropping 120 meters below present. Ice covers much of North America and northern Europe. Human populations retreat to refugia, later recolonizing as ice melts."
       },
       {
         id: "event-oldest-settlement",
         name: "Oldest Permanent Settlement (Dolní Věstonice)",
-        time: {value: 25000, unit: "years-ago"},
+        time: { value: 25000, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "A settlement of huts built from rocks and mammoth bones near Dolní Věstonice in Moravia (Czech Republic) represents the oldest known permanent human settlement found by archaeologists."
       },
       {
         id: "event-lion-man",
         name: "Lion-Man of Hohlenstein-Stadel Carved",
-        time: {value: 40000, unit: "years-ago"},
+        time: { value: 40000, unit: "years-ago" },
         info: "The Lion-Man, a 31cm ivory sculpture of a human-lion hybrid found in Germany, is one of the oldest known examples of figurative art and demonstrates sophisticated symbolic thinking and craftsmanship in Ice Age Europe."
       },
       {
         id: "event-oldest-flute",
         name: "Oldest Known Musical Instrument",
-        time: {value: 40000, unit: "years-ago"},
+        time: { value: 40000, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "Bone flutes discovered in Hohle Fels cave in Germany, made from bird bones and mammoth ivory, represent the earliest known musical instruments. Music likely played important roles in social bonding and ritual."
       },
       {
         id: "event-chauvet-cave",
         name: "Chauvet Cave Paintings Created",
-        time: {value: 36000, unit: "years-ago"},
+        time: { value: 36000, unit: "years-ago" },
         info: "Artists in southern France create sophisticated paintings of lions, mammoths, rhinoceroses, and other animals in Chauvet Cave. The artistic skill and use of perspective rivals much later artwork."
       },
       {
         id: "event-lascaux-cave",
         name: "Lascaux Cave Paintings Created",
-        time: {value: 17000, unit: "years-ago"},
+        time: { value: 17000, unit: "years-ago" },
         info: "The famous Lascaux cave paintings in France depict horses, deer, bison, and other animals with remarkable artistry. The 'Hall of Bulls' contains some of the most impressive prehistoric art ever discovered."
       },
       {
         id: "event-oldest-pottery",
         name: "Oldest Known Pottery",
-        time: {value: 20000, unit: "years-ago"},
+        time: { value: 20000, unit: "years-ago" },
         info: "Ceramic fragments from Xianrendong Cave in China represent the oldest known pottery, created by hunter-gatherers during the Last Glacial Maximum. This predates agriculture and the traditional association of pottery with settled life."
       },
       {
         id: "event-natufian-culture",
         name: "Natufian Culture Flourishes",
-        time: {value: 12500, unit: "bce"},
+        time: { value: 12500, unit: "bce" },
         relates_to: "period-mesolithic",
         info: "The Natufian culture emerges in the Levant as sedentary hunter-gatherers who may have cultivated wild rye. Living in permanent villages, they represent a crucial transition between mobile foraging and settled agricultural life."
       },
       {
         id: "event-agriculture-origins",
         name: "Emergence of Agriculture",
-        time: {value: 12000, unit: "years-ago"},
+        time: { value: 12000, unit: "years-ago" },
         relates_to: "period-neolithic",
         info: "The Neolithic Revolution begins independently in multiple regions as humans start domesticating plants and animals. The Fertile Crescent sees early cultivation of wheat and barley, transforming human society from nomadic to settled."
       },
       {
         id: "event-first-figs",
         name: "First Cultivated Figs",
-        time: {value: 9400, unit: "bce"},
+        time: { value: 9400, unit: "bce" },
         relates_to: "period-neolithic",
         info: "Parthenocarpic (sterile) figs cultivated at Gilgal I in the Jordan Valley may represent the earliest known instance of agriculture, predating the domestication of wheat, barley, and legumes by about a thousand years."
       },
       {
         id: "event-jericho-tower",
         name: "Tower of Jericho Built",
-        time: {value: 8000, unit: "bce"},
+        time: { value: 8000, unit: "bce" },
         relates_to: "period-neolithic",
         info: "A round stone tower 8.5 meters high and 8.5 meters in diameter is built at Jericho, one of the oldest known stone monuments. Its purpose remains debated—possibly defensive, ceremonial, or for flood protection."
       },
       {
         id: "event-mehrgarh-founded",
         name: "Mehrgarh Settlement Founded",
-        time: {value: 7000, unit: "bce"},
+        time: { value: 7000, unit: "bce" },
         relates_to: "period-mehrgarh",
         info: "One of the earliest Neolithic settlements in South Asia is established at Mehrgarh in Balochistan (modern Pakistan). Inhabitants cultivate wheat and barley, domesticate cattle, sheep and goats, and develop mud-brick architecture. This pre-Harappan culture lays the foundation for the later Indus Valley Civilization."
       },
       {
         id: "event-mehrgarh-pottery",
         name: "Mehrgarh Pottery and Craft Production",
-        time: {value: 5500, unit: "bce"},
+        time: { value: 5500, unit: "bce" },
         relates_to: "period-mehrgarh",
         info: "Mehrgarh develops sophisticated pottery, bead-making, and metallurgy. Artisans create distinctive ceramics and drill tiny beads from semi-precious stones. Evidence of early dentistry—drilling teeth to treat decay—appears at this site, the oldest known dental work."
       },
       {
         id: "event-catal-huyuk",
         name: "Çatalhöyük Settlement Founded",
-        time: {value: 7500, unit: "bce"},
+        time: { value: 7500, unit: "bce" },
         relates_to: "period-neolithic",
         info: "One of the world's first proto-cities emerges in Anatolia, housing up to 10,000 people. Residents enter homes through roof hatches, decorate walls with murals and reliefs, and bury dead beneath house floors."
       },
       {
         id: "event-copper-smelting",
         name: "Earliest Copper Smelting",
-        time: {value: 5000, unit: "bce"},
+        time: { value: 5000, unit: "bce" },
         relates_to: "period-chalcolithic",
         info: "Copper smelting begins in the Balkans and possibly independently in other regions. The Vinča culture in Serbia provides some of the oldest securely dated evidence of high-temperature copper working."
       },
       {
         id: "event-proto-cuneiform",
         name: "Proto-Cuneiform Writing Appears",
-        time: {value: 3700, unit: "bce"},
+        time: { value: 3700, unit: "bce" },
         relates_to: "period-chalcolithic",
         info: "Pictographic proto-writing appears in Sumer for record-keeping, representing the earliest known writing system. Initially used for accounting and administration, it will evolve into full cuneiform script."
       },
       {
         id: "event-otzi-iceman",
         name: "Ötzi the Iceman Dies",
-        time: {value: 3300, unit: "bce"},
+        time: { value: 3300, unit: "bce" },
         relates_to: "period-chalcolithic",
         info: "A man later known as Ötzi dies in the Alps, his body preserved by ice until discovery in 1991. His copper axe, clothing, and equipment provide extraordinary insight into Chalcolithic life. Evidence suggests he was murdered."
       },
       {
         id: "event-skara-brae",
         name: "Skara Brae Settlement Built",
-        time: {value: 3100, unit: "bce"},
+        time: { value: 3100, unit: "bce" },
         relates_to: "period-neolithic",
         info: "A stone-built Neolithic village is constructed in Orkney, Scotland, featuring ten clustered houses with stone hearths, beds, cupboards, and a sophisticated drainage system. Occupied for 600 years before abandonment."
       },
       {
         id: "event-stonehenge",
         name: "Stonehenge Construction Begins",
-        time: {value: 3000, unit: "bce"},
+        time: { value: 3000, unit: "bce" },
         relates_to: "period-neolithic",
         info: "Construction begins on Stonehenge in England, initially as a circular ditch and bank with 56 wooden posts. The famous stone circle is added later, with some stones transported from Wales, 150 miles away."
       },
       {
         id: "event-yamnaya-expansion",
         name: "Yamnaya Migrations Begin",
-        time: {value: 3000, unit: "bce"},
+        time: { value: 3000, unit: "bce" },
         relates_to: "period-bronze-age",
         info: "Pastoral nomads from the Pontic-Caspian steppe begin expanding into Europe and Asia. These migrations spread Yamnaya ancestry and are thought to have carried Indo-European languages across much of Eurasia."
       },
       {
         id: "event-cuneiform",
         name: "Invention of Cuneiform Writing",
-        time: {value: 3400, unit: "bce"},
+        time: { value: 3400, unit: "bce" },
         relates_to: "period-sumer",
         info: "The Sumerians develop cuneiform, one of the earliest writing systems. Initially used for record-keeping, it evolves to record literature, law, and science. Cuneiform is adapted by subsequent Mesopotamian civilizations."
       },
       {
         id: "event-pyramids-giza",
         name: "Great Pyramids of Giza Built",
-        time: {value: 2560, unit: "bce"},
+        time: { value: 2560, unit: "bce" },
         relates_to: "period-egypt",
         info: "Pharaoh Khufu commissions the Great Pyramid, the largest of the Giza pyramids. These monuments demonstrate Egypt's organizational capacity, engineering knowledge, and religious beliefs about the afterlife."
       },
       {
         id: "event-code-hammurabi",
         name: "Code of Hammurabi",
-        time: {value: 1754, unit: "bce"},
+        time: { value: 1754, unit: "bce" },
         relates_to: "period-babylon",
         info: "Babylonian king Hammurabi promulgates one of the oldest known written legal codes. Its 282 laws cover family, commerce, and criminal matters, establishing the principle of 'an eye for an eye'."
       },
       {
         id: "event-bronze-age-collapse",
         name: "Bronze Age Collapse",
-        time: {value: 1200, unit: "bce"},
+        time: { value: 1200, unit: "bce" },
         relates_to: "period-hittite",
         info: "A catastrophic period sees the fall of multiple Mediterranean civilizations including the Hittites, Mycenaeans, and others. Causes may include climate change, invasions by 'Sea Peoples', and systemic failures. Ushers in a centuries-long 'dark age'."
       },
       {
         id: "event-founding-rome",
         name: "Traditional Founding of Rome",
-        time: {value: 753, unit: "bce"},
+        time: { value: 753, unit: "bce" },
         relates_to: "period-rome",
         info: "According to legend, Romulus founds Rome after killing his twin brother Remus. Archaeological evidence suggests the settlement actually developed gradually from earlier Latin and Etruscan communities."
       },
       {
         id: "event-first-olympics",
         name: "First Olympic Games",
-        time: {value: 776, unit: "bce"},
+        time: { value: 776, unit: "bce" },
         relates_to: "period-greece",
         info: "The first recorded Olympic Games are held at Olympia in honor of Zeus. The games become a unifying event for Greek city-states, establishing a four-year cycle and a tradition lasting over a millennium."
       },
       {
         id: "event-athenian-democracy",
         name: "Athenian Democracy Established",
-        time: {value: 508, unit: "bce"},
+        time: { value: 508, unit: "bce" },
         relates_to: "period-greece",
         info: "Cleisthenes reforms Athenian government, creating the world's first known democracy. Citizens participate directly in legislation and judicial decisions, though women, slaves, and foreigners are excluded."
       },
       {
         id: "event-persian-wars",
         name: "Persian Wars Begin",
-        time: {value: 499, unit: "bce"},
+        time: { value: 499, unit: "bce" },
         relates_to: "period-persia-achaemenid",
         info: "The Ionian Revolt against Persian rule sparks decades of conflict between Greece and Persia. Key battles at Marathon, Thermopylae, and Salamis become legendary, shaping Greek identity and Western historical memory."
       },
       {
         id: "event-alexander-conquest",
         name: "Alexander Conquers Persia",
-        time: {value: 330, unit: "bce"},
+        time: { value: 330, unit: "bce" },
         relates_to: "period-macedon",
         info: "Alexander the Great defeats Darius III and conquers the Achaemenid Empire. His campaigns spread Greek culture from Egypt to India, initiating the Hellenistic period of cultural fusion."
       },
       {
         id: "event-qin-unification",
         name: "Qin Unifies China",
-        time: {value: 221, unit: "bce"},
+        time: { value: 221, unit: "bce" },
         relates_to: "period-qin",
         info: "Qin Shi Huang conquers rival states and establishes China's first unified empire. He standardizes weights, measures, currency, and writing, and begins construction of the Great Wall. His brutal reign ends after just 15 years."
       },
       {
         id: "event-punic-wars-end",
         name: "Rome Destroys Carthage",
-        time: {value: 146, unit: "bce"},
+        time: { value: 146, unit: "bce" },
         relates_to: "period-rome",
         info: "Rome defeats Carthage in the Third Punic War, destroying the city and salting the earth. Rome becomes the dominant power in the Mediterranean, controlling North Africa, Spain, and beyond."
       },
       {
         id: "event-julius-caesar-assassination",
         name: "Assassination of Julius Caesar",
-        time: {value: 44, unit: "bce"},
+        time: { value: 44, unit: "bce" },
         relates_to: "period-rome",
         info: "Julius Caesar is assassinated by senators fearing his dictatorial power. His death triggers civil war and ultimately the end of the Roman Republic, as his adopted heir Octavian becomes Emperor Augustus."
       },
       {
         id: "event-silk-road-established",
         name: "Silk Road Trade Flourishes",
-        time: {value: 130, unit: "bce"},
+        time: { value: 130, unit: "bce" },
         relates_to: "period-han",
         info: "The Han Dynasty establishes regular diplomatic and trade contact with Central Asia following Zhang Qian's expeditions. The Silk Road connects China with Persia, India, and eventually Rome, facilitating exchange of goods, ideas, and religions."
       },
@@ -394,7 +394,7 @@ Timeline.create(
       {
         id: "event-maya-classic-collapse",
         name: "Classic Maya Collapse",
-        time: {value: 900, unit: "ce"},
+        time: { value: 900, unit: "ce" },
         relates_to: "period-maya",
         info: "Major Maya cities in the southern lowlands are abandoned over several decades. Causes may include drought, warfare, overpopulation, and environmental degradation. Maya civilization continues in the northern Yucatan."
       },
@@ -519,182 +519,182 @@ Timeline.create(
       {
         id: "period-lower-paleolithic",
         name: "Lower Paleolithic",
-        startTime: {value: 3.3, unit: "mya"},
-        endTime: {value: 300000, unit: "years-ago"},
+        startTime: { value: 3.3, unit: "mya" },
+        endTime: { value: 300000, unit: "years-ago" },
         info: "The earliest and longest period of the Stone Age, beginning with the first stone tools at Lomekwi in Kenya. Early hominins including Homo habilis and Homo erectus develop increasingly sophisticated tool-making techniques, from simple Oldowan choppers to the more refined Acheulean hand axes. Fire is controlled, and hominins spread from Africa to Asia and Europe."
       },
       {
         id: "period-middle-paleolithic",
         name: "Middle Paleolithic",
-        startTime: {value: 300000, unit: "years-ago"},
-        endTime: {value: 50000, unit: "years-ago"},
+        startTime: { value: 300000, unit: "years-ago" },
+        endTime: { value: 50000, unit: "years-ago" },
         info: "The era when anatomically modern Homo sapiens emerges in Africa. Neanderthals thrive in Europe and Western Asia, developing the Mousterian tool culture. This period sees the first definitive evidence of controlled fire use, intentional burials suggesting symbolic thought, invention of clothing, and the beginning of behavioral modernity including language."
       },
       {
         id: "period-upper-paleolithic",
         name: "European Upper Paleolithic",
-        startTime: {value: 50000, unit: "years-ago"},
-        endTime: {value: 12000, unit: "years-ago"},
+        startTime: { value: 50000, unit: "years-ago" },
+        endTime: { value: 12000, unit: "years-ago" },
         info: "A period of rapid cultural innovation as modern humans spread across the globe. Cave art flourishes at sites like Chauvet and Lascaux. Sophisticated tools including harpoons, needles, and saws are invented. The first permanent settlements appear, humans colonize Australia and the Americas, and Neanderthals go extinct."
       },
       {
         id: "period-mesolithic",
         name: "Mesolithic",
-        startTime: {value: 12000, unit: "years-ago"},
-        endTime: {value: 7000, unit: "bce"},
+        startTime: { value: 12000, unit: "years-ago" },
+        endTime: { value: 7000, unit: "bce" },
         info: "The 'Middle Stone Age' bridges the Paleolithic and Neolithic, beginning as glaciers retreat at the end of the Pleistocene. Characterized by microlithic tools, fishing tackle, and the first canoes. The Natufian culture in the Levant represents sedentary hunter-gatherers who may have begun cultivating wild cereals."
       },
       {
         id: "period-neolithic",
         name: "Neolithic",
-        startTime: {value: 10200, unit: "bce"},
-        endTime: {value: 4500, unit: "bce"},
+        startTime: { value: 10200, unit: "bce" },
+        endTime: { value: 4500, unit: "bce" },
         info: "The 'New Stone Age' witnesses the Neolithic Revolution: the transition from hunting-gathering to agriculture and settled life. Crops and animals are domesticated, permanent villages emerge, pottery is invented, and megalithic monuments like Stonehenge are built. This transformation begins in the Fertile Crescent and spreads gradually across the world."
       },
       {
         id: "period-chalcolithic",
         name: "Chalcolithic (Copper Age)",
-        startTime: {value: 5000, unit: "bce"},
-        endTime: {value: 3300, unit: "bce"},
+        startTime: { value: 5000, unit: "bce" },
+        endTime: { value: 3300, unit: "bce" },
         info: "A transitional period between the Stone Age and Bronze Age when copper metallurgy first appears alongside stone tools. Copper smelting may have been invented independently in multiple locations. The period sees the rise of the first fortified settlements, increasing social stratification, and the earliest proto-writing systems."
       },
       {
         id: "period-bronze-age",
         name: "Bronze Age",
-        startTime: {value: 3300, unit: "bce"},
-        endTime: {value: 1200, unit: "bce"},
+        startTime: { value: 3300, unit: "bce" },
+        endTime: { value: 1200, unit: "bce" },
         info: "The discovery that adding tin to copper creates harder bronze revolutionizes tool and weapon making. The first true civilizations with writing emerge: Sumer, Egypt, the Indus Valley, and Shang China. Long-distance trade networks develop to obtain rare tin. The period ends with a widespread collapse around 1200 BCE affecting many Mediterranean civilizations."
       },
       {
         id: "period-iron-age",
         name: "Iron Age",
-        startTime: {value: 1200, unit: "bce"},
-        endTime: {value: 500, unit: "bce"},
+        startTime: { value: 1200, unit: "bce" },
+        endTime: { value: 500, unit: "bce" },
         info: "Iron working technology spreads, democratizing access to metal tools and weapons since iron ore is far more common than tin. This period sees the rise of classical civilizations in Greece, Rome, Persia, India, and China. Writing becomes widespread, and many regions transition from prehistory to recorded history."
       },
       {
         id: "period-gobekli-tepe",
         name: "Göbekli Tepe Culture",
-        startTime: {value: 9500, unit: "bce"},
-        endTime: {value: 8000, unit: "bce"},
+        startTime: { value: 9500, unit: "bce" },
+        endTime: { value: 8000, unit: "bce" },
         info: "A pre-pottery Neolithic culture in southeastern Anatolia that constructed Göbekli Tepe, the world's oldest known monumental architecture. Hunter-gatherers erected massive stone circles with T-shaped pillars carved with animals and symbols, challenging assumptions that organized religion and monumental building required settled agricultural societies. The site was deliberately buried around 8000 BCE for unknown reasons."
       },
       {
         id: "period-uruk",
         name: "Uruk Period",
-        startTime: {value: 4000, unit: "bce"},
-        endTime: {value: 3100, unit: "bce"},
+        startTime: { value: 4000, unit: "bce" },
+        endTime: { value: 3100, unit: "bce" },
         info: "The period when Uruk became the world's first true city, with a population reaching 40,000-80,000. Uruk saw the development of proto-cuneiform writing, cylinder seals, monumental architecture (including temples to Inanna), and the first bureaucratic administration. The 'Uruk expansion' spread Mesopotamian culture across the Near East."
       },
       {
         id: "period-sumer",
         name: "Sumerian Civilization",
-        startTime: {value: 4500, unit: "bce"},
-        endTime: {value: 1900, unit: "bce"},
+        startTime: { value: 4500, unit: "bce" },
+        endTime: { value: 1900, unit: "bce" },
         info: "The world's first urban civilization emerges in southern Mesopotamia (modern Iraq). Sumerians invent cuneiform writing, the wheel, and the plow. City-states like Ur, Uruk, and Eridu develop complex governments, religions, and the first known literary work, the Epic of Gilgamesh."
       },
       {
         id: "period-minoan",
         name: "Minoan Civilization",
-        startTime: {value: 3000, unit: "bce"},
-        endTime: {value: 1100, unit: "bce"},
+        startTime: { value: 3000, unit: "bce" },
+        endTime: { value: 1100, unit: "bce" },
         info: "Europe's first advanced civilization, centered on the island of Crete. The Minoans built elaborate palace complexes at Knossos, Phaistos, and Malia, developed Linear A script (still undeciphered), and created distinctive art featuring bulls, marine life, and acrobatic sports. Their civilization influenced the later Mycenaean Greeks."
       },
       {
         id: "period-egypt",
         name: "Ancient Egypt",
-        startTime: {value: 3150, unit: "bce"},
-        endTime: {value: 30, unit: "bce"},
+        startTime: { value: 3150, unit: "bce" },
+        endTime: { value: 30, unit: "bce" },
         info: "One of history's longest-lasting civilizations, unified under pharaohs who are considered living gods. Egyptians build pyramids, develop hieroglyphic writing, and create a rich religious tradition focused on the afterlife. The civilization endures through multiple dynasties until Roman conquest."
       },
       {
         id: "period-mehrgarh",
         name: "Mehrgarh Culture",
-        startTime: {value: 7000, unit: "bce"},
-        endTime: {value: 2600, unit: "bce"},
+        startTime: { value: 7000, unit: "bce" },
+        endTime: { value: 2600, unit: "bce" },
         info: "A pre-Harappan Neolithic culture centered at Mehrgarh in Balochistan, representing the earliest farming community in South Asia. Over 4,000 years, inhabitants develop agriculture, animal husbandry, pottery, metallurgy, and long-distance trade. The culture shows continuous evolution leading directly to the Indus Valley Civilization."
       },
       {
         id: "period-indus",
         name: "Indus Valley Civilization",
-        startTime: {value: 3300, unit: "bce"},
-        endTime: {value: 1300, unit: "bce"},
+        startTime: { value: 3300, unit: "bce" },
+        endTime: { value: 1300, unit: "bce" },
         info: "A sophisticated Bronze Age civilization in South Asia with major cities at Mohenjo-daro and Harappa. Features advanced urban planning, standardized weights and measures, and sophisticated drainage systems. Its script remains undeciphered, and its decline is still debated."
       },
       {
         id: "period-akkad",
         name: "Akkadian Empire",
-        startTime: {value: 2334, unit: "bce"},
-        endTime: {value: 2154, unit: "bce"},
+        startTime: { value: 2334, unit: "bce" },
+        endTime: { value: 2154, unit: "bce" },
         info: "The world's first empire, founded by Sargon of Akkad who conquers Sumerian city-states and creates a unified state. Akkadian becomes the lingua franca of the ancient Near East. The empire introduces new administrative techniques but collapses after about 180 years."
       },
       {
         id: "period-babylon",
         name: "Babylonian Empire",
-        startTime: {value: 1894, unit: "bce"},
-        endTime: {value: 539, unit: "bce"},
+        startTime: { value: 1894, unit: "bce" },
+        endTime: { value: 539, unit: "bce" },
         info: "A Mesopotamian civilization centered on Babylon. Under Hammurabi, it produces one of history's first law codes. After decline and Assyrian rule, the Neo-Babylonian Empire under Nebuchadnezzar II builds the Hanging Gardens and destroys Jerusalem before falling to Persia."
       },
       {
         id: "period-phoenicia",
         name: "Phoenician Civilization",
-        startTime: {value: 1500, unit: "bce"},
-        endTime: {value: 332, unit: "bce"},
+        startTime: { value: 1500, unit: "bce" },
+        endTime: { value: 332, unit: "bce" },
         info: "Seafaring traders from the Levant who establish a commercial network across the Mediterranean. Phoenicians found Carthage and other colonies, produce purple dye, and create an alphabet that becomes the ancestor of Greek, Latin, Arabic, and Hebrew scripts."
       },
       {
         id: "period-shang",
         name: "Shang Dynasty",
-        startTime: {value: 1600, unit: "bce"},
-        endTime: {value: 1046, unit: "bce"},
+        startTime: { value: 1600, unit: "bce" },
+        endTime: { value: 1046, unit: "bce" },
         info: "China's first historically verified dynasty, known for bronze casting, oracle bone divination, and the earliest Chinese writing. The Shang ruled from a series of capitals in the Yellow River valley, with Yin (near Anyang) as their final capital. Their sophisticated bronze vessels and jade artifacts demonstrate advanced craftsmanship."
       },
       {
         id: "period-zhou",
         name: "Zhou Dynasty",
-        startTime: {value: 1046, unit: "bce"},
-        endTime: {value: 256, unit: "bce"},
+        startTime: { value: 1046, unit: "bce" },
+        endTime: { value: 256, unit: "bce" },
         info: "China's longest dynasty, introducing the Mandate of Heaven concept. The early Western Zhou maintains centralized control, but the Eastern Zhou period sees fragmentation into competing states. This era produces Confucius, Laozi, and other foundational Chinese philosophers."
       },
       {
         id: "period-greece",
         name: "Ancient Greece",
-        startTime: {value: 800, unit: "bce"},
-        endTime: {value: 146, unit: "bce"},
+        startTime: { value: 800, unit: "bce" },
+        endTime: { value: 146, unit: "bce" },
         info: "A civilization of independent city-states that develops democracy, philosophy, theater, and the Olympic Games. Athens and Sparta lead the defense against Persian invasion. Greek culture spreads through Alexander's conquests, becoming the foundation of Western civilization."
       },
       {
         id: "period-persia-achaemenid",
         name: "Achaemenid Persian Empire",
-        startTime: {value: 550, unit: "bce"},
-        endTime: {value: 330, unit: "bce"},
+        startTime: { value: 550, unit: "bce" },
+        endTime: { value: 330, unit: "bce" },
         info: "The first Persian Empire, founded by Cyrus the Great. At its height under Darius I, it spans from Egypt to India, the largest empire yet seen. Known for religious tolerance, efficient administration via satrapies, and the Royal Road communication system."
       },
       {
         id: "period-carthage",
         name: "Carthaginian Empire",
-        startTime: {value: 814, unit: "bce"},
-        endTime: {value: 146, unit: "bce"},
+        startTime: { value: 814, unit: "bce" },
+        endTime: { value: 146, unit: "bce" },
         info: "A Phoenician colony that becomes a major Mediterranean power. Carthage controls trade routes and North African territories, coming into conflict with Rome in the Punic Wars. General Hannibal famously crosses the Alps with elephants. Rome ultimately destroys the city entirely."
       },
       {
         id: "period-qin",
         name: "Qin Dynasty",
-        startTime: {value: 221, unit: "bce"},
-        endTime: {value: 206, unit: "bce"},
+        startTime: { value: 221, unit: "bce" },
+        endTime: { value: 206, unit: "bce" },
         info: "China's first imperial dynasty unifies the warring states under Qin Shi Huang, the 'First Emperor.' Brutal but transformative, the Qin standardizes writing, currency, and measurements, builds the Great Wall's first sections, and creates the Terracotta Army. Collapses shortly after the emperor's death."
       },
       {
         id: "period-han",
         name: "Han Dynasty",
-        startTime: {value: 206, unit: "bce"},
-        endTime: {value: 220, unit: "ce"},
+        startTime: { value: 206, unit: "bce" },
+        endTime: { value: 220, unit: "ce" },
         info: "One of China's golden ages, so influential that ethnic Chinese still call themselves 'Han people.' The dynasty establishes Confucianism as state ideology, creates the civil service examination, expands the Silk Road trade, and invents paper. Considered a classical era of Chinese civilization."
       },
       {
         id: "period-rome",
         name: "Roman Civilization",
-        startTime: {value: 753, unit: "bce"},
+        startTime: { value: 753, unit: "bce" },
         endTime: "0476-09-04",
         info: "From a small Italian city-state to an empire spanning three continents. Rome evolves from monarchy to republic to empire, developing law, engineering, and military systems that influence the world for millennia. Latin becomes the basis for Romance languages; Roman law underlies Western legal traditions."
       },
@@ -708,15 +708,15 @@ Timeline.create(
       {
         id: "period-mississippian",
         name: "Mississippian Culture",
-        startTime: {value: 800, unit: "ce"},
-        endTime: {value: 1600, unit: "ce"},
+        startTime: { value: 800, unit: "ce" },
+        endTime: { value: 1600, unit: "ce" },
         info: "A mound-building Native American civilization of the Midwestern, Eastern, and Southeastern United States. Centered on maize agriculture and characterized by large earthen platform mounds, shell-tempered pottery, and chiefdom-level political organization. Cahokia, near modern St. Louis, was its largest city."
       },
       {
         id: "period-cahokia",
         name: "Cahokia",
-        startTime: {value: 1050, unit: "ce"},
-        endTime: {value: 1350, unit: "ce"},
+        startTime: { value: 1050, unit: "ce" },
+        endTime: { value: 1350, unit: "ce" },
         info: "The largest pre-Columbian settlement north of Mexico, located near present-day St. Louis. At its peak around 1100 CE, Cahokia had a population of 10,000-20,000, with Monks Mound being the largest earthen structure in the Americas. The city declined and was abandoned before European contact for reasons still debated."
       },
       {
@@ -757,15 +757,15 @@ Timeline.create(
       {
         id: "period-ghana",
         name: "Ghana Empire",
-        startTime: {value: 300, unit: "ce"},
-        endTime: {value: 1200, unit: "ce"},
+        startTime: { value: 300, unit: "ce" },
+        endTime: { value: 1200, unit: "ce" },
         info: "The first major West African empire, controlling trans-Saharan gold and salt trade. Not related to modern Ghana, it was located in present-day Mauritania and Mali. Ghana's wealth inspires later empires including Mali and Songhai."
       },
       {
         id: "period-mali",
         name: "Mali Empire",
-        startTime: {value: 1235, unit: "ce"},
-        endTime: {value: 1600, unit: "ce"},
+        startTime: { value: 1235, unit: "ce" },
+        endTime: { value: 1600, unit: "ce" },
         info: "A West African empire that succeeds Ghana, controlling gold and salt trade. Under Mansa Musa, Mali becomes fabulously wealthy; his pilgrimage to Mecca reportedly crashes gold prices in Egypt. Timbuktu becomes a center of Islamic learning."
       },
       {
@@ -1467,84 +1467,84 @@ Timeline.create(
         fromId: "period-utopian-socialism",
         toId: "period-first-international",
         type: "defined",
-        metadata: {note: "Scientific socialism emerges from critique of utopian socialism"}
+        metadata: { note: "Scientific socialism emerges from critique of utopian socialism" }
       },
       {
         id: "conn-first-second",
         fromId: "period-first-international",
         toId: "period-second-international",
         type: "undefined",
-        metadata: {note: "Internationals as successive attempts at workers' coordination"}
+        metadata: { note: "Internationals as successive attempts at workers' coordination" }
       },
       {
         id: "conn-second-third",
         fromId: "period-second-international",
         toId: "period-third-international",
         type: "undefined",
-        metadata: {note: "Third International founded in opposition to Second's 'social patriotism'"}
+        metadata: { note: "Third International founded in opposition to Second's 'social patriotism'" }
       },
       {
         id: "conn-third-fourth",
         fromId: "period-third-international",
         toId: "period-fourth-international",
         type: "undefined",
-        metadata: {note: "Fourth International founded in opposition to Stalinist Comintern"}
+        metadata: { note: "Fourth International founded in opposition to Stalinist Comintern" }
       },
       {
         id: "conn-ussr-ddr",
         fromId: "period-ussr",
         toId: "period-ddr",
         type: "defined",
-        metadata: {note: "DDR established in Soviet occupation zone"}
+        metadata: { note: "DDR established in Soviet occupation zone" }
       },
       {
         id: "conn-ussr-yugoslavia",
         fromId: "period-ussr",
         toId: "period-yugoslavia",
         type: "defined",
-        metadata: {note: "Yugoslav partisans supported by USSR, later independent"}
+        metadata: { note: "Yugoslav partisans supported by USSR, later independent" }
       },
       {
         id: "conn-ccp-prc",
         fromId: "period-ccp-revolution",
         toId: "period-prc",
         type: "defined",
-        metadata: {note: "Revolutionary period leads to state formation"}
+        metadata: { note: "Revolutionary period leads to state formation" }
       },
       {
         id: "conn-revolution-ussr",
         fromId: "period-first-international",
         toId: "period-ussr",
         type: "defined",
-        metadata: {note: "Marxist tradition from First International shapes Bolshevism"}
+        metadata: { note: "Marxist tradition from First International shapes Bolshevism" }
       },
       {
         id: "conn-cnt-iww",
         fromId: "period-iww",
         toId: "period-cnt-fai",
         type: "undefined",
-        metadata: {note: "Anarcho-syndicalist tradition connects IWW and CNT"}
+        metadata: { note: "Anarcho-syndicalist tradition connects IWW and CNT" }
       },
       {
         id: "conn-cuba-sandinistas",
         fromId: "period-cuba",
         toId: "period-sandinistas",
         type: "defined",
-        metadata: {note: "Cuban support for Sandinista revolution"}
+        metadata: { note: "Cuban support for Sandinista revolution" }
       },
       {
         id: "conn-sandinistas-bolivarian",
         fromId: "period-sandinistas",
         toId: "period-bolivarian",
         type: "undefined",
-        metadata: {note: "Latin American revolutionary tradition continues"}
+        metadata: { note: "Latin American revolutionary tradition continues" }
       },
       {
         id: "conn-allende-bolivarian",
         fromId: "period-allende",
         toId: "period-bolivarian",
         type: "undefined",
-        metadata: {note: "Democratic socialist tradition in Latin America"}
+        metadata: { note: "Democratic socialist tradition in Latin America" }
       }
     ]
   }
@@ -1621,272 +1621,272 @@ Timeline.create(
       {
         id: "event-earth-formation",
         name: "Formation of Earth",
-        time: {value: 4540, unit: "mya"},
+        time: { value: 4540, unit: "mya" },
         info: "Earth forms from the solar nebula through accretion of dust and gas. The early Earth is molten, bombarded by asteroids, and has no atmosphere or oceans. The collision that forms the Moon occurs shortly after."
       },
       {
         id: "event-first-life",
         name: "First Life Appears",
-        time: {value: 3800, unit: "mya"},
+        time: { value: 3800, unit: "mya" },
         relates_to: "period-archean",
         info: "The earliest evidence of life appears in the form of simple prokaryotic cells (bacteria and archaea). These single-celled organisms likely emerge near hydrothermal vents or in warm shallow pools, using chemical energy rather than sunlight."
       },
       {
         id: "event-photosynthesis",
         name: "First Photosynthesis",
-        time: {value: 3500, unit: "mya"},
+        time: { value: 3500, unit: "mya" },
         relates_to: "period-archean",
         info: "Cyanobacteria evolve oxygenic photosynthesis, the ability to convert sunlight, water, and carbon dioxide into energy while releasing oxygen. Stromatolites—layered structures built by cyanobacterial mats—become common in shallow seas."
       },
       {
         id: "event-great-oxygenation",
         name: "Great Oxygenation Event",
-        time: {value: 2400, unit: "mya"},
+        time: { value: 2400, unit: "mya" },
         relates_to: "period-proterozoic",
         info: "Oxygen produced by cyanobacteria accumulates in Earth's atmosphere, rising from trace amounts to about 2%. This transforms the planet, rusting iron in the oceans, creating a new atmosphere, and causing a mass extinction of anaerobic life."
       },
       {
         id: "event-first-eukaryotes",
         name: "First Eukaryotic Cells",
-        time: {value: 2100, unit: "mya"},
+        time: { value: 2100, unit: "mya" },
         relates_to: "period-proterozoic",
         info: "Eukaryotes—cells with a nucleus and membrane-bound organelles—evolve through endosymbiosis. Mitochondria originate as engulfed bacteria that become permanent energy-producing partners. This innovation enables larger, more complex cells."
       },
       {
         id: "event-sexual-reproduction",
         name: "Sexual Reproduction Evolves",
-        time: {value: 1200, unit: "mya"},
+        time: { value: 1200, unit: "mya" },
         relates_to: "period-proterozoic",
         info: "Sexual reproduction emerges, enabling genetic recombination and dramatically accelerating evolution. The mixing of genes from two parents creates variation that natural selection can act upon more effectively."
       },
       {
         id: "event-first-multicellular",
         name: "First Multicellular Life",
-        time: {value: 1000, unit: "mya"},
+        time: { value: 1000, unit: "mya" },
         relates_to: "period-proterozoic",
         info: "Simple multicellular organisms appear, with cells beginning to specialize for different functions. Red and green algae are among the earliest multicellular forms, followed by early sponges and other simple animals."
       },
       {
         id: "event-snowball-earth",
         name: "Snowball Earth",
-        time: {value: 720, unit: "mya"},
+        time: { value: 720, unit: "mya" },
         relates_to: "period-proterozoic",
         info: "Earth enters a period of extreme glaciation, possibly freezing over almost entirely. Ice sheets may have reached the equator. The eventual thawing releases carbon dioxide and may have triggered conditions favorable for complex life."
       },
       {
         id: "event-ediacaran-fauna",
         name: "Ediacaran Fauna Appears",
-        time: {value: 575, unit: "mya"},
+        time: { value: 575, unit: "mya" },
         relates_to: "period-proterozoic",
         info: "The first large, complex multicellular organisms appear in the fossil record. The Ediacaran biota includes strange, quilted creatures like Dickinsonia and Charnia—soft-bodied organisms unlike anything alive today."
       },
       {
         id: "event-cambrian-explosion",
         name: "Cambrian Explosion",
-        time: {value: 538.8, unit: "mya"},
+        time: { value: 538.8, unit: "mya" },
         relates_to: "period-cambrian",
         info: "An evolutionary burst produces most major animal body plans within about 25 million years. Eyes, shells, legs, and other innovations appear. The Burgess Shale preserves extraordinary fossils including Anomalocaris, Hallucigenia, and the first chordates."
       },
       {
         id: "event-first-vertebrates",
         name: "First Vertebrates",
-        time: {value: 530, unit: "mya"},
+        time: { value: 530, unit: "mya" },
         relates_to: "period-cambrian",
         info: "The earliest vertebrates appear as small, jawless fish-like creatures. Haikouichthys, from the Cambrian of China, has a notochord, primitive skull, and segmented muscles—the basic vertebrate body plan that will give rise to all fish, amphibians, reptiles, birds, and mammals."
       },
       {
         id: "event-first-land-plants",
         name: "First Land Plants",
-        time: {value: 470, unit: "mya"},
+        time: { value: 470, unit: "mya" },
         relates_to: "period-ordovician",
         info: "Plants begin colonizing land, initially as simple moss-like forms lacking roots or vascular tissue. They transform barren rock into soil, paving the way for terrestrial ecosystems. Fungi likely assist by forming symbiotic relationships."
       },
       {
         id: "event-ordovician-extinction",
         name: "Ordovician Mass Extinction",
-        time: {value: 445, unit: "mya"},
+        time: { value: 445, unit: "mya" },
         relates_to: "period-ordovician",
         info: "The second-largest mass extinction in Earth's history kills about 85% of marine species. Caused by glaciation and falling sea levels, it devastates the trilobites, brachiopods, and other invertebrates that dominate Ordovician seas."
       },
       {
         id: "event-first-jawed-fish",
         name: "First Jawed Fish",
-        time: {value: 430, unit: "mya"},
+        time: { value: 430, unit: "mya" },
         relates_to: "period-silurian",
         info: "Jaws evolve from modified gill arches, revolutionizing vertebrate feeding. Jawed fish can bite, grasp, and process food in new ways. This innovation eventually leads to the dominance of jawed vertebrates on Earth."
       },
       {
         id: "event-first-insects",
         name: "First Insects",
-        time: {value: 410, unit: "mya"},
+        time: { value: 410, unit: "mya" },
         relates_to: "period-devonian",
         info: "Insects appear on land, evolving from crustacean-like ancestors. These six-legged arthropods will become the most diverse group of animals on Earth, eventually comprising over half of all known species."
       },
       {
         id: "event-first-amphibians",
         name: "First Amphibians",
-        time: {value: 375, unit: "mya"},
+        time: { value: 375, unit: "mya" },
         relates_to: "period-devonian",
         info: "Tiktaalik and similar 'fishapods' bridge the gap between fish and tetrapods, using sturdy fins to prop themselves up in shallow water. True amphibians like Ichthyostega soon follow, becoming the first vertebrates to walk on land."
       },
       {
         id: "event-devonian-extinction",
         name: "Late Devonian Extinction",
-        time: {value: 372, unit: "mya"},
+        time: { value: 372, unit: "mya" },
         relates_to: "period-devonian",
         info: "A prolonged extinction event kills about 75% of species over millions of years. Tropical marine species are hit hardest, including many reef-building organisms. The causes may include oxygen depletion, climate change, or asteroid impacts."
       },
       {
         id: "event-first-reptiles",
         name: "First Reptiles",
-        time: {value: 312, unit: "mya"},
+        time: { value: 312, unit: "mya" },
         relates_to: "period-carboniferous",
         info: "Reptiles evolve the amniotic egg, which can be laid on land without drying out. This breakthrough frees vertebrates from dependence on water for reproduction. Hylonomus is among the earliest known reptiles."
       },
       {
         id: "event-first-flying-insects",
         name: "Giant Flying Insects",
-        time: {value: 300, unit: "mya"},
+        time: { value: 300, unit: "mya" },
         relates_to: "period-carboniferous",
         info: "Insects take to the air, becoming the first animals to achieve powered flight. High oxygen levels allow giant forms like Meganeura, a dragonfly with a 70cm wingspan. Flight enables insects to exploit new ecological niches."
       },
       {
         id: "event-permian-extinction",
         name: "Permian Mass Extinction",
-        time: {value: 252, unit: "mya"},
+        time: { value: 252, unit: "mya" },
         relates_to: "period-permian",
         info: "The 'Great Dying' eliminates about 96% of marine species and 70% of land species—the worst mass extinction in Earth's history. Massive volcanic eruptions in Siberia trigger climate change, ocean acidification, and oxygen depletion."
       },
       {
         id: "event-first-dinosaurs",
         name: "First Dinosaurs",
-        time: {value: 233, unit: "mya"},
+        time: { value: 233, unit: "mya" },
         relates_to: "period-triassic",
         info: "Dinosaurs evolve from small, bipedal archosaurs. Early dinosaurs like Eoraptor and Herrerasaurus are modest-sized predators. They will eventually dominate terrestrial ecosystems for over 160 million years."
       },
       {
         id: "event-first-mammals",
         name: "First True Mammals",
-        time: {value: 225, unit: "mya"},
+        time: { value: 225, unit: "mya" },
         relates_to: "period-triassic",
         info: "Mammals evolve from synapsid reptiles. Early mammals are small, nocturnal insectivores, living in the shadow of dinosaurs. Their warm-blooded metabolism, fur, and milk production will prove advantageous after the dinosaurs' extinction."
       },
       {
         id: "event-triassic-extinction",
         name: "Triassic-Jurassic Extinction",
-        time: {value: 201, unit: "mya"},
+        time: { value: 201, unit: "mya" },
         relates_to: "period-triassic",
         info: "A mass extinction kills about 80% of species, including most large amphibians and many reptile groups. Volcanic activity as Pangaea breaks apart is the likely cause. Dinosaurs survive and diversify rapidly afterward."
       },
       {
         id: "event-first-birds",
         name: "First Birds",
-        time: {value: 150, unit: "mya"},
+        time: { value: 150, unit: "mya" },
         relates_to: "period-jurassic",
         info: "Archaeopteryx, discovered in Germany, shows a mix of dinosaurian and avian features: feathered wings, teeth, and a bony tail. Birds evolve from small, feathered theropod dinosaurs, making modern birds living dinosaurs."
       },
       {
         id: "event-first-flowering-plants",
         name: "First Flowering Plants",
-        time: {value: 130, unit: "mya"},
+        time: { value: 130, unit: "mya" },
         relates_to: "period-cretaceous",
         info: "Angiosperms (flowering plants) appear and begin their explosive diversification. Their flowers attract pollinators; their fruits spread seeds. By the end of the Cretaceous, they dominate most terrestrial ecosystems."
       },
       {
         id: "event-kt-extinction",
         name: "Cretaceous-Paleogene Extinction",
-        time: {value: 66, unit: "mya"},
+        time: { value: 66, unit: "mya" },
         relates_to: "period-cretaceous",
         info: "An asteroid 10km wide strikes the Yucatan Peninsula, triggering global catastrophe. Dust and debris block sunlight; fires rage; temperatures plunge then spike. All non-avian dinosaurs perish, along with 75% of species. Mammals inherit the Earth."
       },
       {
         id: "event-first-primates",
         name: "First Primates",
-        time: {value: 55, unit: "mya"},
+        time: { value: 55, unit: "mya" },
         relates_to: "period-paleogene",
         info: "Primates evolve, characterized by grasping hands, forward-facing eyes, and large brains relative to body size. Early primates like Plesiadapis are small, tree-dwelling creatures. They will eventually give rise to monkeys, apes, and humans."
       },
       {
         id: "event-first-whales",
         name: "Whales Return to Sea",
-        time: {value: 50, unit: "mya"},
+        time: { value: 50, unit: "mya" },
         relates_to: "period-paleogene",
         info: "Cetaceans evolve from land-dwelling hoofed mammals. Pakicetus and Ambulocetus show the transition, with limbs gradually becoming flippers. Within 10 million years, fully aquatic whales roam the oceans."
       },
       {
         id: "event-grasslands-spread",
         name: "Grasslands Spread",
-        time: {value: 25, unit: "mya"},
+        time: { value: 25, unit: "mya" },
         relates_to: "period-neogene",
         info: "Grasslands expand across continents as climate becomes cooler and drier. This new ecosystem drives the evolution of grazing mammals with specialized teeth and long legs for running on open plains."
       },
       {
         id: "event-first-hominins",
         name: "First Hominins",
-        time: {value: 7, unit: "mya"},
+        time: { value: 7, unit: "mya" },
         relates_to: "period-neogene",
         info: "The human lineage splits from the ancestors of chimpanzees. Sahelanthropus tchadensis, discovered in Chad, may be near this divergence point. Early hominins begin developing bipedal locomotion in African forests."
       },
       {
         id: "event-australopithecus",
         name: "Australopithecus Appears",
-        time: {value: 4, unit: "mya"},
+        time: { value: 4, unit: "mya" },
         relates_to: "period-quaternary",
         info: "Australopithecus, including the famous 'Lucy', walks upright in East Africa. These early human relatives have small brains but are fully bipedal, freeing their hands for tool use and carrying food."
       },
       {
         id: "event-first-stone-tools",
         name: "First Stone Tools",
-        time: {value: 3.3, unit: "mya"},
+        time: { value: 3.3, unit: "mya" },
         relates_to: "period-quaternary",
         info: "The oldest known stone tools appear in East Africa, predating the genus Homo. These simple flakes and choppers mark a cognitive leap—the ability to plan, craft, and use technology to extend physical capabilities."
       },
       {
         id: "event-homo-erectus",
         name: "Homo erectus Emerges",
-        time: {value: 1.9, unit: "mya"},
+        time: { value: 1.9, unit: "mya" },
         relates_to: "period-quaternary",
         info: "Homo erectus evolves with a larger brain, smaller face, and modern body proportions. This species masters fire, creates more sophisticated tools, and becomes the first hominin to leave Africa, spreading across Asia and Europe."
       },
       {
         id: "event-first-fire-use",
         name: "Controlled Use of Fire",
-        time: {value: 1, unit: "mya"},
+        time: { value: 1, unit: "mya" },
         relates_to: "period-quaternary",
         info: "Hominins begin using fire regularly for cooking, warmth, and protection. Cooking makes food more digestible and nutritious, possibly enabling the evolution of larger brains. Fire extends the day and enables habitation of colder climates."
       },
       {
         id: "event-homo-sapiens",
         name: "Homo sapiens Evolves",
-        time: {value: 300000, unit: "years-ago"},
+        time: { value: 300000, unit: "years-ago" },
         relates_to: "period-quaternary",
         info: "Anatomically modern humans appear in Africa, distinguished by a globular skull, small face, and prominent chin. Fossils from Jebel Irhoud, Morocco push back our species' origin. Modern human behavior, including art and symbolism, follows."
       },
       {
         id: "event-out-of-africa",
         name: "Out of Africa Migration",
-        time: {value: 70000, unit: "years-ago"},
+        time: { value: 70000, unit: "years-ago" },
         relates_to: "period-quaternary",
         info: "Homo sapiens expands out of Africa, eventually colonizing every continent except Antarctica. Along the way, our ancestors encounter and interbreed with Neanderthals and Denisovans, whose DNA persists in modern populations."
       },
       {
         id: "event-cave-art",
         name: "First Cave Art",
-        time: {value: 40000, unit: "years-ago"},
+        time: { value: 40000, unit: "years-ago" },
         relates_to: "period-quaternary",
         info: "Humans create the earliest known cave paintings in Indonesia and Europe. These artworks—depicting animals, hands, and abstract patterns—demonstrate symbolic thinking, creativity, and the capacity for culture that defines our species."
       },
       {
         id: "event-megafauna-extinction",
         name: "Megafauna Extinction",
-        time: {value: 12000, unit: "years-ago"},
+        time: { value: 12000, unit: "years-ago" },
         relates_to: "period-quaternary",
         info: "Woolly mammoths, saber-toothed cats, giant sloths, and other large Ice Age mammals go extinct. Climate change and human hunting both contribute. These extinctions reshape ecosystems and remove ecological roles not yet refilled."
       },
       {
         id: "event-agriculture",
         name: "Agriculture Begins",
-        time: {value: 10000, unit: "years-ago"},
+        time: { value: 10000, unit: "years-ago" },
         relates_to: "period-quaternary",
         info: "Humans begin domesticating plants and animals in multiple regions independently. This Neolithic Revolution enables settled communities, population growth, and eventually cities and civilizations. It also brings new diseases and social hierarchies."
       }
@@ -1895,131 +1895,131 @@ Timeline.create(
       {
         id: "period-hadean",
         name: "Hadean Eon",
-        startTime: {value: 4540, unit: "mya"},
-        endTime: {value: 4000, unit: "mya"},
+        startTime: { value: 4540, unit: "mya" },
+        endTime: { value: 4000, unit: "mya" },
         info: "The earliest eon of Earth's history, named after Hades (the Greek underworld) for its hellish conditions. The Earth is molten, bombarded by asteroids, and has no stable crust, oceans, or life. The Moon forms from a giant impact. No rocks survive from this time."
       },
       {
         id: "period-archean",
         name: "Archean Eon",
-        startTime: {value: 4000, unit: "mya"},
-        endTime: {value: 2500, unit: "mya"},
+        startTime: { value: 4000, unit: "mya" },
+        endTime: { value: 2500, unit: "mya" },
         info: "Life emerges on Earth during this eon. The first continents form as the crust stabilizes. Prokaryotic life (bacteria and archaea) dominates, with cyanobacteria eventually evolving photosynthesis and beginning to oxygenate the atmosphere. Stromatolites build layered structures in shallow seas."
       },
       {
         id: "period-proterozoic",
         name: "Proterozoic Eon",
-        startTime: {value: 2500, unit: "mya"},
-        endTime: {value: 538.8, unit: "mya"},
+        startTime: { value: 2500, unit: "mya" },
+        endTime: { value: 538.8, unit: "mya" },
         info: "The eon of 'earlier life' sees major evolutionary innovations: eukaryotic cells, sexual reproduction, and multicellular organisms. The Great Oxygenation Event transforms the atmosphere. Snowball Earth glaciations occur. By its end, the Ediacaran fauna—the first large, complex organisms—appears."
       },
       {
         id: "period-cambrian",
         name: "Cambrian Period",
-        startTime: {value: 538.8, unit: "mya"},
-        endTime: {value: 485.4, unit: "mya"},
+        startTime: { value: 538.8, unit: "mya" },
+        endTime: { value: 485.4, unit: "mya" },
         info: "The Cambrian Explosion produces most major animal phyla in a geologically brief burst of evolution. Trilobites, anomalocarids, and the ancestors of all vertebrates appear. Hard shells and exoskeletons evolve, improving fossil preservation. The first predators drive an evolutionary arms race."
       },
       {
         id: "period-ordovician",
         name: "Ordovician Period",
-        startTime: {value: 485.4, unit: "mya"},
-        endTime: {value: 443.8, unit: "mya"},
+        startTime: { value: 485.4, unit: "mya" },
+        endTime: { value: 443.8, unit: "mya" },
         info: "Marine life diversifies dramatically in the 'Great Ordovician Biodiversification Event'. Brachiopods, bryozoans, and corals flourish. Fish remain jawless. The first land plants appear. The period ends with a severe mass extinction caused by glaciation."
       },
       {
         id: "period-silurian",
         name: "Silurian Period",
-        startTime: {value: 443.8, unit: "mya"},
-        endTime: {value: 419.2, unit: "mya"},
+        startTime: { value: 443.8, unit: "mya" },
+        endTime: { value: 419.2, unit: "mya" },
         info: "Life recovers from the Ordovician extinction. The first jawed fish and bony fish evolve. Vascular plants develop, allowing them to grow taller and spread across land. The first terrestrial arthropods—millipedes and early arachnids—colonize the land."
       },
       {
         id: "period-devonian",
         name: "Devonian Period",
-        startTime: {value: 419.2, unit: "mya"},
-        endTime: {value: 358.9, unit: "mya"},
+        startTime: { value: 419.2, unit: "mya" },
+        endTime: { value: 358.9, unit: "mya" },
         info: "The 'Age of Fishes' sees incredible diversity among fish, including armored placoderms, sharks, and lobe-finned fish. The first forests grow on land. Insects appear. Vertebrates make the transition to land, with Tiktaalik bridging fish and amphibians. Ends with a prolonged mass extinction."
       },
       {
         id: "period-carboniferous",
         name: "Carboniferous Period",
-        startTime: {value: 358.9, unit: "mya"},
-        endTime: {value: 298.9, unit: "mya"},
+        startTime: { value: 358.9, unit: "mya" },
+        endTime: { value: 298.9, unit: "mya" },
         info: "Vast swamp forests cover tropical lowlands, eventually forming the coal deposits that give this period its name. High oxygen levels allow giant insects. Amphibians diversify; the first reptiles evolve with their waterproof eggs. The supercontinent Pangaea begins forming."
       },
       {
         id: "period-permian",
         name: "Permian Period",
-        startTime: {value: 298.9, unit: "mya"},
-        endTime: {value: 252, unit: "mya"},
+        startTime: { value: 298.9, unit: "mya" },
+        endTime: { value: 252, unit: "mya" },
         info: "Reptiles diversify and dominate land ecosystems. Synapsids (mammal ancestors) include the large, sail-backed Dimetrodon. Pangaea is fully assembled, creating vast interior deserts. The period ends with the catastrophic Permian-Triassic extinction, the worst in Earth's history."
       },
       {
         id: "period-triassic",
         name: "Triassic Period",
-        startTime: {value: 252, unit: "mya"},
-        endTime: {value: 201.3, unit: "mya"},
+        startTime: { value: 252, unit: "mya" },
+        endTime: { value: 201.3, unit: "mya" },
         info: "Life recovers from the Great Dying. The first dinosaurs, mammals, pterosaurs, and marine reptiles evolve. Conifers and cycads dominate plant life. Pangaea begins breaking apart. Another mass extinction at the period's end clears the way for dinosaur dominance."
       },
       {
         id: "period-jurassic",
         name: "Jurassic Period",
-        startTime: {value: 201.3, unit: "mya"},
-        endTime: {value: 145, unit: "mya"},
+        startTime: { value: 201.3, unit: "mya" },
+        endTime: { value: 145, unit: "mya" },
         info: "The 'Age of Dinosaurs' reaches its peak. Sauropods like Brachiosaurus and Diplodocus become the largest land animals ever. Theropods include Allosaurus and early tyrannosaurs. The first birds evolve from feathered dinosaurs. Pangaea continues splitting."
       },
       {
         id: "period-cretaceous",
         name: "Cretaceous Period",
-        startTime: {value: 145, unit: "mya"},
-        endTime: {value: 66, unit: "mya"},
+        startTime: { value: 145, unit: "mya" },
+        endTime: { value: 66, unit: "mya" },
         info: "The longest period of the Mesozoic Era. Flowering plants revolutionize ecosystems, co-evolving with pollinating insects. Tyrannosaurus, Triceratops, and the giant sauropod Argentinosaurus roam. The period ends abruptly with the asteroid impact that eliminates non-avian dinosaurs."
       },
       {
         id: "period-paleogene",
         name: "Paleogene Period",
-        startTime: {value: 66, unit: "mya"},
-        endTime: {value: 23, unit: "mya"},
+        startTime: { value: 66, unit: "mya" },
+        endTime: { value: 23, unit: "mya" },
         info: "Mammals rapidly diversify to fill ecological niches left by dinosaurs. Modern mammal orders appear: primates, rodents, carnivores, whales, and more. Birds also diversify. India collides with Asia, raising the Himalayas. Climate cools gradually."
       },
       {
         id: "period-neogene",
         name: "Neogene Period",
-        startTime: {value: 23, unit: "mya"},
-        endTime: {value: 2.6, unit: "mya"},
+        startTime: { value: 23, unit: "mya" },
+        endTime: { value: 2.6, unit: "mya" },
         info: "Grasslands spread as climate becomes cooler and drier, driving evolution of grazing mammals. Apes diversify in Africa; great apes and early hominins diverge. The Panama land bridge forms, connecting North and South America and enabling the Great American Interchange."
       },
       {
         id: "period-quaternary",
         name: "Quaternary Period",
-        startTime: {value: 2.6, unit: "mya"},
+        startTime: { value: 2.6, unit: "mya" },
         info: "The current geological period, defined by cycles of ice ages. Homo erectus, Neanderthals, and Homo sapiens evolve. Humans spread across the globe, develop agriculture, and transform the planet. Many large mammals go extinct as humans expand."
       },
       {
         id: "period-age-of-fish",
         name: "Age of Fishes",
-        startTime: {value: 530, unit: "mya"},
-        endTime: {value: 360, unit: "mya"},
+        startTime: { value: 530, unit: "mya" },
+        endTime: { value: 360, unit: "mya" },
         info: "Fish dominate the oceans from the Cambrian through the Devonian. Jawless fish give way to jawed fish, including placoderms, sharks, and bony fish. Lobe-finned fish give rise to the first tetrapods, beginning the vertebrate conquest of land."
       },
       {
         id: "period-age-of-dinosaurs",
         name: "Age of Dinosaurs",
-        startTime: {value: 233, unit: "mya"},
-        endTime: {value: 66, unit: "mya"},
+        startTime: { value: 233, unit: "mya" },
+        endTime: { value: 66, unit: "mya" },
         info: "Dinosaurs dominate terrestrial ecosystems for over 160 million years—longer than any other group of large land animals. They evolve into thousands of species, from tiny feathered theropods to the largest animals to ever walk the Earth."
       },
       {
         id: "period-age-of-mammals",
         name: "Age of Mammals",
-        startTime: {value: 66, unit: "mya"},
+        startTime: { value: 66, unit: "mya" },
         info: "Following the extinction of non-avian dinosaurs, mammals diversify explosively. From tiny insectivores, they evolve into forms as diverse as whales, bats, elephants, and humans. Mammals occupy nearly every ecological niche on land, sea, and air."
       },
       {
         id: "period-human-evolution",
         name: "Human Evolution",
-        startTime: {value: 7, unit: "mya"},
+        startTime: { value: 7, unit: "mya" },
         info: "The human lineage diverges from other apes and evolves through multiple species. Bipedalism, tool use, enlarged brains, and language develop over millions of years. Homo sapiens emerges in Africa and eventually becomes the dominant species on Earth."
       }
     ],
@@ -2145,321 +2145,321 @@ Timeline.create(
       {
         id: "event-lomekwi-tools",
         name: "Oldest Known Stone Tools (Lomekwi)",
-        time: {value: 3.3, unit: "mya"},
+        time: { value: 3.3, unit: "mya" },
         info: "Stone tools discovered at Lomekwi 3 in Kenya represent the oldest known manufactured artifacts. These pre-Oldowan tools, likely made by Australopithecus or Kenyanthropus, predate the emergence of the Homo genus and push back the origins of tool-making by 700,000 years."
       },
       {
         id: "event-genus-homo",
         name: "Genus Homo Appears",
-        time: {value: 2.8, unit: "mya"},
+        time: { value: 2.8, unit: "mya" },
         relates_to: "period-lower-paleolithic",
         info: "The first members of the genus Homo emerge in East Africa, distinguished from earlier Australopithecines by larger brains and more sophisticated tool use. Homo habilis ('handy man') is among the earliest species, associated with systematic tool manufacturing."
       },
       {
         id: "event-oldowan-tools",
         name: "Oldowan Tool Industry Begins",
-        time: {value: 2.6, unit: "mya"},
+        time: { value: 2.6, unit: "mya" },
         relates_to: "period-lower-paleolithic",
         info: "The Oldowan stone tool tradition emerges in East Africa, associated with early Homo species. These simple choppers and flakes represent the first standardized tool-making technology, persisting for over a million years."
       },
       {
         id: "event-homo-erectus-fire",
         name: "Fire Use at Bnot Ya'akov Bridge",
-        time: {value: 790000, unit: "years-ago"},
+        time: { value: 790000, unit: "years-ago" },
         relates_to: "period-lower-paleolithic",
         info: "Evidence from Bnot Ya'akov Bridge in Israel provides the most widely accepted early claim of controlled fire use by Homo erectus or Homo ergaster. Fire enables cooking, warmth, protection, and extends human activity into the night."
       },
       {
         id: "event-first-fire",
         name: "Earliest Evidence of Controlled Fire",
-        time: {value: 1, unit: "mya"},
+        time: { value: 1, unit: "mya" },
         info: "Evidence from Wonderwerk Cave in South Africa suggests hominins were using controlled fire by this time. Fire provided warmth, protection from predators, and the ability to cook food—potentially enabling the evolution of larger brains."
       },
       {
         id: "event-oldest-homo-sapiens",
         name: "Oldest Homo Sapiens Fossils",
-        time: {value: 300000, unit: "years-ago"},
+        time: { value: 300000, unit: "years-ago" },
         info: "Fossils from Jebel Irhoud in Morocco represent the earliest known anatomically modern humans. These remains push back the origin of our species by 100,000 years and suggest Homo sapiens evolved across Africa rather than in a single location."
       },
       {
         id: "event-oldest-burial",
         name: "Earliest Known Intentional Burial",
-        time: {value: 100000, unit: "years-ago"},
+        time: { value: 100000, unit: "years-ago" },
         relates_to: "period-middle-paleolithic",
         info: "Burials at Qafzeh Cave in Israel provide the earliest clear evidence of intentional human burial, with bodies placed in prepared graves with grave goods. This suggests early symbolic thinking and possibly beliefs about death and afterlife."
       },
       {
         id: "event-invention-clothing",
         name: "Invention of Clothing",
-        time: {value: 170000, unit: "years-ago"},
+        time: { value: 170000, unit: "years-ago" },
         relates_to: "period-middle-paleolithic",
         info: "Genetic studies of body lice suggest clothing was invented between 170,000 and 83,000 years ago. Clothing enabled humans to survive in colder climates and was essential for migration into Europe, Asia, and eventually the Americas."
       },
       {
         id: "event-toba-eruption",
         name: "Toba Supervolcano Eruption",
-        time: {value: 75000, unit: "years-ago"},
+        time: { value: 75000, unit: "years-ago" },
         relates_to: "period-middle-paleolithic",
         info: "The Toba supervolcano in Sumatra erupts in one of Earth's largest known volcanic events, ejecting 2,800 cubic kilometers of material. Some researchers propose this caused a volcanic winter and human population bottleneck, though this remains debated."
       },
       {
         id: "event-out-of-africa",
         name: "Major Human Migration Out of Africa",
-        time: {value: 70000, unit: "years-ago"},
+        time: { value: 70000, unit: "years-ago" },
         info: "Homo sapiens begins the major wave of migration out of Africa that will eventually colonize every continent. Genetic evidence suggests a population bottleneck around this time, possibly linked to the Toba supervolcanic eruption."
       },
       {
         id: "event-oldest-figurative-art",
         name: "Oldest Figurative Art (Sulawesi Cave)",
-        time: {value: 45500, unit: "years-ago"},
+        time: { value: 45500, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "A cave painting of a warty pig in Sulawesi, Indonesia represents the oldest known figurative artwork. This discovery proves that symbolic artistic expression emerged independently in both Europe and Southeast Asia."
       },
       {
         id: "event-australia-settlement",
         name: "Human Settlement of Australia",
-        time: {value: 40000, unit: "years-ago"},
+        time: { value: 40000, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "Indigenous Australians become the first humans to colonize Australia, crossing from Southeast Asia via land bridges and short sea voyages. This represents the earliest known sea crossing by humans and the colonization of an entirely new continent."
       },
       {
         id: "event-new-guinea-settlement",
         name: "Human Settlement of New Guinea",
-        time: {value: 30500, unit: "years-ago"},
+        time: { value: 30500, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "New Guinea is populated by colonists from Asia or Australia. The island's inhabitants will later independently develop agriculture, making it one of the few places where farming originated independently."
       },
       {
         id: "event-gravettian-inventions",
         name: "Gravettian Culture and Inventions",
-        time: {value: 28000, unit: "years-ago"},
+        time: { value: 28000, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "The Gravettian culture flourishes in Europe, producing sophisticated tools including harpoons, needles, and saws. This period sees the creation of famous Venus figurines and advances in clothing and shelter construction."
       },
       {
         id: "event-last-glacial-maximum",
         name: "Last Glacial Maximum",
-        time: {value: 26500, unit: "years-ago"},
+        time: { value: 26500, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "Global ice sheets reach their maximum extent, with sea levels dropping 120 meters below present. Ice covers much of North America and northern Europe. Human populations retreat to refugia, later recolonizing as ice melts."
       },
       {
         id: "event-oldest-settlement",
         name: "Oldest Permanent Settlement (Dolní Věstonice)",
-        time: {value: 25000, unit: "years-ago"},
+        time: { value: 25000, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "A settlement of huts built from rocks and mammoth bones near Dolní Věstonice in Moravia (Czech Republic) represents the oldest known permanent human settlement found by archaeologists."
       },
       {
         id: "event-lion-man",
         name: "Lion-Man of Hohlenstein-Stadel Carved",
-        time: {value: 40000, unit: "years-ago"},
+        time: { value: 40000, unit: "years-ago" },
         info: "The Lion-Man, a 31cm ivory sculpture of a human-lion hybrid found in Germany, is one of the oldest known examples of figurative art and demonstrates sophisticated symbolic thinking and craftsmanship in Ice Age Europe."
       },
       {
         id: "event-oldest-flute",
         name: "Oldest Known Musical Instrument",
-        time: {value: 40000, unit: "years-ago"},
+        time: { value: 40000, unit: "years-ago" },
         relates_to: "period-upper-paleolithic",
         info: "Bone flutes discovered in Hohle Fels cave in Germany, made from bird bones and mammoth ivory, represent the earliest known musical instruments. Music likely played important roles in social bonding and ritual."
       },
       {
         id: "event-chauvet-cave",
         name: "Chauvet Cave Paintings Created",
-        time: {value: 36000, unit: "years-ago"},
+        time: { value: 36000, unit: "years-ago" },
         info: "Artists in southern France create sophisticated paintings of lions, mammoths, rhinoceroses, and other animals in Chauvet Cave. The artistic skill and use of perspective rivals much later artwork."
       },
       {
         id: "event-lascaux-cave",
         name: "Lascaux Cave Paintings Created",
-        time: {value: 17000, unit: "years-ago"},
+        time: { value: 17000, unit: "years-ago" },
         info: "The famous Lascaux cave paintings in France depict horses, deer, bison, and other animals with remarkable artistry. The 'Hall of Bulls' contains some of the most impressive prehistoric art ever discovered."
       },
       {
         id: "event-oldest-pottery",
         name: "Oldest Known Pottery",
-        time: {value: 20000, unit: "years-ago"},
+        time: { value: 20000, unit: "years-ago" },
         info: "Ceramic fragments from Xianrendong Cave in China represent the oldest known pottery, created by hunter-gatherers during the Last Glacial Maximum. This predates agriculture and the traditional association of pottery with settled life."
       },
       {
         id: "event-natufian-culture",
         name: "Natufian Culture Flourishes",
-        time: {value: 12500, unit: "bce"},
+        time: { value: 12500, unit: "bce" },
         relates_to: "period-mesolithic",
         info: "The Natufian culture emerges in the Levant as sedentary hunter-gatherers who may have cultivated wild rye. Living in permanent villages, they represent a crucial transition between mobile foraging and settled agricultural life."
       },
       {
         id: "event-agriculture-origins",
         name: "Emergence of Agriculture",
-        time: {value: 12000, unit: "years-ago"},
+        time: { value: 12000, unit: "years-ago" },
         relates_to: "period-neolithic",
         info: "The Neolithic Revolution begins independently in multiple regions as humans start domesticating plants and animals. The Fertile Crescent sees early cultivation of wheat and barley, transforming human society from nomadic to settled."
       },
       {
         id: "event-first-figs",
         name: "First Cultivated Figs",
-        time: {value: 9400, unit: "bce"},
+        time: { value: 9400, unit: "bce" },
         relates_to: "period-neolithic",
         info: "Parthenocarpic (sterile) figs cultivated at Gilgal I in the Jordan Valley may represent the earliest known instance of agriculture, predating the domestication of wheat, barley, and legumes by about a thousand years."
       },
       {
         id: "event-jericho-tower",
         name: "Tower of Jericho Built",
-        time: {value: 8000, unit: "bce"},
+        time: { value: 8000, unit: "bce" },
         relates_to: "period-neolithic",
         info: "A round stone tower 8.5 meters high and 8.5 meters in diameter is built at Jericho, one of the oldest known stone monuments. Its purpose remains debated—possibly defensive, ceremonial, or for flood protection."
       },
       {
         id: "event-mehrgarh-founded",
         name: "Mehrgarh Settlement Founded",
-        time: {value: 7000, unit: "bce"},
+        time: { value: 7000, unit: "bce" },
         relates_to: "period-mehrgarh",
         info: "One of the earliest Neolithic settlements in South Asia is established at Mehrgarh in Balochistan (modern Pakistan). Inhabitants cultivate wheat and barley, domesticate cattle, sheep and goats, and develop mud-brick architecture. This pre-Harappan culture lays the foundation for the later Indus Valley Civilization."
       },
       {
         id: "event-mehrgarh-pottery",
         name: "Mehrgarh Pottery and Craft Production",
-        time: {value: 5500, unit: "bce"},
+        time: { value: 5500, unit: "bce" },
         relates_to: "period-mehrgarh",
         info: "Mehrgarh develops sophisticated pottery, bead-making, and metallurgy. Artisans create distinctive ceramics and drill tiny beads from semi-precious stones. Evidence of early dentistry—drilling teeth to treat decay—appears at this site, the oldest known dental work."
       },
       {
         id: "event-catal-huyuk",
         name: "Çatalhöyük Settlement Founded",
-        time: {value: 7500, unit: "bce"},
+        time: { value: 7500, unit: "bce" },
         relates_to: "period-neolithic",
         info: "One of the world's first proto-cities emerges in Anatolia, housing up to 10,000 people. Residents enter homes through roof hatches, decorate walls with murals and reliefs, and bury dead beneath house floors."
       },
       {
         id: "event-copper-smelting",
         name: "Earliest Copper Smelting",
-        time: {value: 5000, unit: "bce"},
+        time: { value: 5000, unit: "bce" },
         relates_to: "period-chalcolithic",
         info: "Copper smelting begins in the Balkans and possibly independently in other regions. The Vinča culture in Serbia provides some of the oldest securely dated evidence of high-temperature copper working."
       },
       {
         id: "event-proto-cuneiform",
         name: "Proto-Cuneiform Writing Appears",
-        time: {value: 3700, unit: "bce"},
+        time: { value: 3700, unit: "bce" },
         relates_to: "period-chalcolithic",
         info: "Pictographic proto-writing appears in Sumer for record-keeping, representing the earliest known writing system. Initially used for accounting and administration, it will evolve into full cuneiform script."
       },
       {
         id: "event-otzi-iceman",
         name: "Ötzi the Iceman Dies",
-        time: {value: 3300, unit: "bce"},
+        time: { value: 3300, unit: "bce" },
         relates_to: "period-chalcolithic",
         info: "A man later known as Ötzi dies in the Alps, his body preserved by ice until discovery in 1991. His copper axe, clothing, and equipment provide extraordinary insight into Chalcolithic life. Evidence suggests he was murdered."
       },
       {
         id: "event-skara-brae",
         name: "Skara Brae Settlement Built",
-        time: {value: 3100, unit: "bce"},
+        time: { value: 3100, unit: "bce" },
         relates_to: "period-neolithic",
         info: "A stone-built Neolithic village is constructed in Orkney, Scotland, featuring ten clustered houses with stone hearths, beds, cupboards, and a sophisticated drainage system. Occupied for 600 years before abandonment."
       },
       {
         id: "event-stonehenge",
         name: "Stonehenge Construction Begins",
-        time: {value: 3000, unit: "bce"},
+        time: { value: 3000, unit: "bce" },
         relates_to: "period-neolithic",
         info: "Construction begins on Stonehenge in England, initially as a circular ditch and bank with 56 wooden posts. The famous stone circle is added later, with some stones transported from Wales, 150 miles away."
       },
       {
         id: "event-yamnaya-expansion",
         name: "Yamnaya Migrations Begin",
-        time: {value: 3000, unit: "bce"},
+        time: { value: 3000, unit: "bce" },
         relates_to: "period-bronze-age",
         info: "Pastoral nomads from the Pontic-Caspian steppe begin expanding into Europe and Asia. These migrations spread Yamnaya ancestry and are thought to have carried Indo-European languages across much of Eurasia."
       },
       {
         id: "event-cuneiform",
         name: "Invention of Cuneiform Writing",
-        time: {value: 3400, unit: "bce"},
+        time: { value: 3400, unit: "bce" },
         relates_to: "period-sumer",
         info: "The Sumerians develop cuneiform, one of the earliest writing systems. Initially used for record-keeping, it evolves to record literature, law, and science. Cuneiform is adapted by subsequent Mesopotamian civilizations."
       },
       {
         id: "event-pyramids-giza",
         name: "Great Pyramids of Giza Built",
-        time: {value: 2560, unit: "bce"},
+        time: { value: 2560, unit: "bce" },
         relates_to: "period-egypt",
         info: "Pharaoh Khufu commissions the Great Pyramid, the largest of the Giza pyramids. These monuments demonstrate Egypt's organizational capacity, engineering knowledge, and religious beliefs about the afterlife."
       },
       {
         id: "event-code-hammurabi",
         name: "Code of Hammurabi",
-        time: {value: 1754, unit: "bce"},
+        time: { value: 1754, unit: "bce" },
         relates_to: "period-babylon",
         info: "Babylonian king Hammurabi promulgates one of the oldest known written legal codes. Its 282 laws cover family, commerce, and criminal matters, establishing the principle of 'an eye for an eye'."
       },
       {
         id: "event-bronze-age-collapse",
         name: "Bronze Age Collapse",
-        time: {value: 1200, unit: "bce"},
+        time: { value: 1200, unit: "bce" },
         relates_to: "period-hittite",
         info: "A catastrophic period sees the fall of multiple Mediterranean civilizations including the Hittites, Mycenaeans, and others. Causes may include climate change, invasions by 'Sea Peoples', and systemic failures. Ushers in a centuries-long 'dark age'."
       },
       {
         id: "event-founding-rome",
         name: "Traditional Founding of Rome",
-        time: {value: 753, unit: "bce"},
+        time: { value: 753, unit: "bce" },
         relates_to: "period-rome",
         info: "According to legend, Romulus founds Rome after killing his twin brother Remus. Archaeological evidence suggests the settlement actually developed gradually from earlier Latin and Etruscan communities."
       },
       {
         id: "event-first-olympics",
         name: "First Olympic Games",
-        time: {value: 776, unit: "bce"},
+        time: { value: 776, unit: "bce" },
         relates_to: "period-greece",
         info: "The first recorded Olympic Games are held at Olympia in honor of Zeus. The games become a unifying event for Greek city-states, establishing a four-year cycle and a tradition lasting over a millennium."
       },
       {
         id: "event-athenian-democracy",
         name: "Athenian Democracy Established",
-        time: {value: 508, unit: "bce"},
+        time: { value: 508, unit: "bce" },
         relates_to: "period-greece",
         info: "Cleisthenes reforms Athenian government, creating the world's first known democracy. Citizens participate directly in legislation and judicial decisions, though women, slaves, and foreigners are excluded."
       },
       {
         id: "event-persian-wars",
         name: "Persian Wars Begin",
-        time: {value: 499, unit: "bce"},
+        time: { value: 499, unit: "bce" },
         relates_to: "period-persia-achaemenid",
         info: "The Ionian Revolt against Persian rule sparks decades of conflict between Greece and Persia. Key battles at Marathon, Thermopylae, and Salamis become legendary, shaping Greek identity and Western historical memory."
       },
       {
         id: "event-alexander-conquest",
         name: "Alexander Conquers Persia",
-        time: {value: 330, unit: "bce"},
+        time: { value: 330, unit: "bce" },
         relates_to: "period-macedon",
         info: "Alexander the Great defeats Darius III and conquers the Achaemenid Empire. His campaigns spread Greek culture from Egypt to India, initiating the Hellenistic period of cultural fusion."
       },
       {
         id: "event-qin-unification",
         name: "Qin Unifies China",
-        time: {value: 221, unit: "bce"},
+        time: { value: 221, unit: "bce" },
         relates_to: "period-qin",
         info: "Qin Shi Huang conquers rival states and establishes China's first unified empire. He standardizes weights, measures, currency, and writing, and begins construction of the Great Wall. His brutal reign ends after just 15 years."
       },
       {
         id: "event-punic-wars-end",
         name: "Rome Destroys Carthage",
-        time: {value: 146, unit: "bce"},
+        time: { value: 146, unit: "bce" },
         relates_to: "period-rome",
         info: "Rome defeats Carthage in the Third Punic War, destroying the city and salting the earth. Rome becomes the dominant power in the Mediterranean, controlling North Africa, Spain, and beyond."
       },
       {
         id: "event-julius-caesar-assassination",
         name: "Assassination of Julius Caesar",
-        time: {value: 44, unit: "bce"},
+        time: { value: 44, unit: "bce" },
         relates_to: "period-rome",
         info: "Julius Caesar is assassinated by senators fearing his dictatorial power. His death triggers civil war and ultimately the end of the Roman Republic, as his adopted heir Octavian becomes Emperor Augustus."
       },
       {
         id: "event-silk-road-established",
         name: "Silk Road Trade Flourishes",
-        time: {value: 130, unit: "bce"},
+        time: { value: 130, unit: "bce" },
         relates_to: "period-han",
         info: "The Han Dynasty establishes regular diplomatic and trade contact with Central Asia following Zhang Qian's expeditions. The Silk Road connects China with Persia, India, and eventually Rome, facilitating exchange of goods, ideas, and religions."
       },
@@ -2514,7 +2514,7 @@ Timeline.create(
       {
         id: "event-maya-classic-collapse",
         name: "Classic Maya Collapse",
-        time: {value: 900, unit: "ce"},
+        time: { value: 900, unit: "ce" },
         relates_to: "period-maya",
         info: "Major Maya cities in the southern lowlands are abandoned over several decades. Causes may include drought, warfare, overpopulation, and environmental degradation. Maya civilization continues in the northern Yucatan."
       },
@@ -2639,260 +2639,260 @@ Timeline.create(
       {
         id: "period-lower-paleolithic",
         name: "Lower Paleolithic",
-        startTime: {value: 3.3, unit: "mya"},
-        endTime: {value: 300000, unit: "years-ago"},
+        startTime: { value: 3.3, unit: "mya" },
+        endTime: { value: 300000, unit: "years-ago" },
         info: "The earliest and longest period of the Stone Age, beginning with the first stone tools at Lomekwi in Kenya. Early hominins including Homo habilis and Homo erectus develop increasingly sophisticated tool-making techniques, from simple Oldowan choppers to the more refined Acheulean hand axes. Fire is controlled, and hominins spread from Africa to Asia and Europe."
       },
       {
         id: "period-middle-paleolithic",
         name: "Middle Paleolithic",
-        startTime: {value: 300000, unit: "years-ago"},
-        endTime: {value: 50000, unit: "years-ago"},
+        startTime: { value: 300000, unit: "years-ago" },
+        endTime: { value: 50000, unit: "years-ago" },
         info: "The era when anatomically modern Homo sapiens emerges in Africa. Neanderthals thrive in Europe and Western Asia, developing the Mousterian tool culture. This period sees the first definitive evidence of controlled fire use, intentional burials suggesting symbolic thought, invention of clothing, and the beginning of behavioral modernity including language."
       },
       {
         id: "period-upper-paleolithic",
         name: "European Upper Paleolithic",
-        startTime: {value: 50000, unit: "years-ago"},
-        endTime: {value: 12000, unit: "years-ago"},
+        startTime: { value: 50000, unit: "years-ago" },
+        endTime: { value: 12000, unit: "years-ago" },
         info: "A period of rapid cultural innovation as modern humans spread across the globe. Cave art flourishes at sites like Chauvet and Lascaux. Sophisticated tools including harpoons, needles, and saws are invented. The first permanent settlements appear, humans colonize Australia and the Americas, and Neanderthals go extinct."
       },
       {
         id: "period-european-mesolithic",
         name: "European Mesolithic",
-        startTime: {value: 15000, unit: "years-ago"},
-        endTime: {value: 5000, unit: "bce"},
+        startTime: { value: 15000, unit: "years-ago" },
+        endTime: { value: 5000, unit: "bce" },
         info: "The 'Middle Stone Age' bridges the Paleolithic and Neolithic, beginning as glaciers retreat at the end of the Pleistocene. Characterized by microlithic tools, fishing tackle, and the first canoes. The Natufian culture in the Levant represents sedentary hunter-gatherers who may have begun cultivating wild cereals."
       },
       {
         id: "period-wa-mesolithic",
         name: "West Asian Mesolithic",
-        startTime: {value: 20000, unit: "years-ago"},
-        endTime: {value: 10000, unit: "bce"},
+        startTime: { value: 20000, unit: "years-ago" },
+        endTime: { value: 10000, unit: "bce" },
         info: "The 'Middle Stone Age' bridges the Paleolithic and Neolithic, beginning as glaciers retreat at the end of the Pleistocene. Characterized by microlithic tools, fishing tackle, and the first canoes. The Natufian culture in the Levant represents sedentary hunter-gatherers who may have begun cultivating wild cereals."
       },
       {
         id: "period-neolithic",
         name: "Neolithic",
-        startTime: {value: 10000, unit: "bce"},
-        endTime: {value: 2000, unit: "bce"},
+        startTime: { value: 10000, unit: "bce" },
+        endTime: { value: 2000, unit: "bce" },
         info: "The 'New Stone Age' witnesses the Neolithic Revolution: the transition from hunting-gathering to agriculture and settled life. Crops and animals are domesticated, permanent villages emerge, pottery is invented, and megalithic monuments like Stonehenge are built. This transformation begins in the Fertile Crescent and spreads gradually across the world."
       },
       {
         id: "period-chalcolithic",
         name: "Chalcolithic (Copper Age)",
-        startTime: {value: 5000, unit: "bce"},
-        endTime: {value: 3300, unit: "bce"},
+        startTime: { value: 5000, unit: "bce" },
+        endTime: { value: 3300, unit: "bce" },
         info: "A transitional period between the Stone Age and Bronze Age when copper metallurgy first appears alongside stone tools. Copper smelting may have been invented independently in multiple locations. The period sees the rise of the first fortified settlements, increasing social stratification, and the earliest proto-writing systems."
       },
       {
         id: "period-bronze-age",
         name: "Bronze Age",
-        startTime: {value: 3300, unit: "bce"},
-        endTime: {value: 1200, unit: "bce"},
+        startTime: { value: 3300, unit: "bce" },
+        endTime: { value: 1200, unit: "bce" },
         info: "The discovery that adding tin to copper creates harder bronze revolutionizes tool and weapon making. The first true civilizations with writing emerge: Sumer, Egypt, the Indus Valley, and Shang China. Long-distance trade networks develop to obtain rare tin. The period ends with a widespread collapse around 1200 BCE affecting many Mediterranean civilizations."
       },
       {
         id: "period-iron-age",
         name: "Iron Age",
-        startTime: {value: 1200, unit: "bce"},
-        endTime: {value: 500, unit: "bce"},
+        startTime: { value: 1200, unit: "bce" },
+        endTime: { value: 500, unit: "bce" },
         info: "Iron working technology spreads, democratizing access to metal tools and weapons since iron ore is far more common than tin. This period sees the rise of classical civilizations in Greece, Rome, Persia, India, and China. Writing becomes widespread, and many regions transition from prehistory to recorded history."
       },
       {
         id: "period-gobekli-tepe",
         name: "Göbekli Tepe Culture",
-        startTime: {value: 9500, unit: "bce"},
-        endTime: {value: 8000, unit: "bce"},
+        startTime: { value: 9500, unit: "bce" },
+        endTime: { value: 8000, unit: "bce" },
         info: "A pre-pottery Neolithic culture in southeastern Anatolia that constructed Göbekli Tepe, the world's oldest known monumental architecture. Hunter-gatherers erected massive stone circles with T-shaped pillars carved with animals and symbols, challenging assumptions that organized religion and monumental building required settled agricultural societies. The site was deliberately buried around 8000 BCE for unknown reasons."
       },
       {
         id: "period-uruk",
         name: "Uruk Period",
-        startTime: {value: 4000, unit: "bce"},
-        endTime: {value: 3100, unit: "bce"},
+        startTime: { value: 4000, unit: "bce" },
+        endTime: { value: 3100, unit: "bce" },
         info: "The period when Uruk became the world's first true city, with a population reaching 40,000-80,000. Uruk saw the development of proto-cuneiform writing, cylinder seals, monumental architecture (including temples to Inanna), and the first bureaucratic administration. The 'Uruk expansion' spread Mesopotamian culture across the Near East."
       },
       {
         id: "period-sumer",
         name: "Sumerian Civilization",
-        startTime: {value: 3350, unit: "bce"},
-        endTime: {value: 2500, unit: "bce"},
+        startTime: { value: 3350, unit: "bce" },
+        endTime: { value: 2500, unit: "bce" },
         info: "The world's first urban civilization emerges in southern Mesopotamia (modern Iraq). Sumerians invent cuneiform writing, the wheel, and the plow. City-states like Ur, Uruk, and Eridu develop complex governments, religions, and the first known literary work, the Epic of Gilgamesh."
       },
       {
         id: "period-minoan",
         name: "Minoan Civilization",
-        startTime: {value: 3000, unit: "bce"},
-        endTime: {value: 1100, unit: "bce"},
+        startTime: { value: 3000, unit: "bce" },
+        endTime: { value: 1100, unit: "bce" },
         info: "Europe's first advanced civilization, centered on the island of Crete. The Minoans built elaborate palace complexes at Knossos, Phaistos, and Malia, developed Linear A script (still undeciphered), and created distinctive art featuring bulls, marine life, and acrobatic sports. Their civilization influenced the later Mycenaean Greeks."
       },
       {
         id: "period-mycenean",
         name: "Mycenaean civilization",
-        startTime: {value: 1750, unit: "bce"},
-        endTime: {value: 1050, unit: "bce"},
+        startTime: { value: 1750, unit: "bce" },
+        endTime: { value: 1050, unit: "bce" },
         info: "Mycenaean civilization was the last phase of the Bronze Age in ancient Greece. It represents the first advanced and distinctively Greek civilization in mainland Greece with its palatial states, urban organization, works of art, and writing system. The Mycenaeans were mainland Greek peoples who were likely stimulated by their contact with insular Minoan Crete and other Mediterranean cultures to develop a more sophisticated sociopolitical culture of their own."
       },
       {
         id: "period-egypt",
         name: "Ancient Egypt",
-        startTime: {value: 3150, unit: "bce"},
-        endTime: {value: 27, unit: "bce"},
+        startTime: { value: 3150, unit: "bce" },
+        endTime: { value: 27, unit: "bce" },
         info: "One of history's longest-lasting civilizations, unified under pharaohs who are considered living gods. Egyptians build pyramids, develop hieroglyphic writing, and create a rich religious tradition focused on the afterlife. The civilization endures through multiple dynasties until Roman conquest."
       },
       {
         id: "period-roman-egypt",
         name: "Roman Egypt",
-        startTime: {value: 27, unit: "bce"},
-        endTime: {value: 642, unit: "ce"},
+        startTime: { value: 27, unit: "bce" },
+        endTime: { value: 642, unit: "ce" },
         info: "During the era of the Roman Empire, most of modern-day Egypt except for the Sinai was ruled as the imperial province of Aegyptus."
       },
       {
         id: "period-mehrgarh",
         name: "Mehrgarh Culture",
-        startTime: {value: 7000, unit: "bce"},
-        endTime: {value: 2600, unit: "bce"},
+        startTime: { value: 7000, unit: "bce" },
+        endTime: { value: 2600, unit: "bce" },
         info: "A pre-Harappan Neolithic culture centered at Mehrgarh in Balochistan, representing the earliest farming community in South Asia. Over 4,000 years, inhabitants develop agriculture, animal husbandry, pottery, metallurgy, and long-distance trade. The culture shows continuous evolution leading directly to the Indus Valley Civilization."
       },
       {
         id: "period-indus",
         name: "Indus Valley Civilization",
-        startTime: {value: 3300, unit: "bce"},
-        endTime: {value: 1300, unit: "bce"},
+        startTime: { value: 3300, unit: "bce" },
+        endTime: { value: 1300, unit: "bce" },
         info: "A sophisticated Bronze Age civilization in South Asia with major cities at Mohenjo-daro and Harappa. Features advanced urban planning, standardized weights and measures, and sophisticated drainage systems. Its script remains undeciphered, and its decline is still debated."
       },
       {
         id: "period-akkad",
         name: "Akkadian Empire",
-        startTime: {value: 2334, unit: "bce"},
-        endTime: {value: 2154, unit: "bce"},
+        startTime: { value: 2334, unit: "bce" },
+        endTime: { value: 2154, unit: "bce" },
         info: "The world's first empire, founded by Sargon of Akkad who conquers Sumerian city-states and creates a unified state. Akkadian becomes the lingua franca of the ancient Near East. The empire introduces new administrative techniques but collapses after about 180 years."
       },
       {
         id: "period-babylon",
         name: "Babylonian Empire",
-        startTime: {value: 1894, unit: "bce"},
-        endTime: {value: 539, unit: "bce"},
+        startTime: { value: 1894, unit: "bce" },
+        endTime: { value: 539, unit: "bce" },
         info: "A Mesopotamian civilization centered on Babylon. Under Hammurabi, it produces one of history's first law codes. After decline and Assyrian rule, the Neo-Babylonian Empire under Nebuchadnezzar II builds the Hanging Gardens and destroys Jerusalem before falling to Persia."
       },
       {
         id: "period-assyria",
         name: "Assyrian Empire",
-        startTime: {value: 2500, unit: "bce"},
-        endTime: {value: 609, unit: "bce"},
+        startTime: { value: 2500, unit: "bce" },
+        endTime: { value: 609, unit: "bce" },
         info: "A Mesopotamian empire known for military prowess and administrative innovation. The Neo-Assyrian Empire (911-609 BCE) becomes the largest empire yet seen, controlling Mesopotamia, the Levant, and Egypt. Known for brutal warfare but also library-building and astronomical records."
       },
       {
         id: "period-hittite",
         name: "Hittite Empire",
-        startTime: {value: 1600, unit: "bce"},
-        endTime: {value: 1178, unit: "bce"},
+        startTime: { value: 1600, unit: "bce" },
+        endTime: { value: 1178, unit: "bce" },
         info: "An Anatolian civilization that rivals Egypt and Mesopotamia. The Hittites develop iron-working technology and create one of the earliest known peace treaties with Egypt. Their empire collapses during the Bronze Age collapse around 1200 BCE."
       },
       {
         id: "period-phoenicia",
         name: "Phoenician Civilization",
-        startTime: {value: 1500, unit: "bce"},
-        endTime: {value: 332, unit: "bce"},
+        startTime: { value: 1500, unit: "bce" },
+        endTime: { value: 332, unit: "bce" },
         info: "Seafaring traders from the Levant who establish a commercial network across the Mediterranean. Phoenicians found Carthage and other colonies, produce purple dye, and create an alphabet that becomes the ancestor of Greek, Latin, Arabic, and Hebrew scripts."
       },
       {
         id: "period-shang",
         name: "Shang Dynasty",
-        startTime: {value: 1600, unit: "bce"},
-        endTime: {value: 1046, unit: "bce"},
+        startTime: { value: 1600, unit: "bce" },
+        endTime: { value: 1046, unit: "bce" },
         info: "China's first historically verified dynasty, known for bronze casting, oracle bone divination, and the earliest Chinese writing. The Shang ruled from a series of capitals in the Yellow River valley, with Yin (near Anyang) as their final capital. Their sophisticated bronze vessels and jade artifacts demonstrate advanced craftsmanship."
       },
       {
         id: "period-zhou",
         name: "Zhou Dynasty",
-        startTime: {value: 1046, unit: "bce"},
-        endTime: {value: 256, unit: "bce"},
+        startTime: { value: 1046, unit: "bce" },
+        endTime: { value: 256, unit: "bce" },
         info: "China's longest dynasty, introducing the Mandate of Heaven concept. The early Western Zhou maintains centralized control, but the Eastern Zhou period sees fragmentation into competing states. This era produces Confucius, Laozi, and other foundational Chinese philosophers."
       },
       {
         id: "period-greece",
         name: "Ancient Greece",
-        startTime: {value: 800, unit: "bce"},
-        endTime: {value: 146, unit: "bce"},
+        startTime: { value: 800, unit: "bce" },
+        endTime: { value: 146, unit: "bce" },
         info: "A civilization of independent city-states that develops democracy, philosophy, theater, and the Olympic Games. Athens and Sparta lead the defense against Persian invasion. Greek culture spreads through Alexander's conquests, becoming the foundation of Western civilization."
       },
       {
         id: "period-persia-achaemenid",
         name: "Achaemenid Persian Empire",
-        startTime: {value: 550, unit: "bce"},
-        endTime: {value: 330, unit: "bce"},
+        startTime: { value: 550, unit: "bce" },
+        endTime: { value: 330, unit: "bce" },
         info: "The first Persian Empire, founded by Cyrus the Great. At its height under Darius I, it spans from Egypt to India, the largest empire yet seen. Known for religious tolerance, efficient administration via satrapies, and the Royal Road communication system."
       },
       {
         id: "period-carthage",
         name: "Carthaginian Empire",
-        startTime: {value: 814, unit: "bce"},
-        endTime: {value: 146, unit: "bce"},
+        startTime: { value: 814, unit: "bce" },
+        endTime: { value: 146, unit: "bce" },
         info: "A Phoenician colony that becomes a major Mediterranean power. Carthage controls trade routes and North African territories, coming into conflict with Rome in the Punic Wars. General Hannibal famously crosses the Alps with elephants. Rome ultimately destroys the city entirely."
       },
       {
         id: "period-macedon",
         name: "Macedonian Empire",
-        startTime: {value: 359, unit: "bce"},
-        endTime: {value: 323, unit: "bce"},
+        startTime: { value: 359, unit: "bce" },
+        endTime: { value: 323, unit: "bce" },
         info: "Under Philip II and his son Alexander the Great, Macedonia transforms from a regional kingdom to a world empire. Alexander conquers Persia, Egypt, and reaches India. His empire fragments after his death, but Hellenistic successor states spread Greek culture across the Near East."
       },
       {
         id: "period-maurya",
         name: "Maurya Empire",
-        startTime: {value: 322, unit: "bce"},
-        endTime: {value: 185, unit: "bce"},
+        startTime: { value: 322, unit: "bce" },
+        endTime: { value: 185, unit: "bce" },
         info: "India's first major empire, founded by Chandragupta Maurya. Under Ashoka, it encompasses most of the Indian subcontinent. Ashoka's conversion to Buddhism after the bloody Kalinga War leads him to promote non-violence and dharma through his famous edicts."
       },
       {
         id: "period-qin",
         name: "Qin Dynasty",
-        startTime: {value: 221, unit: "bce"},
-        endTime: {value: 206, unit: "bce"},
+        startTime: { value: 221, unit: "bce" },
+        endTime: { value: 206, unit: "bce" },
         info: "China's first imperial dynasty unifies the warring states under Qin Shi Huang, the 'First Emperor.' Brutal but transformative, the Qin standardizes writing, currency, and measurements, builds the Great Wall's first sections, and creates the Terracotta Army. Collapses shortly after the emperor's death."
       },
       {
         id: "period-han",
         name: "Han Dynasty",
-        startTime: {value: 206, unit: "bce"},
-        endTime: {value: 220, unit: "ce"},
+        startTime: { value: 206, unit: "bce" },
+        endTime: { value: 220, unit: "ce" },
         info: "One of China's golden ages, so influential that ethnic Chinese still call themselves 'Han people.' The dynasty establishes Confucianism as state ideology, creates the civil service examination, expands the Silk Road trade, and invents paper. Considered a classical era of Chinese civilization."
       },
       {
         id: "period-rome",
         name: "Roman Civilization",
-        startTime: {value: 753, unit: "bce"},
+        startTime: { value: 753, unit: "bce" },
         endTime: "0476-09-04",
         info: "From a small Italian city-state to an empire spanning three continents. Rome evolves from monarchy to republic to empire, developing law, engineering, and military systems that influence the world for millennia. Latin becomes the basis for Romance languages; Roman law underlies Western legal traditions."
       },
       {
         id: "period-parthia",
         name: "Parthian Empire",
-        startTime: {value: 247, unit: "bce"},
-        endTime: {value: 224, unit: "ce"},
+        startTime: { value: 247, unit: "bce" },
+        endTime: { value: 224, unit: "ce" },
         info: "An Iranian empire that succeeds the Seleucids and becomes Rome's eastern rival. Parthia controls the Silk Road trade, develops heavy cavalry tactics, and defeats multiple Roman invasions. Famous for the 'Parthian shot'—firing arrows while retreating on horseback."
       },
       {
         id: "period-kushan",
         name: "Kushan Empire",
-        startTime: {value: 30, unit: "ce"},
-        endTime: {value: 375, unit: "ce"},
+        startTime: { value: 30, unit: "ce" },
+        endTime: { value: 375, unit: "ce" },
         info: "A Central Asian empire controlling the Silk Road's crucial middle section. Under Kanishka, the Kushans patronize Buddhism and Greco-Buddhist art. The empire facilitates cultural exchange between China, India, Persia, and Rome."
       },
       {
         id: "period-sasanian",
         name: "Sasanian Persian Empire",
-        startTime: {value: 224, unit: "ce"},
+        startTime: { value: 224, unit: "ce" },
         endTime: "0651-01-01",
         info: "The last pre-Islamic Persian empire, reviving Achaemenid traditions. The Sasanians are Rome/Byzantium's main rival for four centuries, developing sophisticated art, architecture, and Zoroastrian religious institutions. Falls to the Arab Muslim conquest in the 7th century."
       },
       {
         id: "period-gupta",
         name: "Gupta Empire",
-        startTime: {value: 320, unit: "ce"},
-        endTime: {value: 550, unit: "ce"},
+        startTime: { value: 320, unit: "ce" },
+        endTime: { value: 550, unit: "ce" },
         info: "India's 'Golden Age,' marked by advances in science, mathematics (including the concept of zero), astronomy, literature, and art. The Gupta period sees the flourishing of classical Hindu culture, Sanskrit literature, and the Ajanta cave paintings."
       },
       {
@@ -2905,57 +2905,57 @@ Timeline.create(
       {
         id: "period-maya",
         name: "Maya Civilization",
-        startTime: {value: 2000, unit: "bce"},
+        startTime: { value: 2000, unit: "bce" },
         endTime: "1697-03-13",
         info: "A Mesoamerican civilization known for advanced writing, astronomy, mathematics (including zero), and monumental architecture. Maya city-states flourish in the Classic period, then largely collapse in the southern lowlands around 900 CE. Northern Maya continue until Spanish conquest."
       },
       {
         id: "period-poverty-point",
         name: "Poverty Point Culture",
-        startTime: {value: 1700, unit: "bce"},
-        endTime: {value: 1100, unit: "bce"},
+        startTime: { value: 1700, unit: "bce" },
+        endTime: { value: 1100, unit: "bce" },
         info: "A Late Archaic archaeological culture in the lower Mississippi Valley, centered on the massive earthwork complex at Poverty Point, Louisiana. Hunter-gatherers built enormous mound complexes and participated in trade networks spanning much of eastern North America, obtaining copper, soapstone, and other materials from distant sources."
       },
       {
         id: "period-hopewell",
         name: "Hopewell Culture",
-        startTime: {value: 200, unit: "bce"},
-        endTime: {value: 500, unit: "ce"},
+        startTime: { value: 200, unit: "bce" },
+        endTime: { value: 500, unit: "ce" },
         info: "A Native American culture flourishing in the Eastern Woodlands, known for elaborate burial mounds, extensive trade networks (the 'Hopewell Interaction Sphere'), and sophisticated artwork. Hopewell peoples traded obsidian from Yellowstone, copper from the Great Lakes, shells from the Gulf, and mica from the Appalachians."
       },
       {
         id: "period-teotihuacan",
         name: "Teotihuacan",
-        startTime: {value: 100, unit: "bce"},
-        endTime: {value: 550, unit: "ce"},
+        startTime: { value: 100, unit: "bce" },
+        endTime: { value: 550, unit: "ce" },
         info: "A major Mesoamerican city that became one of the largest in the ancient world, with a population of 125,000-200,000 at its peak. Famous for the Pyramid of the Sun, Pyramid of the Moon, and the Avenue of the Dead. Its influence extended throughout Mesoamerica, but its ethnic identity and the cause of its collapse remain mysterious."
       },
       {
         id: "period-mississippian",
         name: "Mississippian Culture",
-        startTime: {value: 800, unit: "ce"},
-        endTime: {value: 1600, unit: "ce"},
+        startTime: { value: 800, unit: "ce" },
+        endTime: { value: 1600, unit: "ce" },
         info: "A mound-building Native American civilization of the Midwestern, Eastern, and Southeastern United States. Centered on maize agriculture and characterized by large earthen platform mounds, shell-tempered pottery, and chiefdom-level political organization. Cahokia, near modern St. Louis, was its largest city."
       },
       {
         id: "period-cahokia",
         name: "Cahokia",
-        startTime: {value: 1050, unit: "ce"},
-        endTime: {value: 1350, unit: "ce"},
+        startTime: { value: 1050, unit: "ce" },
+        endTime: { value: 1350, unit: "ce" },
         info: "The largest pre-Columbian settlement north of Mexico, located near present-day St. Louis. At its peak around 1100 CE, Cahokia had a population of 10,000-20,000, with Monks Mound being the largest earthen structure in the Americas. The city declined and was abandoned before European contact for reasons still debated."
       },
       {
         id: "period-northwest-coast",
         name: "Northwest Coast Cultures",
-        startTime: {value: 1500, unit: "bce"},
-        endTime: {value: 1900, unit: "ce"},
+        startTime: { value: 1500, unit: "bce" },
+        endTime: { value: 1900, unit: "ce" },
         info: "Complex hunter-gatherer societies along the Pacific coast from Alaska to northern California, including the Haida, Tlingit, Kwakwaka'wakw, and others. Known for elaborate woodworking (totem poles, canoes), potlatch ceremonies, social stratification including slavery, and artistic traditions. Rich marine resources supported dense, sedentary populations without agriculture."
       },
       {
         id: "period-wendat",
         name: "Wendat (Huron) Confederacy",
-        startTime: {value: 1400, unit: "ce"},
-        endTime: {value: 1650, unit: "ce"},
+        startTime: { value: 1400, unit: "ce" },
+        endTime: { value: 1650, unit: "ce" },
         info: "A confederacy of Iroquoian-speaking peoples in the Great Lakes region, primarily in present-day Ontario. The Wendat were major agricultural producers and traders, acting as middlemen in the fur trade. Their confederacy was destroyed by warfare with the Haudenosaunee (Iroquois) Confederacy in the 1640s-1650s."
       },
       {
@@ -3003,15 +3003,15 @@ Timeline.create(
       {
         id: "period-ghana",
         name: "Ghana Empire",
-        startTime: {value: 300, unit: "ce"},
-        endTime: {value: 1200, unit: "ce"},
+        startTime: { value: 300, unit: "ce" },
+        endTime: { value: 1200, unit: "ce" },
         info: "The first major West African empire, controlling trans-Saharan gold and salt trade. Not related to modern Ghana, it was located in present-day Mauritania and Mali. Ghana's wealth inspires later empires including Mali and Songhai."
       },
       {
         id: "period-mali",
         name: "Mali Empire",
-        startTime: {value: 1235, unit: "ce"},
-        endTime: {value: 1600, unit: "ce"},
+        startTime: { value: 1235, unit: "ce" },
+        endTime: { value: 1600, unit: "ce" },
         info: "A West African empire that succeeds Ghana, controlling gold and salt trade. Under Mansa Musa, Mali becomes fabulously wealthy; his pilgrimage to Mecca reportedly crashes gold prices in Egypt. Timbuktu becomes a center of Islamic learning."
       },
       {
@@ -3094,8 +3094,8 @@ Timeline.create(
       {
         id: "period-merina",
         name: "Merina Kingdom",
-        startTime: {value: 1540, unit: "ce"},
-        endTime: {value: 1897, unit: "ce"},
+        startTime: { value: 1540, unit: "ce" },
+        endTime: { value: 1897, unit: "ce" },
         info: "The dominant kingdom of Madagascar, founded in the central highlands. Under rulers like Andrianampoinimerina and Radama I, the Merina unified much of Madagascar, developed a written language using Latin script, established diplomatic relations with Britain, and modernized their military. The kingdom was annexed by France in 1897 after resisting colonization."
       }
     ],

@@ -1,6 +1,6 @@
 class TimelinesController < ApplicationController
-  before_action :set_timeline, only: [:show, :edit, :update, :destroy]
-  skip_before_action :require_authentication, only: [:index, :show]
+  before_action :set_timeline, only: [ :show, :edit, :update, :destroy ]
+  skip_before_action :require_authentication, only: [ :index, :show ]
 
   def index
     if authenticated?
@@ -84,7 +84,7 @@ class TimelinesController < ApplicationController
   end
 
   def timeline_params
-    permitted = params.expect(timeline: [:name, :description, :public, :timeline_data])
+    permitted = params.expect(timeline: [ :name, :description, :public, :timeline_data ])
 
     # Parse timeline_data if it's a string
     if permitted[:timeline_data].is_a?(String)

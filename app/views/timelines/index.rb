@@ -47,7 +47,7 @@ module Views
               end
             end
 
-            if (@my_timelines.any? || @public_timelines.any?)
+            if @my_timelines.any? || @public_timelines.any?
               Button(
                 variant: :secondary,
                 data_action: "click->timeline-combiner#combine",

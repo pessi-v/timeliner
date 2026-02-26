@@ -40,23 +40,41 @@ module Views
 
       def render_password_field(form)
         div(class: "my-5") do
-          form.password_field :password,
-            required: true,
-            autocomplete: "new-password",
-            placeholder: "Enter your password",
-            maxlength: 72,
-            class: "block shadow-sm rounded-md border border-gray-400 focus:outline-blue-600 px-3 py-2 mt-2 w-full"
+          div(class: "relative mt-2", data_controller: "password-visibility") do
+            form.password_field :password,
+              required: true,
+              autocomplete: "new-password",
+              placeholder: "Enter your password",
+              maxlength: 72,
+              class: "block shadow-sm rounded-md border border-gray-400 focus:outline-blue-600 px-3 py-2 pr-16 w-full",
+              data: { password_visibility_target: "input" }
+            button(
+              type: "button",
+              class: "absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 hover:text-gray-700",
+              data_password_visibility_target: "button",
+              data_action: "click->password-visibility#toggle"
+            ) { "Show" }
+          end
         end
       end
 
       def render_password_confirmation_field(form)
         div(class: "my-5") do
-          form.password_field :password_confirmation,
-            required: true,
-            autocomplete: "new-password",
-            placeholder: "Confirm your password",
-            maxlength: 72,
-            class: "block shadow-sm rounded-md border border-gray-400 focus:outline-blue-600 px-3 py-2 mt-2 w-full"
+          div(class: "relative mt-2", data_controller: "password-visibility") do
+            form.password_field :password_confirmation,
+              required: true,
+              autocomplete: "new-password",
+              placeholder: "Confirm your password",
+              maxlength: 72,
+              class: "block shadow-sm rounded-md border border-gray-400 focus:outline-blue-600 px-3 py-2 pr-16 w-full",
+              data: { password_visibility_target: "input" }
+            button(
+              type: "button",
+              class: "absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 hover:text-gray-700",
+              data_password_visibility_target: "button",
+              data_action: "click->password-visibility#toggle"
+            ) { "Show" }
+          end
         end
       end
 

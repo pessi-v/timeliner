@@ -1,9 +1,16 @@
 class TimelinesController < ApplicationController
   before_action :set_timeline, only: [ :show, :edit, :update, :destroy ]
+  skip_before_action :require_authentication, only: [ :index, :show ]
 
   def index
-    timelines = Timeline.all.order(created_at: :desc)
-    render Views::Timelines::Index.new(timelines: timelines)
+    if authenticated?
+      my_timelines = Current.user.timelines.order(created_at: :desc)
+      public_timelines = Timeline.where(public: true).where.not(user: Current.user).order(created_at: :desc)
+    else
+      my_timelines = Timeline.none
+      public_timelines = Timeline.where(public: true).order(created_at: :desc)
+    end
+    render Views::Timelines::Index.new(my_timelines: my_timelines, public_timelines: public_timelines)
   end
 
   def show
@@ -77,7 +84,7 @@ class TimelinesController < ApplicationController
   end
 
   def timeline_params
-    permitted = params.expect(timeline: [ :name, :description, :timeline_data ])
+    permitted = params.expect(timeline: [ :name, :description, :public, :timeline_data ])
 
     # Parse timeline_data if it's a string
     if permitted[:timeline_data].is_a?(String)

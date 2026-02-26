@@ -8,10 +8,18 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 #
+begin
+  User.create(email_address: "test@example.com", password: "bob")
+  User.create(email_address: "second@example.com", password: "bob")
+rescue
+  p "failed to create users"
+end
 
 Timeline.create(
   name: "The history of socialism",
   description: "blah blah blah",
+  user_id: 1,
+  public: true,
   timeline_data: {
     events: [
       {
@@ -1175,6 +1183,8 @@ Timeline.create(
 Timeline.create(
   name: "The history of socialism",
   description: "blah blah blah",
+  user_id: 1,
+  public: true,
   timeline_data: {
     events: [
       {
@@ -1541,7 +1551,71 @@ Timeline.create(
 )
 
 Timeline.create(
+  name: "Epstein files",
+  description: "",
+  user_id: 1,
+  public: true,
+  timeline_data: {
+    events: [
+      {
+        id: "maxwell-talks-to-deputy-attorney-general-todd-blanche-stellv-us-justizminister",
+        name: "Maxwell talks to Deputy Attorney General Todd Blanche (stellv. US Justizminister)",
+        time: "2025-07-25"
+      }
+    ],
+    periods: [
+      {
+        id: "maxwell-in-custody-waiting-for-trial",
+        name: "maxwell in custody waiting for trial",
+        endTime: "2021-11-29",
+        startTime: "2020-07-02"
+      },
+      {
+        id: "trial-against-maxwell",
+        name: "trial against maxwell",
+        endTime: "2022-06-28",
+        startTime: "2021-11-29"
+      },
+      {
+        id: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida",
+        name: "maxwell in prison \" Federal Correctional Institution in Tallahassee, Florida",
+        endTime: "2025-08-01",
+        startTime: "2022-06-28"
+      },
+      {
+        id: "maxwell-in-prison-with-lowest-security-standards-federal-prison-camp-in-bryan-texas",
+        name: "Maxwell in prison with lowest security standards  \"Federal Prison Camp\" in Bryan, Texas",
+        endTime: "2037-07-17",
+        startTime: "2025-08-01"
+      }
+    ],
+    connectors: [
+      {
+        id: "maxwell-in-custody-waiting-for-trial-to-trial-against-maxwell",
+        toId: "trial-against-maxwell",
+        type: "defined",
+        fromId: "maxwell-in-custody-waiting-for-trial"
+      },
+      {
+        id: "trial-against-maxwell-to-maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida",
+        toId: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida",
+        type: "defined",
+        fromId: "trial-against-maxwell"
+      },
+      {
+        id: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida-to-maxwell-in-prison-with-lowest-security-standards-federal-prison-camp-in-bryan-texas",
+        toId: "maxwell-in-prison-with-lowest-security-standards-federal-prison-camp-in-bryan-texas",
+        type: "defined",
+        fromId: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida"
+      }
+    ]
+  }
+)
+
+Timeline.create(
   name: "Development of Life",
+  user_id: 1,
+  public: true,
   timeline_data: {
     events: [
       {
@@ -2064,6 +2138,8 @@ Timeline.create(
 
 Timeline.create(
   name: "History of Civilizations",
+  user_id: 1,
+  public: true,
   timeline_data: {
     events: [
       {

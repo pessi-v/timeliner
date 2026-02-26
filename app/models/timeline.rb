@@ -3,7 +3,7 @@ class Timeline < ApplicationRecord
   validates :timeline_data, presence: true
   validate :validate_timeline_data_structure
   validate :validate_with_thymeline
-  belongs_to :user, optional: true
+  belongs_to :user
 
   # Ensure timeline_data always has the required keys
   before_validation :ensure_timeline_data_structure

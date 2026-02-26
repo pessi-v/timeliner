@@ -27,9 +27,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_25_190101) do
     t.datetime "created_at", null: false
     t.text "description"
     t.string "name", null: false
+    t.boolean "public", default: true
     t.jsonb "timeline_data", default: {"events"=>[], "periods"=>[], "connectors"=>[]}, null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", default: 1, null: false
     t.index ["timeline_data"], name: "index_timelines_on_timeline_data", using: :gin
     t.index ["user_id"], name: "index_timelines_on_user_id"
   end

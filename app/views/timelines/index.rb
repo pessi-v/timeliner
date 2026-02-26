@@ -7,8 +7,9 @@ module Views
       include Phlex::Rails::Helpers::ButtonTo
       include Phlex::Rails::Helpers::Pluralize
 
-      def initialize(timelines:)
-        @timelines = timelines
+      def initialize(my_timelines:, public_timelines:)
+        @my_timelines = my_timelines
+        @public_timelines = public_timelines
       end
 
       def view_template
@@ -18,11 +19,11 @@ module Views
         ) do
           render_header
 
-          if @timelines.any?
-            render_timeline_list
-          else
-            render_empty_state
+          if helpers.authenticated?
+            render_section("My Timelines", @my_timelines, editable: true)
           end
+
+          render_section("Public Timelines", @public_timelines, editable: false)
         end
       end
 
@@ -46,29 +47,40 @@ module Views
               end
             end
 
-            if @timelines.any?
+            if (@my_timelines.any? || @public_timelines.any?)
               Button(
                 variant: :secondary,
                 data_action: "click->timeline-combiner#combine",
                 id: "combine-button"
               ) { "Combine Selected" }
             end
-            link_to new_timeline_path do
-              Button(variant: :primary) { "New Timeline" }
+
+            if helpers.authenticated?
+              link_to new_timeline_path do
+                Button(variant: :primary) { "New Timeline" }
+              end
             end
           end
         end
       end
 
-      def render_timeline_list
-        div(class: "grid gap-6") do
-          @timelines.each do |timeline|
-            render_timeline_card(timeline)
+      def render_section(title, timelines, editable:)
+        div(class: "mb-10") do
+          Heading(level: 2, class: "mb-4") { title }
+
+          if timelines.any?
+            div(class: "grid gap-6") do
+              timelines.each do |timeline|
+                render_timeline_card(timeline, editable: editable)
+              end
+            end
+          else
+            render_empty_state(editable: editable)
           end
         end
       end
 
-      def render_timeline_card(timeline)
+      def render_timeline_card(timeline, editable:)
         Card do
           CardHeader do
             div(class: "flex justify-between items-start gap-4") do
@@ -99,12 +111,14 @@ module Views
                 end
               end
 
-              div(class: "flex gap-2") do
-                link_to edit_timeline_path(timeline) do
-                  Button(variant: :secondary, size: :sm) { "Edit" }
-                end
-                link_to(timeline_path(timeline), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }) do
-                  Button(variant: :primary, size: :sm) { "Delete" }
+              if editable
+                div(class: "flex gap-2") do
+                  link_to edit_timeline_path(timeline) do
+                    Button(variant: :secondary, size: :sm) { "Edit" }
+                  end
+                  link_to(timeline_path(timeline), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }) do
+                    Button(variant: :primary, size: :sm) { "Delete" }
+                  end
                 end
               end
             end
@@ -112,11 +126,15 @@ module Views
         end
       end
 
-      def render_empty_state
-        div(class: "text-center py-12") do
-          Text(size: "4", class: "text-muted-foreground mb-4") { "No timelines yet" }
-          link_to new_timeline_path do
-            Button(variant: :primary) { "Create your first timeline" }
+      def render_empty_state(editable:)
+        div(class: "text-center py-8") do
+          if editable
+            Text(size: "4", class: "text-muted-foreground mb-4") { "You haven't created any timelines yet" }
+            link_to new_timeline_path do
+              Button(variant: :primary) { "Create your first timeline" }
+            end
+          else
+            Text(size: "4", class: "text-muted-foreground") { "No public timelines available" }
           end
         end
       end

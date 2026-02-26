@@ -26,6 +26,7 @@ module Views
           render_errors if @timeline.errors.any?
           render_name_field(form)
           render_description_field(form)
+          render_public_field(form)
           render_periods_section
           render_events_section
           render_connectors_section
@@ -57,6 +58,16 @@ module Views
           FormFieldLabel { "Name" }
           form.text_field :name,
             class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        end
+      end
+
+      def render_public_field(form)
+        FormField(class: "mb-6") do
+          label(class: "flex items-center gap-2 cursor-pointer") do
+            form.check_box :public, checked: @timeline.public?,
+              class: "h-4 w-4 rounded border-gray-300"
+            span(class: "text-sm font-medium") { "Public" }
+          end
         end
       end
 

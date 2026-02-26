@@ -7,7 +7,7 @@ image: pessiv/timeliner
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.133
+    - x270
   # job:
   #   hosts:
   #     - 192.168.0.1

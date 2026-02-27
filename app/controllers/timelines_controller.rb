@@ -1,6 +1,6 @@
 class TimelinesController < ApplicationController
   before_action :set_timeline, only: [ :show, :edit, :update, :destroy ]
-  skip_before_action :require_authentication, only: [ :index, :show ]
+  skip_before_action :require_authentication, only: [ :index, :show, :combine ]
 
   def index
     if authenticated?

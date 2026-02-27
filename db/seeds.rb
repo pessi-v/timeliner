@@ -8,12 +8,12 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 #
-begin
-  User.create(email_address: "test@example.com", password: "bob")
-  User.create(email_address: "second@example.com", password: "bob")
-rescue
-  p "failed to create users"
-end
+# begin
+#   User.create(email_address: "test@example.com", password: "bob")
+#   User.create(email_address: "second@example.com", password: "bob")
+# rescue
+#   p "failed to create users"
+# end
 
 Timeline.create(
   name: "The history of socialism",
@@ -1180,437 +1180,437 @@ Timeline.create(
   }
 )
 
-Timeline.create(
-  name: "The history of socialism",
-  description: "blah blah blah",
-  user_id: 1,
-  public: true,
-  timeline_data: {
-    events: [
-      {
-        id: "event-manifesto",
-        name: "Communist Manifesto Published",
-        time: "1848-02-21",
-        info: "Karl Marx and Friedrich Engels publish 'The Communist Manifesto', laying out the theoretical foundations of scientific socialism. The pamphlet declares 'A spectre is haunting Europe — the spectre of communism' and ends with the famous call: 'Workers of the world, unite!'"
-      },
-      {
-        id: "event-1848-revolutions",
-        name: "Revolutions of 1848",
-        time: "1848-03-15",
-        info: "A wave of revolutions sweeps across Europe, driven by demands for democratic reform, national unification, and workers' rights. Though ultimately suppressed, these uprisings mark the emergence of the working class as a political force."
-      },
-      {
-        id: "event-kapital",
-        name: "Das Kapital Vol. 1 Published",
-        time: "1867-09-14",
-        info: "Karl Marx publishes the first volume of 'Das Kapital', his magnum opus analyzing capitalism's internal contradictions. The work introduces concepts like surplus value, commodity fetishism, and the tendency of the rate of profit to fall."
-      },
-      {
-        id: "event-paris-commune",
-        name: "Paris Commune",
-        time: "1871-03-18",
-        info: "Workers seize control of Paris for 72 days, establishing the first proletarian government in history. The Commune implements radical reforms including workers' self-management, separation of church and state, and women's rights. Brutally suppressed with 20,000-30,000 killed."
-      },
-      {
-        id: "event-haymarket",
-        name: "Haymarket Affair",
-        time: "1886-05-04",
-        info: "A labor rally in Chicago for the eight-hour workday turns violent when a bomb explodes, leading to the execution of four anarchist leaders. The event becomes a rallying point for the international labor movement and the origin of May Day celebrations worldwide."
-      },
-      {
-        id: "event-iww-founding",
-        name: "IWW Founded",
-        time: "1905-06-27",
-        info: "The Industrial Workers of the World is founded in Chicago by radical unionists including Eugene V. Debs, Mother Jones, and Big Bill Haywood. The 'Wobblies' advocate for 'One Big Union' organizing all workers regardless of skill, race, or gender."
-      },
-      {
-        id: "event-1905-revolution",
-        name: "Russian Revolution of 1905",
-        time: "1905-01-22",
-        info: "Bloody Sunday massacre triggers a revolutionary wave across the Russian Empire. Workers form the first soviets (councils), demonstrating new forms of democratic organization. Though defeated, the revolution serves as a 'dress rehearsal' for 1917."
-      },
-      {
-        id: "event-february-revolution",
-        name: "February Revolution",
-        time: "1917-03-08",
-        info: "Women workers in Petrograd strike on International Women's Day, sparking a revolution that topples the Romanov dynasty. Dual power emerges between the Provisional Government and the soviets of workers, soldiers, and peasants."
-      },
-      {
-        id: "event-october-revolution",
-        name: "October Revolution",
-        time: "1917-11-07",
-        info: "The Bolsheviks, led by Vladimir Lenin and Leon Trotsky, overthrow the Provisional Government in the name of 'All Power to the Soviets'. The world's first socialist state is proclaimed, sending shockwaves through the global order."
-      },
-      {
-        id: "event-rosa-assassination",
-        name: "Rosa Luxemburg Assassinated",
-        time: "1919-01-15",
-        info: "Revolutionary socialist Rosa Luxemburg and Karl Liebknecht are murdered by Freikorps paramilitaries during the failed Spartacist uprising in Berlin. Luxemburg's writings on spontaneity, democracy, and mass strikes remain influential across the socialist left."
-      },
-      {
-        id: "event-kronstadt",
-        name: "Kronstadt Rebellion",
-        time: "1921-03-01",
-        info: "Sailors at the Kronstadt naval base, former Bolshevik supporters, rebel demanding 'Soviets without Bolsheviks', free elections, and an end to War Communism. The rebellion's suppression marks a turning point, criticized by anarchists and left communists."
-      },
-      {
-        id: "event-long-march",
-        name: "Long March Begins",
-        time: "1934-10-16",
-        info: "The Chinese Red Army begins its 6,000-mile retreat from Nationalist forces, a journey that will forge the Communist Party's leadership under Mao Zedong and become central to revolutionary mythology."
-      },
-      {
-        id: "event-spanish-revolution",
-        name: "Spanish Revolution",
-        time: "1936-07-19",
-        info: "Workers and peasants respond to Franco's fascist coup by launching a social revolution. In Catalonia and Aragon, anarchist collectives manage factories and farms. George Orwell documents the experience in 'Homage to Catalonia'."
-      },
-      {
-        id: "event-tito-stalin-split",
-        name: "Tito-Stalin Split",
-        time: "1948-06-28",
-        info: "Yugoslavia is expelled from the Cominform after Josip Broz Tito refuses to subordinate Yugoslav interests to Soviet control. The split leads to the development of 'workers' self-management' as an alternative socialist model."
-      },
-      {
-        id: "event-cuban-revolution",
-        name: "Cuban Revolution Triumphs",
-        time: "1959-01-01",
-        info: "Fidel Castro's 26th of July Movement overthrows the Batista dictatorship. The revolution, initially nationalist, soon declares itself socialist. Che Guevara becomes a global icon of revolutionary commitment."
-      },
-      {
-        id: "event-che-death",
-        name: "Che Guevara Killed",
-        time: "1967-10-09",
-        info: "Ernesto 'Che' Guevara is captured and executed by Bolivian forces with CIA assistance while attempting to spread revolution in Latin America. His image becomes the most reproduced photograph in history."
-      },
-      {
-        id: "event-prague-spring",
-        name: "Prague Spring Crushed",
-        time: "1968-08-20",
-        info: "Warsaw Pact forces invade Czechoslovakia to end Alexander Dubček's reforms of 'socialism with a human face'. The invasion deepens divisions in the international communist movement and disillusions many Western leftists."
-      },
-      {
-        id: "event-allende-elected",
-        name: "Allende Elected in Chile",
-        time: "1970-09-04",
-        info: "Salvador Allende becomes the world's first democratically elected Marxist head of state. His Popular Unity government nationalizes copper mines and banks while preserving democratic institutions."
-      },
-      {
-        id: "event-allende-coup",
-        name: "Chilean Coup",
-        time: "1973-09-11",
-        info: "General Augusto Pinochet, backed by the CIA, overthrows Salvador Allende in a violent coup. Allende dies in the presidential palace. The coup inaugurates brutal repression and neoliberal economic 'shock therapy'."
-      },
-      {
-        id: "event-sandinista-revolution",
-        name: "Sandinista Revolution",
-        time: "1979-07-19",
-        info: "The Sandinista National Liberation Front overthrows the Somoza dictatorship in Nicaragua after years of guerrilla struggle. The revolution implements literacy campaigns and land reform while facing US-backed Contra war."
-      },
-      {
-        id: "event-solidarity",
-        name: "Solidarity Founded",
-        time: "1980-09-17",
-        info: "Polish workers at the Gdańsk shipyard, led by Lech Wałęsa, form Solidarity, the first independent trade union in the Soviet bloc. The movement, supported by the Catholic Church, eventually helps bring down communist rule in Poland."
-      },
-      {
-        id: "event-berlin-wall-fall",
-        name: "Fall of the Berlin Wall",
-        time: "1989-11-09",
-        info: "East Germans breach the Berlin Wall after weeks of mass protests, symbolizing the collapse of Soviet-style socialism in Eastern Europe. The event triggers rapid German reunification and the end of the Cold War."
-      },
-      {
-        id: "event-ussr-dissolution",
-        name: "USSR Dissolved",
-        time: "1991-12-26",
-        info: "The Soviet Union officially dissolves after the failed August coup and declarations of independence by constituent republics. The world's first socialist state ends after 74 years, leaving contested legacies across the political spectrum."
-      },
-      {
-        id: "event-zapatista-uprising",
-        name: "Zapatista Uprising",
-        time: "1994-01-01",
-        info: "The Zapatista Army of National Liberation (EZLN) launches an uprising in Chiapas, Mexico, on the day NAFTA takes effect. Led by Subcomandante Marcos, the movement combines indigenous rights with anti-capitalist politics and innovative use of media."
-      },
-      {
-        id: "event-chavez-elected",
-        name: "Hugo Chávez Elected",
-        time: "1998-12-06",
-        info: "Hugo Chávez wins Venezuela's presidency, launching the 'Bolivarian Revolution' and inspiring a 'pink tide' of left-wing governments across Latin America. His '21st century socialism' emphasizes participatory democracy and regional integration."
-      }
-    ],
-    periods: [
-      {
-        id: "period-utopian-socialism",
-        name: "Utopian Socialism",
-        startTime: "1800-01-01",
-        endTime: "1848-02-21",
-        info: "Early socialist thinkers envision ideal communities based on cooperation rather than competition. Robert Owen establishes New Lanark and New Harmony; Charles Fourier designs phalanstères; Henri de Saint-Simon advocates technocratic planning. Marx and Engels later distinguish their 'scientific' socialism from these 'utopian' predecessors."
-      },
-      {
-        id: "period-first-international",
-        name: "First International",
-        startTime: "1864-09-28",
-        endTime: "1876-07-15",
-        info: "The International Workingmen's Association unites trade unionists, socialists, and anarchists across Europe. Karl Marx drafts its founding address. Internal conflicts between Marx and Mikhail Bakunin over centralization, the state, and revolutionary strategy lead to the organization's collapse."
-      },
-      {
-        id: "period-second-international",
-        name: "Second International",
-        startTime: "1889-07-14",
-        endTime: "1916-04-24",
-        info: "Socialist and labor parties form a new international, establishing May Day and building mass parties. Key debates emerge between reformists like Eduard Bernstein and revolutionaries like Rosa Luxemburg. The International collapses when most parties support their nations in World War I."
-      },
-      {
-        id: "period-third-international",
-        name: "Third International (Comintern)",
-        startTime: "1919-03-02",
-        endTime: "1943-05-15",
-        info: "Lenin founds the Communist International to spread world revolution and coordinate communist parties. The 21 Conditions require parties to break with reformists. Under Stalin, the Comintern becomes an instrument of Soviet foreign policy. Dissolved during WWII to appease Western allies."
-      },
-      {
-        id: "period-iww",
-        name: "IWW Peak Years",
-        startTime: "1905-06-27",
-        endTime: "1924-12-31",
-        info: "The Industrial Workers of the World organizes militant strikes among miners, textile workers, and migrant laborers. The Wobblies pioneer tactics like the sit-down strike and produce enduring songs like 'Solidarity Forever'. Government repression during WWI and the Red Scare devastates the union."
-      },
-      {
-        id: "period-ussr",
-        name: "Soviet Union",
-        startTime: "1922-12-30",
-        endTime: "1991-12-26",
-        info: "The Union of Soviet Socialist Republics becomes the world's first constitutionally socialist state. Rapid industrialization transforms a peasant society but at enormous human cost. The USSR defeats Nazi Germany, develops nuclear weapons, and sponsors revolutionary movements worldwide before economic stagnation and political crisis lead to its dissolution."
-      },
-      {
-        id: "period-cnt-fai",
-        name: "CNT-FAI Revolutionary Period",
-        startTime: "1936-07-19",
-        endTime: "1939-04-01",
-        info: "The anarcho-syndicalist CNT (National Confederation of Labor) and FAI (Iberian Anarchist Federation) lead a social revolution in Republican Spain. Workers collectivize factories; peasants socialize land. Internal conflicts with Communists and the Republic's defeat by Franco end the experiment."
-      },
-      {
-        id: "period-ccp-revolution",
-        name: "Chinese Revolution",
-        startTime: "1927-08-01",
-        endTime: "1949-10-01",
-        info: "The Chinese Communist Party, led by Mao Zedong, wages a revolutionary war combining peasant mobilization with guerrilla tactics. After surviving the Long March, defeating Japanese invasion, and winning civil war against the Nationalists, the CCP proclaims the People's Republic."
-      },
-      {
-        id: "period-prc",
-        name: "People's Republic of China",
-        startTime: "1949-10-01",
-        info: "The Communist Party establishes the People's Republic of China, implementing land reform, collectivization, and rapid industrialization. The Great Leap Forward causes famine; the Cultural Revolution brings upheaval. After Mao's death, Deng Xiaoping's reforms create 'socialism with Chinese characteristics'."
-      },
-      {
-        id: "period-yugoslavia",
-        name: "Socialist Yugoslavia",
-        startTime: "1945-11-29",
-        endTime: "1992-04-27",
-        info: "Yugoslavia under Josip Broz Tito develops a distinctive socialist model featuring workers' self-management, market mechanisms, and non-alignment in the Cold War. The federation holds together diverse nationalities until economic crisis and nationalist mobilization lead to violent dissolution in the 1990s."
-      },
-      {
-        id: "period-ddr",
-        name: "German Democratic Republic",
-        startTime: "1949-10-07",
-        endTime: "1990-10-03",
-        info: "East Germany becomes the most economically developed Warsaw Pact state, claiming to represent the antifascist German tradition. The Berlin Wall (1961) stems emigration but symbolizes the regime's lack of legitimacy. Mass protests in 1989 lead to the Wall's fall and rapid reunification with West Germany."
-      },
-      {
-        id: "period-cuba",
-        name: "Socialist Cuba",
-        startTime: "1961-04-16",
-        info: "Cuba declares itself socialist after the Bay of Pigs invasion, becoming the Western Hemisphere's first socialist state. Despite US embargo, Cuba achieves notable advances in healthcare and education while supporting revolutionary movements in Latin America and Africa."
-      },
-      {
-        id: "period-allende",
-        name: "Allende's Chile",
-        startTime: "1970-11-03",
-        endTime: "1973-09-11",
-        info: "Salvador Allende's Popular Unity government attempts a 'Chilean road to socialism' through democratic means. Nationalizations of copper and banking provoke US opposition and domestic polarization. The experiment ends with Pinochet's coup and Allende's death."
-      },
-      {
-        id: "period-sandinistas",
-        name: "Sandinista Nicaragua",
-        startTime: "1979-07-19",
-        endTime: "1990-04-25",
-        info: "The Sandinista Front governs Nicaragua, implementing literacy campaigns, land reform, and mixed economy policies. The US-backed Contra war and economic embargo devastate the country. The Sandinistas lose the 1990 election but return to power in 2006."
-      },
-      {
-        id: "period-mst",
-        name: "MST",
-        startTime: "1984-01-20",
-        info: "The Landless Workers' Movement (MST) becomes Latin America's largest social movement, organizing landless peasants in Brazil to occupy unused land and demand agrarian reform. The movement combines direct action with cooperatives, schools, and alliance with the Workers' Party."
-      },
-      {
-        id: "period-ezln",
-        name: "Zapatista Autonomous Zones",
-        startTime: "1994-01-01",
-        info: "After their 1994 uprising, the Zapatistas establish autonomous municipalities in Chiapas, Mexico. The 'caracoles' practice participatory democracy, collective land use, and autonomous education and healthcare, inspiring anti-globalization movements worldwide."
-      },
-      {
-        id: "period-bolivarian",
-        name: "Bolivarian Venezuela",
-        startTime: "1999-02-02",
-        endTime: "2013-03-05",
-        info: "Hugo Chávez's Bolivarian Revolution nationalizes key industries, expands social programs called 'missions', and promotes participatory democracy through communal councils. Oil revenues fund regional integration initiatives like ALBA. The project faces ongoing crisis after Chávez's death."
-      },
-      {
-        id: "period-fourth-international",
-        name: "Fourth International",
-        startTime: "1938-09-03",
-        info: "Leon Trotsky founds the Fourth International to continue revolutionary socialism against both capitalism and Stalinist 'bureaucratic degeneration'. Though never achieving mass influence, Trotskyist organizations persist globally, characterized by anti-Stalinism, permanent revolution theory, and frequent splits."
-      }
-    ],
-    connectors: [
-      {
-        id: "conn-utopian-first",
-        fromId: "period-utopian-socialism",
-        toId: "period-first-international",
-        type: "defined",
-        metadata: { note: "Scientific socialism emerges from critique of utopian socialism" }
-      },
-      {
-        id: "conn-first-second",
-        fromId: "period-first-international",
-        toId: "period-second-international",
-        type: "undefined",
-        metadata: { note: "Internationals as successive attempts at workers' coordination" }
-      },
-      {
-        id: "conn-second-third",
-        fromId: "period-second-international",
-        toId: "period-third-international",
-        type: "undefined",
-        metadata: { note: "Third International founded in opposition to Second's 'social patriotism'" }
-      },
-      {
-        id: "conn-third-fourth",
-        fromId: "period-third-international",
-        toId: "period-fourth-international",
-        type: "undefined",
-        metadata: { note: "Fourth International founded in opposition to Stalinist Comintern" }
-      },
-      {
-        id: "conn-ussr-ddr",
-        fromId: "period-ussr",
-        toId: "period-ddr",
-        type: "defined",
-        metadata: { note: "DDR established in Soviet occupation zone" }
-      },
-      {
-        id: "conn-ussr-yugoslavia",
-        fromId: "period-ussr",
-        toId: "period-yugoslavia",
-        type: "defined",
-        metadata: { note: "Yugoslav partisans supported by USSR, later independent" }
-      },
-      {
-        id: "conn-ccp-prc",
-        fromId: "period-ccp-revolution",
-        toId: "period-prc",
-        type: "defined",
-        metadata: { note: "Revolutionary period leads to state formation" }
-      },
-      {
-        id: "conn-revolution-ussr",
-        fromId: "period-first-international",
-        toId: "period-ussr",
-        type: "defined",
-        metadata: { note: "Marxist tradition from First International shapes Bolshevism" }
-      },
-      {
-        id: "conn-cnt-iww",
-        fromId: "period-iww",
-        toId: "period-cnt-fai",
-        type: "undefined",
-        metadata: { note: "Anarcho-syndicalist tradition connects IWW and CNT" }
-      },
-      {
-        id: "conn-cuba-sandinistas",
-        fromId: "period-cuba",
-        toId: "period-sandinistas",
-        type: "defined",
-        metadata: { note: "Cuban support for Sandinista revolution" }
-      },
-      {
-        id: "conn-sandinistas-bolivarian",
-        fromId: "period-sandinistas",
-        toId: "period-bolivarian",
-        type: "undefined",
-        metadata: { note: "Latin American revolutionary tradition continues" }
-      },
-      {
-        id: "conn-allende-bolivarian",
-        fromId: "period-allende",
-        toId: "period-bolivarian",
-        type: "undefined",
-        metadata: { note: "Democratic socialist tradition in Latin America" }
-      }
-    ]
-  }
-)
+# Timeline.create(
+#   name: "The history of socialism",
+#   description: "blah blah blah",
+#   user_id: 1,
+#   public: true,
+#   timeline_data: {
+#     events: [
+#       {
+#         id: "event-manifesto",
+#         name: "Communist Manifesto Published",
+#         time: "1848-02-21",
+#         info: "Karl Marx and Friedrich Engels publish 'The Communist Manifesto', laying out the theoretical foundations of scientific socialism. The pamphlet declares 'A spectre is haunting Europe — the spectre of communism' and ends with the famous call: 'Workers of the world, unite!'"
+#       },
+#       {
+#         id: "event-1848-revolutions",
+#         name: "Revolutions of 1848",
+#         time: "1848-03-15",
+#         info: "A wave of revolutions sweeps across Europe, driven by demands for democratic reform, national unification, and workers' rights. Though ultimately suppressed, these uprisings mark the emergence of the working class as a political force."
+#       },
+#       {
+#         id: "event-kapital",
+#         name: "Das Kapital Vol. 1 Published",
+#         time: "1867-09-14",
+#         info: "Karl Marx publishes the first volume of 'Das Kapital', his magnum opus analyzing capitalism's internal contradictions. The work introduces concepts like surplus value, commodity fetishism, and the tendency of the rate of profit to fall."
+#       },
+#       {
+#         id: "event-paris-commune",
+#         name: "Paris Commune",
+#         time: "1871-03-18",
+#         info: "Workers seize control of Paris for 72 days, establishing the first proletarian government in history. The Commune implements radical reforms including workers' self-management, separation of church and state, and women's rights. Brutally suppressed with 20,000-30,000 killed."
+#       },
+#       {
+#         id: "event-haymarket",
+#         name: "Haymarket Affair",
+#         time: "1886-05-04",
+#         info: "A labor rally in Chicago for the eight-hour workday turns violent when a bomb explodes, leading to the execution of four anarchist leaders. The event becomes a rallying point for the international labor movement and the origin of May Day celebrations worldwide."
+#       },
+#       {
+#         id: "event-iww-founding",
+#         name: "IWW Founded",
+#         time: "1905-06-27",
+#         info: "The Industrial Workers of the World is founded in Chicago by radical unionists including Eugene V. Debs, Mother Jones, and Big Bill Haywood. The 'Wobblies' advocate for 'One Big Union' organizing all workers regardless of skill, race, or gender."
+#       },
+#       {
+#         id: "event-1905-revolution",
+#         name: "Russian Revolution of 1905",
+#         time: "1905-01-22",
+#         info: "Bloody Sunday massacre triggers a revolutionary wave across the Russian Empire. Workers form the first soviets (councils), demonstrating new forms of democratic organization. Though defeated, the revolution serves as a 'dress rehearsal' for 1917."
+#       },
+#       {
+#         id: "event-february-revolution",
+#         name: "February Revolution",
+#         time: "1917-03-08",
+#         info: "Women workers in Petrograd strike on International Women's Day, sparking a revolution that topples the Romanov dynasty. Dual power emerges between the Provisional Government and the soviets of workers, soldiers, and peasants."
+#       },
+#       {
+#         id: "event-october-revolution",
+#         name: "October Revolution",
+#         time: "1917-11-07",
+#         info: "The Bolsheviks, led by Vladimir Lenin and Leon Trotsky, overthrow the Provisional Government in the name of 'All Power to the Soviets'. The world's first socialist state is proclaimed, sending shockwaves through the global order."
+#       },
+#       {
+#         id: "event-rosa-assassination",
+#         name: "Rosa Luxemburg Assassinated",
+#         time: "1919-01-15",
+#         info: "Revolutionary socialist Rosa Luxemburg and Karl Liebknecht are murdered by Freikorps paramilitaries during the failed Spartacist uprising in Berlin. Luxemburg's writings on spontaneity, democracy, and mass strikes remain influential across the socialist left."
+#       },
+#       {
+#         id: "event-kronstadt",
+#         name: "Kronstadt Rebellion",
+#         time: "1921-03-01",
+#         info: "Sailors at the Kronstadt naval base, former Bolshevik supporters, rebel demanding 'Soviets without Bolsheviks', free elections, and an end to War Communism. The rebellion's suppression marks a turning point, criticized by anarchists and left communists."
+#       },
+#       {
+#         id: "event-long-march",
+#         name: "Long March Begins",
+#         time: "1934-10-16",
+#         info: "The Chinese Red Army begins its 6,000-mile retreat from Nationalist forces, a journey that will forge the Communist Party's leadership under Mao Zedong and become central to revolutionary mythology."
+#       },
+#       {
+#         id: "event-spanish-revolution",
+#         name: "Spanish Revolution",
+#         time: "1936-07-19",
+#         info: "Workers and peasants respond to Franco's fascist coup by launching a social revolution. In Catalonia and Aragon, anarchist collectives manage factories and farms. George Orwell documents the experience in 'Homage to Catalonia'."
+#       },
+#       {
+#         id: "event-tito-stalin-split",
+#         name: "Tito-Stalin Split",
+#         time: "1948-06-28",
+#         info: "Yugoslavia is expelled from the Cominform after Josip Broz Tito refuses to subordinate Yugoslav interests to Soviet control. The split leads to the development of 'workers' self-management' as an alternative socialist model."
+#       },
+#       {
+#         id: "event-cuban-revolution",
+#         name: "Cuban Revolution Triumphs",
+#         time: "1959-01-01",
+#         info: "Fidel Castro's 26th of July Movement overthrows the Batista dictatorship. The revolution, initially nationalist, soon declares itself socialist. Che Guevara becomes a global icon of revolutionary commitment."
+#       },
+#       {
+#         id: "event-che-death",
+#         name: "Che Guevara Killed",
+#         time: "1967-10-09",
+#         info: "Ernesto 'Che' Guevara is captured and executed by Bolivian forces with CIA assistance while attempting to spread revolution in Latin America. His image becomes the most reproduced photograph in history."
+#       },
+#       {
+#         id: "event-prague-spring",
+#         name: "Prague Spring Crushed",
+#         time: "1968-08-20",
+#         info: "Warsaw Pact forces invade Czechoslovakia to end Alexander Dubček's reforms of 'socialism with a human face'. The invasion deepens divisions in the international communist movement and disillusions many Western leftists."
+#       },
+#       {
+#         id: "event-allende-elected",
+#         name: "Allende Elected in Chile",
+#         time: "1970-09-04",
+#         info: "Salvador Allende becomes the world's first democratically elected Marxist head of state. His Popular Unity government nationalizes copper mines and banks while preserving democratic institutions."
+#       },
+#       {
+#         id: "event-allende-coup",
+#         name: "Chilean Coup",
+#         time: "1973-09-11",
+#         info: "General Augusto Pinochet, backed by the CIA, overthrows Salvador Allende in a violent coup. Allende dies in the presidential palace. The coup inaugurates brutal repression and neoliberal economic 'shock therapy'."
+#       },
+#       {
+#         id: "event-sandinista-revolution",
+#         name: "Sandinista Revolution",
+#         time: "1979-07-19",
+#         info: "The Sandinista National Liberation Front overthrows the Somoza dictatorship in Nicaragua after years of guerrilla struggle. The revolution implements literacy campaigns and land reform while facing US-backed Contra war."
+#       },
+#       {
+#         id: "event-solidarity",
+#         name: "Solidarity Founded",
+#         time: "1980-09-17",
+#         info: "Polish workers at the Gdańsk shipyard, led by Lech Wałęsa, form Solidarity, the first independent trade union in the Soviet bloc. The movement, supported by the Catholic Church, eventually helps bring down communist rule in Poland."
+#       },
+#       {
+#         id: "event-berlin-wall-fall",
+#         name: "Fall of the Berlin Wall",
+#         time: "1989-11-09",
+#         info: "East Germans breach the Berlin Wall after weeks of mass protests, symbolizing the collapse of Soviet-style socialism in Eastern Europe. The event triggers rapid German reunification and the end of the Cold War."
+#       },
+#       {
+#         id: "event-ussr-dissolution",
+#         name: "USSR Dissolved",
+#         time: "1991-12-26",
+#         info: "The Soviet Union officially dissolves after the failed August coup and declarations of independence by constituent republics. The world's first socialist state ends after 74 years, leaving contested legacies across the political spectrum."
+#       },
+#       {
+#         id: "event-zapatista-uprising",
+#         name: "Zapatista Uprising",
+#         time: "1994-01-01",
+#         info: "The Zapatista Army of National Liberation (EZLN) launches an uprising in Chiapas, Mexico, on the day NAFTA takes effect. Led by Subcomandante Marcos, the movement combines indigenous rights with anti-capitalist politics and innovative use of media."
+#       },
+#       {
+#         id: "event-chavez-elected",
+#         name: "Hugo Chávez Elected",
+#         time: "1998-12-06",
+#         info: "Hugo Chávez wins Venezuela's presidency, launching the 'Bolivarian Revolution' and inspiring a 'pink tide' of left-wing governments across Latin America. His '21st century socialism' emphasizes participatory democracy and regional integration."
+#       }
+#     ],
+#     periods: [
+#       {
+#         id: "period-utopian-socialism",
+#         name: "Utopian Socialism",
+#         startTime: "1800-01-01",
+#         endTime: "1848-02-21",
+#         info: "Early socialist thinkers envision ideal communities based on cooperation rather than competition. Robert Owen establishes New Lanark and New Harmony; Charles Fourier designs phalanstères; Henri de Saint-Simon advocates technocratic planning. Marx and Engels later distinguish their 'scientific' socialism from these 'utopian' predecessors."
+#       },
+#       {
+#         id: "period-first-international",
+#         name: "First International",
+#         startTime: "1864-09-28",
+#         endTime: "1876-07-15",
+#         info: "The International Workingmen's Association unites trade unionists, socialists, and anarchists across Europe. Karl Marx drafts its founding address. Internal conflicts between Marx and Mikhail Bakunin over centralization, the state, and revolutionary strategy lead to the organization's collapse."
+#       },
+#       {
+#         id: "period-second-international",
+#         name: "Second International",
+#         startTime: "1889-07-14",
+#         endTime: "1916-04-24",
+#         info: "Socialist and labor parties form a new international, establishing May Day and building mass parties. Key debates emerge between reformists like Eduard Bernstein and revolutionaries like Rosa Luxemburg. The International collapses when most parties support their nations in World War I."
+#       },
+#       {
+#         id: "period-third-international",
+#         name: "Third International (Comintern)",
+#         startTime: "1919-03-02",
+#         endTime: "1943-05-15",
+#         info: "Lenin founds the Communist International to spread world revolution and coordinate communist parties. The 21 Conditions require parties to break with reformists. Under Stalin, the Comintern becomes an instrument of Soviet foreign policy. Dissolved during WWII to appease Western allies."
+#       },
+#       {
+#         id: "period-iww",
+#         name: "IWW Peak Years",
+#         startTime: "1905-06-27",
+#         endTime: "1924-12-31",
+#         info: "The Industrial Workers of the World organizes militant strikes among miners, textile workers, and migrant laborers. The Wobblies pioneer tactics like the sit-down strike and produce enduring songs like 'Solidarity Forever'. Government repression during WWI and the Red Scare devastates the union."
+#       },
+#       {
+#         id: "period-ussr",
+#         name: "Soviet Union",
+#         startTime: "1922-12-30",
+#         endTime: "1991-12-26",
+#         info: "The Union of Soviet Socialist Republics becomes the world's first constitutionally socialist state. Rapid industrialization transforms a peasant society but at enormous human cost. The USSR defeats Nazi Germany, develops nuclear weapons, and sponsors revolutionary movements worldwide before economic stagnation and political crisis lead to its dissolution."
+#       },
+#       {
+#         id: "period-cnt-fai",
+#         name: "CNT-FAI Revolutionary Period",
+#         startTime: "1936-07-19",
+#         endTime: "1939-04-01",
+#         info: "The anarcho-syndicalist CNT (National Confederation of Labor) and FAI (Iberian Anarchist Federation) lead a social revolution in Republican Spain. Workers collectivize factories; peasants socialize land. Internal conflicts with Communists and the Republic's defeat by Franco end the experiment."
+#       },
+#       {
+#         id: "period-ccp-revolution",
+#         name: "Chinese Revolution",
+#         startTime: "1927-08-01",
+#         endTime: "1949-10-01",
+#         info: "The Chinese Communist Party, led by Mao Zedong, wages a revolutionary war combining peasant mobilization with guerrilla tactics. After surviving the Long March, defeating Japanese invasion, and winning civil war against the Nationalists, the CCP proclaims the People's Republic."
+#       },
+#       {
+#         id: "period-prc",
+#         name: "People's Republic of China",
+#         startTime: "1949-10-01",
+#         info: "The Communist Party establishes the People's Republic of China, implementing land reform, collectivization, and rapid industrialization. The Great Leap Forward causes famine; the Cultural Revolution brings upheaval. After Mao's death, Deng Xiaoping's reforms create 'socialism with Chinese characteristics'."
+#       },
+#       {
+#         id: "period-yugoslavia",
+#         name: "Socialist Yugoslavia",
+#         startTime: "1945-11-29",
+#         endTime: "1992-04-27",
+#         info: "Yugoslavia under Josip Broz Tito develops a distinctive socialist model featuring workers' self-management, market mechanisms, and non-alignment in the Cold War. The federation holds together diverse nationalities until economic crisis and nationalist mobilization lead to violent dissolution in the 1990s."
+#       },
+#       {
+#         id: "period-ddr",
+#         name: "German Democratic Republic",
+#         startTime: "1949-10-07",
+#         endTime: "1990-10-03",
+#         info: "East Germany becomes the most economically developed Warsaw Pact state, claiming to represent the antifascist German tradition. The Berlin Wall (1961) stems emigration but symbolizes the regime's lack of legitimacy. Mass protests in 1989 lead to the Wall's fall and rapid reunification with West Germany."
+#       },
+#       {
+#         id: "period-cuba",
+#         name: "Socialist Cuba",
+#         startTime: "1961-04-16",
+#         info: "Cuba declares itself socialist after the Bay of Pigs invasion, becoming the Western Hemisphere's first socialist state. Despite US embargo, Cuba achieves notable advances in healthcare and education while supporting revolutionary movements in Latin America and Africa."
+#       },
+#       {
+#         id: "period-allende",
+#         name: "Allende's Chile",
+#         startTime: "1970-11-03",
+#         endTime: "1973-09-11",
+#         info: "Salvador Allende's Popular Unity government attempts a 'Chilean road to socialism' through democratic means. Nationalizations of copper and banking provoke US opposition and domestic polarization. The experiment ends with Pinochet's coup and Allende's death."
+#       },
+#       {
+#         id: "period-sandinistas",
+#         name: "Sandinista Nicaragua",
+#         startTime: "1979-07-19",
+#         endTime: "1990-04-25",
+#         info: "The Sandinista Front governs Nicaragua, implementing literacy campaigns, land reform, and mixed economy policies. The US-backed Contra war and economic embargo devastate the country. The Sandinistas lose the 1990 election but return to power in 2006."
+#       },
+#       {
+#         id: "period-mst",
+#         name: "MST",
+#         startTime: "1984-01-20",
+#         info: "The Landless Workers' Movement (MST) becomes Latin America's largest social movement, organizing landless peasants in Brazil to occupy unused land and demand agrarian reform. The movement combines direct action with cooperatives, schools, and alliance with the Workers' Party."
+#       },
+#       {
+#         id: "period-ezln",
+#         name: "Zapatista Autonomous Zones",
+#         startTime: "1994-01-01",
+#         info: "After their 1994 uprising, the Zapatistas establish autonomous municipalities in Chiapas, Mexico. The 'caracoles' practice participatory democracy, collective land use, and autonomous education and healthcare, inspiring anti-globalization movements worldwide."
+#       },
+#       {
+#         id: "period-bolivarian",
+#         name: "Bolivarian Venezuela",
+#         startTime: "1999-02-02",
+#         endTime: "2013-03-05",
+#         info: "Hugo Chávez's Bolivarian Revolution nationalizes key industries, expands social programs called 'missions', and promotes participatory democracy through communal councils. Oil revenues fund regional integration initiatives like ALBA. The project faces ongoing crisis after Chávez's death."
+#       },
+#       {
+#         id: "period-fourth-international",
+#         name: "Fourth International",
+#         startTime: "1938-09-03",
+#         info: "Leon Trotsky founds the Fourth International to continue revolutionary socialism against both capitalism and Stalinist 'bureaucratic degeneration'. Though never achieving mass influence, Trotskyist organizations persist globally, characterized by anti-Stalinism, permanent revolution theory, and frequent splits."
+#       }
+#     ],
+#     connectors: [
+#       {
+#         id: "conn-utopian-first",
+#         fromId: "period-utopian-socialism",
+#         toId: "period-first-international",
+#         type: "defined",
+#         metadata: { note: "Scientific socialism emerges from critique of utopian socialism" }
+#       },
+#       {
+#         id: "conn-first-second",
+#         fromId: "period-first-international",
+#         toId: "period-second-international",
+#         type: "undefined",
+#         metadata: { note: "Internationals as successive attempts at workers' coordination" }
+#       },
+#       {
+#         id: "conn-second-third",
+#         fromId: "period-second-international",
+#         toId: "period-third-international",
+#         type: "undefined",
+#         metadata: { note: "Third International founded in opposition to Second's 'social patriotism'" }
+#       },
+#       {
+#         id: "conn-third-fourth",
+#         fromId: "period-third-international",
+#         toId: "period-fourth-international",
+#         type: "undefined",
+#         metadata: { note: "Fourth International founded in opposition to Stalinist Comintern" }
+#       },
+#       {
+#         id: "conn-ussr-ddr",
+#         fromId: "period-ussr",
+#         toId: "period-ddr",
+#         type: "defined",
+#         metadata: { note: "DDR established in Soviet occupation zone" }
+#       },
+#       {
+#         id: "conn-ussr-yugoslavia",
+#         fromId: "period-ussr",
+#         toId: "period-yugoslavia",
+#         type: "defined",
+#         metadata: { note: "Yugoslav partisans supported by USSR, later independent" }
+#       },
+#       {
+#         id: "conn-ccp-prc",
+#         fromId: "period-ccp-revolution",
+#         toId: "period-prc",
+#         type: "defined",
+#         metadata: { note: "Revolutionary period leads to state formation" }
+#       },
+#       {
+#         id: "conn-revolution-ussr",
+#         fromId: "period-first-international",
+#         toId: "period-ussr",
+#         type: "defined",
+#         metadata: { note: "Marxist tradition from First International shapes Bolshevism" }
+#       },
+#       {
+#         id: "conn-cnt-iww",
+#         fromId: "period-iww",
+#         toId: "period-cnt-fai",
+#         type: "undefined",
+#         metadata: { note: "Anarcho-syndicalist tradition connects IWW and CNT" }
+#       },
+#       {
+#         id: "conn-cuba-sandinistas",
+#         fromId: "period-cuba",
+#         toId: "period-sandinistas",
+#         type: "defined",
+#         metadata: { note: "Cuban support for Sandinista revolution" }
+#       },
+#       {
+#         id: "conn-sandinistas-bolivarian",
+#         fromId: "period-sandinistas",
+#         toId: "period-bolivarian",
+#         type: "undefined",
+#         metadata: { note: "Latin American revolutionary tradition continues" }
+#       },
+#       {
+#         id: "conn-allende-bolivarian",
+#         fromId: "period-allende",
+#         toId: "period-bolivarian",
+#         type: "undefined",
+#         metadata: { note: "Democratic socialist tradition in Latin America" }
+#       }
+#     ]
+#   }
+# )
 
-Timeline.create(
-  name: "Epstein files",
-  description: "",
-  user_id: 1,
-  public: true,
-  timeline_data: {
-    events: [
-      {
-        id: "maxwell-talks-to-deputy-attorney-general-todd-blanche-stellv-us-justizminister",
-        name: "Maxwell talks to Deputy Attorney General Todd Blanche (stellv. US Justizminister)",
-        time: "2025-07-25"
-      }
-    ],
-    periods: [
-      {
-        id: "maxwell-in-custody-waiting-for-trial",
-        name: "maxwell in custody waiting for trial",
-        endTime: "2021-11-29",
-        startTime: "2020-07-02"
-      },
-      {
-        id: "trial-against-maxwell",
-        name: "trial against maxwell",
-        endTime: "2022-06-28",
-        startTime: "2021-11-29"
-      },
-      {
-        id: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida",
-        name: "maxwell in prison \" Federal Correctional Institution in Tallahassee, Florida",
-        endTime: "2025-08-01",
-        startTime: "2022-06-28"
-      },
-      {
-        id: "maxwell-in-prison-with-lowest-security-standards-federal-prison-camp-in-bryan-texas",
-        name: "Maxwell in prison with lowest security standards  \"Federal Prison Camp\" in Bryan, Texas",
-        endTime: "2037-07-17",
-        startTime: "2025-08-01"
-      }
-    ],
-    connectors: [
-      {
-        id: "maxwell-in-custody-waiting-for-trial-to-trial-against-maxwell",
-        toId: "trial-against-maxwell",
-        type: "defined",
-        fromId: "maxwell-in-custody-waiting-for-trial"
-      },
-      {
-        id: "trial-against-maxwell-to-maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida",
-        toId: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida",
-        type: "defined",
-        fromId: "trial-against-maxwell"
-      },
-      {
-        id: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida-to-maxwell-in-prison-with-lowest-security-standards-federal-prison-camp-in-bryan-texas",
-        toId: "maxwell-in-prison-with-lowest-security-standards-federal-prison-camp-in-bryan-texas",
-        type: "defined",
-        fromId: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida"
-      }
-    ]
-  }
-)
+# Timeline.create(
+#   name: "Epstein files",
+#   description: "",
+#   user_id: 1,
+#   public: true,
+#   timeline_data: {
+#     events: [
+#       {
+#         id: "maxwell-talks-to-deputy-attorney-general-todd-blanche-stellv-us-justizminister",
+#         name: "Maxwell talks to Deputy Attorney General Todd Blanche (stellv. US Justizminister)",
+#         time: "2025-07-25"
+#       }
+#     ],
+#     periods: [
+#       {
+#         id: "maxwell-in-custody-waiting-for-trial",
+#         name: "maxwell in custody waiting for trial",
+#         endTime: "2021-11-29",
+#         startTime: "2020-07-02"
+#       },
+#       {
+#         id: "trial-against-maxwell",
+#         name: "trial against maxwell",
+#         endTime: "2022-06-28",
+#         startTime: "2021-11-29"
+#       },
+#       {
+#         id: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida",
+#         name: "maxwell in prison \" Federal Correctional Institution in Tallahassee, Florida",
+#         endTime: "2025-08-01",
+#         startTime: "2022-06-28"
+#       },
+#       {
+#         id: "maxwell-in-prison-with-lowest-security-standards-federal-prison-camp-in-bryan-texas",
+#         name: "Maxwell in prison with lowest security standards  \"Federal Prison Camp\" in Bryan, Texas",
+#         endTime: "2037-07-17",
+#         startTime: "2025-08-01"
+#       }
+#     ],
+#     connectors: [
+#       {
+#         id: "maxwell-in-custody-waiting-for-trial-to-trial-against-maxwell",
+#         toId: "trial-against-maxwell",
+#         type: "defined",
+#         fromId: "maxwell-in-custody-waiting-for-trial"
+#       },
+#       {
+#         id: "trial-against-maxwell-to-maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida",
+#         toId: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida",
+#         type: "defined",
+#         fromId: "trial-against-maxwell"
+#       },
+#       {
+#         id: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida-to-maxwell-in-prison-with-lowest-security-standards-federal-prison-camp-in-bryan-texas",
+#         toId: "maxwell-in-prison-with-lowest-security-standards-federal-prison-camp-in-bryan-texas",
+#         type: "defined",
+#         fromId: "maxwell-in-prison-federal-correctional-institution-in-tallahassee-florida"
+#       }
+#     ]
+#   }
+# )
 
 Timeline.create(
   name: "Development of Life",
@@ -2130,6 +2130,526 @@ Timeline.create(
         type: "defined",
         metadata: {
           note: "Dinosaur dominance continues, birds diversify"
+        }
+      }
+    ]
+  }
+)
+
+Timeline.create(
+  name: "Climate Change: Past, Present & Future",
+  user_id: 1,
+  public: true,
+  timeline_data: {
+    events: [
+      {
+        id: "event-fourier-greenhouse",
+        name: "Greenhouse Effect Described",
+        time: { value: 1824, unit: "ce" },
+        relates_to: "period-early-science",
+        info: "Joseph Fourier calculates that the Earth would be far colder without an atmosphere, proposing that gases in the air trap heat like glass in a greenhouse. This foundational insight launches the study of what will later be called the greenhouse effect."
+      },
+      {
+        id: "event-tyndall-co2",
+        name: "Tyndall Identifies CO₂ as Heat-Trapping Gas",
+        time: { value: 1859, unit: "ce" },
+        relates_to: "period-early-science",
+        info: "John Tyndall demonstrates experimentally that carbon dioxide and water vapor absorb infrared radiation, proving that specific atmospheric gases are responsible for trapping heat. He recognizes that changes in these gases could alter climate."
+      },
+      {
+        id: "event-arrhenius-calculation",
+        name: "Arrhenius Predicts CO₂ Warming",
+        time: { value: 1896, unit: "ce" },
+        relates_to: "period-early-science",
+        info: "Svante Arrhenius calculates that doubling atmospheric CO₂ would raise global temperatures by roughly 5°C. Though his estimate is somewhat high by modern standards, it is the first quantitative prediction of CO₂-driven warming."
+      },
+      {
+        id: "event-industrial-co2-rise",
+        name: "CO₂ Passes Pre-Industrial Baseline",
+        time: { value: 1900, unit: "ce" },
+        relates_to: "period-industrial-acceleration",
+        info: "Atmospheric CO₂ begins rising measurably above the pre-industrial level of roughly 280 ppm. The widespread burning of coal for industry and transport is the primary driver, though the significance won't be fully understood for decades."
+      },
+      {
+        id: "event-callendar-warming",
+        name: "Callendar Links Fossil Fuels to Warming",
+        time: { value: 1938, unit: "ce" },
+        relates_to: "period-industrial-acceleration",
+        info: "Guy Stewart Callendar compiles temperature records showing the Earth is warming and argues that rising CO₂ from fossil fuel combustion is the cause. The scientific community is largely skeptical, but his work revives interest in CO₂ and climate."
+      },
+      {
+        id: "event-keeling-curve",
+        name: "Keeling Curve Begins",
+        time: { value: 1958, unit: "ce" },
+        relates_to: "period-awareness-era",
+        info: "Charles David Keeling begins continuous CO₂ measurements at Mauna Loa Observatory in Hawaii. His data reveals a steady annual rise and seasonal oscillation, producing the iconic 'Keeling Curve'—the most important dataset in climate science."
+      },
+      {
+        id: "event-co2-passes-315",
+        name: "CO₂ Reaches 315 ppm",
+        time: { value: 1958, unit: "ce" },
+        relates_to: "period-awareness-era",
+        info: "The first Keeling Curve measurements record atmospheric CO₂ at approximately 315 ppm, already 35 ppm above the pre-industrial level of 280 ppm. The relentless upward trend will continue unbroken for decades."
+      },
+      {
+        id: "event-first-climate-model",
+        name: "First Modern Climate Model",
+        time: { value: 1967, unit: "ce" },
+        relates_to: "period-awareness-era",
+        info: "Syukuro Manabe and Richard Wetherald publish the first credible computational climate model showing that doubling CO₂ would raise surface temperatures by about 2°C. This pioneering work earns Manabe a share of the 2021 Nobel Prize in Physics."
+      },
+      {
+        id: "event-first-earth-day",
+        name: "First Earth Day",
+        time: { value: 1970, unit: "ce" },
+        relates_to: "period-awareness-era",
+        info: "Twenty million Americans participate in the first Earth Day, marking the birth of the modern environmental movement. While focused broadly on pollution, the event galvanizes public concern about humanity's impact on the planet."
+      },
+      {
+        id: "event-exxon-research",
+        name: "Exxon's Internal Climate Research",
+        time: { value: 1977, unit: "ce" },
+        relates_to: "period-awareness-era",
+        info: "Exxon's own scientists begin internal research confirming that fossil fuel combustion is warming the planet. Their projections prove remarkably accurate, yet the company will later fund campaigns to cast doubt on climate science for decades."
+      },
+      {
+        id: "event-hansen-testimony",
+        name: "Hansen's Congressional Testimony",
+        time: { value: 1988, unit: "ce" },
+        relates_to: "period-political-action",
+        info: "NASA scientist James Hansen testifies before the U.S. Senate that global warming is already underway and is caused by greenhouse gases. His dramatic testimony during a sweltering Washington heat wave brings climate change into mainstream political discourse."
+      },
+      {
+        id: "event-ipcc-founded",
+        name: "IPCC Established",
+        time: { value: 1988, unit: "ce" },
+        relates_to: "period-political-action",
+        info: "The Intergovernmental Panel on Climate Change is created by the UN to assess climate science. Its periodic assessment reports become the authoritative synthesis of climate research, guiding international policy for decades."
+      },
+      {
+        id: "event-first-ipcc-report",
+        name: "First IPCC Assessment Report",
+        time: { value: 1990, unit: "ce" },
+        relates_to: "period-political-action",
+        info: "The IPCC's first report confirms that human activities are increasing greenhouse gas concentrations and that this will enhance the greenhouse effect, resulting in additional warming. It calls for international action."
+      },
+      {
+        id: "event-rio-earth-summit",
+        name: "Rio Earth Summit (UNFCCC)",
+        time: { value: 1992, unit: "ce" },
+        relates_to: "period-political-action",
+        info: "The UN Framework Convention on Climate Change is adopted at the Earth Summit in Rio de Janeiro. Nearly every nation agrees to stabilize greenhouse gas concentrations at a level that prevents dangerous interference with the climate system."
+      },
+      {
+        id: "event-kyoto-protocol",
+        name: "Kyoto Protocol Adopted",
+        time: { value: 1997, unit: "ce" },
+        relates_to: "period-political-action",
+        info: "The first binding international treaty to reduce greenhouse gas emissions is adopted. Industrialized nations commit to specific reduction targets. The U.S. signs but never ratifies it. The protocol proves limited but establishes the framework for future agreements."
+      },
+      {
+        id: "event-hockey-stick",
+        name: "Hockey Stick Graph Published",
+        time: { value: 1998, unit: "ce" },
+        relates_to: "period-political-action",
+        info: "Michael Mann and colleagues publish a temperature reconstruction showing that late 20th-century warming is unprecedented in at least 1,000 years. The 'hockey stick' shape—flat for centuries then sharply rising—becomes both iconic and politically controversial."
+      },
+      {
+        id: "event-co2-passes-370",
+        name: "CO₂ Reaches 370 ppm",
+        time: { value: 2000, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "Atmospheric CO₂ passes 370 ppm as global emissions continue to accelerate, driven by economic growth in China, India, and other developing nations. The rate of increase is faster than at any point in the Keeling Curve record."
+      },
+      {
+        id: "event-gore-inconvenient-truth",
+        name: "An Inconvenient Truth",
+        time: { value: 2006, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "Al Gore's documentary brings climate science to a mass audience, winning an Academy Award. Gore and the IPCC jointly receive the 2007 Nobel Peace Prize. The film significantly raises public awareness but also deepens political polarization on the issue."
+      },
+      {
+        id: "event-arctic-sea-ice-record",
+        name: "Arctic Sea Ice Record Low",
+        time: { value: 2007, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "Arctic summer sea ice extent crashes to a record minimum, losing an area the size of Alaska compared to the long-term average. The dramatic decline shocks scientists and becomes a visible symbol of planetary warming."
+      },
+      {
+        id: "event-copenhagen-failure",
+        name: "Copenhagen Climate Summit",
+        time: { value: 2009, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "The Copenhagen climate conference fails to produce a binding agreement, widely regarded as a diplomatic failure. The non-binding Copenhagen Accord acknowledges the goal of limiting warming to 2°C but includes no enforcement mechanism."
+      },
+      {
+        id: "event-co2-passes-400",
+        name: "CO₂ Passes 400 ppm",
+        time: { value: 2013, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "Atmospheric CO₂ surpasses 400 ppm for the first time in at least 3 million years. The last time concentrations were this high, sea levels were 15–25 meters higher and trees grew at the South Pole."
+      },
+      {
+        id: "event-paris-agreement",
+        name: "Paris Agreement Signed",
+        time: { value: 2015, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "195 nations agree to limit global warming to well below 2°C above pre-industrial levels, with efforts to limit it to 1.5°C. Unlike Kyoto, each nation sets its own targets. It is the most comprehensive climate agreement in history, though pledges remain insufficient."
+      },
+      {
+        id: "event-1-5-report",
+        name: "IPCC 1.5°C Special Report",
+        time: { value: 2018, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "The IPCC finds that limiting warming to 1.5°C rather than 2°C would significantly reduce risks of drought, floods, extreme heat, and poverty for hundreds of millions of people. It calls for cutting emissions 45% by 2030 and reaching net zero by 2050."
+      },
+      {
+        id: "event-greta-thunberg",
+        name: "Youth Climate Strikes Go Global",
+        time: { value: 2019, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "Inspired by Greta Thunberg's solo school strike in Sweden, millions of young people in over 150 countries join climate strikes. The movement reframes climate change as an issue of intergenerational justice and puts unprecedented social pressure on leaders."
+      },
+      {
+        id: "event-covid-emissions-drop",
+        name: "COVID-19 Emissions Drop",
+        time: { value: 2020, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "Global CO₂ emissions drop roughly 5.4% as pandemic lockdowns halt travel and economic activity. The temporary dip illustrates both how deeply fossil fuels are embedded in the economy and how quickly emissions rebound when activity resumes."
+      },
+      {
+        id: "event-1-1-degree-passed",
+        name: "Global Temperature Exceeds 1.1°C Above Pre-Industrial",
+        time: { value: 2021, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "The IPCC Sixth Assessment Report confirms that global surface temperature has risen approximately 1.1°C above the 1850–1900 baseline. Human influence is declared unequivocal. Every fraction of additional warming increases risks of extreme weather, ecosystem collapse, and human suffering."
+      },
+      {
+        id: "event-ira-signed",
+        name: "U.S. Inflation Reduction Act",
+        time: { value: 2022, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "The largest climate investment in U.S. history allocates roughly $370 billion toward clean energy, electric vehicles, and emissions reduction. It accelerates the energy transition domestically and triggers a global race for clean energy manufacturing."
+      },
+      {
+        id: "event-2023-hottest-year",
+        name: "2023: Hottest Year on Record",
+        time: { value: 2023, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "2023 becomes the hottest year in at least 125,000 years of human existence, with global temperatures briefly exceeding 1.5°C above pre-industrial levels. Record ocean temperatures, devastating wildfires, and extreme heat events affect every continent."
+      },
+      {
+        id: "event-co2-passes-425",
+        name: "CO₂ Passes 425 ppm",
+        time: { value: 2024, unit: "ce" },
+        relates_to: "period-acceleration-crisis",
+        info: "Atmospheric CO₂ surpasses 425 ppm. Despite rapid growth in renewable energy, global fossil fuel consumption continues to rise. The gap between climate ambition and actual emissions reductions remains dangerously wide."
+      },
+      {
+        id: "event-1-5-threshold",
+        name: "1.5°C Threshold Likely Breached (Annual Average)",
+        time: { value: 2030, unit: "ce" },
+        relates_to: "period-critical-decade",
+        info: "Under most scenarios, global average temperature exceeds 1.5°C above pre-industrial levels on a sustained annual basis. While the Paris Agreement's aspirational limit is surpassed, the degree of overshoot depends on near-term emissions cuts."
+      },
+      {
+        id: "event-renewable-dominance",
+        name: "Renewables Become Dominant New Power Source",
+        time: { value: 2030, unit: "ce" },
+        relates_to: "period-critical-decade",
+        info: "Solar and wind energy account for the majority of new electricity generation capacity worldwide. Costs continue to fall, and battery storage improves. However, replacing existing fossil fuel infrastructure and addressing industrial emissions remain enormous challenges."
+      },
+      {
+        id: "event-ev-tipping-point",
+        name: "Electric Vehicles Reach Mass Adoption",
+        time: { value: 2035, unit: "ce" },
+        relates_to: "period-critical-decade",
+        info: "Electric vehicles surpass internal combustion engine sales in most major markets as multiple countries implement ICE bans. Charging infrastructure expands, battery costs drop, and the transportation sector's emissions begin a structural decline."
+      },
+      {
+        id: "event-arctic-ice-free-summer",
+        name: "First Ice-Free Arctic Summer",
+        time: { value: 2040, unit: "ce" },
+        relates_to: "period-mid-century",
+        info: "The Arctic Ocean experiences its first practically ice-free summer, a milestone not seen in over 100,000 years. This accelerates regional warming through reduced albedo, disrupts Arctic ecosystems, and alters weather patterns across the Northern Hemisphere."
+      },
+      {
+        id: "event-coral-reef-collapse",
+        name: "Widespread Coral Reef Collapse",
+        time: { value: 2040, unit: "ce" },
+        relates_to: "period-mid-century",
+        info: "At 1.5–2°C of warming, over 70–90% of tropical coral reefs have degraded or died. The loss devastates marine biodiversity, fisheries that feed hundreds of millions of people, and coastal protection from storms."
+      },
+      {
+        id: "event-net-zero-target",
+        name: "Global Net-Zero Target Date",
+        time: { value: 2050, unit: "ce" },
+        relates_to: "period-mid-century",
+        info: "The target date for global net-zero emissions under most Paris-aligned scenarios. Whether this is achieved depends on decisions made in the 2020s and 2030s. Carbon capture, green hydrogen, and transformed agriculture must all play roles alongside renewables."
+      },
+      {
+        id: "event-sea-level-half-meter",
+        name: "Sea Level Rise Reaches ~0.5 Meters",
+        time: { value: 2050, unit: "ce" },
+        relates_to: "period-mid-century",
+        info: "Global mean sea level rises approximately 0.3–0.5 meters above 2000 levels, threatening coastal cities, low-lying islands, and hundreds of millions of people. Storm surges, flooding, and saltwater intrusion become significantly more damaging."
+      },
+      {
+        id: "event-climate-migration",
+        name: "Large-Scale Climate Migration",
+        time: { value: 2050, unit: "ce" },
+        relates_to: "period-mid-century",
+        info: "The World Bank projects up to 216 million internal climate migrants across six regions by 2050, driven by water scarcity, crop failure, rising seas, and extreme heat. Climate migration reshapes demographics and tests international cooperation."
+      },
+      {
+        id: "event-2c-threshold",
+        name: "2°C Threshold in High-Emission Scenarios",
+        time: { value: 2060, unit: "ce" },
+        relates_to: "period-long-term",
+        info: "Under high-emission pathways, global average temperature exceeds 2°C above pre-industrial levels. This crosses key tipping points: accelerated ice sheet loss, permafrost thaw releasing stored carbon, and potential Amazon dieback. Low-emission scenarios may hold below this level."
+      },
+      {
+        id: "event-sea-level-one-meter",
+        name: "Sea Level Rise Approaches 1 Meter",
+        time: { value: 2100, unit: "ce" },
+        relates_to: "period-long-term",
+        info: "Under moderate to high emission scenarios, sea levels rise 0.6–1.1 meters by 2100, with continued rise locked in for centuries. Major coastal cities face existential choices between massive adaptation, managed retreat, or catastrophic flooding."
+      },
+      {
+        id: "event-high-emission-scenario",
+        name: "3–4°C Warming (High-Emission Pathway)",
+        time: { value: 2100, unit: "ce" },
+        relates_to: "period-long-term",
+        info: "If emissions are not sharply curtailed, warming could reach 3–4°C by 2100. This would mean extreme heat events affecting billions, severe food and water insecurity, widespread species extinction, and potential collapse of major ice sheets committing the world to many meters of sea level rise."
+      },
+      {
+        id: "event-low-emission-scenario",
+        name: "1.5–2°C Stabilization (Low-Emission Pathway)",
+        time: { value: 2100, unit: "ce" },
+        relates_to: "period-long-term",
+        info: "Under aggressive decarbonization and potential carbon removal, warming stabilizes near 1.5–2°C. Significant impacts still occur—more extreme weather, biodiversity loss, sea level rise—but catastrophic tipping points are largely avoided and adaptation remains feasible."
+      },
+      {
+        id: "event-multi-meter-sea-rise",
+        name: "Multi-Meter Sea Level Rise Committed",
+        time: { value: 2300, unit: "ce" },
+        relates_to: "period-deep-future",
+        info: "Regardless of pathway, thermal expansion and ice sheet dynamics commit the world to several meters of sea level rise over centuries. Under high-emission scenarios, eventual rise of 5–15+ meters would reshape coastlines and displace billions."
+      },
+      {
+        id: "event-ice-sheet-fate",
+        name: "Fate of Greenland and Antarctic Ice Sheets",
+        time: { value: 2500, unit: "ce" },
+        relates_to: "period-deep-future",
+        info: "The long-term fate of the great ice sheets depends on peak warming. Complete loss of Greenland's ice (over millennia) adds ~7 meters to sea levels. West Antarctic collapse adds ~3–5 meters. Both may become irreversible above 2–3°C of sustained warming."
+      },
+      {
+        id: "event-co2-persistence",
+        name: "CO₂ Persists for Millennia",
+        time: { value: 3000, unit: "ce" },
+        relates_to: "period-deep-future",
+        info: "Roughly 20–40% of emitted CO₂ remains in the atmosphere for thousands of years. The climate legacy of 21st-century emissions extends far beyond any human planning horizon, making current decisions consequential for hundreds of generations."
+      }
+    ],
+    periods: [
+      {
+        id: "period-early-science",
+        name: "Early Climate Science",
+        startTime: { value: 1820, unit: "ce" },
+        endTime: { value: 1950, unit: "ce" },
+        info: "Pioneering scientists discover the greenhouse effect and predict that fossil fuel combustion could warm the planet. These insights are largely theoretical, and the scientific community remains divided. CO₂ levels begin rising but the changes are not yet measurable with precision."
+      },
+      {
+        id: "period-industrial-acceleration",
+        name: "Industrial Emissions Accelerate",
+        startTime: { value: 1870, unit: "ce" },
+        endTime: { value: 1960, unit: "ce" },
+        info: "Industrialization spreads from Europe and North America across the globe. Coal, oil, and natural gas become the backbone of modern economies. CO₂ emissions rise exponentially, though the climatic consequences are not yet widely recognized."
+      },
+      {
+        id: "period-awareness-era",
+        name: "Measurement & Awareness",
+        startTime: { value: 1958, unit: "ce" },
+        endTime: { value: 1988, unit: "ce" },
+        info: "Systematic measurement of CO₂ and development of climate models transforms climate change from speculation to established science. Environmental awareness grows, though climate change is not yet a top public or political concern."
+      },
+      {
+        id: "period-political-action",
+        name: "International Negotiations",
+        startTime: { value: 1988, unit: "ce" },
+        endTime: { value: 2005, unit: "ce" },
+        info: "Climate change enters the political arena. The IPCC is established, the UNFCCC is signed, and the Kyoto Protocol is adopted. Scientific consensus solidifies while fossil fuel industry campaigns sow doubt. Emissions continue rising."
+      },
+      {
+        id: "period-acceleration-crisis",
+        name: "Accelerating Crisis",
+        startTime: { value: 2005, unit: "ce" },
+        endTime: { value: 2030, unit: "ce" },
+        info: "Observable climate impacts intensify—record temperatures, wildfires, floods, and hurricanes. The Paris Agreement sets ambitious goals, but the gap between pledges and action grows. Renewable energy surges but cannot yet match the pace of rising demand. This is the decisive period."
+      },
+      {
+        id: "period-critical-decade",
+        name: "The Critical Decade",
+        startTime: { value: 2025, unit: "ce" },
+        endTime: { value: 2035, unit: "ce" },
+        info: "Scientists identify this decade as the make-or-break period for climate action. Emissions must peak and begin declining steeply to keep 1.5°C within reach. Energy transition accelerates, but incumbent fossil fuel infrastructure and political resistance create friction."
+      },
+      {
+        id: "period-mid-century",
+        name: "Mid-Century Reckoning",
+        startTime: { value: 2035, unit: "ce" },
+        endTime: { value: 2070, unit: "ce" },
+        info: "The consequences of decisions made in the 2020s and 2030s become clearly visible. Under low-emission scenarios, the energy transition is largely complete and warming stabilizes. Under high-emission scenarios, cascading impacts stress ecosystems, economies, and societies worldwide."
+      },
+      {
+        id: "period-long-term",
+        name: "Long-Term Trajectories",
+        startTime: { value: 2070, unit: "ce" },
+        endTime: { value: 2200, unit: "ce" },
+        info: "Climate pathways diverge dramatically depending on cumulative emissions. Scenarios range from a stabilized 1.5–2°C world with manageable adaptation to a 3–4°C+ world facing severe disruption. Sea level rise, ecosystem transformation, and human migration continue for centuries."
+      },
+      {
+        id: "period-deep-future",
+        name: "Deep Future Legacy",
+        startTime: { value: 2200, unit: "ce" },
+        endTime: { value: 3500, unit: "ce" },
+        info: "The long tail of climate change extends millennia. CO₂ persists in the atmosphere, ice sheets slowly respond to peak warming, and sea levels continue adjusting. The fossil fuel era—a few centuries of human history—shapes planetary conditions for thousands of years."
+      },
+      {
+        id: "period-fossil-fuel-era",
+        name: "Fossil Fuel Era",
+        startTime: { value: 1760, unit: "ce" },
+        endTime: { value: 2050, unit: "ce" },
+        info: "From the Industrial Revolution through the mid-21st century, fossil fuels—coal, oil, and natural gas—power human civilization's explosive growth. They enable unprecedented prosperity and technological advancement while fundamentally altering Earth's atmosphere and climate."
+      },
+      {
+        id: "period-great-acceleration",
+        name: "The Great Acceleration",
+        startTime: { value: 1950, unit: "ce" },
+        info: "After World War II, population, economic output, energy use, and CO₂ emissions all surge exponentially. Nearly half of all fossil fuel CO₂ ever emitted is released after 1990. Human activity becomes the dominant force shaping Earth systems—the hallmark of the Anthropocene."
+      },
+      {
+        id: "period-energy-transition",
+        name: "Energy Transition",
+        startTime: { value: 2010, unit: "ce" },
+        endTime: { value: 2060, unit: "ce" },
+        info: "The shift from fossil fuels to renewable energy, electrification, and efficiency gains accelerates. Solar and wind costs plummet, electric vehicles scale, and green hydrogen emerges. The pace of transition determines which climate pathway humanity follows."
+      },
+      {
+        id: "period-adaptation-era",
+        name: "Adaptation Era",
+        startTime: { value: 2030, unit: "ce" },
+        endTime: { value: 2050, unit: "ce" },
+        info: "As climate impacts become unavoidable regardless of emissions pathway, societies invest heavily in adaptation: sea walls, drought-resistant crops, heat-resilient cities, climate-informed infrastructure, managed retreat from vulnerable areas, and systems to support displaced populations."
+      }
+    ],
+    connectors: [
+      {
+        id: "conn-science-to-awareness",
+        fromId: "period-early-science",
+        toId: "period-awareness-era",
+        type: "defined",
+        metadata: {
+          note: "Theoretical predictions lead to systematic measurement"
+        }
+      },
+      {
+        id: "conn-awareness-to-politics",
+        fromId: "period-awareness-era",
+        toId: "period-political-action",
+        type: "defined",
+        metadata: {
+          note: "Scientific consensus compels political action"
+        }
+      },
+      {
+        id: "conn-politics-to-crisis",
+        fromId: "period-political-action",
+        toId: "period-acceleration-crisis",
+        type: "defined",
+        metadata: {
+          note: "Insufficient action leads to accelerating impacts"
+        }
+      },
+      {
+        id: "conn-crisis-to-critical",
+        fromId: "period-acceleration-crisis",
+        toId: "period-critical-decade",
+        type: "defined",
+        metadata: {
+          note: "Mounting evidence demands urgent action"
+        }
+      },
+      {
+        id: "conn-critical-to-midcentury",
+        fromId: "period-critical-decade",
+        toId: "period-mid-century",
+        type: "defined",
+        metadata: {
+          note: "Decisions of the 2020s–2030s determine mid-century outcomes"
+        }
+      },
+      {
+        id: "conn-midcentury-to-longterm",
+        fromId: "period-mid-century",
+        toId: "period-long-term",
+        type: "defined",
+        metadata: {
+          note: "Cumulative emissions lock in long-term trajectories"
+        }
+      },
+      {
+        id: "conn-longterm-to-deep",
+        fromId: "period-long-term",
+        toId: "period-deep-future",
+        type: "defined",
+        metadata: {
+          note: "Climate inertia extends consequences for millennia"
+        }
+      },
+      {
+        id: "conn-fossil-to-acceleration",
+        fromId: "period-fossil-fuel-era",
+        toId: "period-great-acceleration",
+        type: "defined",
+        metadata: {
+          note: "Post-war boom intensifies fossil fuel dependence"
+        }
+      },
+      {
+        id: "conn-acceleration-to-transition",
+        fromId: "period-great-acceleration",
+        toId: "period-energy-transition",
+        type: "defined",
+        metadata: {
+          note: "Recognition of crisis drives energy transformation"
+        }
+      },
+      {
+        id: "conn-transition-to-adaptation",
+        fromId: "period-energy-transition",
+        toId: "period-adaptation-era",
+        type: "undefined",
+        metadata: {
+          note: "Even with transition, adaptation becomes essential"
+        }
+      },
+      {
+        id: "conn-industrial-to-fossil",
+        fromId: "period-fossil-fuel-era",
+        toId: "period-industrial-acceleration",
+        type: "undefined",
+        metadata: {
+          note: "Industrial growth fueled by fossil energy"
+        }
+      },
+      {
+        id: "conn-critical-to-adaptation",
+        fromId: "period-critical-decade",
+        toId: "period-adaptation-era",
+        type: "defined",
+        metadata: {
+          note: "Unavoidable impacts require adaptation alongside mitigation"
         }
       }
     ]
@@ -3629,6 +4149,524 @@ Timeline.create(
         type: "defined",
         metadata: {
           note: "Cahokia is the largest and most influential Mississippian center"
+        }
+      }
+    ]
+  }
+)
+
+Timeline.create(
+  name: "The Development of Earth",
+  user_id: 1,
+  public: true,
+  timeline_data: {
+    events: [
+      {
+        id: "event-solar-nebula",
+        name: "Solar Nebula Collapses",
+        time: { value: 4600, unit: "mya" },
+        relates_to: "period-formation",
+        info: "A cloud of gas and dust in the Milky Way begins collapsing under its own gravity, likely triggered by a nearby supernova shockwave. The rotating disk of material that forms will give rise to the Sun and all the planets, including Earth."
+      },
+      {
+        id: "event-earth-accretion",
+        name: "Earth Begins to Form",
+        time: { value: 4540, unit: "mya" },
+        relates_to: "period-hadean",
+        info: "Dust and rocky debris in the inner solar system collide and stick together through accretion, gradually building a molten proto-Earth. The young planet is a hellscape of magma oceans, with no solid surface, no atmosphere, and temperatures exceeding 2000°C."
+      },
+      {
+        id: "event-theia-impact",
+        name: "Theia Impact and Moon Formation",
+        time: { value: 4530, unit: "mya" },
+        relates_to: "period-hadean",
+        info: "A Mars-sized body called Theia collides with the young Earth in a cataclysmic impact. The collision ejects vast amounts of debris into orbit, which coalesces to form the Moon. The impact also tilts Earth's axis, giving us seasons, and the Moon stabilizes this tilt over time."
+      },
+      {
+        id: "event-iron-catastrophe",
+        name: "Iron Catastrophe and Core Formation",
+        time: { value: 4500, unit: "mya" },
+        relates_to: "period-hadean",
+        info: "Dense iron and nickel sink through the molten Earth to form a metallic core, while lighter silicates float upward to form the mantle. This differentiation releases enormous heat and establishes Earth's layered internal structure. The liquid iron core generates a magnetic field that will shield the planet from solar wind."
+      },
+      {
+        id: "event-magnetic-field",
+        name: "Earth's Magnetic Field Established",
+        time: { value: 4200, unit: "mya" },
+        relates_to: "period-hadean",
+        info: "Convection currents in the liquid iron outer core generate a global magnetic field through the geodynamo effect. This magnetosphere deflects charged particles from the Sun, protecting the atmosphere from being stripped away and shielding the surface from harmful radiation."
+      },
+      {
+        id: "event-first-oceans",
+        name: "First Oceans Form",
+        time: { value: 4400, unit: "mya" },
+        relates_to: "period-hadean",
+        info: "As Earth cools, water vapor released by volcanic outgassing condenses into torrential rains lasting millions of years, filling basins to form the first oceans. Comets and water-rich asteroids may also deliver additional water. Liquid water will prove essential for plate tectonics, weathering, and life."
+      },
+      {
+        id: "event-first-crust",
+        name: "First Solid Crust Forms",
+        time: { value: 4400, unit: "mya" },
+        relates_to: "period-hadean",
+        info: "The oldest known mineral grains—zircon crystals from Jack Hills, Australia—date to this time, indicating that patches of solid crust existed despite continued heavy bombardment. These ancient zircons also contain chemical signatures suggesting the presence of liquid water."
+      },
+      {
+        id: "event-late-heavy-bombardment",
+        name: "Late Heavy Bombardment",
+        time: { value: 4100, unit: "mya" },
+        relates_to: "period-hadean",
+        info: "A spike in asteroid and comet impacts batters the inner solar system, scarring the Moon and pummeling Earth. The bombardment may have been triggered by gravitational shifts in the outer planets. It delivers both destruction and volatile compounds, possibly contributing to Earth's water and organic chemistry."
+      },
+      {
+        id: "event-first-continents",
+        name: "First Continental Crust",
+        time: { value: 4000, unit: "mya" },
+        relates_to: "period-archean",
+        info: "The earliest fragments of continental crust form as lighter, silica-rich rocks begin to differentiate from the denser oceanic crust. The Acasta Gneiss in Canada, dating to about 4.0 billion years ago, is among the oldest known rocks on Earth's surface."
+      },
+      {
+        id: "event-first-life",
+        name: "Earliest Evidence of Life",
+        time: { value: 3800, unit: "mya" },
+        relates_to: "period-archean",
+        info: "Chemical signatures in ancient rocks from Greenland suggest the presence of simple microbial life. Whether life originated at hydrothermal vents, in warm pools, or was delivered by meteorites remains debated, but Earth becomes a living planet remarkably early in its history."
+      },
+      {
+        id: "event-stromatolites",
+        name: "Stromatolites and Photosynthesis",
+        time: { value: 3500, unit: "mya" },
+        relates_to: "period-archean",
+        info: "Cyanobacteria build layered mineral structures called stromatolites in shallow seas. These microbes evolve oxygenic photosynthesis, beginning the slow transformation of Earth's atmosphere from one dominated by nitrogen, CO₂, and methane to one containing free oxygen."
+      },
+      {
+        id: "event-first-plate-tectonics",
+        name: "Modern Plate Tectonics Begins",
+        time: { value: 3200, unit: "mya" },
+        relates_to: "period-archean",
+        info: "Evidence suggests that recognizable plate tectonics—with subduction zones, spreading ridges, and lateral plate motion—becomes established. Plate tectonics recycles carbon, builds mountains, creates new ocean floor, and drives volcanic activity, fundamentally regulating Earth's climate and chemistry."
+      },
+      {
+        id: "event-great-oxygenation",
+        name: "Great Oxygenation Event",
+        time: { value: 2400, unit: "mya" },
+        relates_to: "period-proterozoic",
+        info: "Oxygen produced by cyanobacteria accumulates in the atmosphere after overwhelming natural chemical sinks. Free oxygen rises from trace levels to roughly 2%, rusting dissolved iron in the oceans to form banded iron formations, triggering a mass die-off of anaerobic life, and creating Earth's ozone layer."
+      },
+      {
+        id: "event-huronian-glaciation",
+        name: "Huronian Glaciation",
+        time: { value: 2300, unit: "mya" },
+        relates_to: "period-proterozoic",
+        info: "The first major ice age in Earth's history, likely triggered by the Great Oxygenation Event. Rising oxygen destroys atmospheric methane—a potent greenhouse gas—causing temperatures to plummet. Ice sheets may have extended to the tropics in the earliest known Snowball Earth episode."
+      },
+      {
+        id: "event-boring-billion",
+        name: "The 'Boring Billion' Begins",
+        time: { value: 1800, unit: "mya" },
+        relates_to: "period-proterozoic",
+        info: "Earth enters a period of remarkable environmental stability lasting roughly a billion years. Tectonic activity, atmospheric composition, and ocean chemistry remain relatively stable. While sometimes called 'boring,' eukaryotic cells evolve and diversify during this time."
+      },
+      {
+        id: "event-rodinia-assembly",
+        name: "Supercontinent Rodinia Assembles",
+        time: { value: 1100, unit: "mya" },
+        relates_to: "period-proterozoic",
+        info: "Earth's landmasses converge to form the supercontinent Rodinia. Supercontinent cycles—assembly and breakup driven by mantle convection—profoundly influence climate, ocean circulation, and evolution by creating and destroying habitats on a global scale."
+      },
+      {
+        id: "event-rodinia-breakup",
+        name: "Rodinia Breaks Apart",
+        time: { value: 750, unit: "mya" },
+        relates_to: "period-proterozoic",
+        info: "Rodinia rifts apart, opening new ocean basins. The breakup exposes fresh rock to chemical weathering, which draws CO₂ from the atmosphere and may contribute to the extreme glaciations that follow. New coastlines create shallow marine habitats."
+      },
+      {
+        id: "event-snowball-earth",
+        name: "Snowball Earth Glaciations",
+        time: { value: 720, unit: "mya" },
+        relates_to: "period-snowball",
+        info: "Earth freezes almost entirely in at least two major glaciations: the Sturtian (~717 mya) and the Marinoan (~650 mya). Ice sheets extend to the equator, oceans freeze over, and surface life nearly perishes. Volcanic CO₂ eventually accumulates enough to trigger dramatic thawing."
+      },
+      {
+        id: "event-snowball-thaw",
+        name: "Snowball Earth Thaws",
+        time: { value: 635, unit: "mya" },
+        relates_to: "period-snowball",
+        info: "Volcanic CO₂ builds up under the ice until a runaway greenhouse effect rapidly melts the global ice sheets. The transition from icehouse to extreme greenhouse is violent—mega-hurricanes, torrential acid rain, and massive chemical weathering follow. The aftermath may set the stage for complex life."
+      },
+      {
+        id: "event-ediacaran-fauna",
+        name: "Ediacaran Fauna Appears",
+        time: { value: 575, unit: "mya" },
+        relates_to: "period-proterozoic",
+        info: "The first large, complex multicellular organisms appear in the fossil record after the Snowball Earth thaw. These strange, quilted creatures—Dickinsonia, Charnia, Kimberella—represent a failed experiment or evolutionary stepping stone before the Cambrian Explosion."
+      },
+      {
+        id: "event-cambrian-explosion",
+        name: "Cambrian Explosion",
+        time: { value: 538.8, unit: "mya" },
+        relates_to: "period-phanerozoic",
+        info: "An extraordinary burst of evolution produces most major animal body plans within roughly 25 million years. Rising oxygen levels, ecological arms races, and the evolution of eyes and hard shells drive unprecedented diversification. Earth's biosphere transforms from microbial mats to complex ecosystems."
+      },
+      {
+        id: "event-first-land-plants",
+        name: "Plants Colonize Land",
+        time: { value: 470, unit: "mya" },
+        relates_to: "period-phanerozoic",
+        info: "Simple plants move onto bare rock for the first time, beginning the transformation of Earth's continents. Over millions of years, plants create soil, alter weathering rates, draw down atmospheric CO₂, and build the foundation for terrestrial ecosystems."
+      },
+      {
+        id: "event-first-forests",
+        name: "First Forests Grow",
+        time: { value: 385, unit: "mya" },
+        relates_to: "period-phanerozoic",
+        info: "The evolution of woody tissue allows trees like Archaeopteris to grow tall, forming the first forests. Forests profoundly alter Earth's carbon cycle, accelerate rock weathering, change rainfall patterns, and draw down atmospheric CO₂ so dramatically that they may contribute to the Late Devonian ice age."
+      },
+      {
+        id: "event-coal-swamps",
+        name: "Carboniferous Coal Swamps",
+        time: { value: 320, unit: "mya" },
+        relates_to: "period-phanerozoic",
+        info: "Vast tropical swamp forests cover equatorial lowlands. Dead plant matter accumulates faster than it decomposes—fungi have not yet evolved the ability to break down lignin—burying enormous amounts of carbon that becomes coal. Oxygen levels reach 35%, the highest in Earth's history."
+      },
+      {
+        id: "event-pangaea-assembly",
+        name: "Pangaea Fully Assembled",
+        time: { value: 300, unit: "mya" },
+        relates_to: "period-pangaea",
+        info: "All major landmasses merge into the supercontinent Pangaea, stretching from pole to pole. A single landmass creates extreme continental climates with vast interior deserts, alters ocean circulation, and reduces coastal habitats—contributing to the Permian extinction."
+      },
+      {
+        id: "event-permian-extinction",
+        name: "The Great Dying",
+        time: { value: 252, unit: "mya" },
+        relates_to: "period-phanerozoic",
+        info: "The worst mass extinction in Earth's history kills 96% of marine species and 70% of land species. Massive volcanism in Siberia (the Siberian Traps) releases CO₂ and toxic gases, triggering runaway warming, ocean acidification, and oxygen depletion. Earth takes 10 million years to recover."
+      },
+      {
+        id: "event-pangaea-breakup",
+        name: "Pangaea Begins Breaking Apart",
+        time: { value: 200, unit: "mya" },
+        relates_to: "period-pangaea",
+        info: "Pangaea rifts into Laurasia (north) and Gondwana (south), opening the central Atlantic Ocean. The breakup reshapes global ocean circulation, creates new coastlines and shallow seas, and ultimately produces the continental configuration we know today."
+      },
+      {
+        id: "event-atlantic-opens",
+        name: "Atlantic Ocean Widens",
+        time: { value: 150, unit: "mya" },
+        relates_to: "period-modern-continents",
+        info: "The Atlantic Ocean expands as the Americas separate from Europe and Africa. Mid-ocean ridges produce new oceanic crust at rates of a few centimeters per year. The widening Atlantic fundamentally alters global ocean circulation and climate patterns."
+      },
+      {
+        id: "event-deccan-traps",
+        name: "Deccan Traps Volcanism",
+        time: { value: 66.5, unit: "mya" },
+        relates_to: "period-modern-continents",
+        info: "Massive volcanic eruptions in what is now India produce the Deccan Traps—one of the largest volcanic features on Earth. These eruptions release vast quantities of CO₂ and sulfur dioxide, stressing ecosystems just before the Chicxulub asteroid delivers the final blow."
+      },
+      {
+        id: "event-chicxulub-impact",
+        name: "Chicxulub Asteroid Impact",
+        time: { value: 66, unit: "mya" },
+        relates_to: "period-modern-continents",
+        info: "A 10-kilometer asteroid strikes the Yucatan Peninsula at 20 km/s, releasing energy equivalent to billions of nuclear weapons. The impact triggers global firestorms, a years-long 'impact winter,' acid rain, and the collapse of food chains. It eliminates 75% of all species, including all non-avian dinosaurs."
+      },
+      {
+        id: "event-india-asia-collision",
+        name: "India Collides with Asia",
+        time: { value: 50, unit: "mya" },
+        relates_to: "period-modern-continents",
+        info: "The Indian subcontinent, having drifted north from Gondwana, collides with Asia. The collision begins raising the Himalayas and the Tibetan Plateau—a process still ongoing. This massive uplift alters global atmospheric circulation, monsoon patterns, and accelerates chemical weathering that draws down CO₂."
+      },
+      {
+        id: "event-antarctic-glaciation",
+        name: "Antarctic Ice Sheet Forms",
+        time: { value: 34, unit: "mya" },
+        relates_to: "period-icehouse",
+        info: "As Antarctica separates from South America, the Antarctic Circumpolar Current forms, thermally isolating the southern continent. Combined with declining CO₂ levels, this triggers the growth of a permanent ice sheet on Antarctica, marking the transition to the current icehouse climate."
+      },
+      {
+        id: "event-panama-closes",
+        name: "Isthmus of Panama Closes",
+        time: { value: 3, unit: "mya" },
+        relates_to: "period-icehouse",
+        info: "The land bridge connecting North and South America completes, severing the connection between the Atlantic and Pacific oceans. This redirects ocean currents, strengthens the Gulf Stream, and increases moisture delivery to the Arctic—possibly helping trigger Northern Hemisphere glaciation."
+      },
+      {
+        id: "event-ice-ages-begin",
+        name: "Quaternary Ice Ages Begin",
+        time: { value: 2.6, unit: "mya" },
+        relates_to: "period-icehouse",
+        info: "Earth enters a pattern of rhythmic glaciations driven by Milankovitch cycles—subtle variations in Earth's orbit and axial tilt. Ice sheets advance and retreat roughly every 100,000 years. These glacial-interglacial cycles shape landscapes, drive evolution, and eventually provide the backdrop for human emergence."
+      },
+      {
+        id: "event-last-glacial-max",
+        name: "Last Glacial Maximum",
+        time: { value: 20000, unit: "years-ago" },
+        relates_to: "period-icehouse",
+        info: "Ice sheets reach their greatest extent of the current ice age, covering much of North America and northern Europe with ice up to 3 kilometers thick. Sea levels drop 120 meters, exposing land bridges and reshaping coastlines. Global temperatures average about 6°C colder than today."
+      },
+      {
+        id: "event-holocene-begins",
+        name: "Holocene Warm Period Begins",
+        time: { value: 11700, unit: "years-ago" },
+        relates_to: "period-holocene",
+        info: "The current interglacial period begins as ice sheets rapidly retreat. Sea levels rise, forests expand, and the stable, warm climate enables the development of agriculture and human civilization. The Holocene's climate stability is exceptional compared to the preceding glacial period."
+      },
+      {
+        id: "event-sahara-green",
+        name: "Green Sahara Period",
+        time: { value: 9000, unit: "years-ago" },
+        relates_to: "period-holocene",
+        info: "The Sahara Desert is lush and green, covered in grasslands, lakes, and rivers supporting hippos, crocodiles, and human communities. Orbital changes strengthen the African monsoon. By 5,500 years ago, the monsoon weakens and the Sahara desiccates rapidly—one of the most dramatic recent landscape transformations."
+      },
+      {
+        id: "event-anthropocene-proposed",
+        name: "The Anthropocene",
+        time: { value: 1950, unit: "ce" },
+        relates_to: "period-holocene",
+        info: "Scientists propose that human activity has become the dominant geological force on Earth. Nuclear fallout, plastic pollution, concrete, chicken bones, and CO₂ from fossil fuels leave a permanent mark in the geological record. Whether formally adopted or not, the concept captures humanity's planetary-scale impact."
+      },
+      {
+        id: "event-future-supercontinent",
+        name: "Next Supercontinent (Pangaea Ultima)",
+        time: { value: 250000000, unit: "ce" },
+        relates_to: "period-far-future",
+        info: "Plate tectonics will reassemble the continents into a new supercontinent, sometimes called Pangaea Ultima or Amasia. The Atlantic Ocean closes as the Americas drift back toward Europe and Africa. The resulting supercontinent will create extreme climates and reshape ocean circulation entirely."
+      },
+      {
+        id: "event-oceans-evaporate",
+        name: "Oceans Begin to Evaporate",
+        time: { value: 1000000000, unit: "ce" },
+        relates_to: "period-far-future",
+        info: "As the Sun gradually brightens (roughly 1% every 100 million years), Earth's surface temperatures rise to a point where the oceans begin evaporating. Water vapor—a potent greenhouse gas—accelerates warming in a runaway feedback loop. Earth begins its transformation toward a Venus-like state."
+      },
+      {
+        id: "event-plate-tectonics-end",
+        name: "Plate Tectonics Ceases",
+        time: { value: 1500000000, unit: "ce" },
+        relates_to: "period-far-future",
+        info: "Earth's interior cools sufficiently that mantle convection weakens and plate tectonics grinds to a halt. Without tectonic recycling, the carbon cycle breaks down, volcanic CO₂ replenishment stops, and the geological engine that regulated Earth's climate for billions of years falls silent."
+      },
+      {
+        id: "event-magnetic-field-fades",
+        name: "Magnetic Field Weakens",
+        time: { value: 2000000000, unit: "ce" },
+        relates_to: "period-far-future",
+        info: "As the core solidifies and convection slows, Earth's magnetic field weakens and eventually disappears. Without the magnetosphere, the solar wind gradually strips away the atmosphere, much as it did to Mars billions of years ago."
+      },
+      {
+        id: "event-sun-red-giant",
+        name: "Sun Becomes a Red Giant",
+        time: { value: 5000000000, unit: "ce" },
+        relates_to: "period-far-future",
+        info: "The Sun exhausts its hydrogen fuel and expands into a red giant, engulfing Mercury and Venus. Whether Earth is consumed or merely scorched depends on orbital dynamics, but either way, all traces of Earth's geological and biological history on the surface are erased."
+      }
+    ],
+    periods: [
+      {
+        id: "period-formation",
+        name: "Solar System Formation",
+        startTime: { value: 4600, unit: "mya" },
+        endTime: { value: 4540, unit: "mya" },
+        info: "The Sun and planets form from a collapsing cloud of gas and dust called the solar nebula. Rocky material in the inner disk accretes into the terrestrial planets—Mercury, Venus, Earth, and Mars—through increasingly violent collisions."
+      },
+      {
+        id: "period-hadean",
+        name: "Hadean Eon",
+        startTime: { value: 4540, unit: "mya" },
+        endTime: { value: 4000, unit: "mya" },
+        info: "Named for Hades, the Greek underworld, reflecting its hellish conditions. Earth is molten, bombarded by asteroids, and lacks a stable surface. Yet during this violent period, the core differentiates, the Moon forms, the magnetic field ignites, the first oceans condense, and the oldest mineral grains crystallize."
+      },
+      {
+        id: "period-archean",
+        name: "Archean Eon",
+        startTime: { value: 4000, unit: "mya" },
+        endTime: { value: 2500, unit: "mya" },
+        info: "Earth stabilizes enough for life to emerge. The first continents form, plate tectonics begins, and prokaryotic life dominates. Cyanobacteria evolve photosynthesis, slowly beginning to oxygenate the atmosphere. The Archean Earth has a faint Sun, a reducing atmosphere, and green-tinged seas rich in dissolved iron."
+      },
+      {
+        id: "period-proterozoic",
+        name: "Proterozoic Eon",
+        startTime: { value: 2500, unit: "mya" },
+        endTime: { value: 538.8, unit: "mya" },
+        info: "The longest eon sees transformative changes: the Great Oxygenation Event, the first Snowball Earth episodes, the evolution of eukaryotic and then multicellular life, and the assembly and breakup of supercontinents. By its end, the Ediacaran fauna heralds the coming explosion of complex life."
+      },
+      {
+        id: "period-snowball",
+        name: "Snowball Earth Episodes",
+        startTime: { value: 720, unit: "mya" },
+        endTime: { value: 635, unit: "mya" },
+        info: "Earth freezes almost entirely in at least two catastrophic glaciations. Ice sheets reach the equator, oceans freeze over, and life clings on in refugia near volcanic vents and thin ice. The dramatic thawing may have triggered conditions that enabled the evolution of complex animal life."
+      },
+      {
+        id: "period-phanerozoic",
+        name: "Phanerozoic Eon",
+        startTime: { value: 538.8, unit: "mya" },
+        info: "The eon of 'visible life' encompasses all of complex life's history. From the Cambrian Explosion to the present, five mass extinctions punctuate a story of increasing biological complexity. Continents drift, climates swing between icehouse and greenhouse, and life transforms Earth's surface again and again."
+      },
+      {
+        id: "period-pangaea",
+        name: "Pangaea Supercontinent",
+        startTime: { value: 335, unit: "mya" },
+        endTime: { value: 175, unit: "mya" },
+        info: "Earth's landmasses converge into a single supercontinent stretching from pole to pole, surrounded by the global ocean Panthalassa. Pangaea's formation and breakup drive mass extinctions, create new ocean basins, and redistribute life across the globe."
+      },
+      {
+        id: "period-modern-continents",
+        name: "Modern Continents Take Shape",
+        startTime: { value: 175, unit: "mya" },
+        endTime: { value: 34, unit: "mya" },
+        info: "Pangaea fragments into the continents we recognize. The Atlantic opens, India races north toward Asia, Australia separates from Antarctica. Mountain chains rise where plates collide—the Andes, Alps, and Himalayas. Each continental rearrangement reshapes ocean currents and global climate."
+      },
+      {
+        id: "period-icehouse",
+        name: "Icehouse Earth",
+        startTime: { value: 34, unit: "mya" },
+        endTime: { value: 11700, unit: "years-ago" },
+        info: "Earth transitions from the warm Eocene greenhouse into a long cooling trend. Antarctic ice sheets form first, followed by Northern Hemisphere glaciation. The Quaternary ice ages bring rhythmic glacial-interglacial cycles that carve landscapes, reshape coastlines, and drive the evolution of cold-adapted species and humans."
+      },
+      {
+        id: "period-holocene",
+        name: "Holocene Epoch",
+        startTime: { value: 11700, unit: "years-ago" },
+        info: "The current warm interglacial period. Stable, mild climate enables agriculture, civilization, and explosive human population growth. In just 12,000 years—a geological eyeblink—humans transform the planet's surface, atmosphere, and biosphere more profoundly than any force since the asteroid that killed the dinosaurs."
+      },
+      {
+        id: "period-atmosphere-evolution",
+        name: "Atmospheric Evolution",
+        startTime: { value: 4400, unit: "mya" },
+        endTime: { value: 400, unit: "mya" },
+        info: "Earth's atmosphere transforms from a primordial mix of CO₂, nitrogen, and water vapor to one rich in nitrogen and oxygen. Volcanic outgassing builds the early atmosphere, photosynthesis adds oxygen, the ozone layer forms, and by the Devonian, oxygen levels approach modern values."
+      },
+      {
+        id: "period-supercontinent-cycle",
+        name: "Supercontinent Cycles",
+        startTime: { value: 2700, unit: "mya" },
+        info: "Earth's continents repeatedly assemble into supercontinents and break apart in cycles lasting 300–500 million years. Known supercontinents include Kenorland (~2.7 Ga), Columbia/Nuna (~1.8 Ga), Rodinia (~1.1 Ga), and Pangaea (~300 Ma). Each cycle reshapes climate, ocean circulation, and the trajectory of life."
+      },
+      {
+        id: "period-mass-extinctions",
+        name: "The Big Five Mass Extinctions",
+        startTime: { value: 445, unit: "mya" },
+        endTime: { value: 66, unit: "mya" },
+        info: "Five catastrophic events punctuate the Phanerozoic, each eliminating 70–96% of species. Caused by volcanism, asteroid impacts, glaciation, and ocean chemistry changes, they repeatedly reshape the trajectory of life—destroying dominant groups and opening opportunities for new ones."
+      },
+      {
+        id: "period-far-future",
+        name: "Earth's Far Future",
+        startTime: { value: 100000000, unit: "ce" },
+        endTime: { value: 5500000000, unit: "ce" },
+        info: "Earth's future is governed by the Sun's increasing luminosity. Over hundreds of millions of years, rising temperatures evaporate the oceans, plate tectonics ceases, the magnetic field fades, and the atmosphere is lost. Earth's story as a habitable world—spanning roughly 4.5 billion years—eventually ends."
+      }
+    ],
+    connectors: [
+      {
+        id: "conn-formation-hadean",
+        fromId: "period-formation",
+        toId: "period-hadean",
+        type: "defined",
+        metadata: {
+          note: "Accretion produces a molten proto-Earth"
+        }
+      },
+      {
+        id: "conn-hadean-archean",
+        fromId: "period-hadean",
+        toId: "period-archean",
+        type: "defined",
+        metadata: {
+          note: "Earth cools and stabilizes, enabling life"
+        }
+      },
+      {
+        id: "conn-archean-proterozoic",
+        fromId: "period-archean",
+        toId: "period-proterozoic",
+        type: "defined",
+        metadata: {
+          note: "Oxygenation transforms the planet"
+        }
+      },
+      {
+        id: "conn-proterozoic-snowball",
+        fromId: "period-proterozoic",
+        toId: "period-snowball",
+        type: "defined",
+        metadata: {
+          note: "Continental breakup and weathering trigger extreme glaciation"
+        }
+      },
+      {
+        id: "conn-snowball-phanerozoic",
+        fromId: "period-snowball",
+        toId: "period-phanerozoic",
+        type: "defined",
+        metadata: {
+          note: "Post-glacial conditions enable complex life"
+        }
+      },
+      {
+        id: "conn-phanerozoic-pangaea",
+        fromId: "period-phanerozoic",
+        toId: "period-pangaea",
+        type: "defined",
+        metadata: {
+          note: "Continental drift assembles Pangaea during the Phanerozoic"
+        }
+      },
+      {
+        id: "conn-pangaea-modern",
+        fromId: "period-pangaea",
+        toId: "period-modern-continents",
+        type: "defined",
+        metadata: {
+          note: "Pangaea fragments into today's continents"
+        }
+      },
+      {
+        id: "conn-modern-icehouse",
+        fromId: "period-modern-continents",
+        toId: "period-icehouse",
+        type: "defined",
+        metadata: {
+          note: "Continental rearrangement drives global cooling"
+        }
+      },
+      {
+        id: "conn-icehouse-holocene",
+        fromId: "period-icehouse",
+        toId: "period-holocene",
+        type: "defined",
+        metadata: {
+          note: "Glacial retreat begins the current warm period"
+        }
+      },
+      {
+        id: "conn-atmosphere-to-phanerozoic",
+        fromId: "period-atmosphere-evolution",
+        toId: "period-phanerozoic",
+        type: "defined",
+        metadata: {
+          note: "Oxygenated atmosphere enables complex life on land"
+        }
+      },
+      {
+        id: "conn-supercontinent-pangaea",
+        fromId: "period-supercontinent-cycle",
+        toId: "period-pangaea",
+        type: "undefined",
+        metadata: {
+          note: "Pangaea is the most recent in a recurring cycle"
+        }
+      },
+      {
+        id: "conn-extinctions-phanerozoic",
+        fromId: "period-phanerozoic",
+        toId: "period-mass-extinctions",
+        type: "undefined",
+        metadata: {
+          note: "Mass extinctions repeatedly reset the trajectory of complex life"
         }
       }
     ]

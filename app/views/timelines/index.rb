@@ -7,9 +7,10 @@ module Views
       include Phlex::Rails::Helpers::ButtonTo
       include Phlex::Rails::Helpers::Pluralize
 
-      def initialize(my_timelines:, public_timelines:)
+      def initialize(my_timelines:, public_timelines:, authenticated:)
         @my_timelines = my_timelines
         @public_timelines = public_timelines
+        @authenticated = authenticated
       end
 
       def view_template
@@ -19,7 +20,7 @@ module Views
         ) do
           render_header
 
-          if helpers.authenticated?
+          if @authenticated
             render_section("My Timelines", @my_timelines, editable: true)
           end
 
@@ -34,8 +35,10 @@ module Views
           Heading(level: 1) { "Timelines" }
 
           div(class: "flex gap-3") do
-            if helpers.authenticated?
-              link_to session_path, data: { turbo_method: :delete } do
+            render_about_dialog
+
+            if @authenticated
+              link_to session_path, data: {turbo_method: :delete} do
                 Button(variant: :secondary) { "Log out" }
               end
             else
@@ -55,9 +58,45 @@ module Views
               ) { "Combine Selected" }
             end
 
-            if helpers.authenticated?
+            if @authenticated
               link_to new_timeline_path do
                 Button(variant: :primary) { "New Timeline" }
+              end
+            end
+          end
+        end
+      end
+
+      def render_about_dialog
+        Dialog do
+          DialogTrigger do
+            Button(variant: :secondary) { "About" }
+          end
+          DialogContent do
+            DialogHeader do
+              DialogTitle { "Timeliner" }
+            end
+            DialogMiddle do
+              div(class: "space-y-4 text-sm overflow-y-auto max-h-[60vh]") do
+                p { "Timeliner is an early-stage project to build a good historical timeline tool. I like learning and have an attraction to overviews of topics. When it comes to history, I prefer to have information about events and periods visually represented. A lot of times I would read a book with historical dates, but it'd be hard to retain the information or make connections to other events happening around the same time. Also, when I think of my own life, I actively think of it in its historical context. I like to ponder its unremarkably short duration as well as its position along societal and geological periods." }
+                p { "History is also a very contested sphere, where historical narrative is famously 'written by the winners'. The manipulation of history is an extremely powerful tool for propaganda. As a counterpoint, education of history is an important tool against manipulation of people through propaganda, and as such, providing educational tools for learning and understanding history could have leverage in improving society." }
+                p { "The Internet offers some other timeline projects, but I haven't found one that would satisfy my requirements, so I'm building one:" }
+                ul(class: "list-disc pl-6 space-y-1") do
+                  li { "A broad selection of timelines for various perspectives: dates mentioned in books, histories of conflicts, histories of scientific development, personal histories etc." }
+                  li { "User curation of timelines by a system of liking or voting" }
+                  li { "Possibility to combine timelines" }
+                  li { "Timelines should be on any time scale: cosmological time, civilizational time, recent history and future timelines" }
+                  li { "Tree structure for timelines, to show historical inheritance and continuum" }
+                  li { "Automatic timeline building, without having to manually place periods" }
+                  li { "Aesthetically pleasing" }
+                  li { "Possibly a discussion forum for users" }
+                end
+                div do
+                  Heading(level: 3, class: "mb-2") { "Contributions" }
+                  p { "I'm happy to receive Issues and Pull Requests to Timeliner and Thymeline.js." }
+                end
+                Link(href: "https://github.com/pessi-v/timeliner/") { "Timeliner on GitHub" }
+                Link(href: "https://github.com/pessi-v/thymeline") { "Thymeline.js on GitHub" }
               end
             end
           end
@@ -116,7 +155,7 @@ module Views
                   link_to edit_timeline_path(timeline) do
                     Button(variant: :secondary, size: :sm) { "Edit" }
                   end
-                  link_to(timeline_path(timeline), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }) do
+                  link_to(timeline_path(timeline), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}) do
                     Button(variant: :primary, size: :sm) { "Delete" }
                   end
                 end

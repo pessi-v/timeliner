@@ -10,7 +10,7 @@ class TimelinesController < ApplicationController
       my_timelines = Timeline.none
       public_timelines = Timeline.where(public: true).order(created_at: :desc)
     end
-    render Views::Timelines::Index.new(my_timelines: my_timelines, public_timelines: public_timelines)
+    render Views::Timelines::Index.new(my_timelines: my_timelines, public_timelines: public_timelines, authenticated: authenticated?)
   end
 
   def show

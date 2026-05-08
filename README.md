@@ -4,8 +4,10 @@ Timeliner is an early-stage project to build a good historical timeline tool. I 
 
 History is also a very contested sphere, where historical narrative is famously 'written by the winners'. The manipulation of history is an extremely powerful tool for propaganda. As a counterpoint, education of history is an important tool against manipulation of people through propaganda, and as such, providing educational tools for learning and understanding history could have leverage in improving society.
 
+![Screenshot of Timeliner](timeliner_screenshot.png)
 
 The Internet offers some other timeline projects, but I haven't found one that would satisfy my requirements, so I'm building one:
+
 - A broad selection of timelines for various perspectives: dates mentioned in books, histories of conflicts, histories of scientific development, personal histories etc.
 - User curation of timelines by a system of liking or voting
 - Possibility to combine timelines
@@ -14,7 +16,6 @@ The Internet offers some other timeline projects, but I haven't found one that w
 - Automatic timeline building, without having to manually place periods
 - Aesthetically pleasing
 - Possibly a discussion forum for users
-
 
 ### Contributions
 

@@ -1,5 +1,6 @@
 class TimelinesController < ApplicationController
-  before_action :set_timeline, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_timeline, only: [ :show ]
+  before_action :set_owned_timeline, only: [ :edit, :update, :destroy ]
   skip_before_action :require_authentication, only: [ :index, :show, :combine ]
 
   def index
@@ -25,7 +26,7 @@ class TimelinesController < ApplicationController
       return
     end
 
-    @timelines = Timeline.where(id: timeline_ids)
+    @timelines = accessible_timelines.where(id: timeline_ids)
 
     if @timelines.empty?
       redirect_to timelines_path, alert: "No valid timelines found."
@@ -51,7 +52,7 @@ class TimelinesController < ApplicationController
   end
 
   def create
-    @timeline = Timeline.new(timeline_params)
+    @timeline = Current.user.timelines.new(timeline_params)
 
     if @timeline.save
       redirect_to @timeline, notice: "Timeline was successfully created."
@@ -80,7 +81,19 @@ class TimelinesController < ApplicationController
   private
 
   def set_timeline
-    @timeline = Timeline.find(params.expect(:id))
+    @timeline = accessible_timelines.find(params.expect(:id))
+  end
+
+  def set_owned_timeline
+    @timeline = Current.user.timelines.find(params.expect(:id))
+  end
+
+  def accessible_timelines
+    if authenticated?
+      Timeline.where(public: true).or(Timeline.where(user: Current.user))
+    else
+      Timeline.where(public: true)
+    end
   end
 
   def timeline_params

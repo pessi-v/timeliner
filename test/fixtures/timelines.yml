@@ -1,11 +1,31 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyText
-  timeline_data: 
+public_one:
+  name: Roman Empire
+  description: Public timeline owned by user one
+  public: true
+  user: one
+  timeline_data:
+    events: []
+    periods: []
+    connectors: []
 
-two:
-  name: MyString
-  description: MyText
-  timeline_data: 
+private_one:
+  name: Secret Plans
+  description: Private timeline owned by user one
+  public: false
+  user: one
+  timeline_data:
+    events: []
+    periods: []
+    connectors: []
+
+public_two:
+  name: Space Age
+  description: Public timeline owned by user two
+  public: true
+  user: two
+  timeline_data:
+    events: []
+    periods: []
+    connectors: []
